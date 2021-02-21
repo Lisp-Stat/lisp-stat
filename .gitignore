@@ -1,0 +1,14 @@
+\#*#
+/TAGS
+/WIP
+
+# Generated build files
+*.fasl
+*.texi
+
+# Files local to a developer
+TODO.org
+NOTES.org
+*.text
+
+public
