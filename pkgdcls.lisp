@@ -19,6 +19,7 @@
 		 :distributions
 		 :num-utils.arithmetic
 		 :num-utils.statistics
+		 :num-utils.elementwise
 		 :select
 		 :split-sequence)
   (:export #:variables

@@ -26,7 +26,9 @@
 			:serial t
 			:components
 			((:file #:utilities)
-			 (:file #:variables)))))  ; XLS style variable definitions
+			 (:file #:variables)))  ; XLS style variable definitions
+	       (:module "docs"
+		:components ((:file #:doc-strings)))))
 
 
 (asdf:defsystem :lisp-stat/rdata
