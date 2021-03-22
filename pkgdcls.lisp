@@ -10,16 +10,17 @@
   ;; This would be easier with something like defpackage-plus, but that system is somewhat fragile when redefining packages
   (:shadowing-import-from :num-utils.statistics #:mean #:variance #:median) ; alexandria only works on sequences
   (:shadowing-import-from :array-operations     #:flatten)                  ; alexandria works on cons trees, aops on arrays
-  (:shadowing-import-from :distributions        #:standard-deviation)       ; alexandria only works on sequences
+  ;; (:shadowing-import-from :distributions        #:standard-deviation)       ; alexandria only works on sequences
 
   (:use-reexport :alexandria-2
 		 :array-operations
 		 :data-frame
                  :dfio
-		 :distributions
+		 ;; :distributions
 		 :num-utils.arithmetic
 		 :num-utils.statistics
-		 :num-utils.elementwise
+                 :num-utils.elementwise
+		 :num-utils.utilities
 		 :select
 		 :split-sequence)
   (:export #:variables

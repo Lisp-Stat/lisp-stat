@@ -3,6 +3,7 @@
 (in-package :lisp-stat)
 
 ;;; Add doc-strings where the implementation lacks them
+;;; NOTE: Do not add line breaks to doc strings. Variables, functions, etc should be in ALL-CAPS
 
 #+sbcl
 (progn

@@ -4,17 +4,15 @@
 (asdf:defsystem :lisp-stat
   :name "Lisp Statistics"
   :version     (:read-file-form "version.sexp")
-  :description "A statistical computing environment for common lisp"
-  :long-description "Common Lisp Statistics (LS): An environment for statistical computing"
+  :description "A statistical computing environment for Common Lisp"
   :author      "Steve Nunez <steve@symbolics.tech>"
   :license :MS-PL
   :depends-on (#:alexandria
 	       #:array-operations
-	       ;; #:cl-ppcre		; regular expressions; not required yet
 	       #:cl-semver		; Application versioning
 	       #:data-frame
 	       #:dfio
-	       #:distributions
+	       ;; #:distributions		; not yet
 	       #:num-utils
 	       #:select
 	       #:split-sequence)
