@@ -20,9 +20,9 @@
   <h3 align="center">Lisp-Stat</h3>
 
   <p align="center">
-  A system for file and network I/O for data frames
+	An environment for statistical computing
 	<br />
-    <a href="https://lisp-stat.dev/docs/tasks/data-frame/"><strong>Explore the docs »</strong></a>
+    <a href="https://lisp-stat.dev/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/lisp-stat/lisp-stat/issues">Report Bug</a>
@@ -66,11 +66,21 @@
 <!-- ABOUT THE PROJECT -->
 ## About the Project
 
-  A data frame is isn't much use if you have to type all the data in
-  by hand. This system provides I/O functions to read data sets in
-  delimited (CSV, TSV, etc.) files from both local disk and network
-  locations.
+  Lisp-Stat provides support for vectorized mathematical operations,
+  and a comprehensive set of statistical methods that are implemented
+  using the latest numerical algorithms.  In addition, Common Lisp
+  provides a dynamic programming environment
+  ([REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)),
+  an excellent object-oriented facility
+  ([CLOS](https://en.wikipedia.org/wiki/Common_Lisp_Object_System))
+  and meta-object protocol
+  ([MOP](https://en.wikipedia.org/wiki/Metaobject#Metaobject_protocol)).
 
+   Lisp-Stat is fully functional today, and most of the [XLISP-STAT
+   libraries](https://github.com/Lisp-Stat/xls-archive) can be ported
+   with the aid of a compatibility package
+   [XLS-compat](https://github.com/Lisp-Stat/XLS-compat).  This gives
+   Lisp-Stat a leg up on ecosystem development.
 
 
 ### Built With
@@ -143,7 +153,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MS-PL License. See [LICENSE](LICENSE) for more information.
+Distributed under the MS-PL License. See [LICENSE](LICENSE) for more infoqrmation.
 
 
 
