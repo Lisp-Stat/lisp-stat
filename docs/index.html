@@ -1,0 +1,1069 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The Lisp-Stat Reference Manual</title>
+
+<meta name="description" content="The Lisp-Stat Reference Manual, version 1.0.">
+<meta name="keywords" content="The Lisp-Stat Reference Manual">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="#Top" rel="start" title="Top">
+<link href="#Indexes" rel="index" title="Indexes">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">The Lisp-Stat Reference Manual</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="SEC_Contents"></span>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a id="toc-Systems-1" href="#Systems">1 Systems</a>
+  <ul class="no-bullet">
+    <li><a id="toc-lisp_002dstat" href="#The-lisp_002dstat-system">1.1 <tt>lisp-stat</tt></a></li>
+  </ul></li>
+  <li><a id="toc-Modules-1" href="#Modules">2 Modules</a>
+  <ul class="no-bullet">
+    <li><a id="toc-lisp_002dstat_002fbase" href="#The-lisp_002dstat_002fbase-module">2.1 <tt>lisp-stat/base</tt></a></li>
+    <li><a id="toc-lisp_002dstat_002fdocs" href="#The-lisp_002dstat_002fdocs-module">2.2 <tt>lisp-stat/docs</tt></a></li>
+  </ul></li>
+  <li><a id="toc-Files-1" href="#Files">3 Files</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Lisp" href="#Lisp-files">3.1 Lisp</a>
+    <ul class="no-bullet">
+      <li><a id="toc-lisp_002dstat_002easd" href="#The-lisp_002dstat_2024asd-file">3.1.1 <tt>lisp-stat.asd</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fpkgdcls_002elisp" href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">3.1.2 <tt>lisp-stat/pkgdcls.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fls_002dinit_002elisp" href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">3.1.3 <tt>lisp-stat/ls-init.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fbase_002futilities_002elisp" href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file">3.1.4 <tt>lisp-stat/base/utilities.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fbase_002fvariables_002elisp" href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">3.1.5 <tt>lisp-stat/base/variables.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp" href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">3.1.6 <tt>lisp-stat/docs/doc-strings.lisp</tt></a></li>
+    </ul></li>
+    <li><a id="toc-Static" href="#Static-files">3.2 Static</a>
+    <ul class="no-bullet">
+      <li><a id="toc-lisp_002dstat_002flicense" href="#The-lisp_002dstat_002flicense-file">3.2.1 <tt>lisp-stat/license</tt></a></li>
+    </ul></li>
+  </ul></li>
+  <li><a id="toc-Packages-1" href="#Packages">4 Packages</a>
+  <ul class="no-bullet">
+    <li><a id="toc-lisp_002dstat-1" href="#The-lisp_002dstat-package">4.1 <tt>lisp-stat</tt></a></li>
+    <li><a id="toc-ls_002duser" href="#The-ls_002duser-package">4.2 <tt>ls-user</tt></a></li>
+  </ul></li>
+  <li><a id="toc-Definitions-1" href="#Definitions">5 Definitions</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Exported-definitions-1" href="#Exported-definitions">5.1 Exported definitions</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Special-variables" href="#Exported-special-variables">5.1.1 Special variables</a></li>
+      <li><a id="toc-Macros" href="#Exported-macros">5.1.2 Macros</a></li>
+      <li><a id="toc-Functions" href="#Exported-functions">5.1.3 Functions</a></li>
+    </ul></li>
+    <li><a id="toc-Internal-definitions-1" href="#Internal-definitions">5.2 Internal definitions</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Special-variables-1" href="#Internal-special-variables">5.2.1 Special variables</a></li>
+      <li><a id="toc-Functions-1" href="#Internal-functions">5.2.2 Functions</a></li>
+      <li><a id="toc-Generic-functions" href="#Internal-generic-functions">5.2.3 Generic functions</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a id="toc-Indexes-1" href="#Indexes">Appendix A Indexes</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Concepts" href="#Concept-index" rel="index">A.1 Concepts</a></li>
+    <li><a id="toc-Functions-2" href="#Function-index" rel="index">A.2 Functions</a></li>
+    <li><a id="toc-Variables" href="#Variable-index" rel="index">A.3 Variables</a></li>
+    <li><a id="toc-Data-types" href="#Data-type-index" rel="index">A.4 Data types</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+<span id="Top"></span><div class="header">
+<p>
+Next: <a href="#Systems" accesskey="n" rel="next">Systems</a>, Previous: <a href="dir.html#Top" accesskey="p" rel="prev">(dir)</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="The-Lisp_002dStat-Reference-Manual"></span><h1 class="top">The Lisp-Stat Reference Manual</h1>
+<p>This is the Lisp-Stat Reference Manual, version 1.0.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Systems" accesskey="1">Systems</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The systems documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Modules" accesskey="2">Modules</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The modules documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Files" accesskey="3">Files</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The files documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Packages" accesskey="4">Packages</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The packages documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Definitions" accesskey="5">Definitions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The symbols documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Indexes" accesskey="6">Indexes</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Concepts, functions, variables and data types
+</td></tr>
+</table>
+
+
+
+<hr>
+<span id="Systems"></span><div class="header">
+<p>
+Next: <a href="#Modules" accesskey="n" rel="next">Modules</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Systems-1"></span><h2 class="chapter">1 Systems</h2>
+<p>The main system appears first, followed by any subsystem dependency.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat-system" accesskey="1">The lisp-stat system</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="The-lisp_002dstat-system"></span><div class="header">
+<p>
+Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="#Systems" accesskey="u" rel="up">Systems</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat"></span><h3 class="section">1.1 <tt>lisp-stat</tt></h3>
+<span id="go-to-the-lisp_002dstat-system"></span><span id="index-lisp_002dstat"></span>
+<span id="index-System_002c-lisp_002dstat"></span>
+<dl compact="compact">
+<dt><strong>Author</strong></dt>
+<dd><p>Steve Nunez &lt;<a href="mailto:steve@symbolics.tech">steve@symbolics.tech</a>&gt;
+</p></dd>
+<dt><strong>License</strong></dt>
+<dd><p>MS-PL
+</p></dd>
+<dt><strong>Description</strong></dt>
+<dd><p>A statistical computing environment for Common Lisp
+</p></dd>
+<dt><strong>Version</strong></dt>
+<dd><p>1.0
+</p></dd>
+<dt><strong>Dependencies</strong></dt>
+<dd><ul>
+<li> <tt>alexandria</tt>
+</li><li> <tt>array-operations</tt>
+</li><li> <tt>cl-semver</tt>
+</li><li> <tt>data-frame</tt>
+</li><li> <tt>dfio</tt>
+</li><li> <tt>num-utils</tt>
+</li><li> <tt>select</tt>
+</li><li> <tt>split-sequence</tt>
+</li></ul>
+</dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_2024asd-file"><tt>lisp-stat.asd</tt></a> (file)
+</p></dd>
+<dt><strong>Directory</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/"><tt>s:/src/lisp-stat/</tt></a>
+</p></dd>
+<dt><strong>Components</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-lisp_002dstat_002fpkgdcls_2024lisp-file"><tt>pkgdcls.lisp</tt></a> (file)
+</li><li> <a href="#go-to-the-lisp_002dstat_002fls_002dinit_2024lisp-file"><tt>ls-init.lisp</tt></a> (file)
+</li><li> <a href="#go-to-the-lisp_002dstat_002flicense-file"><tt>license</tt></a> (file)
+</li><li> <a href="#go-to-the-lisp_002dstat_002fbase-module"><tt>base</tt></a> (module)
+</li><li> <a href="#go-to-the-lisp_002dstat_002fdocs-module"><tt>docs</tt></a> (module)
+</li></ul>
+</dd>
+</dl>
+
+
+
+<hr>
+<span id="Modules"></span><div class="header">
+<p>
+Next: <a href="#Files" accesskey="n" rel="next">Files</a>, Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Modules-1"></span><h2 class="chapter">2 Modules</h2>
+<p>Modules are listed depth-first from the system components tree.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fbase-module" accesskey="1">The lisp-stat/base module</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fdocs-module" accesskey="2">The lisp-stat/docs module</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="The-lisp_002dstat_002fbase-module"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fdocs-module" accesskey="n" rel="next">The lisp-stat/docs module</a>, Previous: <a href="#Modules" accesskey="p" rel="prev">Modules</a>, Up: <a href="#Modules" accesskey="u" rel="up">Modules</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fbase"></span><h3 class="section">2.1 <tt>lisp-stat/base</tt></h3>
+<span id="go-to-the-lisp_002dstat_002fbase-module"></span><span id="index-lisp_002dstat_002fbase"></span>
+<span id="index-Module_002c-lisp_002dstat_002fbase"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/base/"><tt>base/</tt></a>
+</p></dd>
+<dt><strong>Components</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-lisp_002dstat_002fbase_002futilities_2024lisp-file"><tt>utilities.lisp</tt></a> (file)
+</li><li> <a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</li></ul>
+</dd>
+</dl>
+
+
+<hr>
+<span id="The-lisp_002dstat_002fdocs-module"></span><div class="header">
+<p>
+Previous: <a href="#The-lisp_002dstat_002fbase-module" accesskey="p" rel="prev">The lisp-stat/base module</a>, Up: <a href="#Modules" accesskey="u" rel="up">Modules</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fdocs"></span><h3 class="section">2.2 <tt>lisp-stat/docs</tt></h3>
+<span id="go-to-the-lisp_002dstat_002fdocs-module"></span><span id="index-lisp_002dstat_002fdocs"></span>
+<span id="index-Module_002c-lisp_002dstat_002fdocs"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/docs/"><tt>docs/</tt></a>
+</p></dd>
+<dt><strong>Component</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file"><tt>doc-strings.lisp</tt></a> (file)
+</p></dd>
+</dl>
+
+
+
+<hr>
+<span id="Files"></span><div class="header">
+<p>
+Next: <a href="#Packages" accesskey="n" rel="next">Packages</a>, Previous: <a href="#Modules" accesskey="p" rel="prev">Modules</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Files-1"></span><h2 class="chapter">3 Files</h2>
+<p>Files are sorted by type and then listed depth-first from the systems
+components trees.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Lisp-files" accesskey="1">Lisp files</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Static-files" accesskey="2">Static files</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="Lisp-files"></span><div class="header">
+<p>
+Next: <a href="#Static-files" accesskey="n" rel="next">Static files</a>, Previous: <a href="#Files" accesskey="p" rel="prev">Files</a>, Up: <a href="#Files" accesskey="u" rel="up">Files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Lisp"></span><h3 class="section">3.1 Lisp</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_2024asd-file" accesskey="1">The lisp-stat.asd file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file" accesskey="2">The lisp-stat/pkgdcls.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file" accesskey="3">The lisp-stat/ls-init.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file" accesskey="4">The lisp-stat/base/utilities.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file" accesskey="5">The lisp-stat/base/variables.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file" accesskey="6">The lisp-stat/docs/doc-strings.lisp file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<span id="The-lisp_002dstat_2024asd-file"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file" accesskey="n" rel="next">The lisp-stat/pkgdcls․lisp file</a>, Previous: <a href="#Lisp-files" accesskey="p" rel="prev">Lisp files</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002easd"></span><h4 class="subsection">3.1.1 <tt>lisp-stat.asd</tt></h4>
+<span id="go-to-the-lisp_002dstat_2024asd-file"></span><span id="index-lisp_002dstat_002easd"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002easd"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002easd"></span>
+<dl compact="compact">
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/lisp-stat.asd"><tt>lisp-stat.asd</tt></a>
+</p></dd>
+<dt><strong>Systems</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+</dl>
+
+<hr>
+<span id="The-lisp_002dstat_002fpkgdcls_2024lisp-file"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file" accesskey="n" rel="next">The lisp-stat/ls-init․lisp file</a>, Previous: <a href="#The-lisp_002dstat_2024asd-file" accesskey="p" rel="prev">The lisp-stat․asd file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fpkgdcls_002elisp"></span><h4 class="subsection">3.1.2 <tt>lisp-stat/pkgdcls.lisp</tt></h4>
+<span id="go-to-the-lisp_002dstat_002fpkgdcls_2024lisp-file"></span><span id="index-lisp_002dstat_002fpkgdcls_002elisp"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002fpkgdcls_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002fpkgdcls_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/pkgdcls.lisp"><tt>pkgdcls.lisp</tt></a>
+</p></dd>
+<dt><strong>Packages</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</li><li> <a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</li></ul>
+</dd>
+</dl>
+
+<hr>
+<span id="The-lisp_002dstat_002fls_002dinit_2024lisp-file"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file" accesskey="n" rel="next">The lisp-stat/base/utilities․lisp file</a>, Previous: <a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file" accesskey="p" rel="prev">The lisp-stat/pkgdcls․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fls_002dinit_002elisp"></span><h4 class="subsection">3.1.3 <tt>lisp-stat/ls-init.lisp</tt></h4>
+<span id="go-to-the-lisp_002dstat_002fls_002dinit_2024lisp-file"></span><span id="index-lisp_002dstat_002fls_002dinit_002elisp"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002fls_002dinit_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002fls_002dinit_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/ls-init.lisp"><tt>ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT_2236_2236_002aLS_002dVERSION_002a-special-variable"><tt>*ls-version*</tt></a> (special variable)
+</p></dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aRELEASE_002dNAME_002a-special-variable"><tt>*release-name*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SETUP_002dLS_002dTRANSLATIONS-function"><tt>setup-ls-translations</tt></a> (function)
+</li></ul>
+</dd>
+</dl>
+
+<hr>
+<span id="The-lisp_002dstat_002fbase_002futilities_2024lisp-file"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file" accesskey="n" rel="next">The lisp-stat/base/variables․lisp file</a>, Previous: <a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file" accesskey="p" rel="prev">The lisp-stat/ls-init․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fbase_002futilities_002elisp"></span><h4 class="subsection">3.1.4 <tt>lisp-stat/base/utilities.lisp</tt></h4>
+<span id="go-to-the-lisp_002dstat_002fbase_002futilities_2024lisp-file"></span><span id="index-lisp_002dstat_002fbase_002futilities_002elisp"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002fbase_002futilities_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002fbase_002futilities_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase-module"><tt>base</tt></a> (module)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/base/utilities.lisp"><tt>base/utilities.lisp</tt></a>
+</p></dd>
+</dl>
+
+<hr>
+<span id="The-lisp_002dstat_002fbase_002fvariables_2024lisp-file"></span><div class="header">
+<p>
+Next: <a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file" accesskey="n" rel="next">The lisp-stat/docs/doc-strings․lisp file</a>, Previous: <a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file" accesskey="p" rel="prev">The lisp-stat/base/utilities․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fbase_002fvariables_002elisp"></span><h4 class="subsection">3.1.5 <tt>lisp-stat/base/variables.lisp</tt></h4>
+<span id="go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"></span><span id="index-lisp_002dstat_002fbase_002fvariables_002elisp"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002fbase_002fvariables_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002fbase_002fvariables_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Dependency</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002futilities_2024lisp-file"><tt>utilities.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase-module"><tt>base</tt></a> (module)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/base/variables.lisp"><tt>base/variables.lisp</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT_2236_2236DEF-macro"><tt>def</tt></a> (macro)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVEVAR-function"><tt>savevar</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236UNDEF-function"><tt>undef</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"><tt>variables</tt></a> (function)
+</li></ul>
+</dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"><tt>*ask-on-redefine*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aVARIABLES_002a-special-variable"><tt>*variables*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE-generic-function"><tt>save</tt></a> (generic function)
+</li></ul>
+</dd>
+</dl>
+
+<hr>
+<span id="The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file"></span><div class="header">
+<p>
+Previous: <a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file" accesskey="p" rel="prev">The lisp-stat/base/variables․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span><h4 class="subsection">3.1.6 <tt>lisp-stat/docs/doc-strings.lisp</tt></h4>
+<span id="go-to-the-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file"></span><span id="index-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span>
+<span id="index-Lisp-File_002c-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span>
+<span id="index-File_002c-Lisp_002c-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fdocs-module"><tt>docs</tt></a> (module)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/docs/doc-strings.lisp"><tt>docs/doc-strings.lisp</tt></a>
+</p></dd>
+</dl>
+
+
+<hr>
+<span id="Static-files"></span><div class="header">
+<p>
+Previous: <a href="#Lisp-files" accesskey="p" rel="prev">Lisp files</a>, Up: <a href="#Files" accesskey="u" rel="up">Files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Static"></span><h3 class="section">3.2 Static</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat_002flicense-file" accesskey="1">The lisp-stat/license file</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<span id="The-lisp_002dstat_002flicense-file"></span><div class="header">
+<p>
+Previous: <a href="#Static-files" accesskey="p" rel="prev">Static files</a>, Up: <a href="#Static-files" accesskey="u" rel="up">Static files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat_002flicense"></span><h4 class="subsection">3.2.1 <tt>lisp-stat/license</tt></h4>
+<span id="go-to-the-lisp_002dstat_002flicense-file"></span><span id="index-lisp_002dstat_002flicense"></span>
+<span id="index-Static-File_002c-lisp_002dstat_002flicense"></span>
+<span id="index-File_002c-static_002c-lisp_002dstat_002flicense"></span>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat-system"><tt>lisp-stat</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file://s:/src/lisp-stat/LICENSE"><tt>LICENSE</tt></a>
+</p></dd>
+</dl>
+
+
+
+<hr>
+<span id="Packages"></span><div class="header">
+<p>
+Next: <a href="#Definitions" accesskey="n" rel="next">Definitions</a>, Previous: <a href="#Files" accesskey="p" rel="prev">Files</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Packages-1"></span><h2 class="chapter">4 Packages</h2>
+<p>Packages are listed by definition order.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-lisp_002dstat-package" accesskey="1">The lisp-stat package</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-ls_002duser-package" accesskey="2">The ls-user package</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="The-lisp_002dstat-package"></span><div class="header">
+<p>
+Next: <a href="#The-ls_002duser-package" accesskey="n" rel="next">The ls-user package</a>, Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href="#Packages" accesskey="u" rel="up">Packages</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="lisp_002dstat-1"></span><h3 class="section">4.1 <tt>lisp-stat</tt></h3>
+<span id="go-to-the-LISP_002dSTAT-package"></span><span id="index-lisp_002dstat-1"></span>
+<span id="index-Package_002c-lisp_002dstat"></span>
+<p>Base functions and variables for Lisp-Stat
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fpkgdcls_2024lisp-file"><tt>pkgdcls.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Nickname</strong></dt>
+<dd><p><tt>ls</tt>
+</p></dd>
+<dt><strong>Use List</strong></dt>
+<dd><ul>
+<li> <tt>split-sequence</tt>
+</li><li> <tt>select</tt>
+</li><li> <tt>num-utils.utilities</tt>
+</li><li> <tt>num-utils.elementwise</tt>
+</li><li> <tt>num-utils.statistics</tt>
+</li><li> <tt>num-utils.arithmetic</tt>
+</li><li> <tt>dfio</tt>
+</li><li> <tt>data-frame</tt>
+</li><li> <tt>array-operations/all</tt>
+</li><li> <tt>alexandria-2</tt>
+</li><li> <tt>common-lisp</tt>
+</li></ul>
+</dd>
+<dt><strong>Used By List</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aLS_002dVERSION_002a-special-variable"><tt>*ls-version*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236DEF-macro"><tt>def</tt></a> (macro)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVEVAR-function"><tt>savevar</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236UNDEF-function"><tt>undef</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"><tt>variables</tt></a> (function)
+</li></ul>
+</dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"><tt>*ask-on-redefine*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aRELEASE_002dNAME_002a-special-variable"><tt>*release-name*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aVARIABLES_002a-special-variable"><tt>*variables*</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE-generic-function"><tt>save</tt></a> (generic function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SETUP_002dLS_002dTRANSLATIONS-function"><tt>setup-ls-translations</tt></a> (function)
+</li></ul>
+</dd>
+</dl>
+
+
+<hr>
+<span id="The-ls_002duser-package"></span><div class="header">
+<p>
+Previous: <a href="#The-lisp_002dstat-package" accesskey="p" rel="prev">The lisp-stat package</a>, Up: <a href="#Packages" accesskey="u" rel="up">Packages</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="ls_002duser"></span><h3 class="section">4.2 <tt>ls-user</tt></h3>
+<span id="go-to-the-LS_002dUSER-package"></span><span id="index-ls_002duser"></span>
+<span id="index-Package_002c-ls_002duser"></span>
+<p>User package for Lisp-Stat
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fpkgdcls_2024lisp-file"><tt>pkgdcls.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Use List</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</li><li> <tt>common-lisp</tt>
+</li></ul>
+</dd>
+</dl>
+
+
+
+<hr>
+<span id="Definitions"></span><div class="header">
+<p>
+Next: <a href="#Indexes" accesskey="n" rel="next">Indexes</a>, Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Definitions-1"></span><h2 class="chapter">5 Definitions</h2>
+<p>Definitions are sorted by export status, category, package, and then by
+lexicographic order.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-definitions" accesskey="1">Exported definitions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-definitions" accesskey="2">Internal definitions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="Exported-definitions"></span><div class="header">
+<p>
+Next: <a href="#Internal-definitions" accesskey="n" rel="next">Internal definitions</a>, Previous: <a href="#Definitions" accesskey="p" rel="prev">Definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Exported-definitions-1"></span><h3 class="section">5.1 Exported definitions</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-special-variables" accesskey="1">Exported special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-macros" accesskey="2">Exported macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="3">Exported functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<span id="Exported-special-variables"></span><div class="header">
+<p>
+Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Special-variables"></span><h4 class="subsection">5.1.1 Special variables</h4>
+<dl>
+<dt id="index-_002als_002dversion_002a">Special Variable: <strong>*ls-version*</strong></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236_002aLS_002dVERSION_002a-special-variable"></span><span id="index-Special-Variable_002c-_002als_002dversion_002a"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fls_002dinit_2024lisp-file"><tt>ls-init.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<span id="Exported-macros"></span><div class="header">
+<p>
+Next: <a href="#Exported-functions" accesskey="n" rel="next">Exported functions</a>, Previous: <a href="#Exported-special-variables" accesskey="p" rel="prev">Exported special variables</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Macros"></span><h4 class="subsection">5.1.2 Macros</h4>
+<dl>
+<dt id="index-def">Macro: <strong>def</strong> <em>NAME VALUE &amp;optional DOCUMENTATION</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236DEF-macro"></span><span id="index-Macro_002c-def"></span>
+<p>Args: (var form)<br>
+VAR is not evaluated and must be a symbol.  Assigns the value of FORM to
+VAR and adds VAR to the list *VARIABLES* of def&rsquo;ed variables. Returns VAR.
+If VAR is already bound and the global variable *ASK-ON-REDEFINE*<br>
+is not nil then you are asked if you want to redefine the variable.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<span id="Exported-functions"></span><div class="header">
+<p>
+Previous: <a href="#Exported-macros" accesskey="p" rel="prev">Exported macros</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Functions"></span><h4 class="subsection">5.1.3 Functions</h4>
+<dl>
+<dt id="index-savevar">Function: <strong>savevar</strong> <em>VARS FILE &amp;optional SUFFIX</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236SAVEVAR-function"></span><span id="index-Function_002c-savevar"></span>
+<p>Args: (vars-symbol-or-list file-name-root &amp;optional suffix-string)
+NOTE: Ensure vars doesn&rsquo;t contain CLOS objects that don&rsquo;t have a save
+method.  VARS is a symbol or a list of symbols. FILE-NAME-ROOT is a
+string (or a symbol whose print name is used) not ending in<br>
+SUFFIX (defaults to &quot;.lisp&quot;). The VARS and their current values are
+written to the file FILE-NAME-ROOT.lisp in a form suitable for use with
+the load command.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-undef">Function: <strong>undef</strong> <em>V</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236UNDEF-function"></span><span id="index-Function_002c-undef"></span>
+<p>Args: (v)<br>
+If V is the symbol of a defined variable the variable it is unbound and
+removed from the list of defined variables. If V is a list of variable
+names each is unbound and removed. Returns V.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-variables">Function: <strong>variables</strong> <em>()</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"></span><span id="index-Function_002c-variables"></span>
+<p>Args:()<br>
+Returns a list of the names of all def&rsquo;ed variables.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+
+<hr>
+<span id="Internal-definitions"></span><div class="header">
+<p>
+Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Internal-definitions-1"></span><h3 class="section">5.2 Internal definitions</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-special-variables" accesskey="1">Internal special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-functions" accesskey="2">Internal functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-generic-functions" accesskey="3">Internal generic functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<span id="Internal-special-variables"></span><div class="header">
+<p>
+Next: <a href="#Internal-functions" accesskey="n" rel="next">Internal functions</a>, Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Special-variables-1"></span><h4 class="subsection">5.2.1 Special variables</h4>
+<dl>
+<dt id="index-_002aask_002don_002dredefine_002a">Special Variable: <strong>*ask-on-redefine*</strong></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"></span><span id="index-Special-Variable_002c-_002aask_002don_002dredefine_002a"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-_002arelease_002dname_002a">Special Variable: <strong>*release-name*</strong></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236_002aRELEASE_002dNAME_002a-special-variable"></span><span id="index-Special-Variable_002c-_002arelease_002dname_002a"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fls_002dinit_2024lisp-file"><tt>ls-init.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-_002avariables_002a">Special Variable: <strong>*variables*</strong></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236_002aVARIABLES_002a-special-variable"></span><span id="index-Special-Variable_002c-_002avariables_002a"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<span id="Internal-functions"></span><div class="header">
+<p>
+Next: <a href="#Internal-generic-functions" accesskey="n" rel="next">Internal generic functions</a>, Previous: <a href="#Internal-special-variables" accesskey="p" rel="prev">Internal special variables</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Functions-1"></span><h4 class="subsection">5.2.2 Functions</h4>
+<dl>
+<dt id="index-setup_002dls_002dtranslations">Function: <strong>setup-ls-translations</strong> <em>()</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236SETUP_002dLS_002dTRANSLATIONS-function"></span><span id="index-Function_002c-setup_002dls_002dtranslations"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fls_002dinit_2024lisp-file"><tt>ls-init.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<span id="Internal-generic-functions"></span><div class="header">
+<p>
+Previous: <a href="#Internal-functions" accesskey="p" rel="prev">Internal functions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Generic-functions"></span><h4 class="subsection">5.2.3 Generic functions</h4>
+<dl>
+<dt id="index-save">Generic Function: <strong>save</strong> <em>DATA</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236SAVE-generic-function"></span><span id="index-Generic-Function_002c-save"></span>
+<p>Save the data.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+
+
+<hr>
+<span id="Indexes"></span><div class="header">
+<p>
+Previous: <a href="#Definitions" accesskey="p" rel="prev">Definitions</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Indexes-1"></span><h2 class="appendix">Appendix A Indexes</h2>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Concept-index" rel="index" accesskey="1">Concept index</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Function-index" rel="index" accesskey="2">Function index</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Variable-index" rel="index" accesskey="3">Variable index</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Data-type-index" rel="index" accesskey="4">Data type index</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<span id="Concept-index"></span><div class="header">
+<p>
+Next: <a href="#Function-index" accesskey="n" rel="next">Function index</a>, Previous: <a href="#Indexes" accesskey="p" rel="prev">Indexes</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Concepts"></span><h3 class="appendixsec">A.1 Concepts</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-cp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Concept-index_cp_letter-F">F</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002easd">File, Lisp, <tt>lisp-stat.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_2024asd-file">The lisp-stat․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002fbase_002futilities_002elisp">File, Lisp, <tt>lisp-stat/base/utilities.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file">The lisp-stat/base/utilities․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002fbase_002fvariables_002elisp">File, Lisp, <tt>lisp-stat/base/variables.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">The lisp-stat/base/variables․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp">File, Lisp, <tt>lisp-stat/docs/doc-strings.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">The lisp-stat/docs/doc-strings․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002fls_002dinit_002elisp">File, Lisp, <tt>lisp-stat/ls-init.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">The lisp-stat/ls-init․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-lisp_002dstat_002fpkgdcls_002elisp">File, Lisp, <tt>lisp-stat/pkgdcls.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">The lisp-stat/pkgdcls․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-static_002c-lisp_002dstat_002flicense">File, static, <tt>lisp-stat/license</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002flicense-file">The lisp-stat/license file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Concept-index_cp_letter-L">L</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002easd">Lisp File, <tt>lisp-stat.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_2024asd-file">The lisp-stat․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002fbase_002futilities_002elisp">Lisp File, <tt>lisp-stat/base/utilities.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file">The lisp-stat/base/utilities․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002fbase_002fvariables_002elisp">Lisp File, <tt>lisp-stat/base/variables.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">The lisp-stat/base/variables․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp">Lisp File, <tt>lisp-stat/docs/doc-strings.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">The lisp-stat/docs/doc-strings․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002fls_002dinit_002elisp">Lisp File, <tt>lisp-stat/ls-init.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">The lisp-stat/ls-init․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-lisp_002dstat_002fpkgdcls_002elisp">Lisp File, <tt>lisp-stat/pkgdcls.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">The lisp-stat/pkgdcls․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002easd"><tt>lisp-stat.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_2024asd-file">The lisp-stat․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fbase"><tt>lisp-stat/base</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase-module">The lisp-stat/base module</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fbase_002futilities_002elisp"><tt>lisp-stat/base/utilities.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002futilities_2024lisp-file">The lisp-stat/base/utilities․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fbase_002fvariables_002elisp"><tt>lisp-stat/base/variables.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">The lisp-stat/base/variables․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fdocs"><tt>lisp-stat/docs</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs-module">The lisp-stat/docs module</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"><tt>lisp-stat/docs/doc-strings.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">The lisp-stat/docs/doc-strings․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002flicense"><tt>lisp-stat/license</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002flicense-file">The lisp-stat/license file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fls_002dinit_002elisp"><tt>lisp-stat/ls-init.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">The lisp-stat/ls-init․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat_002fpkgdcls_002elisp"><tt>lisp-stat/pkgdcls.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">The lisp-stat/pkgdcls․lisp file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Concept-index_cp_letter-M">M</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Module_002c-lisp_002dstat_002fbase">Module, <tt>lisp-stat/base</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase-module">The lisp-stat/base module</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Module_002c-lisp_002dstat_002fdocs">Module, <tt>lisp-stat/docs</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs-module">The lisp-stat/docs module</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Concept-index_cp_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Static-File_002c-lisp_002dstat_002flicense">Static File, <tt>lisp-stat/license</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002flicense-file">The lisp-stat/license file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<span id="Function-index"></span><div class="header">
+<p>
+Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Previous: <a href="#Concept-index" accesskey="p" rel="prev">Concept index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Functions-2"></span><h3 class="appendixsec">A.2 Functions</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-U"><b>U</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-V"><b>V</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-fn" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-D">D</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-def"><code>def</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-macros">Exported macros</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-F">F</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-savevar"><code><span class="roman">Function, </span>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-setup_002dls_002dtranslations"><code><span class="roman">Function, </span>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-undef"><code><span class="roman">Function, </span>undef</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-variables"><code><span class="roman">Function, </span>variables</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-G">G</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-save"><code><span class="roman">Generic Function, </span>save</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-M">M</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Macro_002c-def"><code><span class="roman">Macro, </span>def</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-macros">Exported macros</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-save"><code>save</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-savevar"><code>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-setup_002dls_002dtranslations"><code>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-U">U</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-undef"><code>undef</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-V">V</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-variables"><code>variables</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-U"><b>U</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-V"><b>V</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<span id="Variable-index"></span><div class="header">
+<p>
+Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, Previous: <a href="#Function-index" accesskey="p" rel="prev">Function index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Variables"></span><h3 class="appendixsec">A.3 Variables</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
+ &nbsp; 
+<br>
+<a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-vr" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Variable-index_vr_symbol-1">*</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002aask_002don_002dredefine_002a"><code>*ask-on-redefine*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002als_002dversion_002a"><code>*ls-version*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002arelease_002dname_002a"><code>*release-name*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002avariables_002a"><code>*variables*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Variable-index_vr_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002aask_002don_002dredefine_002a"><code><span class="roman">Special Variable, </span>*ask-on-redefine*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002als_002dversion_002a"><code><span class="roman">Special Variable, </span>*ls-version*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002arelease_002dname_002a"><code><span class="roman">Special Variable, </span>*release-name*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002avariables_002a"><code><span class="roman">Special Variable, </span>*variables*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
+ &nbsp; 
+<br>
+<a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<span id="Data-type-index"></span><div class="header">
+<p>
+Previous: <a href="#Variable-index" accesskey="p" rel="prev">Variable index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Data-types"></span><h3 class="appendixsec">A.4 Data types</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-tp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Data-type-index_tp_letter-L">L</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat"><code>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-system">The lisp-stat system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-lisp_002dstat-1"><code>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-package">The lisp-stat package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-ls_002duser"><code>ls-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-ls_002duser-package">The ls-user package</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Data-type-index_tp_letter-P">P</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Package_002c-lisp_002dstat"><code><span class="roman">Package, </span>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-package">The lisp-stat package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Package_002c-ls_002duser"><code><span class="roman">Package, </span>ls-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-ls_002duser-package">The ls-user package</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Data-type-index_tp_letter-S">S</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-System_002c-lisp_002dstat"><code><span class="roman">System, </span>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-system">The lisp-stat system</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+
+<hr>
+
+
+
+</body>
+</html>

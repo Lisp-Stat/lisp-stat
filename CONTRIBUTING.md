@@ -30,16 +30,16 @@ including submissions by project members, require review. We use
 GitHub pull requests for this purpose. Consult [GitHub
 Help](https://help.github.com/articles/about-pull-requests/) for more
 information on using pull requests, and the [contributing
-code](www.lisp-stat.dev/docs/contributing/code/) page for more
+code](https://lisp-stat.dev/docs/contributing/code/) page for more
 details.
 
 ## Community Guidelines
 
 This project follows a code of conduct that can be found on the
-[contributing](https://www.lisp-stat.dev/docs/contributing/) page.
+[contributing](https://lisp-stat.dev/docs/contributing/) page.
 
 ## How to contribute
 
 See the [contribution
-guidelines](https://www.lisp-stat.dev/docs/contributing/)
+guidelines](https://lisp-stat.dev/docs/contributing/)
 in the Lisp-Stat user guide.

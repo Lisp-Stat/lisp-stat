@@ -1,0 +1,699 @@
+This is lisp-stat.info, produced by makeinfo version 6.7 from
+lisp-stat.texi.
+
+INFO-DIR-SECTION Common Lisp
+START-INFO-DIR-ENTRY
+* Lisp-Stat Reference: (lisp-stat). The Lisp-Stat Reference Manual.
+END-INFO-DIR-ENTRY
+
+
+File: lisp-stat.info,  Node: Top,  Next: Systems,  Prev: (dir),  Up: (dir)
+
+The Lisp-Stat Reference Manual
+******************************
+
+This is the Lisp-Stat Reference Manual, version 1.0.
+
+* Menu:
+
+* Systems:: The systems documentation
+* Modules:: The modules documentation
+* Files:: The files documentation
+* Packages:: The packages documentation
+* Definitions:: The symbols documentation
+* Indexes:: Concepts, functions, variables and data types
+
+
+File: lisp-stat.info,  Node: Systems,  Next: Modules,  Prev: Top,  Up: Top
+
+1 Systems
+*********
+
+The main system appears first, followed by any subsystem dependency.
+
+* Menu:
+
+* The lisp-stat system::
+
+
+File: lisp-stat.info,  Node: The lisp-stat system,  Prev: Systems,  Up: Systems
+
+1.1 lisp-stat
+=============
+
+*Author*
+     Steve Nunez <<steve@symbolics.tech>>
+*License*
+     MS-PL
+*Description*
+     A statistical computing environment for Common Lisp
+*Version*
+     1.0
+*Dependencies*
+        • alexandria
+        • array-operations
+        • cl-semver
+        • data-frame
+        • dfio
+        • num-utils
+        • select
+        • split-sequence
+*Source*
+     *note lisp-stat.asd: go to the lisp-stat․asd file. (file)
+*Directory*
+     s:/src/lisp-stat/
+*Components*
+        • *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file.
+          (file)
+        • *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          (file)
+        • *note license: go to the lisp-stat/license file. (file)
+        • *note base: go to the lisp-stat/base module. (module)
+        • *note docs: go to the lisp-stat/docs module. (module)
+
+
+File: lisp-stat.info,  Node: Modules,  Next: Files,  Prev: Systems,  Up: Top
+
+2 Modules
+*********
+
+Modules are listed depth-first from the system components tree.
+
+* Menu:
+
+* The lisp-stat/base module::
+* The lisp-stat/docs module::
+
+
+File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/docs module,  Prev: Modules,  Up: Modules
+
+2.1 lisp-stat/base
+==================
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     base/
+*Components*
+        • *note utilities.lisp: go to the lisp-stat/base/utilities․lisp
+          file. (file)
+        • *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/docs module,  Prev: The lisp-stat/base module,  Up: Modules
+
+2.2 lisp-stat/docs
+==================
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     docs/
+*Component*
+     *note doc-strings.lisp: go to the lisp-stat/docs/doc-strings․lisp
+     file. (file)
+
+
+File: lisp-stat.info,  Node: Files,  Next: Packages,  Prev: Modules,  Up: Top
+
+3 Files
+*******
+
+Files are sorted by type and then listed depth-first from the systems
+components trees.
+
+* Menu:
+
+* Lisp files::
+* Static files::
+
+
+File: lisp-stat.info,  Node: Lisp files,  Next: Static files,  Prev: Files,  Up: Files
+
+3.1 Lisp
+========
+
+* Menu:
+
+* The lisp-stat.asd file: The lisp-stat․asd file.
+* The lisp-stat/pkgdcls.lisp file: The lisp-stat/pkgdcls․lisp file.
+* The lisp-stat/ls-init.lisp file: The lisp-stat/ls-init․lisp file.
+* The lisp-stat/base/utilities.lisp file: The lisp-stat/base/utilities․lisp file.
+* The lisp-stat/base/variables.lisp file: The lisp-stat/base/variables․lisp file.
+* The lisp-stat/docs/doc-strings.lisp file: The lisp-stat/docs/doc-strings․lisp file.
+
+
+File: lisp-stat.info,  Node: The lisp-stat․asd file,  Next: The lisp-stat/pkgdcls․lisp file,  Prev: Lisp files,  Up: Lisp files
+
+3.1.1 lisp-stat.asd
+-------------------
+
+*Location*
+     lisp-stat.asd
+*Systems*
+     *note lisp-stat: go to the lisp-stat system. (system)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/pkgdcls․lisp file,  Next: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat․asd file,  Up: Lisp files
+
+3.1.2 lisp-stat/pkgdcls.lisp
+----------------------------
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     pkgdcls.lisp
+*Packages*
+        • *note lisp-stat: go to the LISP-STAT package.
+        • *note ls-user: go to the LS-USER package.
+
+
+File: lisp-stat.info,  Node: The lisp-stat/ls-init․lisp file,  Next: The lisp-stat/base/utilities․lisp file,  Prev: The lisp-stat/pkgdcls․lisp file,  Up: Lisp files
+
+3.1.3 lisp-stat/ls-init.lisp
+----------------------------
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     ls-init.lisp
+*Exported Definitions*
+     *note *ls-version*: go to the LISP-STAT∶∶*LS-VERSION* special
+     variable. (special variable)
+*Internal Definitions*
+        • *note *release-name*: go to the LISP-STAT∶∶*RELEASE-NAME*
+          special variable. (special variable)
+        • *note setup-ls-translations: go to the
+          LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/base/utilities․lisp file,  Next: The lisp-stat/base/variables․lisp file,  Prev: The lisp-stat/ls-init․lisp file,  Up: Lisp files
+
+3.1.4 lisp-stat/base/utilities.lisp
+-----------------------------------
+
+*Parent*
+     *note base: go to the lisp-stat/base module. (module)
+*Location*
+     base/utilities.lisp
+
+
+File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/utilities․lisp file,  Up: Lisp files
+
+3.1.5 lisp-stat/base/variables.lisp
+-----------------------------------
+
+*Dependency*
+     *note utilities.lisp: go to the lisp-stat/base/utilities․lisp file.
+     (file)
+*Parent*
+     *note base: go to the lisp-stat/base module. (module)
+*Location*
+     base/variables.lisp
+*Exported Definitions*
+        • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
+        • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
+          (function)
+        • *note undef: go to the LISP-STAT∶∶UNDEF function. (function)
+        • *note variables: go to the LISP-STAT∶∶VARIABLES function.
+          (function)
+*Internal Definitions*
+        • *note *ask-on-redefine*: go to the
+          LISP-STAT∶∶*ASK-ON-REDEFINE* special variable. (special
+          variable)
+        • *note *variables*: go to the LISP-STAT∶∶*VARIABLES* special
+          variable. (special variable)
+        • *note save: go to the LISP-STAT∶∶SAVE generic function.
+          (generic function)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
+
+3.1.6 lisp-stat/docs/doc-strings.lisp
+-------------------------------------
+
+*Parent*
+     *note docs: go to the lisp-stat/docs module. (module)
+*Location*
+     docs/doc-strings.lisp
+
+
+File: lisp-stat.info,  Node: Static files,  Prev: Lisp files,  Up: Files
+
+3.2 Static
+==========
+
+* Menu:
+
+* The lisp-stat/license file::
+
+
+File: lisp-stat.info,  Node: The lisp-stat/license file,  Prev: Static files,  Up: Static files
+
+3.2.1 lisp-stat/license
+-----------------------
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     LICENSE
+
+
+File: lisp-stat.info,  Node: Packages,  Next: Definitions,  Prev: Files,  Up: Top
+
+4 Packages
+**********
+
+Packages are listed by definition order.
+
+* Menu:
+
+* The lisp-stat package::
+* The ls-user package::
+
+
+File: lisp-stat.info,  Node: The lisp-stat package,  Next: The ls-user package,  Prev: Packages,  Up: Packages
+
+4.1 lisp-stat
+=============
+
+Base functions and variables for Lisp-Stat
+*Source*
+     *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file. (file)
+*Nickname*
+     ls
+*Use List*
+        • split-sequence
+        • select
+        • num-utils.utilities
+        • num-utils.elementwise
+        • num-utils.statistics
+        • num-utils.arithmetic
+        • dfio
+        • data-frame
+        • array-operations/all
+        • alexandria-2
+        • common-lisp
+*Used By List*
+     *note ls-user: go to the LS-USER package.
+*Exported Definitions*
+        • *note *ls-version*: go to the LISP-STAT∶∶*LS-VERSION* special
+          variable. (special variable)
+        • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
+        • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
+          (function)
+        • *note undef: go to the LISP-STAT∶∶UNDEF function. (function)
+        • *note variables: go to the LISP-STAT∶∶VARIABLES function.
+          (function)
+*Internal Definitions*
+        • *note *ask-on-redefine*: go to the
+          LISP-STAT∶∶*ASK-ON-REDEFINE* special variable. (special
+          variable)
+        • *note *release-name*: go to the LISP-STAT∶∶*RELEASE-NAME*
+          special variable. (special variable)
+        • *note *variables*: go to the LISP-STAT∶∶*VARIABLES* special
+          variable. (special variable)
+        • *note save: go to the LISP-STAT∶∶SAVE generic function.
+          (generic function)
+        • *note setup-ls-translations: go to the
+          LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
+
+
+File: lisp-stat.info,  Node: The ls-user package,  Prev: The lisp-stat package,  Up: Packages
+
+4.2 ls-user
+===========
+
+User package for Lisp-Stat
+*Source*
+     *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file. (file)
+*Use List*
+        • *note lisp-stat: go to the LISP-STAT package.
+        • common-lisp
+
+
+File: lisp-stat.info,  Node: Definitions,  Next: Indexes,  Prev: Packages,  Up: Top
+
+5 Definitions
+*************
+
+Definitions are sorted by export status, category, package, and then by
+lexicographic order.
+
+* Menu:
+
+* Exported definitions::
+* Internal definitions::
+
+
+File: lisp-stat.info,  Node: Exported definitions,  Next: Internal definitions,  Prev: Definitions,  Up: Definitions
+
+5.1 Exported definitions
+========================
+
+* Menu:
+
+* Exported special variables::
+* Exported macros::
+* Exported functions::
+
+
+File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,  Prev: Exported definitions,  Up: Exported definitions
+
+5.1.1 Special variables
+-----------------------
+
+ -- Special Variable: *ls-version*
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          (file)
+
+
+File: lisp-stat.info,  Node: Exported macros,  Next: Exported functions,  Prev: Exported special variables,  Up: Exported definitions
+
+5.1.2 Macros
+------------
+
+ -- Macro: def NAME VALUE &optional DOCUMENTATION
+     Args: (var form)
+     VAR is not evaluated and must be a symbol.  Assigns the value of
+     FORM to VAR and adds VAR to the list *VARIABLES* of def’ed
+     variables.  Returns VAR. If VAR is already bound and the global
+     variable *ASK-ON-REDEFINE*
+     is not nil then you are asked if you want to redefine the variable.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+
+
+File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Exported definitions
+
+5.1.3 Functions
+---------------
+
+ -- Function: savevar VARS FILE &optional SUFFIX
+     Args: (vars-symbol-or-list file-name-root &optional suffix-string)
+     NOTE: Ensure vars doesn’t contain CLOS objects that don’t have a
+     save method.  VARS is a symbol or a list of symbols.
+     FILE-NAME-ROOT is a string (or a symbol whose print name is used)
+     not ending in
+     SUFFIX (defaults to ".lisp").  The VARS and their current values
+     are written to the file FILE-NAME-ROOT.lisp in a form suitable for
+     use with the load command.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+ -- Function: undef V
+     Args: (v)
+     If V is the symbol of a defined variable the variable it is unbound
+     and removed from the list of defined variables.  If V is a list of
+     variable names each is unbound and removed.  Returns V.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+ -- Function: variables ()
+     Args:()
+     Returns a list of the names of all def’ed variables.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+
+
+File: lisp-stat.info,  Node: Internal definitions,  Prev: Exported definitions,  Up: Definitions
+
+5.2 Internal definitions
+========================
+
+* Menu:
+
+* Internal special variables::
+* Internal functions::
+* Internal generic functions::
+
+
+File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functions,  Prev: Internal definitions,  Up: Internal definitions
+
+5.2.1 Special variables
+-----------------------
+
+ -- Special Variable: *ask-on-redefine*
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+ -- Special Variable: *release-name*
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          (file)
+ -- Special Variable: *variables*
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+
+
+File: lisp-stat.info,  Node: Internal functions,  Next: Internal generic functions,  Prev: Internal special variables,  Up: Internal definitions
+
+5.2.2 Functions
+---------------
+
+ -- Function: setup-ls-translations ()
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          (file)
+
+
+File: lisp-stat.info,  Node: Internal generic functions,  Prev: Internal functions,  Up: Internal definitions
+
+5.2.3 Generic functions
+-----------------------
+
+ -- Generic Function: save DATA
+     Save the data.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+
+
+File: lisp-stat.info,  Node: Indexes,  Prev: Definitions,  Up: Top
+
+Appendix A Indexes
+******************
+
+* Menu:
+
+* Concept index::
+* Function index::
+* Variable index::
+* Data type index::
+
+
+File: lisp-stat.info,  Node: Concept index,  Next: Function index,  Prev: Indexes,  Up: Indexes
+
+A.1 Concepts
+============
+
+ [index ]
+* Menu:
+
+* File, Lisp, lisp-stat.asd:             The lisp-stat․asd file.
+                                                                (line 6)
+* File, Lisp, lisp-stat/base/utilities.lisp: The lisp-stat/base/utilities․lisp file.
+                                                                (line 6)
+* File, Lisp, lisp-stat/base/variables.lisp: The lisp-stat/base/variables․lisp file.
+                                                                (line 6)
+* File, Lisp, lisp-stat/docs/doc-strings.lisp: The lisp-stat/docs/doc-strings․lisp file.
+                                                                (line 6)
+* File, Lisp, lisp-stat/ls-init.lisp:    The lisp-stat/ls-init․lisp file.
+                                                                (line 6)
+* File, Lisp, lisp-stat/pkgdcls.lisp:    The lisp-stat/pkgdcls․lisp file.
+                                                                (line 6)
+* File, static, lisp-stat/license:       The lisp-stat/license file.
+                                                                (line 6)
+* Lisp File, lisp-stat.asd:              The lisp-stat․asd file.
+                                                                (line 6)
+* Lisp File, lisp-stat/base/utilities.lisp: The lisp-stat/base/utilities․lisp file.
+                                                                (line 6)
+* Lisp File, lisp-stat/base/variables.lisp: The lisp-stat/base/variables․lisp file.
+                                                                (line 6)
+* Lisp File, lisp-stat/docs/doc-strings.lisp: The lisp-stat/docs/doc-strings․lisp file.
+                                                                (line 6)
+* Lisp File, lisp-stat/ls-init.lisp:     The lisp-stat/ls-init․lisp file.
+                                                                (line 6)
+* Lisp File, lisp-stat/pkgdcls.lisp:     The lisp-stat/pkgdcls․lisp file.
+                                                                (line 6)
+* lisp-stat.asd:                         The lisp-stat․asd file.
+                                                                (line 6)
+* lisp-stat/base:                        The lisp-stat/base module.
+                                                                (line 6)
+* lisp-stat/base/utilities.lisp:         The lisp-stat/base/utilities․lisp file.
+                                                                (line 6)
+* lisp-stat/base/variables.lisp:         The lisp-stat/base/variables․lisp file.
+                                                                (line 6)
+* lisp-stat/docs:                        The lisp-stat/docs module.
+                                                                (line 6)
+* lisp-stat/docs/doc-strings.lisp:       The lisp-stat/docs/doc-strings․lisp file.
+                                                                (line 6)
+* lisp-stat/license:                     The lisp-stat/license file.
+                                                                (line 6)
+* lisp-stat/ls-init.lisp:                The lisp-stat/ls-init․lisp file.
+                                                                (line 6)
+* lisp-stat/pkgdcls.lisp:                The lisp-stat/pkgdcls․lisp file.
+                                                                (line 6)
+* Module, lisp-stat/base:                The lisp-stat/base module.
+                                                                (line 6)
+* Module, lisp-stat/docs:                The lisp-stat/docs module.
+                                                                (line 6)
+* Static File, lisp-stat/license:        The lisp-stat/license file.
+                                                                (line 6)
+
+
+File: lisp-stat.info,  Node: Function index,  Next: Variable index,  Prev: Concept index,  Up: Indexes
+
+A.2 Functions
+=============
+
+ [index ]
+* Menu:
+
+* def:                                   Exported macros.      (line  6)
+* Function, savevar:                     Exported functions.   (line  7)
+* Function, setup-ls-translations:       Internal functions.   (line  7)
+* Function, undef:                       Exported functions.   (line 21)
+* Function, variables:                   Exported functions.   (line 31)
+* Generic Function, save:                Internal generic functions.
+                                                               (line  7)
+* Macro, def:                            Exported macros.      (line  7)
+* save:                                  Internal generic functions.
+                                                               (line  6)
+* savevar:                               Exported functions.   (line  6)
+* setup-ls-translations:                 Internal functions.   (line  6)
+* undef:                                 Exported functions.   (line 20)
+* variables:                             Exported functions.   (line 30)
+
+
+File: lisp-stat.info,  Node: Variable index,  Next: Data type index,  Prev: Function index,  Up: Indexes
+
+A.3 Variables
+=============
+
+ [index ]
+* Menu:
+
+* *ask-on-redefine*:                     Internal special variables.
+                                                               (line  6)
+* *ls-version*:                          Exported special variables.
+                                                               (line  6)
+* *release-name*:                        Internal special variables.
+                                                               (line 12)
+* *variables*:                           Internal special variables.
+                                                               (line 18)
+* Special Variable, *ask-on-redefine*:   Internal special variables.
+                                                               (line  7)
+* Special Variable, *ls-version*:        Exported special variables.
+                                                               (line  7)
+* Special Variable, *release-name*:      Internal special variables.
+                                                               (line 13)
+* Special Variable, *variables*:         Internal special variables.
+                                                               (line 19)
+
+
+File: lisp-stat.info,  Node: Data type index,  Prev: Variable index,  Up: Indexes
+
+A.4 Data types
+==============
+
+ [index ]
+* Menu:
+
+* lisp-stat:                             The lisp-stat system.  (line 6)
+* lisp-stat <1>:                         The lisp-stat package. (line 6)
+* ls-user:                               The ls-user package.   (line 6)
+* Package, lisp-stat:                    The lisp-stat package. (line 6)
+* Package, ls-user:                      The ls-user package.   (line 6)
+* System, lisp-stat:                     The lisp-stat system.  (line 6)
+
+
+
+Tag Table:
+Node: Top217
+Node: Systems672
+Node: The lisp-stat system876
+Ref: go to the lisp-stat system988
+Node: Modules1850
+Node: The lisp-stat/base module2086
+Ref: go to the lisp-stat/base module2247
+Node: The lisp-stat/docs module2549
+Ref: go to the lisp-stat/docs module2694
+Node: Files2888
+Node: Lisp files3117
+Node: The lisp-stat․asd file3684
+Ref: go to the lisp-stat․asd file3860
+Node: The lisp-stat/pkgdcls․lisp file3960
+Ref: go to the lisp-stat/pkgdcls․lisp file4177
+Node: The lisp-stat/ls-init․lisp file4398
+Ref: go to the lisp-stat/ls-init․lisp file4631
+Node: The lisp-stat/base/utilities․lisp file5120
+Ref: go to the lisp-stat/base/utilities․lisp file5374
+Node: The lisp-stat/base/variables․lisp file5479
+Ref: go to the lisp-stat/base/variables․lisp file5742
+Node: The lisp-stat/docs/doc-strings․lisp file6676
+Ref: go to the lisp-stat/docs/doc-strings․lisp file6894
+Node: Static files7001
+Node: The lisp-stat/license file7141
+Ref: go to the lisp-stat/license file7289
+Node: Packages7382
+Node: The lisp-stat package7592
+Ref: go to the LISP-STAT package7735
+Node: The ls-user package9339
+Ref: go to the LS-USER package9461
+Node: Definitions9664
+Node: Exported definitions9934
+Node: Exported special variables10189
+Ref: go to the LISP-STAT∶∶*LS-VERSION* special variable10412
+Node: Exported macros10586
+Ref: go to the LISP-STAT∶∶DEF macro10800
+Node: Exported functions11315
+Ref: go to the LISP-STAT∶∶SAVEVAR function11499
+Ref: go to the LISP-STAT∶∶UNDEF function12171
+Ref: go to the LISP-STAT∶∶VARIABLES function12601
+Node: Internal definitions12857
+Node: Internal special variables13103
+Ref: go to the LISP-STAT∶∶*ASK-ON-REDEFINE* special variable13334
+Ref: go to the LISP-STAT∶∶*RELEASE-NAME* special variable13553
+Ref: go to the LISP-STAT∶∶*VARIABLES* special variable13760
+Node: Internal functions13943
+Ref: go to the LISP-STAT∶∶SETUP-LS-TRANSLATIONS function14163
+Node: Internal generic functions14337
+Ref: go to the LISP-STAT∶∶SAVE generic function14531
+Node: Indexes14734
+Node: Concept index14929
+Node: Function index18816
+Node: Variable index19987
+Node: Data type index21282
+
+End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

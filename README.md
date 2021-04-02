@@ -22,7 +22,7 @@
   <p align="center">
 	An environment for statistical computing
 	<br />
-    <a href="https://lisp-stat.dev/"><strong>Explore the docs »</strong></a>
+    <a href="https://lisp-stat.dev/docs/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/lisp-stat/lisp-stat/issues">Report Bug</a>
@@ -131,7 +131,7 @@ Create a data frame from a file named "computers.csv" on the local disk:
 ```
 
 For more examples, please refer to the
-[Documentation](https://lisp-stat.dev/).
+[Documentation](https://lisp-stat.dev/docs/).
 
 
 <!-- ROADMAP -->
@@ -153,7 +153,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MS-PL License. See [LICENSE](LICENSE) for more infoqrmation.
+Distributed under the MS-PL License. See [LICENSE](LICENSE) for more information.
 
 
 
