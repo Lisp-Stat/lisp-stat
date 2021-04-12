@@ -36,3 +36,6 @@
 (defparameter *release-name* nil)	; Will be nil until the first release
 
 
+;;; Printer control variables
+(setf *print-pretty* nil)
+(setf *print-lines* 25)
