@@ -105,11 +105,25 @@ An ANSI Common Lisp implementation. Developed and tested with
 
 ### Installation
 
-1. Clone the repository
-   ```sh
-   cd ~/quicklisp/local-projects &&
-   git clone https://github.com/Lisp-Stat/lisp-stat.git
-   ```
+Lisp-Stat is composed of several system that are designed to be
+independently useful.  So you can, for example, use `select` to obtain
+selections from two dimensional arrays without bringing in all of
+Lisp-Stat.
+
+
+#### Manual Installation
+1. Clone the repositories
+```sh
+cd ~/quicklisp/local-projects && \
+git clone https://github.com/Lisp-Stat/data-frame.git && \
+git clone https://github.com/Lisp-Stat/dfio.git && \
+git clone https://github.com/Lisp-Stat/special-functions.git && \
+git clone https://github.com/Lisp-Stat/numerical-utilities.git && \
+git clone https://github.com/Lisp-Stat/documentation.git && \
+git clone https://github.com/Lisp-Stat/plot.git && \
+git clone https://github.com/Lisp-Stat/select.git
+git clone https://github.com/Lisp-Stat/lisp-stat.git
+```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
    ```lisp
    (asdf:clear-source-registry)
@@ -122,11 +136,11 @@ An ANSI Common Lisp implementation. Developed and tested with
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Create a data frame from a file named "computers.csv" on the local disk:
+Create a data frame from a file named "absorbation.csv" on the local disk:
 
 ```lisp
 (defparameter *df* (csv-to-data-frame
-		      (uiop:read-file-string "computers.csv")))
+		      (uiop:read-file-string #P"LS:DATASETS;absorbation.csv")))
 
 ```
 
