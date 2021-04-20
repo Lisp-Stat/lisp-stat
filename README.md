@@ -110,6 +110,12 @@ independently useful.  So you can, for example, use `select` to obtain
 selections from two dimensional arrays without bringing in all of
 Lisp-Stat.
 
+#### Quicklisp
+
+```lisp
+(ql:quickload :lisp-stat)
+```
+
 
 #### Manual Installation
 1. Clone the repositories
