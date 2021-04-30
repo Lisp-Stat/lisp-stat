@@ -6,7 +6,7 @@
   (:export #:packages
 	   #:show-packages
 	   #:show-package-items
-	   #:load-df))
+	   #:rdata))
 
 (in-package :rdata)
 
@@ -75,14 +75,13 @@ Example: (show-package-items 'aer)"
       (ascii-table:add-row table `(,item ,(gethash 'title value) ,(gethash 'n-cols value) ,(gethash 'n-rows value))))
     (ascii-table:display table)))
 
-(defun load-df (package item)
-  "Return a data-frame loaded with the data from ITEM in PACKAGE
+(defun rdata (package item)
+  "Return a CSV stream with the data from ITEM in PACKAGE
 Examples:
-    (load-df 'aer 'affairs) ; from in the rdata package
-    (rdata:load-df 'rdata::aer 'rdata::affairs)"
+    (rdata 'aer 'affairs) ; from in the rdata package
+    (rdata 'rdata::aer 'rdata::affairs)"
   (let ((url (gethash 'url (gethash item (cdr-assoc package packages)))))
-    (dfio:csv-to-data-frame (dex:get url :want-stream t))))
-
+    (dex:get url :want-stream t)))
 
 
 
