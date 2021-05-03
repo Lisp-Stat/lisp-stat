@@ -1,7 +1,7 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LS-TESTS -*-
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: RDATA -*-
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 
-(uiop:define-package :rdata
+(uiop:define-package #:rdata
     (:use :common-lisp :make-hash)
   (:export #:packages
 	   #:show-packages
@@ -41,21 +41,23 @@ the package and item to load. |#
 (eval-when (:load-toplevel)
   (iter:iter ;; cl-csv depends on iterate, so we'll use it here
     (iter:for (pkg item title n-rows n-cols n-binary n-char n-factor n-logical n-numeric url docs) in-csv (dex:get index) skipping-header t)
-    (if (not (assoc (read-from-string pkg) packages))
-	(setf packages (acons (read-from-string pkg) (make-hash-table) packages)))
+    (when (not (assoc (read-from-string pkg) packages))
+      (setf packages (acons (read-from-string pkg) (make-hash-table) packages))
+      (export (read-from-string pkg)))
     (let* ((current-item (cdr-assoc (read-from-string pkg) packages)))
       (setf (gethash (read-from-string item) current-item)
 	    (make-hash :size 10
 		       :initial-contents `(title     ,title
 					   n-rows    ,(parse-integer n-rows)
-					       n-cols    ,(parse-integer n-cols)
-					       n-binary  ,(parse-integer n-binary)
-					       n-char    ,(parse-integer n-char)
-					       n-factor  ,(parse-integer n-factor)
-					       n-logical ,(parse-integer n-logical)
-					       n-numeric ,(parse-integer n-numeric)
-					       url       ,url
-					       docs      ,docs))))))
+					   n-cols    ,(parse-integer n-cols)
+					   n-binary  ,(parse-integer n-binary)
+					   n-char    ,(parse-integer n-char)
+					   n-factor  ,(parse-integer n-factor)
+					   n-logical ,(parse-integer n-logical)
+					   n-numeric ,(parse-integer n-numeric)
+					   url       ,url
+					   docs      ,docs)))
+      (export (read-from-string item)))))
 
 ;;; Access functions
 
@@ -78,8 +80,8 @@ Example: (show-package-items 'aer)"
 (defun rdata (package item)
   "Return a CSV stream with the data from ITEM in PACKAGE
 Examples:
-    (rdata 'aer 'affairs) ; from in the rdata package
-    (rdata 'rdata::aer 'rdata::affairs)"
+    (rdata 'aer 'affairs) ; from within the rdata package
+    (rdata 'rdata:aer 'rdata:affairs)"
   (let ((url (gethash 'url (gethash item (cdr-assoc package packages)))))
     (dex:get url :want-stream t)))
 

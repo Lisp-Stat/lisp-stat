@@ -1,7 +1,7 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LS -*-
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 
-(in-package :lisp-stat)
+(in-package #:lisp-stat)
 
 ;;; Utility functions. For developers, not users, thus not exported.
 

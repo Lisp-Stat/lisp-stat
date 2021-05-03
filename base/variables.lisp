@@ -2,7 +2,7 @@
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 ;;; Copyright (c) 1991 by Luke Tierney.
 
-(in-package :lisp-stat)
+(in-package #:lisp-stat)
 
 ;;;; Listing and Saving Variables and Functions
 
