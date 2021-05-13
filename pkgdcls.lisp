@@ -27,6 +27,8 @@
 	   #:def
 	   #:undef
 	   #:savevar
+	   #:fivnum
+	   #:interquartile-range
 	   #:*ls-version*))
 
 (uiop:define-package :ls-user
