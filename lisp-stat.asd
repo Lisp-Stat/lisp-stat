@@ -25,6 +25,9 @@
 			:components
 			((:file #:utilities)
 			 (:file #:variables)))  ; XLS style variable definitions
+	       (:module "statistics"
+		        :serial t
+		        :components ((:file #:stats)))
 	       (:module "docs"
 		:components ((:file #:doc-strings)))))
 
