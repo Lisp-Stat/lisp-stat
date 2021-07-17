@@ -84,6 +84,3 @@ Examples:
     (rdata 'rdata:aer 'rdata:affairs)"
   (let ((url (gethash 'url (gethash item (cdr-assoc package packages)))))
     (dex:get url :want-stream t)))
-
-
-

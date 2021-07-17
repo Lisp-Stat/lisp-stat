@@ -21,7 +21,6 @@
 
 (setup-ls-translations)
 
-
 ;;; Library versioning
 
 ;; As Lisp-Stat evolves over time, you may feel the need to
@@ -39,3 +38,8 @@
 ;;; Printer control variables
 (setf *print-pretty* nil)
 (setf *print-lines* 25)
+
+;; Load user init file, if present
+(if (probe-file #P"~/ls-init.lisp")
+    (load #P"~/ls-init.lisp"))
+
