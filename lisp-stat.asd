@@ -1,58 +1,43 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-lisp; Package: CL-USER -*-
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-lisp; Package: ASDF -*-
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 
-(asdf:defsystem :lisp-stat
+(defsystem :lisp-stat
   :name "Lisp Statistics"
   :version     (:read-file-form "version.sexp")
   :description "A statistical computing environment for Common Lisp"
   :author      "Steve Nunez <steve@symbolics.tech>"
-  :license :MS-PL
-  :depends-on (#:alexandria
-	       #:array-operations
-	       #:cl-semver		; Application versioning
-	       #:data-frame
-	       #:dfio
-	       ;; #:distributions		; not yet
-	       #:num-utils
-	       #:select
-	       #:split-sequence)
+  :license     :MS-PL
+  :depends-on ("alexandria"
+	       "array-operations"
+	       "data-frame"
+	       "dfio"
+	       "num-utils"
+	       "select"
+	       #-genera "dexador"
+	       "split-sequence")
   :in-order-to ((test-op (test-op lisp-stat/tests)))
-  :components ((:file #:pkgdcls)
-	       (:file #:ls-init)
+  :components ((:file "pkgdcls")
 	       (:static-file #:LICENSE)
 	       (:module "base"
 			:serial t
 			:components
-			((:file #:utilities)
-			 (:file #:variables)))  ; XLS style variable definitions
+			((:file "variables") ;XLS style variable definitions
+			 (:file "rdata")))   ;Utilities for working with R data sets
 	       (:module "statistics"
 		        :serial t
-		        :components ((:file #:stats)))
+		        :components ((:file "stats")))
 	       (:module "docs"
-		:components ((:file #:doc-strings)))))
+		:components ((:file "doc-strings")))
+	       (:file "ls-init")))
 
-
-(asdf:defsystem :lisp-stat/rdata
-  :description "API for manipulating data sets from R packages"
-  :long-description "Load Rdatasets from github into a data structure and provide access functions. See https://github.com/vincentarelbundock/Rdatasets/tree/master/csv"
-  :author "Steve Nunez <steve@symbolics.tech>"
-  :license :MS-PL
-  :depends-on (#:cl-csv #:dexador #:make-hash #:cl-ascii-table #:dfio)
-  :serial t
-  :pathname "datasets/"
-  :components ((:file #:rdata)))
-
-
-(asdf:defsystem :lisp-stat/tests
+(defsystem :lisp-stat/tests
   :description "Unit tests for Lisp-Stat"
   :author "Steve Nunez <steve@symbolics.tech>"
   :license :MS-PL
-  :depends-on (#:lisp-stat #:parachute)
+  :depends-on ("lisp-stat" "parachute")
   :serial t
   :pathname "tests/"
-  :components ((:file #:tstpkg)
-	       (:file #:variables))
+  :components ((:file "tstpkg")
+	       (:file "statistics"))
   :perform (test-op (o s)
-  		    (uiop:symbol-call :parachute :test :ls-tests)))
-
-
+  		    (symbol-call :ls-tests :run-tests)))

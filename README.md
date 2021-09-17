@@ -110,24 +110,21 @@ independently useful.  So you can, for example, use `select` to obtain
 selections from two dimensional arrays without bringing in all of
 Lisp-Stat.
 
-#### Quicklisp
+#### Getting the source
 
-```lisp
-(ql:quickload :lisp-stat)
-```
+To make the system accessible to [ASDF](https://common-lisp.net/project/asdf/) (a build facility, similar to `make` in the C world), clone the repository in a directory ASDF knows about.  By default the `common-lisp` directory in your home directory is known. Create this if it doesn't already exist and then:
 
-
-#### Manual Installation
 1. Clone the repositories
 ```sh
-cd ~/quicklisp/local-projects && \
+cd ~/common-lisp && \
 git clone https://github.com/Lisp-Stat/data-frame.git && \
 git clone https://github.com/Lisp-Stat/dfio.git && \
 git clone https://github.com/Lisp-Stat/special-functions.git && \
 git clone https://github.com/Lisp-Stat/numerical-utilities.git && \
 git clone https://github.com/Lisp-Stat/documentation.git && \
 git clone https://github.com/Lisp-Stat/plot.git && \
-git clone https://github.com/Lisp-Stat/select.git
+git clone https://github.com/Lisp-Stat/select.git \
+git clone https://github.com/Symbolics/alexandria-plus \
 git clone https://github.com/Lisp-Stat/lisp-stat.git
 ```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
@@ -136,17 +133,36 @@ git clone https://github.com/Lisp-Stat/lisp-stat.git
    ```
 3. Load the system
    ```lisp
-   (ql:quickload :lisp-stat)
+   (asdf:load-system :lisp-stat)
    ```
+
+If you have installed the slime ASDF extensions, you can invoke this
+with a comma (',') from the slime REPL.
+
+#### Getting dependencies
+
+To get the third party systems that Lisp-Stat depends on, you can use a dependency manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/) Once installed, get the dependencies with either of:
+
+```lisp
+(clpm-client:sync :sources "clpi") ;sources may vary
+```
+
+```lisp
+(ql:quickload :lisp-stat)
+```
+
+You need do this only once. After obtaining the dependencies, you can
+load the system with `ASDF` as described above without first syncing
+sources.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Create a data frame from a file named "absorbation.csv" on the local disk:
+Create a data frame from a file named `sg-weather.csv` on the local disk:
 
 ```lisp
-(defparameter *df* (csv-to-data-frame
-		      (uiop:read-file-string #P"LS:DATASETS;absorbation.csv")))
+(defparameter *df*
+	(read-csv #P"LS:DATASETS;sg-weather.csv"))
 
 ```
 

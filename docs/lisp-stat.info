@@ -12,7 +12,7 @@ File: lisp-stat.info,  Node: Top,  Next: Systems,  Prev: (dir),  Up: (dir)
 The Lisp-Stat Reference Manual
 ******************************
 
-This is the Lisp-Stat Reference Manual, version 1.0.
+This is the Lisp-Stat Reference Manual, version 2.0.
 
 * Menu:
 
@@ -48,15 +48,15 @@ File: lisp-stat.info,  Node: The lisp-stat system,  Prev: Systems,  Up: Systems
 *Description*
      A statistical computing environment for Common Lisp
 *Version*
-     1.0
+     2.0
 *Dependencies*
         • alexandria
         • array-operations
-        • cl-semver
         • data-frame
         • dfio
         • num-utils
         • select
+        • dexador
         • split-sequence
 *Source*
      *note lisp-stat.asd: go to the lisp-stat․asd file. (file)
@@ -65,11 +65,13 @@ File: lisp-stat.info,  Node: The lisp-stat system,  Prev: Systems,  Up: Systems
 *Components*
         • *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file.
           (file)
-        • *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
-          (file)
         • *note license: go to the lisp-stat/license file. (file)
         • *note base: go to the lisp-stat/base module. (module)
+        • *note statistics: go to the lisp-stat/statistics module.
+          (module)
         • *note docs: go to the lisp-stat/docs module. (module)
+        • *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          (file)
 
 
 File: lisp-stat.info,  Node: Modules,  Next: Files,  Prev: Systems,  Up: Top
@@ -82,10 +84,11 @@ Modules are listed depth-first from the system components tree.
 * Menu:
 
 * The lisp-stat/base module::
+* The lisp-stat/statistics module::
 * The lisp-stat/docs module::
 
 
-File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/docs module,  Prev: Modules,  Up: Modules
+File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/statistics module,  Prev: Modules,  Up: Modules
 
 2.1 lisp-stat/base
 ==================
@@ -95,15 +98,29 @@ File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/doc
 *Location*
      base/
 *Components*
-        • *note utilities.lisp: go to the lisp-stat/base/utilities․lisp
-          file. (file)
         • *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
+        • *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
 
 
-File: lisp-stat.info,  Node: The lisp-stat/docs module,  Prev: The lisp-stat/base module,  Up: Modules
+File: lisp-stat.info,  Node: The lisp-stat/statistics module,  Next: The lisp-stat/docs module,  Prev: The lisp-stat/base module,  Up: Modules
 
-2.2 lisp-stat/docs
+2.2 lisp-stat/statistics
+========================
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     statistics/
+*Component*
+     *note stats.lisp: go to the lisp-stat/statistics/stats․lisp file.
+     (file)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/docs module,  Prev: The lisp-stat/statistics module,  Up: Modules
+
+2.3 lisp-stat/docs
 ==================
 
 *Parent*
@@ -138,10 +155,11 @@ File: lisp-stat.info,  Node: Lisp files,  Next: Static files,  Prev: Files,  Up:
 
 * The lisp-stat.asd file: The lisp-stat․asd file.
 * The lisp-stat/pkgdcls.lisp file: The lisp-stat/pkgdcls․lisp file.
-* The lisp-stat/ls-init.lisp file: The lisp-stat/ls-init․lisp file.
-* The lisp-stat/base/utilities.lisp file: The lisp-stat/base/utilities․lisp file.
 * The lisp-stat/base/variables.lisp file: The lisp-stat/base/variables․lisp file.
+* The lisp-stat/base/rdata.lisp file: The lisp-stat/base/rdata․lisp file.
+* The lisp-stat/statistics/stats.lisp file: The lisp-stat/statistics/stats․lisp file.
 * The lisp-stat/docs/doc-strings.lisp file: The lisp-stat/docs/doc-strings․lisp file.
+* The lisp-stat/ls-init.lisp file: The lisp-stat/ls-init․lisp file.
 
 
 File: lisp-stat.info,  Node: The lisp-stat․asd file,  Next: The lisp-stat/pkgdcls․lisp file,  Prev: Lisp files,  Up: Lisp files
@@ -155,7 +173,7 @@ File: lisp-stat.info,  Node: The lisp-stat․asd file,  Next: The lisp-stat/pkgd
      *note lisp-stat: go to the lisp-stat system. (system)
 
 
-File: lisp-stat.info,  Node: The lisp-stat/pkgdcls․lisp file,  Next: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat․asd file,  Up: Lisp files
+File: lisp-stat.info,  Node: The lisp-stat/pkgdcls․lisp file,  Next: The lisp-stat/base/variables․lisp file,  Prev: The lisp-stat․asd file,  Up: Lisp files
 
 3.1.2 lisp-stat/pkgdcls.lisp
 ----------------------------
@@ -165,48 +183,14 @@ File: lisp-stat.info,  Node: The lisp-stat/pkgdcls․lisp file,  Next: The lisp-
 *Location*
      pkgdcls.lisp
 *Packages*
-        • *note lisp-stat: go to the LISP-STAT package.
-        • *note ls-user: go to the LS-USER package.
+     *note lisp-stat: go to the LISP-STAT package.
 
 
-File: lisp-stat.info,  Node: The lisp-stat/ls-init․lisp file,  Next: The lisp-stat/base/utilities․lisp file,  Prev: The lisp-stat/pkgdcls․lisp file,  Up: Lisp files
+File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: The lisp-stat/base/rdata․lisp file,  Prev: The lisp-stat/pkgdcls․lisp file,  Up: Lisp files
 
-3.1.3 lisp-stat/ls-init.lisp
-----------------------------
-
-*Parent*
-     *note lisp-stat: go to the lisp-stat system. (system)
-*Location*
-     ls-init.lisp
-*Exported Definitions*
-     *note *ls-version*: go to the LISP-STAT∶∶*LS-VERSION* special
-     variable. (special variable)
-*Internal Definitions*
-        • *note *release-name*: go to the LISP-STAT∶∶*RELEASE-NAME*
-          special variable. (special variable)
-        • *note setup-ls-translations: go to the
-          LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
-
-
-File: lisp-stat.info,  Node: The lisp-stat/base/utilities․lisp file,  Next: The lisp-stat/base/variables․lisp file,  Prev: The lisp-stat/ls-init․lisp file,  Up: Lisp files
-
-3.1.4 lisp-stat/base/utilities.lisp
+3.1.3 lisp-stat/base/variables.lisp
 -----------------------------------
 
-*Parent*
-     *note base: go to the lisp-stat/base module. (module)
-*Location*
-     base/utilities.lisp
-
-
-File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/utilities․lisp file,  Up: Lisp files
-
-3.1.5 lisp-stat/base/variables.lisp
------------------------------------
-
-*Dependency*
-     *note utilities.lisp: go to the lisp-stat/base/utilities․lisp file.
-     (file)
 *Parent*
      *note base: go to the lisp-stat/base module. (module)
 *Location*
@@ -215,7 +199,6 @@ File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: Th
         • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
         • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
           (function)
-        • *note undef: go to the LISP-STAT∶∶UNDEF function. (function)
         • *note variables: go to the LISP-STAT∶∶VARIABLES function.
           (function)
 *Internal Definitions*
@@ -224,11 +207,234 @@ File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: Th
           variable)
         • *note *variables*: go to the LISP-STAT∶∶*VARIABLES* special
           variable. (special variable)
-        • *note save: go to the LISP-STAT∶∶SAVE generic function.
-          (generic function)
+        • *note save-obj: go to the LISP-STAT∶∶SAVE-OBJ generic
+          function. (generic function)
+        • *note save-variable: go to the LISP-STAT∶∶SAVE-VARIABLE
+          generic function. (generic function)
 
 
-File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
+File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The lisp-stat/statistics/stats․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
+
+3.1.4 lisp-stat/base/rdata.lisp
+-------------------------------
+
+*Dependency*
+     *note variables.lisp: go to the lisp-stat/base/variables․lisp file.
+     (file)
+*Parent*
+     *note base: go to the lisp-stat/base module. (module)
+*Location*
+     base/rdata.lisp
+*Packages*
+     *note rdata: go to the RDATA package.
+*Exported Definitions*
+        • *note *r-default-datasets*: go to the
+          RDATA∶∶*R-DEFAULT-DATASETS* special variable. (special
+          variable)
+        • *note ability.cov: go to the RDATA∶∶ABILITY․COV special
+          variable. (special variable)
+        • *note airmiles: go to the RDATA∶∶AIRMILES special variable.
+          (special variable)
+        • *note airpassengers: go to the RDATA∶∶AIRPASSENGERS special
+          variable. (special variable)
+        • *note airquality: go to the RDATA∶∶AIRQUALITY special
+          variable. (special variable)
+        • *note anscombe: go to the RDATA∶∶ANSCOMBE special variable.
+          (special variable)
+        • *note attenu: go to the RDATA∶∶ATTENU special variable.
+          (special variable)
+        • *note attitude: go to the RDATA∶∶ATTITUDE special variable.
+          (special variable)
+        • *note austres: go to the RDATA∶∶AUSTRES special variable.
+          (special variable)
+        • *note base-url: go to the RDATA∶∶BASE-URL special variable.
+          (special variable)
+        • *note bjsales: go to the RDATA∶∶BJSALES special variable.
+          (special variable)
+        • *note bod: go to the RDATA∶∶BOD special variable. (special
+          variable)
+        • *note cars: go to the RDATA∶∶CARS special variable. (special
+          variable)
+        • *note chickweight: go to the RDATA∶∶CHICKWEIGHT special
+          variable. (special variable)
+        • *note chickwts: go to the RDATA∶∶CHICKWTS special variable.
+          (special variable)
+        • *note co2-1: go to the RDATA∶∶CO2-1 special variable. (special
+          variable)
+        • *note co2-2: go to the RDATA∶∶CO2-2 special variable. (special
+          variable)
+        • *note crimtab: go to the RDATA∶∶CRIMTAB special variable.
+          (special variable)
+        • *note discoveries: go to the RDATA∶∶DISCOVERIES special
+          variable. (special variable)
+        • *note dnase: go to the RDATA∶∶DNASE special variable. (special
+          variable)
+        • *note esoph: go to the RDATA∶∶ESOPH special variable. (special
+          variable)
+        • *note euro: go to the RDATA∶∶EURO special variable. (special
+          variable)
+        • *note eustockmarkets: go to the RDATA∶∶EUSTOCKMARKETS special
+          variable. (special variable)
+        • *note faithful: go to the RDATA∶∶FAITHFUL special variable.
+          (special variable)
+        • *note formaldehyde: go to the RDATA∶∶FORMALDEHYDE special
+          variable. (special variable)
+        • *note freeny: go to the RDATA∶∶FREENY special variable.
+          (special variable)
+        • *note get-r-data: go to the RDATA∶∶GET-R-DATA function.
+          (function)
+        • *note haireyecolor: go to the RDATA∶∶HAIREYECOLOR special
+          variable. (special variable)
+        • *note harman23.cor: go to the RDATA∶∶HARMAN23․COR special
+          variable. (special variable)
+        • *note harman74.cor: go to the RDATA∶∶HARMAN74․COR special
+          variable. (special variable)
+        • *note index: go to the RDATA∶∶INDEX special variable. (special
+          variable)
+        • *note indometh: go to the RDATA∶∶INDOMETH special variable.
+          (special variable)
+        • *note infert: go to the RDATA∶∶INFERT special variable.
+          (special variable)
+        • *note insectsprays: go to the RDATA∶∶INSECTSPRAYS special
+          variable. (special variable)
+        • *note iris: go to the RDATA∶∶IRIS special variable. (special
+          variable)
+        • *note iris3: go to the RDATA∶∶IRIS3 special variable. (special
+          variable)
+        • *note islands: go to the RDATA∶∶ISLANDS special variable.
+          (special variable)
+        • *note johnsonjohnson: go to the RDATA∶∶JOHNSONJOHNSON special
+          variable. (special variable)
+        • *note lakehuron: go to the RDATA∶∶LAKEHURON special variable.
+          (special variable)
+        • *note lh: go to the RDATA∶∶LH special variable. (special
+          variable)
+        • *note lifecyclesavings: go to the RDATA∶∶LIFECYCLESAVINGS
+          special variable. (special variable)
+        • *note load-r-default-datasets: go to the
+          RDATA∶∶LOAD-R-DEFAULT-DATASETS function. (function)
+        • *note load-r-metadata: go to the RDATA∶∶LOAD-R-METADATA
+          function. (function)
+        • *note loblolly: go to the RDATA∶∶LOBLOLLY special variable.
+          (special variable)
+        • *note longley: go to the RDATA∶∶LONGLEY special variable.
+          (special variable)
+        • *note lynx: go to the RDATA∶∶LYNX special variable. (special
+          variable)
+        • *note morley: go to the RDATA∶∶MORLEY special variable.
+          (special variable)
+        • *note mtcars: go to the RDATA∶∶MTCARS special variable.
+          (special variable)
+        • *note nhtemp: go to the RDATA∶∶NHTEMP special variable.
+          (special variable)
+        • *note nile: go to the RDATA∶∶NILE special variable. (special
+          variable)
+        • *note nottem: go to the RDATA∶∶NOTTEM special variable.
+          (special variable)
+        • *note npk: go to the RDATA∶∶NPK special variable. (special
+          variable)
+        • *note occupationalstatus: go to the RDATA∶∶OCCUPATIONALSTATUS
+          special variable. (special variable)
+        • *note orange: go to the RDATA∶∶ORANGE special variable.
+          (special variable)
+        • *note orchardsprays: go to the RDATA∶∶ORCHARDSPRAYS special
+          variable. (special variable)
+        • *note plantgrowth: go to the RDATA∶∶PLANTGROWTH special
+          variable. (special variable)
+        • *note precip: go to the RDATA∶∶PRECIP special variable.
+          (special variable)
+        • *note presidents: go to the RDATA∶∶PRESIDENTS special
+          variable. (special variable)
+        • *note pressure: go to the RDATA∶∶PRESSURE special variable.
+          (special variable)
+        • *note puromycin: go to the RDATA∶∶PUROMYCIN special variable.
+          (special variable)
+        • *note quakes: go to the RDATA∶∶QUAKES special variable.
+          (special variable)
+        • *note randu: go to the RDATA∶∶RANDU special variable. (special
+          variable)
+        • *note rivers: go to the RDATA∶∶RIVERS special variable.
+          (special variable)
+        • *note rock: go to the RDATA∶∶ROCK special variable. (special
+          variable)
+        • *note save-r-default-datasets: go to the
+          RDATA∶∶SAVE-R-DEFAULT-DATASETS function. (function)
+        • *note seatbelts: go to the RDATA∶∶SEATBELTS special variable.
+          (special variable)
+        • *note stackloss: go to the RDATA∶∶STACKLOSS special variable.
+          (special variable)
+        • *note sunspot.month: go to the RDATA∶∶SUNSPOT․MONTH special
+          variable. (special variable)
+        • *note sunspot.year: go to the RDATA∶∶SUNSPOT․YEAR special
+          variable. (special variable)
+        • *note sunspots: go to the RDATA∶∶SUNSPOTS special variable.
+          (special variable)
+        • *note swiss: go to the RDATA∶∶SWISS special variable. (special
+          variable)
+        • *note theoph: go to the RDATA∶∶THEOPH special variable.
+          (special variable)
+        • *note titanic: go to the RDATA∶∶TITANIC special variable.
+          (special variable)
+        • *note toothgrowth: go to the RDATA∶∶TOOTHGROWTH special
+          variable. (special variable)
+        • *note treering: go to the RDATA∶∶TREERING special variable.
+          (special variable)
+        • *note trees: go to the RDATA∶∶TREES special variable. (special
+          variable)
+        • *note ucbadmissions: go to the RDATA∶∶UCBADMISSIONS special
+          variable. (special variable)
+        • *note ukdriverdeaths: go to the RDATA∶∶UKDRIVERDEATHS special
+          variable. (special variable)
+        • *note ukgas: go to the RDATA∶∶UKGAS special variable. (special
+          variable)
+        • *note usaccdeaths: go to the RDATA∶∶USACCDEATHS special
+          variable. (special variable)
+        • *note usarrests: go to the RDATA∶∶USARRESTS special variable.
+          (special variable)
+        • *note usjudgeratings: go to the RDATA∶∶USJUDGERATINGS special
+          variable. (special variable)
+        • *note uspersonalexpenditure: go to the
+          RDATA∶∶USPERSONALEXPENDITURE special variable. (special
+          variable)
+        • *note uspop: go to the RDATA∶∶USPOP special variable. (special
+          variable)
+        • *note vadeaths: go to the RDATA∶∶VADEATHS special variable.
+          (special variable)
+        • *note volcano: go to the RDATA∶∶VOLCANO special variable.
+          (special variable)
+        • *note warpbreaks: go to the RDATA∶∶WARPBREAKS special
+          variable. (special variable)
+        • *note women: go to the RDATA∶∶WOMEN special variable. (special
+          variable)
+        • *note worldphones: go to the RDATA∶∶WORLDPHONES special
+          variable. (special variable)
+        • *note wwwusage: go to the RDATA∶∶WWWUSAGE special variable.
+          (special variable)
+*Internal Definitions*
+        • *note *r-default-dataframes*: go to the
+          RDATA∶∶*R-DEFAULT-DATAFRAMES* special variable. (special
+          variable)
+        • *note student-sleep: go to the RDATA∶∶STUDENT-SLEEP special
+          variable. (special variable)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/statistics/stats․lisp file,  Next: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/rdata․lisp file,  Up: Lisp files
+
+3.1.5 lisp-stat/statistics/stats.lisp
+-------------------------------------
+
+*Parent*
+     *note statistics: go to the lisp-stat/statistics module. (module)
+*Location*
+     statistics/stats.lisp
+*Exported Definitions*
+        • *note fivenum: go to the LISP-STAT∶∶FIVENUM function.
+          (function)
+        • *note interquartile-range: go to the
+          LISP-STAT∶∶INTERQUARTILE-RANGE function. (function)
+
+
+File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Next: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat/statistics/stats․lisp file,  Up: Lisp files
 
 3.1.6 lisp-stat/docs/doc-strings.lisp
 -------------------------------------
@@ -237,6 +443,22 @@ File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Prev: 
      *note docs: go to the lisp-stat/docs module. (module)
 *Location*
      docs/doc-strings.lisp
+
+
+File: lisp-stat.info,  Node: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat/docs/doc-strings․lisp file,  Up: Lisp files
+
+3.1.7 lisp-stat/ls-init.lisp
+----------------------------
+
+*Parent*
+     *note lisp-stat: go to the lisp-stat system. (system)
+*Location*
+     ls-init.lisp
+*Packages*
+     *note ls-user: go to the LS-USER package.
+*Internal Definitions*
+     *note setup-ls-translations: go to the
+     LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
 
 
 File: lisp-stat.info,  Node: Static files,  Prev: Lisp files,  Up: Files
@@ -270,15 +492,16 @@ Packages are listed by definition order.
 * Menu:
 
 * The lisp-stat package::
+* The rdata package::
 * The ls-user package::
 
 
-File: lisp-stat.info,  Node: The lisp-stat package,  Next: The ls-user package,  Prev: Packages,  Up: Packages
+File: lisp-stat.info,  Node: The lisp-stat package,  Next: The rdata package,  Prev: Packages,  Up: Packages
 
 4.1 lisp-stat
 =============
 
-Base functions and variables for Lisp-Stat
+Base functions for Lisp-Stat
 *Source*
      *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file. (file)
 *Nickname*
@@ -293,44 +516,258 @@ Base functions and variables for Lisp-Stat
         • dfio
         • data-frame
         • array-operations/all
-        • alexandria-2
+        • alexandria
         • common-lisp
 *Used By List*
-     *note ls-user: go to the LS-USER package.
+        • ls-tests
+        • *note ls-user: go to the LS-USER package.
 *Exported Definitions*
-        • *note *ls-version*: go to the LISP-STAT∶∶*LS-VERSION* special
-          variable. (special variable)
         • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
+        • *note fivenum: go to the LISP-STAT∶∶FIVENUM function.
+          (function)
+        • *note interquartile-range: go to the
+          LISP-STAT∶∶INTERQUARTILE-RANGE function. (function)
         • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
           (function)
-        • *note undef: go to the LISP-STAT∶∶UNDEF function. (function)
         • *note variables: go to the LISP-STAT∶∶VARIABLES function.
           (function)
 *Internal Definitions*
         • *note *ask-on-redefine*: go to the
           LISP-STAT∶∶*ASK-ON-REDEFINE* special variable. (special
           variable)
-        • *note *release-name*: go to the LISP-STAT∶∶*RELEASE-NAME*
-          special variable. (special variable)
         • *note *variables*: go to the LISP-STAT∶∶*VARIABLES* special
           variable. (special variable)
-        • *note save: go to the LISP-STAT∶∶SAVE generic function.
-          (generic function)
+        • *note save-obj: go to the LISP-STAT∶∶SAVE-OBJ generic
+          function. (generic function)
+        • *note save-variable: go to the LISP-STAT∶∶SAVE-VARIABLE
+          generic function. (generic function)
         • *note setup-ls-translations: go to the
           LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
 
 
-File: lisp-stat.info,  Node: The ls-user package,  Prev: The lisp-stat package,  Up: Packages
+File: lisp-stat.info,  Node: The rdata package,  Next: The ls-user package,  Prev: The lisp-stat package,  Up: Packages
 
-4.2 ls-user
+4.2 rdata
+=========
+
+*Source*
+     *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file. (file)
+*Use List*
+     common-lisp
+*Exported Definitions*
+        • *note *r-default-datasets*: go to the
+          RDATA∶∶*R-DEFAULT-DATASETS* special variable. (special
+          variable)
+        • *note ability.cov: go to the RDATA∶∶ABILITY․COV special
+          variable. (special variable)
+        • *note airmiles: go to the RDATA∶∶AIRMILES special variable.
+          (special variable)
+        • *note airpassengers: go to the RDATA∶∶AIRPASSENGERS special
+          variable. (special variable)
+        • *note airquality: go to the RDATA∶∶AIRQUALITY special
+          variable. (special variable)
+        • *note anscombe: go to the RDATA∶∶ANSCOMBE special variable.
+          (special variable)
+        • *note attenu: go to the RDATA∶∶ATTENU special variable.
+          (special variable)
+        • *note attitude: go to the RDATA∶∶ATTITUDE special variable.
+          (special variable)
+        • *note austres: go to the RDATA∶∶AUSTRES special variable.
+          (special variable)
+        • *note base-url: go to the RDATA∶∶BASE-URL special variable.
+          (special variable)
+        • *note bjsales: go to the RDATA∶∶BJSALES special variable.
+          (special variable)
+        • *note bod: go to the RDATA∶∶BOD special variable. (special
+          variable)
+        • *note cars: go to the RDATA∶∶CARS special variable. (special
+          variable)
+        • *note chickweight: go to the RDATA∶∶CHICKWEIGHT special
+          variable. (special variable)
+        • *note chickwts: go to the RDATA∶∶CHICKWTS special variable.
+          (special variable)
+        • *note co2-1: go to the RDATA∶∶CO2-1 special variable. (special
+          variable)
+        • *note co2-2: go to the RDATA∶∶CO2-2 special variable. (special
+          variable)
+        • *note crimtab: go to the RDATA∶∶CRIMTAB special variable.
+          (special variable)
+        • *note discoveries: go to the RDATA∶∶DISCOVERIES special
+          variable. (special variable)
+        • *note dnase: go to the RDATA∶∶DNASE special variable. (special
+          variable)
+        • *note esoph: go to the RDATA∶∶ESOPH special variable. (special
+          variable)
+        • *note euro: go to the RDATA∶∶EURO special variable. (special
+          variable)
+        • *note eustockmarkets: go to the RDATA∶∶EUSTOCKMARKETS special
+          variable. (special variable)
+        • *note faithful: go to the RDATA∶∶FAITHFUL special variable.
+          (special variable)
+        • *note formaldehyde: go to the RDATA∶∶FORMALDEHYDE special
+          variable. (special variable)
+        • *note freeny: go to the RDATA∶∶FREENY special variable.
+          (special variable)
+        • *note get-r-data: go to the RDATA∶∶GET-R-DATA function.
+          (function)
+        • *note haireyecolor: go to the RDATA∶∶HAIREYECOLOR special
+          variable. (special variable)
+        • *note harman23.cor: go to the RDATA∶∶HARMAN23․COR special
+          variable. (special variable)
+        • *note harman74.cor: go to the RDATA∶∶HARMAN74․COR special
+          variable. (special variable)
+        • *note index: go to the RDATA∶∶INDEX special variable. (special
+          variable)
+        • *note indometh: go to the RDATA∶∶INDOMETH special variable.
+          (special variable)
+        • *note infert: go to the RDATA∶∶INFERT special variable.
+          (special variable)
+        • *note insectsprays: go to the RDATA∶∶INSECTSPRAYS special
+          variable. (special variable)
+        • *note iris: go to the RDATA∶∶IRIS special variable. (special
+          variable)
+        • *note iris3: go to the RDATA∶∶IRIS3 special variable. (special
+          variable)
+        • *note islands: go to the RDATA∶∶ISLANDS special variable.
+          (special variable)
+        • *note johnsonjohnson: go to the RDATA∶∶JOHNSONJOHNSON special
+          variable. (special variable)
+        • *note lakehuron: go to the RDATA∶∶LAKEHURON special variable.
+          (special variable)
+        • *note lh: go to the RDATA∶∶LH special variable. (special
+          variable)
+        • *note lifecyclesavings: go to the RDATA∶∶LIFECYCLESAVINGS
+          special variable. (special variable)
+        • *note load-r-default-datasets: go to the
+          RDATA∶∶LOAD-R-DEFAULT-DATASETS function. (function)
+        • *note load-r-metadata: go to the RDATA∶∶LOAD-R-METADATA
+          function. (function)
+        • *note loblolly: go to the RDATA∶∶LOBLOLLY special variable.
+          (special variable)
+        • *note longley: go to the RDATA∶∶LONGLEY special variable.
+          (special variable)
+        • *note lynx: go to the RDATA∶∶LYNX special variable. (special
+          variable)
+        • *note morley: go to the RDATA∶∶MORLEY special variable.
+          (special variable)
+        • *note mtcars: go to the RDATA∶∶MTCARS special variable.
+          (special variable)
+        • *note nhtemp: go to the RDATA∶∶NHTEMP special variable.
+          (special variable)
+        • *note nile: go to the RDATA∶∶NILE special variable. (special
+          variable)
+        • *note nottem: go to the RDATA∶∶NOTTEM special variable.
+          (special variable)
+        • *note npk: go to the RDATA∶∶NPK special variable. (special
+          variable)
+        • *note occupationalstatus: go to the RDATA∶∶OCCUPATIONALSTATUS
+          special variable. (special variable)
+        • *note orange: go to the RDATA∶∶ORANGE special variable.
+          (special variable)
+        • *note orchardsprays: go to the RDATA∶∶ORCHARDSPRAYS special
+          variable. (special variable)
+        • *note plantgrowth: go to the RDATA∶∶PLANTGROWTH special
+          variable. (special variable)
+        • *note precip: go to the RDATA∶∶PRECIP special variable.
+          (special variable)
+        • *note presidents: go to the RDATA∶∶PRESIDENTS special
+          variable. (special variable)
+        • *note pressure: go to the RDATA∶∶PRESSURE special variable.
+          (special variable)
+        • *note puromycin: go to the RDATA∶∶PUROMYCIN special variable.
+          (special variable)
+        • *note quakes: go to the RDATA∶∶QUAKES special variable.
+          (special variable)
+        • *note randu: go to the RDATA∶∶RANDU special variable. (special
+          variable)
+        • *note rivers: go to the RDATA∶∶RIVERS special variable.
+          (special variable)
+        • *note rock: go to the RDATA∶∶ROCK special variable. (special
+          variable)
+        • *note save-r-default-datasets: go to the
+          RDATA∶∶SAVE-R-DEFAULT-DATASETS function. (function)
+        • *note seatbelts: go to the RDATA∶∶SEATBELTS special variable.
+          (special variable)
+        • *note stackloss: go to the RDATA∶∶STACKLOSS special variable.
+          (special variable)
+        • *note sunspot.month: go to the RDATA∶∶SUNSPOT․MONTH special
+          variable. (special variable)
+        • *note sunspot.year: go to the RDATA∶∶SUNSPOT․YEAR special
+          variable. (special variable)
+        • *note sunspots: go to the RDATA∶∶SUNSPOTS special variable.
+          (special variable)
+        • *note swiss: go to the RDATA∶∶SWISS special variable. (special
+          variable)
+        • *note theoph: go to the RDATA∶∶THEOPH special variable.
+          (special variable)
+        • *note titanic: go to the RDATA∶∶TITANIC special variable.
+          (special variable)
+        • *note toothgrowth: go to the RDATA∶∶TOOTHGROWTH special
+          variable. (special variable)
+        • *note treering: go to the RDATA∶∶TREERING special variable.
+          (special variable)
+        • *note trees: go to the RDATA∶∶TREES special variable. (special
+          variable)
+        • *note ucbadmissions: go to the RDATA∶∶UCBADMISSIONS special
+          variable. (special variable)
+        • *note ukdriverdeaths: go to the RDATA∶∶UKDRIVERDEATHS special
+          variable. (special variable)
+        • *note ukgas: go to the RDATA∶∶UKGAS special variable. (special
+          variable)
+        • *note usaccdeaths: go to the RDATA∶∶USACCDEATHS special
+          variable. (special variable)
+        • *note usarrests: go to the RDATA∶∶USARRESTS special variable.
+          (special variable)
+        • *note usjudgeratings: go to the RDATA∶∶USJUDGERATINGS special
+          variable. (special variable)
+        • *note uspersonalexpenditure: go to the
+          RDATA∶∶USPERSONALEXPENDITURE special variable. (special
+          variable)
+        • *note uspop: go to the RDATA∶∶USPOP special variable. (special
+          variable)
+        • *note vadeaths: go to the RDATA∶∶VADEATHS special variable.
+          (special variable)
+        • *note volcano: go to the RDATA∶∶VOLCANO special variable.
+          (special variable)
+        • *note warpbreaks: go to the RDATA∶∶WARPBREAKS special
+          variable. (special variable)
+        • *note women: go to the RDATA∶∶WOMEN special variable. (special
+          variable)
+        • *note worldphones: go to the RDATA∶∶WORLDPHONES special
+          variable. (special variable)
+        • *note wwwusage: go to the RDATA∶∶WWWUSAGE special variable.
+          (special variable)
+*Internal Definitions*
+        • *note *r-default-dataframes*: go to the
+          RDATA∶∶*R-DEFAULT-DATAFRAMES* special variable. (special
+          variable)
+        • *note student-sleep: go to the RDATA∶∶STUDENT-SLEEP special
+          variable. (special variable)
+
+
+File: lisp-stat.info,  Node: The ls-user package,  Prev: The rdata package,  Up: Packages
+
+4.3 ls-user
 ===========
 
 User package for Lisp-Stat
 *Source*
-     *note pkgdcls.lisp: go to the lisp-stat/pkgdcls․lisp file. (file)
+     *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file. (file)
 *Use List*
         • *note lisp-stat: go to the LISP-STAT package.
         • common-lisp
+*Internal Definitions*
+        • *note *default-datasets*: go to the
+          LS-USER∶∶*DEFAULT-DATASETS* special variable. (special
+          variable)
+        • *note iris: go to the LS-USER∶∶IRIS special variable. (special
+          variable)
+        • *note plantgrowth: go to the LS-USER∶∶PLANTGROWTH special
+          variable. (special variable)
+        • *note toothgrowth: go to the LS-USER∶∶TOOTHGROWTH special
+          variable. (special variable)
+        • *note usarrests: go to the LS-USER∶∶USARRESTS special
+          variable. (special variable)
 
 
 File: lisp-stat.info,  Node: Definitions,  Next: Indexes,  Prev: Packages,  Up: Top
@@ -364,11 +801,606 @@ File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,
 5.1.1 Special variables
 -----------------------
 
- -- Special Variable: *ls-version*
+ -- Special Variable: *r-default-datasets*
+     All data sets included by default in R
      *Package*
-          *note lisp-stat: go to the LISP-STAT package.
+          *note rdata: go to the RDATA package.
      *Source*
-          *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: ability.cov
+     Ability and Intelligence Tests
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: airmiles
+     Passenger Miles on Commercial US Airlines, 1937-1960
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: airpassengers
+     Monthly Airline Passenger Numbers 1949-1960
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: airquality
+     New York Air Quality Measurements
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: anscombe
+     Anscombe’s Quartet of ’Identical’ Simple Linear Regressions
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: attenu
+     The Joyner-Boore Attenuation Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: attitude
+     The Chatterjee-Price Attitude Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: austres
+     Quarterly Time Series of the Number of Australian Residents
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: base-url
+     Base URL for datasets included in R
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: bjsales
+     Sales Data with Leading Indicator
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: bod
+     Biochemical Oxygen Demand
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: cars
+     Speed and Stopping Distances of Cars
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: chickweight
+     Weight versus age of chicks on different diets
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: chickwts
+     Chicken Weights by Feed Type
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: co2-1
+     Carbon Dioxide Uptake in Grass Plants
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: co2-2
+     Mauna Loa Atmospheric CO2 Concentration
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: crimtab
+     Student’s 3000 Criminals Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: discoveries
+     Yearly Numbers of Important Discoveries
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: dnase
+     Elisa assay of DNase
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: esoph
+     Smoking, Alcohol and (O)esophageal Cancer
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: euro
+     Conversion Rates of Euro Currencies
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: eustockmarkets
+     Daily Closing Prices of Major European Stock Indices, 1991-1998
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: faithful
+     Old Faithful Geyser Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: formaldehyde
+     Determination of Formaldehyde
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: freeny
+     Freeny’s Revenue Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: haireyecolor
+     Hair and Eye Color of Statistics Students
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: harman23.cor
+     Harman Example 2.3
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: harman74.cor
+     Harman Example 7.4
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: index
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: indometh
+     Pharmacokinetics of Indomethacin
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: infert
+     Infertility after Spontaneous and Induced Abortion
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: insectsprays
+     Effectiveness of Insect Sprays
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: iris
+     Edgar Anderson’s Iris Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: iris3
+     Edgar Anderson’s Iris Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: islands
+     Areas of the World’s Major Landmasses
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: johnsonjohnson
+     Quarterly Earnings per Johnson & Johnson Share
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: lakehuron
+     Level of Lake Huron 1875-1972
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: lh
+     Luteinizing Hormone in Blood Samples
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: lifecyclesavings
+     Intercountry Life-Cycle Savings Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: loblolly
+     Growth of Loblolly pine trees
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: longley
+     Longley’s Economic Regression Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: lynx
+     Annual Canadian Lynx trappings 1821-1934
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: morley
+     Michelson Speed of Light Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: mtcars
+     Motor Trend Car Road Tests
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nhtemp
+     Average Yearly Temperatures in New Haven
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nile
+     Flow of the River Nile
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nottem
+     Average Monthly Temperatures at Nottingham, 1920-1939
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: npk
+     Classical N, P, K Factorial Experiment
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: occupationalstatus
+     Occupational Status of Fathers and their Sons
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: orange
+     Growth of Orange Trees
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: orchardsprays
+     Potency of Orchard Sprays
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: plantgrowth
+     Results from an Experiment on Plant Growth
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: precip
+     Annual Precipitation in US Cities
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: presidents
+     Quarterly Approval Ratings of US Presidents
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: pressure
+     Vapor Pressure of Mercury as a Function of Temperature
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: puromycin
+     Reaction Velocity of an Enzymatic Reaction
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: quakes
+     Locations of Earthquakes off Fiji
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: randu
+     Random Numbers from Congruential Generator RANDU
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: rivers
+     Lengths of Major North American Rivers
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: rock
+     Measurements on Petroleum Rock Samples
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: seatbelts
+     Road Casualties in Great Britain 1969-84
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: stackloss
+     Brownlee’s Stack Loss Plant Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: sunspot.month
+     Monthly Sunspot Data, from 1749 to Present
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: sunspot.year
+     Yearly Sunspot Data, 1700-1988
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: sunspots
+     Monthly Sunspot Numbers, 1749-1983
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: swiss
+     Swiss Fertility and Socioeconomic Indicators (1888) Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: theoph
+     Pharmacokinetics of Theophylline
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: titanic
+     Survival of passengers on the Titanic
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: toothgrowth
+     The Effect of Vitamin C on Tooth Growth in Guinea Pigs
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: treering
+     Yearly Treering Data, -6000-1979
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: trees
+     Diameter, Height and Volume for Black Cherry Trees
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: ucbadmissions
+     Student Admissions at UC Berkeley
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: ukdriverdeaths
+     Road Casualties in Great Britain 1969-84
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: ukgas
+     UK Quarterly Gas Consumption
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: usaccdeaths
+     Accidental Deaths in the US 1973-1978
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: usarrests
+     Violent Crime Rates by US State
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: usjudgeratings
+     Lawyers’ Ratings of State Judges in the US Superior Court
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: uspersonalexpenditure
+     Personal Expenditure Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: uspop
+     Populations Recorded by the US Census
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: vadeaths
+     Death Rates in Virginia (1940)
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: volcano
+     Topographic Information on Auckland’s Maunga Whau Volcano
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: warpbreaks
+     The Number of Breaks in Yarn during Weaving
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: women
+     Average Heights and Weights for American Women
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: worldphones
+     The World’s Telephones
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: wwwusage
+     Internet Usage per Minute
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
           (file)
 
 
@@ -378,12 +1410,12 @@ File: lisp-stat.info,  Node: Exported macros,  Next: Exported functions,  Prev: 
 ------------
 
  -- Macro: def NAME VALUE &optional DOCUMENTATION
-     Args: (var form)
-     VAR is not evaluated and must be a symbol.  Assigns the value of
-     FORM to VAR and adds VAR to the list *VARIABLES* of def’ed
-     variables.  Returns VAR. If VAR is already bound and the global
-     variable *ASK-ON-REDEFINE*
-     is not nil then you are asked if you want to redefine the variable.
+     Define a data variable
+     VALUE is not evaluated and must be a symbol.  Assigns the value of
+     FORM to VALUE and adds VALUE to the list *VARIABLES* of def’ed
+     variables.  Returns VALUE. If VALUE is already bound and the global
+     variable *ASK-ON-REDEFINE* is not nil then you are asked if you
+     want to redefine the variable.
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
      *Source*
@@ -396,32 +1428,69 @@ File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Ex
 5.1.3 Functions
 ---------------
 
- -- Function: savevar VARS FILE &optional SUFFIX
-     Args: (vars-symbol-or-list file-name-root &optional suffix-string)
-     NOTE: Ensure vars doesn’t contain CLOS objects that don’t have a
-     save method.  VARS is a symbol or a list of symbols.
-     FILE-NAME-ROOT is a string (or a symbol whose print name is used)
-     not ending in
-     SUFFIX (defaults to ".lisp").  The VARS and their current values
-     are written to the file FILE-NAME-ROOT.lisp in a form suitable for
-     use with the load command.
+ -- Function: fivenum X
+     Returns the five number summary (min, 1st quartile, median, 3rd
+     quartile, max) of the elements X.
+     Note this is not Tukey’s fivenum summary, which R returns.  The
+     results will differ when X contains an even number of elements.
+     See:
+     https://www.icalcu.com/stat/fivenum.html
+     https://math.stackexchange.com/questions/398077/question-on-five-number-summary-quantile
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
      *Source*
-          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          *note stats.lisp: go to the lisp-stat/statistics/stats․lisp
           file. (file)
- -- Function: undef V
-     Args: (v)
-     If V is the symbol of a defined variable the variable it is unbound
-     and removed from the list of defined variables.  If V is a list of
-     variable names each is unbound and removed.  Returns V.
+ -- Function: get-r-data ()
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Function: interquartile-range X
+     Returns the interquartile range of the elements of X.
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note stats.lisp: go to the lisp-stat/statistics/stats․lisp
+          file. (file)
+ -- Function: load-r-default-datasets ()
+     Load the data sets included in base R
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Function: load-r-metadata ()
+     Loads the master R data set index as a data frame
+
+     This allows you to slice & dice the 1500+ data sets to find what
+     you need
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Function: save-r-default-datasets ()
+     Save the data sets included in base R
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Function: savevar VARS FILE &optional SUFFIX
+     VARS is a symbol or a list of symbols.  FILE is a string (or a
+     symbol whose print name is used) not ending in SUFFIX (defaults to
+     ".lisp").  The VARS and their current values are written to the
+     file FILE.lisp in a form suitable for use with the load command.
+     NOTE: Ensure VARS doesn’t contain CLOS objects that don’t have a
+     SAVE-OBJ method.  Example (savevar ’urban "urban")
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
      *Source*
           *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
  -- Function: variables ()
-     Args:()
      Returns a list of the names of all def’ed variables.
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
@@ -453,11 +1522,19 @@ File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functio
      *Source*
           *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
- -- Special Variable: *release-name*
+ -- Special Variable: *default-datasets*
+     Data sets loaded as part of personal Lisp-Stat initialisation.
+     Available in every session.
      *Package*
-          *note lisp-stat: go to the LISP-STAT package.
+          *note ls-user: go to the LS-USER package.
      *Source*
-          *note ls-init.lisp: go to the lisp-stat/ls-init․lisp file.
+          /Users/nunez/ls-init.lisp
+ -- Special Variable: *r-default-dataframes*
+     Data frames corresponding to the default R datasets
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
           (file)
  -- Special Variable: *variables*
      *Package*
@@ -465,6 +1542,37 @@ File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functio
      *Source*
           *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
+ -- Special Variable: iris
+     Edgar Anderson’s Iris Data
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+ -- Special Variable: plantgrowth
+     Results from an Experiment on Plant Growth
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+ -- Special Variable: student-sleep
+     Student’s Sleep Data
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: toothgrowth
+     The Effect of Vitamin C on Tooth Growth in Guinea Pigs
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+ -- Special Variable: usarrests
+     Violent Crime Rates by US State
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
 
 
 File: lisp-stat.info,  Node: Internal functions,  Next: Internal generic functions,  Prev: Internal special variables,  Up: Internal definitions
@@ -485,7 +1593,14 @@ File: lisp-stat.info,  Node: Internal generic functions,  Prev: Internal functio
 5.2.3 Generic functions
 -----------------------
 
- -- Generic Function: save DATA
+ -- Generic Function: save-obj DATA
+     Save data object
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
+ -- Generic Function: save-variable DATA
      Save the data.
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
@@ -517,7 +1632,7 @@ A.1 Concepts
 
 * File, Lisp, lisp-stat.asd:             The lisp-stat․asd file.
                                                                 (line 6)
-* File, Lisp, lisp-stat/base/utilities.lisp: The lisp-stat/base/utilities․lisp file.
+* File, Lisp, lisp-stat/base/rdata.lisp: The lisp-stat/base/rdata․lisp file.
                                                                 (line 6)
 * File, Lisp, lisp-stat/base/variables.lisp: The lisp-stat/base/variables․lisp file.
                                                                 (line 6)
@@ -527,11 +1642,13 @@ A.1 Concepts
                                                                 (line 6)
 * File, Lisp, lisp-stat/pkgdcls.lisp:    The lisp-stat/pkgdcls․lisp file.
                                                                 (line 6)
+* File, Lisp, lisp-stat/statistics/stats.lisp: The lisp-stat/statistics/stats․lisp file.
+                                                                (line 6)
 * File, static, lisp-stat/license:       The lisp-stat/license file.
                                                                 (line 6)
 * Lisp File, lisp-stat.asd:              The lisp-stat․asd file.
                                                                 (line 6)
-* Lisp File, lisp-stat/base/utilities.lisp: The lisp-stat/base/utilities․lisp file.
+* Lisp File, lisp-stat/base/rdata.lisp:  The lisp-stat/base/rdata․lisp file.
                                                                 (line 6)
 * Lisp File, lisp-stat/base/variables.lisp: The lisp-stat/base/variables․lisp file.
                                                                 (line 6)
@@ -541,11 +1658,13 @@ A.1 Concepts
                                                                 (line 6)
 * Lisp File, lisp-stat/pkgdcls.lisp:     The lisp-stat/pkgdcls․lisp file.
                                                                 (line 6)
+* Lisp File, lisp-stat/statistics/stats.lisp: The lisp-stat/statistics/stats․lisp file.
+                                                                (line 6)
 * lisp-stat.asd:                         The lisp-stat․asd file.
                                                                 (line 6)
 * lisp-stat/base:                        The lisp-stat/base module.
                                                                 (line 6)
-* lisp-stat/base/utilities.lisp:         The lisp-stat/base/utilities․lisp file.
+* lisp-stat/base/rdata.lisp:             The lisp-stat/base/rdata․lisp file.
                                                                 (line 6)
 * lisp-stat/base/variables.lisp:         The lisp-stat/base/variables․lisp file.
                                                                 (line 6)
@@ -559,9 +1678,15 @@ A.1 Concepts
                                                                 (line 6)
 * lisp-stat/pkgdcls.lisp:                The lisp-stat/pkgdcls․lisp file.
                                                                 (line 6)
+* lisp-stat/statistics:                  The lisp-stat/statistics module.
+                                                                (line 6)
+* lisp-stat/statistics/stats.lisp:       The lisp-stat/statistics/stats․lisp file.
+                                                                (line 6)
 * Module, lisp-stat/base:                The lisp-stat/base module.
                                                                 (line 6)
 * Module, lisp-stat/docs:                The lisp-stat/docs module.
+                                                                (line 6)
+* Module, lisp-stat/statistics:          The lisp-stat/statistics module.
                                                                 (line 6)
 * Static File, lisp-stat/license:        The lisp-stat/license file.
                                                                 (line 6)
@@ -576,19 +1701,33 @@ A.2 Functions
 * Menu:
 
 * def:                                   Exported macros.      (line  6)
-* Function, savevar:                     Exported functions.   (line  7)
+* fivenum:                               Exported functions.   (line  6)
+* Function, fivenum:                     Exported functions.   (line  7)
+* Function, get-r-data:                  Exported functions.   (line 20)
+* Function, interquartile-range:         Exported functions.   (line 26)
+* Function, load-r-default-datasets:     Exported functions.   (line 33)
+* Function, load-r-metadata:             Exported functions.   (line 40)
+* Function, save-r-default-datasets:     Exported functions.   (line 50)
+* Function, savevar:                     Exported functions.   (line 57)
 * Function, setup-ls-translations:       Internal functions.   (line  7)
-* Function, undef:                       Exported functions.   (line 21)
-* Function, variables:                   Exported functions.   (line 31)
-* Generic Function, save:                Internal generic functions.
+* Function, variables:                   Exported functions.   (line 69)
+* Generic Function, save-obj:            Internal generic functions.
                                                                (line  7)
+* Generic Function, save-variable:       Internal generic functions.
+                                                               (line 14)
+* get-r-data:                            Exported functions.   (line 19)
+* interquartile-range:                   Exported functions.   (line 25)
+* load-r-default-datasets:               Exported functions.   (line 32)
+* load-r-metadata:                       Exported functions.   (line 39)
 * Macro, def:                            Exported macros.      (line  7)
-* save:                                  Internal generic functions.
+* save-obj:                              Internal generic functions.
                                                                (line  6)
-* savevar:                               Exported functions.   (line  6)
+* save-r-default-datasets:               Exported functions.   (line 49)
+* save-variable:                         Internal generic functions.
+                                                               (line 13)
+* savevar:                               Exported functions.   (line 56)
 * setup-ls-translations:                 Internal functions.   (line  6)
-* undef:                                 Exported functions.   (line 20)
-* variables:                             Exported functions.   (line 30)
+* variables:                             Exported functions.   (line 68)
 
 
 File: lisp-stat.info,  Node: Variable index,  Next: Data type index,  Prev: Function index,  Up: Indexes
@@ -600,21 +1739,385 @@ A.3 Variables
 * Menu:
 
 * *ask-on-redefine*:                     Internal special variables.
-                                                               (line  6)
-* *ls-version*:                          Exported special variables.
-                                                               (line  6)
-* *release-name*:                        Internal special variables.
-                                                               (line 12)
+                                                              (line   6)
+* *default-datasets*:                    Internal special variables.
+                                                              (line  12)
+* *r-default-dataframes*:                Internal special variables.
+                                                              (line  19)
+* *r-default-datasets*:                  Exported special variables.
+                                                              (line   6)
 * *variables*:                           Internal special variables.
-                                                               (line 18)
+                                                              (line  26)
+* ability.cov:                           Exported special variables.
+                                                              (line  13)
+* airmiles:                              Exported special variables.
+                                                              (line  20)
+* airpassengers:                         Exported special variables.
+                                                              (line  27)
+* airquality:                            Exported special variables.
+                                                              (line  34)
+* anscombe:                              Exported special variables.
+                                                              (line  41)
+* attenu:                                Exported special variables.
+                                                              (line  48)
+* attitude:                              Exported special variables.
+                                                              (line  55)
+* austres:                               Exported special variables.
+                                                              (line  62)
+* base-url:                              Exported special variables.
+                                                              (line  69)
+* bjsales:                               Exported special variables.
+                                                              (line  76)
+* bod:                                   Exported special variables.
+                                                              (line  83)
+* cars:                                  Exported special variables.
+                                                              (line  90)
+* chickweight:                           Exported special variables.
+                                                              (line  97)
+* chickwts:                              Exported special variables.
+                                                              (line 104)
+* co2-1:                                 Exported special variables.
+                                                              (line 111)
+* co2-2:                                 Exported special variables.
+                                                              (line 118)
+* crimtab:                               Exported special variables.
+                                                              (line 125)
+* discoveries:                           Exported special variables.
+                                                              (line 132)
+* dnase:                                 Exported special variables.
+                                                              (line 139)
+* esoph:                                 Exported special variables.
+                                                              (line 146)
+* euro:                                  Exported special variables.
+                                                              (line 153)
+* eustockmarkets:                        Exported special variables.
+                                                              (line 160)
+* faithful:                              Exported special variables.
+                                                              (line 167)
+* formaldehyde:                          Exported special variables.
+                                                              (line 174)
+* freeny:                                Exported special variables.
+                                                              (line 181)
+* haireyecolor:                          Exported special variables.
+                                                              (line 188)
+* harman23.cor:                          Exported special variables.
+                                                              (line 195)
+* harman74.cor:                          Exported special variables.
+                                                              (line 202)
+* index:                                 Exported special variables.
+                                                              (line 209)
+* indometh:                              Exported special variables.
+                                                              (line 215)
+* infert:                                Exported special variables.
+                                                              (line 222)
+* insectsprays:                          Exported special variables.
+                                                              (line 229)
+* iris:                                  Exported special variables.
+                                                              (line 236)
+* iris <1>:                              Internal special variables.
+                                                              (line  32)
+* iris3:                                 Exported special variables.
+                                                              (line 243)
+* islands:                               Exported special variables.
+                                                              (line 250)
+* johnsonjohnson:                        Exported special variables.
+                                                              (line 257)
+* lakehuron:                             Exported special variables.
+                                                              (line 264)
+* lh:                                    Exported special variables.
+                                                              (line 271)
+* lifecyclesavings:                      Exported special variables.
+                                                              (line 278)
+* loblolly:                              Exported special variables.
+                                                              (line 285)
+* longley:                               Exported special variables.
+                                                              (line 292)
+* lynx:                                  Exported special variables.
+                                                              (line 299)
+* morley:                                Exported special variables.
+                                                              (line 306)
+* mtcars:                                Exported special variables.
+                                                              (line 313)
+* nhtemp:                                Exported special variables.
+                                                              (line 320)
+* nile:                                  Exported special variables.
+                                                              (line 327)
+* nottem:                                Exported special variables.
+                                                              (line 334)
+* npk:                                   Exported special variables.
+                                                              (line 341)
+* occupationalstatus:                    Exported special variables.
+                                                              (line 348)
+* orange:                                Exported special variables.
+                                                              (line 355)
+* orchardsprays:                         Exported special variables.
+                                                              (line 362)
+* plantgrowth:                           Exported special variables.
+                                                              (line 369)
+* plantgrowth <1>:                       Internal special variables.
+                                                              (line  38)
+* precip:                                Exported special variables.
+                                                              (line 376)
+* presidents:                            Exported special variables.
+                                                              (line 383)
+* pressure:                              Exported special variables.
+                                                              (line 390)
+* puromycin:                             Exported special variables.
+                                                              (line 397)
+* quakes:                                Exported special variables.
+                                                              (line 404)
+* randu:                                 Exported special variables.
+                                                              (line 411)
+* rivers:                                Exported special variables.
+                                                              (line 418)
+* rock:                                  Exported special variables.
+                                                              (line 425)
+* seatbelts:                             Exported special variables.
+                                                              (line 432)
 * Special Variable, *ask-on-redefine*:   Internal special variables.
-                                                               (line  7)
-* Special Variable, *ls-version*:        Exported special variables.
-                                                               (line  7)
-* Special Variable, *release-name*:      Internal special variables.
-                                                               (line 13)
+                                                              (line   7)
+* Special Variable, *default-datasets*:  Internal special variables.
+                                                              (line  13)
+* Special Variable, *r-default-dataframes*: Internal special variables.
+                                                              (line  20)
+* Special Variable, *r-default-datasets*: Exported special variables.
+                                                              (line   7)
 * Special Variable, *variables*:         Internal special variables.
-                                                               (line 19)
+                                                              (line  27)
+* Special Variable, ability.cov:         Exported special variables.
+                                                              (line  14)
+* Special Variable, airmiles:            Exported special variables.
+                                                              (line  21)
+* Special Variable, airpassengers:       Exported special variables.
+                                                              (line  28)
+* Special Variable, airquality:          Exported special variables.
+                                                              (line  35)
+* Special Variable, anscombe:            Exported special variables.
+                                                              (line  42)
+* Special Variable, attenu:              Exported special variables.
+                                                              (line  49)
+* Special Variable, attitude:            Exported special variables.
+                                                              (line  56)
+* Special Variable, austres:             Exported special variables.
+                                                              (line  63)
+* Special Variable, base-url:            Exported special variables.
+                                                              (line  70)
+* Special Variable, bjsales:             Exported special variables.
+                                                              (line  77)
+* Special Variable, bod:                 Exported special variables.
+                                                              (line  84)
+* Special Variable, cars:                Exported special variables.
+                                                              (line  91)
+* Special Variable, chickweight:         Exported special variables.
+                                                              (line  98)
+* Special Variable, chickwts:            Exported special variables.
+                                                              (line 105)
+* Special Variable, co2-1:               Exported special variables.
+                                                              (line 112)
+* Special Variable, co2-2:               Exported special variables.
+                                                              (line 119)
+* Special Variable, crimtab:             Exported special variables.
+                                                              (line 126)
+* Special Variable, discoveries:         Exported special variables.
+                                                              (line 133)
+* Special Variable, dnase:               Exported special variables.
+                                                              (line 140)
+* Special Variable, esoph:               Exported special variables.
+                                                              (line 147)
+* Special Variable, euro:                Exported special variables.
+                                                              (line 154)
+* Special Variable, eustockmarkets:      Exported special variables.
+                                                              (line 161)
+* Special Variable, faithful:            Exported special variables.
+                                                              (line 168)
+* Special Variable, formaldehyde:        Exported special variables.
+                                                              (line 175)
+* Special Variable, freeny:              Exported special variables.
+                                                              (line 182)
+* Special Variable, haireyecolor:        Exported special variables.
+                                                              (line 189)
+* Special Variable, harman23.cor:        Exported special variables.
+                                                              (line 196)
+* Special Variable, harman74.cor:        Exported special variables.
+                                                              (line 203)
+* Special Variable, index:               Exported special variables.
+                                                              (line 210)
+* Special Variable, indometh:            Exported special variables.
+                                                              (line 216)
+* Special Variable, infert:              Exported special variables.
+                                                              (line 223)
+* Special Variable, insectsprays:        Exported special variables.
+                                                              (line 230)
+* Special Variable, iris:                Exported special variables.
+                                                              (line 237)
+* Special Variable, iris <1>:            Internal special variables.
+                                                              (line  33)
+* Special Variable, iris3:               Exported special variables.
+                                                              (line 244)
+* Special Variable, islands:             Exported special variables.
+                                                              (line 251)
+* Special Variable, johnsonjohnson:      Exported special variables.
+                                                              (line 258)
+* Special Variable, lakehuron:           Exported special variables.
+                                                              (line 265)
+* Special Variable, lh:                  Exported special variables.
+                                                              (line 272)
+* Special Variable, lifecyclesavings:    Exported special variables.
+                                                              (line 279)
+* Special Variable, loblolly:            Exported special variables.
+                                                              (line 286)
+* Special Variable, longley:             Exported special variables.
+                                                              (line 293)
+* Special Variable, lynx:                Exported special variables.
+                                                              (line 300)
+* Special Variable, morley:              Exported special variables.
+                                                              (line 307)
+* Special Variable, mtcars:              Exported special variables.
+                                                              (line 314)
+* Special Variable, nhtemp:              Exported special variables.
+                                                              (line 321)
+* Special Variable, nile:                Exported special variables.
+                                                              (line 328)
+* Special Variable, nottem:              Exported special variables.
+                                                              (line 335)
+* Special Variable, npk:                 Exported special variables.
+                                                              (line 342)
+* Special Variable, occupationalstatus:  Exported special variables.
+                                                              (line 349)
+* Special Variable, orange:              Exported special variables.
+                                                              (line 356)
+* Special Variable, orchardsprays:       Exported special variables.
+                                                              (line 363)
+* Special Variable, plantgrowth:         Exported special variables.
+                                                              (line 370)
+* Special Variable, plantgrowth <1>:     Internal special variables.
+                                                              (line  39)
+* Special Variable, precip:              Exported special variables.
+                                                              (line 377)
+* Special Variable, presidents:          Exported special variables.
+                                                              (line 384)
+* Special Variable, pressure:            Exported special variables.
+                                                              (line 391)
+* Special Variable, puromycin:           Exported special variables.
+                                                              (line 398)
+* Special Variable, quakes:              Exported special variables.
+                                                              (line 405)
+* Special Variable, randu:               Exported special variables.
+                                                              (line 412)
+* Special Variable, rivers:              Exported special variables.
+                                                              (line 419)
+* Special Variable, rock:                Exported special variables.
+                                                              (line 426)
+* Special Variable, seatbelts:           Exported special variables.
+                                                              (line 433)
+* Special Variable, stackloss:           Exported special variables.
+                                                              (line 440)
+* Special Variable, student-sleep:       Internal special variables.
+                                                              (line  45)
+* Special Variable, sunspot.month:       Exported special variables.
+                                                              (line 447)
+* Special Variable, sunspot.year:        Exported special variables.
+                                                              (line 454)
+* Special Variable, sunspots:            Exported special variables.
+                                                              (line 461)
+* Special Variable, swiss:               Exported special variables.
+                                                              (line 468)
+* Special Variable, theoph:              Exported special variables.
+                                                              (line 475)
+* Special Variable, titanic:             Exported special variables.
+                                                              (line 482)
+* Special Variable, toothgrowth:         Exported special variables.
+                                                              (line 489)
+* Special Variable, toothgrowth <1>:     Internal special variables.
+                                                              (line  52)
+* Special Variable, treering:            Exported special variables.
+                                                              (line 496)
+* Special Variable, trees:               Exported special variables.
+                                                              (line 503)
+* Special Variable, ucbadmissions:       Exported special variables.
+                                                              (line 510)
+* Special Variable, ukdriverdeaths:      Exported special variables.
+                                                              (line 517)
+* Special Variable, ukgas:               Exported special variables.
+                                                              (line 524)
+* Special Variable, usaccdeaths:         Exported special variables.
+                                                              (line 531)
+* Special Variable, usarrests:           Exported special variables.
+                                                              (line 538)
+* Special Variable, usarrests <1>:       Internal special variables.
+                                                              (line  58)
+* Special Variable, usjudgeratings:      Exported special variables.
+                                                              (line 545)
+* Special Variable, uspersonalexpenditure: Exported special variables.
+                                                              (line 552)
+* Special Variable, uspop:               Exported special variables.
+                                                              (line 559)
+* Special Variable, vadeaths:            Exported special variables.
+                                                              (line 566)
+* Special Variable, volcano:             Exported special variables.
+                                                              (line 573)
+* Special Variable, warpbreaks:          Exported special variables.
+                                                              (line 580)
+* Special Variable, women:               Exported special variables.
+                                                              (line 587)
+* Special Variable, worldphones:         Exported special variables.
+                                                              (line 594)
+* Special Variable, wwwusage:            Exported special variables.
+                                                              (line 601)
+* stackloss:                             Exported special variables.
+                                                              (line 439)
+* student-sleep:                         Internal special variables.
+                                                              (line  44)
+* sunspot.month:                         Exported special variables.
+                                                              (line 446)
+* sunspot.year:                          Exported special variables.
+                                                              (line 453)
+* sunspots:                              Exported special variables.
+                                                              (line 460)
+* swiss:                                 Exported special variables.
+                                                              (line 467)
+* theoph:                                Exported special variables.
+                                                              (line 474)
+* titanic:                               Exported special variables.
+                                                              (line 481)
+* toothgrowth:                           Exported special variables.
+                                                              (line 488)
+* toothgrowth <1>:                       Internal special variables.
+                                                              (line  51)
+* treering:                              Exported special variables.
+                                                              (line 495)
+* trees:                                 Exported special variables.
+                                                              (line 502)
+* ucbadmissions:                         Exported special variables.
+                                                              (line 509)
+* ukdriverdeaths:                        Exported special variables.
+                                                              (line 516)
+* ukgas:                                 Exported special variables.
+                                                              (line 523)
+* usaccdeaths:                           Exported special variables.
+                                                              (line 530)
+* usarrests:                             Exported special variables.
+                                                              (line 537)
+* usarrests <1>:                         Internal special variables.
+                                                              (line  57)
+* usjudgeratings:                        Exported special variables.
+                                                              (line 544)
+* uspersonalexpenditure:                 Exported special variables.
+                                                              (line 551)
+* uspop:                                 Exported special variables.
+                                                              (line 558)
+* vadeaths:                              Exported special variables.
+                                                              (line 565)
+* volcano:                               Exported special variables.
+                                                              (line 572)
+* warpbreaks:                            Exported special variables.
+                                                              (line 579)
+* women:                                 Exported special variables.
+                                                              (line 586)
+* worldphones:                           Exported special variables.
+                                                              (line 593)
+* wwwusage:                              Exported special variables.
+                                                              (line 600)
 
 
 File: lisp-stat.info,  Node: Data type index,  Prev: Variable index,  Up: Indexes
@@ -630,6 +2133,8 @@ A.4 Data types
 * ls-user:                               The ls-user package.   (line 6)
 * Package, lisp-stat:                    The lisp-stat package. (line 6)
 * Package, ls-user:                      The ls-user package.   (line 6)
+* Package, rdata:                        The rdata package.     (line 6)
+* rdata:                                 The rdata package.     (line 6)
 * System, lisp-stat:                     The lisp-stat system.  (line 6)
 
 
@@ -639,57 +2144,160 @@ Node: Top217
 Node: Systems672
 Node: The lisp-stat system876
 Ref: go to the lisp-stat system988
-Node: Modules1850
-Node: The lisp-stat/base module2086
-Ref: go to the lisp-stat/base module2247
-Node: The lisp-stat/docs module2549
-Ref: go to the lisp-stat/docs module2694
-Node: Files2888
-Node: Lisp files3117
-Node: The lisp-stat․asd file3684
-Ref: go to the lisp-stat․asd file3860
-Node: The lisp-stat/pkgdcls․lisp file3960
-Ref: go to the lisp-stat/pkgdcls․lisp file4177
-Node: The lisp-stat/ls-init․lisp file4398
-Ref: go to the lisp-stat/ls-init․lisp file4631
-Node: The lisp-stat/base/utilities․lisp file5120
-Ref: go to the lisp-stat/base/utilities․lisp file5374
-Node: The lisp-stat/base/variables․lisp file5479
-Ref: go to the lisp-stat/base/variables․lisp file5742
-Node: The lisp-stat/docs/doc-strings․lisp file6676
-Ref: go to the lisp-stat/docs/doc-strings․lisp file6894
-Node: Static files7001
-Node: The lisp-stat/license file7141
-Ref: go to the lisp-stat/license file7289
-Node: Packages7382
-Node: The lisp-stat package7592
-Ref: go to the LISP-STAT package7735
-Node: The ls-user package9339
-Ref: go to the LS-USER package9461
-Node: Definitions9664
-Node: Exported definitions9934
-Node: Exported special variables10189
-Ref: go to the LISP-STAT∶∶*LS-VERSION* special variable10412
-Node: Exported macros10586
-Ref: go to the LISP-STAT∶∶DEF macro10800
-Node: Exported functions11315
-Ref: go to the LISP-STAT∶∶SAVEVAR function11499
-Ref: go to the LISP-STAT∶∶UNDEF function12171
-Ref: go to the LISP-STAT∶∶VARIABLES function12601
-Node: Internal definitions12857
-Node: Internal special variables13103
-Ref: go to the LISP-STAT∶∶*ASK-ON-REDEFINE* special variable13334
-Ref: go to the LISP-STAT∶∶*RELEASE-NAME* special variable13553
-Ref: go to the LISP-STAT∶∶*VARIABLES* special variable13760
-Node: Internal functions13943
-Ref: go to the LISP-STAT∶∶SETUP-LS-TRANSLATIONS function14163
-Node: Internal generic functions14337
-Ref: go to the LISP-STAT∶∶SAVE generic function14531
-Node: Indexes14734
-Node: Concept index14929
-Node: Function index18816
-Node: Variable index19987
-Node: Data type index21282
+Node: Modules1936
+Node: The lisp-stat/base module2208
+Ref: go to the lisp-stat/base module2375
+Node: The lisp-stat/statistics module2669
+Ref: go to the lisp-stat/statistics module2866
+Node: The lisp-stat/docs module3060
+Ref: go to the lisp-stat/docs module3211
+Node: Files3405
+Node: Lisp files3634
+Node: The lisp-stat․asd file4281
+Ref: go to the lisp-stat․asd file4457
+Node: The lisp-stat/pkgdcls․lisp file4557
+Ref: go to the lisp-stat/pkgdcls․lisp file4781
+Node: The lisp-stat/base/variables․lisp file4941
+Ref: go to the lisp-stat/base/variables․lisp file5191
+Node: The lisp-stat/base/rdata․lisp file6075
+Ref: go to the lisp-stat/base/rdata․lisp file6326
+Node: The lisp-stat/statistics/stats․lisp file16451
+Ref: go to the lisp-stat/statistics/stats․lisp file16716
+Node: The lisp-stat/docs/doc-strings․lisp file17064
+Ref: go to the lisp-stat/docs/doc-strings․lisp file17326
+Node: The lisp-stat/ls-init․lisp file17433
+Ref: go to the lisp-stat/ls-init․lisp file17626
+Node: Static files17912
+Node: The lisp-stat/license file18052
+Ref: go to the lisp-stat/license file18200
+Node: Packages18293
+Node: The lisp-stat package18525
+Ref: go to the LISP-STAT package18666
+Node: The rdata package20300
+Ref: go to the RDATA package20444
+Node: The ls-user package30426
+Ref: go to the LS-USER package30544
+Node: Definitions31341
+Node: Exported definitions31611
+Node: Exported special variables31866
+Ref: go to the RDATA∶∶*R-DEFAULT-DATASETS* special variable32097
+Ref: go to the RDATA∶∶ABILITY․COV special variable32341
+Ref: go to the RDATA∶∶AIRMILES special variable32574
+Ref: go to the RDATA∶∶AIRPASSENGERS special variable32834
+Ref: go to the RDATA∶∶AIRQUALITY special variable33082
+Ref: go to the RDATA∶∶ANSCOMBE special variable33318
+Ref: go to the RDATA∶∶ATTENU special variable33584
+Ref: go to the RDATA∶∶ATTITUDE special variable33820
+Ref: go to the RDATA∶∶AUSTRES special variable34056
+Ref: go to the RDATA∶∶BASE-URL special variable34318
+Ref: go to the RDATA∶∶BJSALES special variable34555
+Ref: go to the RDATA∶∶BOD special variable34786
+Ref: go to the RDATA∶∶CARS special variable35010
+Ref: go to the RDATA∶∶CHICKWEIGHT special variable35252
+Ref: go to the RDATA∶∶CHICKWTS special variable35501
+Ref: go to the RDATA∶∶CO2-1 special variable35729
+Ref: go to the RDATA∶∶CO2-2 special variable35966
+Ref: go to the RDATA∶∶CRIMTAB special variable36207
+Ref: go to the RDATA∶∶DISCOVERIES special variable36444
+Ref: go to the RDATA∶∶DNASE special variable36683
+Ref: go to the RDATA∶∶ESOPH special variable36903
+Ref: go to the RDATA∶∶EURO special variable37143
+Ref: go to the RDATA∶∶EUSTOCKMARKETS special variable37387
+Ref: go to the RDATA∶∶FAITHFUL special variable37653
+Ref: go to the RDATA∶∶FORMALDEHYDE special variable37884
+Ref: go to the RDATA∶∶FREENY special variable38114
+Ref: go to the RDATA∶∶HAIREYECOLOR special variable38344
+Ref: go to the RDATA∶∶HARMAN23․COR special variable38592
+Ref: go to the RDATA∶∶HARMAN74․COR special variable38817
+Ref: go to the RDATA∶∶INDEX special variable39035
+Ref: go to the RDATA∶∶INDOMETH special variable39232
+Ref: go to the RDATA∶∶INFERT special variable39465
+Ref: go to the RDATA∶∶INSECTSPRAYS special variable39722
+Ref: go to the RDATA∶∶IRIS special variable39951
+Ref: go to the RDATA∶∶IRIS3 special variable40179
+Ref: go to the RDATA∶∶ISLANDS special variable40409
+Ref: go to the RDATA∶∶JOHNSONJOHNSON special variable40657
+Ref: go to the RDATA∶∶LAKEHURON special variable40907
+Ref: go to the RDATA∶∶LH special variable41133
+Ref: go to the RDATA∶∶LIFECYCLESAVINGS special variable41380
+Ref: go to the RDATA∶∶LOBLOLLY special variable41619
+Ref: go to the RDATA∶∶LONGLEY special variable41850
+Ref: go to the RDATA∶∶LYNX special variable42085
+Ref: go to the RDATA∶∶MORLEY special variable42326
+Ref: go to the RDATA∶∶MTCARS special variable42556
+Ref: go to the RDATA∶∶NHTEMP special variable42783
+Ref: go to the RDATA∶∶NILE special variable43022
+Ref: go to the RDATA∶∶NOTTEM special variable43245
+Ref: go to the RDATA∶∶NPK special variable43496
+Ref: go to the RDATA∶∶OCCUPATIONALSTATUS special variable43747
+Ref: go to the RDATA∶∶ORANGE special variable43993
+Ref: go to the RDATA∶∶ORCHARDSPRAYS special variable44223
+Ref: go to the RDATA∶∶PLANTGROWTH special variable44454
+Ref: go to the RDATA∶∶PRECIP special variable44697
+Ref: go to the RDATA∶∶PRESIDENTS special variable44935
+Ref: go to the RDATA∶∶PRESSURE special variable45181
+Ref: go to the RDATA∶∶PUROMYCIN special variable45439
+Ref: go to the RDATA∶∶QUAKES special variable45682
+Ref: go to the RDATA∶∶RANDU special variable45915
+Ref: go to the RDATA∶∶RIVERS special variable46164
+Ref: go to the RDATA∶∶ROCK special variable46401
+Ref: go to the RDATA∶∶SEATBELTS special variable46643
+Ref: go to the RDATA∶∶STACKLOSS special variable46887
+Ref: go to the RDATA∶∶SUNSPOT․MONTH special variable47129
+Ref: go to the RDATA∶∶SUNSPOT․YEAR special variable47378
+Ref: go to the RDATA∶∶SUNSPOTS special variable47611
+Ref: go to the RDATA∶∶SWISS special variable47845
+Ref: go to the RDATA∶∶THEOPH special variable48102
+Ref: go to the RDATA∶∶TITANIC special variable48336
+Ref: go to the RDATA∶∶TOOTHGROWTH special variable48579
+Ref: go to the RDATA∶∶TREERING special variable48836
+Ref: go to the RDATA∶∶TREES special variable49068
+Ref: go to the RDATA∶∶UCBADMISSIONS special variable49326
+Ref: go to the RDATA∶∶UKDRIVERDEATHS special variable49568
+Ref: go to the RDATA∶∶UKGAS special variable49808
+Ref: go to the RDATA∶∶USACCDEATHS special variable50042
+Ref: go to the RDATA∶∶USARRESTS special variable50283
+Ref: go to the RDATA∶∶USJUDGERATINGS special variable50523
+Ref: go to the RDATA∶∶USPERSONALEXPENDITURE special variable50798
+Ref: go to the RDATA∶∶USPOP special variable51023
+Ref: go to the RDATA∶∶VADEATHS special variable51263
+Ref: go to the RDATA∶∶VOLCANO special variable51495
+Ref: go to the RDATA∶∶WARPBREAKS special variable51759
+Ref: go to the RDATA∶∶WOMEN special variable52002
+Ref: go to the RDATA∶∶WORLDPHONES special variable52254
+Ref: go to the RDATA∶∶WWWUSAGE special variable52481
+Node: Exported macros52679
+Ref: go to the LISP-STAT∶∶DEF macro52893
+Node: Exported functions53424
+Ref: go to the LISP-STAT∶∶FIVENUM function53583
+Ref: go to the RDATA∶∶GET-R-DATA function54189
+Ref: go to the LISP-STAT∶∶INTERQUARTILE-RANGE function54391
+Ref: go to the RDATA∶∶LOAD-R-DEFAULT-DATASETS function54671
+Ref: go to the RDATA∶∶LOAD-R-METADATA function54913
+Ref: go to the RDATA∶∶SAVE-R-DEFAULT-DATASETS function55260
+Ref: go to the LISP-STAT∶∶SAVEVAR function55518
+Ref: go to the LISP-STAT∶∶VARIABLES function56138
+Node: Internal definitions56381
+Node: Internal special variables56627
+Ref: go to the LISP-STAT∶∶*ASK-ON-REDEFINE* special variable56858
+Ref: go to the LS-USER∶∶*DEFAULT-DATASETS* special variable57081
+Ref: go to the RDATA∶∶*R-DEFAULT-DATAFRAMES* special variable57344
+Ref: go to the LISP-STAT∶∶*VARIABLES* special variable57601
+Ref: go to the LS-USER∶∶IRIS special variable57810
+Ref: go to the LS-USER∶∶PLANTGROWTH special variable57995
+Ref: go to the RDATA∶∶STUDENT-SLEEP special variable58196
+Ref: go to the LS-USER∶∶TOOTHGROWTH special variable58424
+Ref: go to the LS-USER∶∶USARRESTS special variable58633
+Node: Internal functions58788
+Ref: go to the LISP-STAT∶∶SETUP-LS-TRANSLATIONS function59008
+Node: Internal generic functions59182
+Ref: go to the LISP-STAT∶∶SAVE-OBJ generic function59380
+Ref: go to the LISP-STAT∶∶SAVE-VARIABLE generic function59625
+Node: Indexes59828
+Node: Concept index60023
+Node: Function index64670
+Node: Variable index66855
+Node: Data type index94000
 
 End Tag Table
 
