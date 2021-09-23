@@ -24,7 +24,7 @@
 		 :split-sequence)
   (:export #:variables
            #:def
-           #:undef
+	   #:undef-var
            #:savevar
 	   #:fivenum
 	   #:interquartile-range
