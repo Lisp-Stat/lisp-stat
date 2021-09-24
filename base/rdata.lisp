@@ -25,6 +25,7 @@
 	   #:LakeHuron #:lh #:LifeCycleSavings #:Loblolly #:longley #:lynx
 	   #:morley #:mtcars
 	   #:nhtemp #:Nile #:nottem #:npk
+	   #:nycflights13-airlines #:nycflights13-airports #:nycflights13-flights #:nycflights13-planes #:nycflights13-weather
 	   #:occupationalStatus #:Orange #:OrchardSprays
 	   #:PlantGrowth #:precip #:presidents #:pressure #:Puromycin
 	   #:quakes
@@ -46,6 +47,20 @@
 
 (defvar *r-default-datasets* '(airpassengers ability.cov airmiles airquality anscombe attenu attitude austres BJsales BOD cars ChickWeight chickwts CO2-1 co2-2 crimtab discoveries DNase esoph euro EuStockMarkets faithful Formaldehyde freeny HairEyeColor Harman23.cor Harman74.cor Indometh infert InsectSprays iris iris3 islands JohnsonJohnson LakeHuron lh LifeCycleSavings Loblolly longley lynx morley mtcars nhtemp Nile nottem npk occupationalStatus Orange OrchardSprays PlantGrowth precip presidents pressure Puromycin quakes randu rivers rock Seatbelts student-sleep stackloss sunspot.month sunspot.year sunspots swiss Theoph Titanic ToothGrowth treering trees UCBAdmissions UKDriverDeaths UKgas USAccDeaths USArrests USJudgeRatings USPersonalExpenditure uspop VADeaths volcano warpbreaks women WorldPhones WWWusage)
   "All data sets included by default in R")
+
+
+;;; Data for tutorials, documentation, examples not in the default datasets
+
+(defvar nycflights13-airlines "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/airlines.csv"
+  "Airline name lookup table by carrier code")
+(defvar nycflights13-airports "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/airports.csv"
+  "Airport metadata")
+(defvar nycflights13-flights "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/flights.csv"
+  "On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013")
+(defvar nycflights13-planes "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/planes.csv"
+  "Metadata for all airplane tail numbers found in the FAA aircraft registry")
+(defvar nycflights13-weather "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/weather.csv"
+  "Hourly meterological data for LGA, JFK and EWR in 2013")
 
 
 
@@ -246,12 +261,11 @@
   "Load the data sets included in base R"
   (map nil #'(lambda (x)
 	       (format t "Processing ~A" (make-symbol (symbol-name x)))
-	       (pushnew (eval `(df:define-data-frame ,(intern (symbol-name x))
+	       (pushnew (eval `(df:defdf ,(intern (symbol-name x))
 				   (dfio:read-csv (dex:get ,(symbol-value x) :want-stream t))
 				 ,(documentation x 'variable)))
 			*r-default-dataframes*))
        rdata:*r-default-datasets*))
-
 
 (defun save-r-default-datasets ()
   "Save the data sets included in base R"
@@ -271,6 +285,6 @@
   "Loads the master R data set index as a data frame
 
 This allows you to slice & dice the 1500+ data sets to find what you need"
-  (eval '(df:define-data-frame all-r-datasets
+  (eval '(df:defdf all-r-datasets
 	  (dfio:read-csv (dex:get index :want-stream t))
 	  "Master index for all vincentarelbundock R data sets")))

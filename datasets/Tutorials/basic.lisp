@@ -11,7 +11,7 @@
 ;; Section 3.2
 (defvar precipitation #(.77 1.74 .81 1.20 1.95 1.20 .47 1.43 3.37 2.20 3.0 3.09 1.51 2.10 .52 1.62 1.31 .32 .59 .81 2.81 1.87 1.18 1.35 4.75 2.48 .96 1.89 .90 2.05))
 
-(define-data-frame mpg (read-csv (dex:get mpg-data :want-stream t))
+(defdf mpg (read-csv mpg-data)
   "Fuel economy data from 1999 to 2008 for 38 popular models of cars")
 
 (defvar urban #(184 196 217 284 184 236 189 206 179 170 205 190 204 330 217 242 222 242 249 241))
