@@ -128,14 +128,17 @@ ul.no-bullet {list-style: none}
     <li><a id="toc-Exported-definitions-1" href="#Exported-definitions">5.1 Exported definitions</a>
     <ul class="no-bullet">
       <li><a id="toc-Special-variables" href="#Exported-special-variables">5.1.1 Special variables</a></li>
-      <li><a id="toc-Macros" href="#Exported-macros">5.1.2 Macros</a></li>
-      <li><a id="toc-Functions" href="#Exported-functions">5.1.3 Functions</a></li>
+      <li><a id="toc-Symbol-macros" href="#Exported-symbol-macros">5.1.2 Symbol macros</a></li>
+      <li><a id="toc-Macros" href="#Exported-macros">5.1.3 Macros</a></li>
+      <li><a id="toc-Functions" href="#Exported-functions">5.1.4 Functions</a></li>
     </ul></li>
     <li><a id="toc-Internal-definitions-1" href="#Internal-definitions">5.2 Internal definitions</a>
     <ul class="no-bullet">
-      <li><a id="toc-Special-variables-1" href="#Internal-special-variables">5.2.1 Special variables</a></li>
-      <li><a id="toc-Functions-1" href="#Internal-functions">5.2.2 Functions</a></li>
-      <li><a id="toc-Generic-functions" href="#Internal-generic-functions">5.2.3 Generic functions</a></li>
+      <li><a id="toc-Constants" href="#Internal-constants">5.2.1 Constants</a></li>
+      <li><a id="toc-Special-variables-1" href="#Internal-special-variables">5.2.2 Special variables</a></li>
+      <li><a id="toc-Symbol-macros-1" href="#Internal-symbol-macros">5.2.3 Symbol macros</a></li>
+      <li><a id="toc-Functions-1" href="#Internal-functions">5.2.4 Functions</a></li>
+      <li><a id="toc-Generic-functions" href="#Internal-generic-functions">5.2.5 Generic functions</a></li>
     </ul></li>
   </ul></li>
   <li><a id="toc-Indexes-1" href="#Indexes">Appendix A Indexes</a>
@@ -426,6 +429,7 @@ Next: <a href="#The-lisp_002dstat_002fbase_002frdata_2024lisp-file" accesskey="n
 <dd><ul>
 <li> <a href="#go-to-the-LISP_002dSTAT_2236_2236DEF-macro"><tt>def</tt></a> (macro)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVEVAR-function"><tt>savevar</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236UNDEF_002dVAR-function"><tt>undef-var</tt></a> (function)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"><tt>variables</tt></a> (function)
 </li></ul>
 </dd>
@@ -434,7 +438,6 @@ Next: <a href="#The-lisp_002dstat_002fbase_002frdata_2024lisp-file" accesskey="n
 <li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"><tt>*ask-on-redefine*</tt></a> (special variable)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aVARIABLES_002a-special-variable"><tt>*variables*</tt></a> (special variable)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE_002dOBJ-generic-function"><tt>save-obj</tt></a> (generic function)
-</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE_002dVARIABLE-generic-function"><tt>save-variable</tt></a> (generic function)
 </li></ul>
 </dd>
 </dl>
@@ -489,7 +492,6 @@ Next: <a href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file" access
 </li><li> <a href="#go-to-the-RDATA_2236_2236FAITHFUL-special-variable"><tt>faithful</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236FORMALDEHYDE-special-variable"><tt>formaldehyde</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236FREENY-special-variable"><tt>freeny</tt></a> (special variable)
-</li><li> <a href="#go-to-the-RDATA_2236_2236GET_002dR_002dDATA-function"><tt>get-r-data</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HAIREYECOLOR-special-variable"><tt>haireyecolor</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HARMAN23_2024COR-special-variable"><tt>harman23.cor</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HARMAN74_2024COR-special-variable"><tt>harman74.cor</tt></a> (special variable)
@@ -510,11 +512,17 @@ Next: <a href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file" access
 </li><li> <a href="#go-to-the-RDATA_2236_2236LONGLEY-special-variable"><tt>longley</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236LYNX-special-variable"><tt>lynx</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236MORLEY-special-variable"><tt>morley</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236MPG-special-variable"><tt>mpg</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236MTCARS-special-variable"><tt>mtcars</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NHTEMP-special-variable"><tt>nhtemp</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NILE-special-variable"><tt>nile</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NOTTEM-special-variable"><tt>nottem</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NPK-special-variable"><tt>npk</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRLINES-special-variable"><tt>nycflights13-airlines</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRPORTS-special-variable"><tt>nycflights13-airports</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dFLIGHTS-special-variable"><tt>nycflights13-flights</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dPLANES-special-variable"><tt>nycflights13-planes</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dWEATHER-special-variable"><tt>nycflights13-weather</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236OCCUPATIONALSTATUS-special-variable"><tt>occupationalstatus</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ORANGE-special-variable"><tt>orange</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ORCHARDSPRAYS-special-variable"><tt>orchardsprays</tt></a> (special variable)
@@ -527,6 +535,7 @@ Next: <a href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file" access
 </li><li> <a href="#go-to-the-RDATA_2236_2236RANDU-special-variable"><tt>randu</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236RIVERS-special-variable"><tt>rivers</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ROCK-special-variable"><tt>rock</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236SAVE_002dR_002dDATA-function"><tt>save-r-data</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236SAVE_002dR_002dDEFAULT_002dDATASETS-function"><tt>save-r-default-datasets</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236SEATBELTS-special-variable"><tt>seatbelts</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236STACKLOSS-special-variable"><tt>stackloss</tt></a> (special variable)
@@ -699,6 +708,7 @@ Next: <a href="#The-rdata-package" accesskey="n" rel="next">The rdata package</a
 <dd><ul>
 <li> <tt>split-sequence</tt>
 </li><li> <tt>select</tt>
+</li><li> <tt>num-utils.print-matrix</tt>
 </li><li> <tt>num-utils.utilities</tt>
 </li><li> <tt>num-utils.elementwise</tt>
 </li><li> <tt>num-utils.statistics</tt>
@@ -711,17 +721,15 @@ Next: <a href="#The-rdata-package" accesskey="n" rel="next">The rdata package</a
 </li></ul>
 </dd>
 <dt><strong>Used By List</strong></dt>
-<dd><ul>
-<li> <tt>ls-tests</tt>
-</li><li> <a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
-</li></ul>
-</dd>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
 <dt><strong>Exported Definitions</strong></dt>
 <dd><ul>
 <li> <a href="#go-to-the-LISP_002dSTAT_2236_2236DEF-macro"><tt>def</tt></a> (macro)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236FIVENUM-function"><tt>fivenum</tt></a> (function)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236INTERQUARTILE_002dRANGE-function"><tt>interquartile-range</tt></a> (function)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVEVAR-function"><tt>savevar</tt></a> (function)
+</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236UNDEF_002dVAR-function"><tt>undef-var</tt></a> (function)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"><tt>variables</tt></a> (function)
 </li></ul>
 </dd>
@@ -730,7 +738,6 @@ Next: <a href="#The-rdata-package" accesskey="n" rel="next">The rdata package</a
 <li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"><tt>*ask-on-redefine*</tt></a> (special variable)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236_002aVARIABLES_002a-special-variable"><tt>*variables*</tt></a> (special variable)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE_002dOBJ-generic-function"><tt>save-obj</tt></a> (generic function)
-</li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SAVE_002dVARIABLE-generic-function"><tt>save-variable</tt></a> (generic function)
 </li><li> <a href="#go-to-the-LISP_002dSTAT_2236_2236SETUP_002dLS_002dTRANSLATIONS-function"><tt>setup-ls-translations</tt></a> (function)
 </li></ul>
 </dd>
@@ -780,7 +787,6 @@ Next: <a href="#The-ls_002duser-package" accesskey="n" rel="next">The ls-user pa
 </li><li> <a href="#go-to-the-RDATA_2236_2236FAITHFUL-special-variable"><tt>faithful</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236FORMALDEHYDE-special-variable"><tt>formaldehyde</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236FREENY-special-variable"><tt>freeny</tt></a> (special variable)
-</li><li> <a href="#go-to-the-RDATA_2236_2236GET_002dR_002dDATA-function"><tt>get-r-data</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HAIREYECOLOR-special-variable"><tt>haireyecolor</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HARMAN23_2024COR-special-variable"><tt>harman23.cor</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236HARMAN74_2024COR-special-variable"><tt>harman74.cor</tt></a> (special variable)
@@ -801,11 +807,17 @@ Next: <a href="#The-ls_002duser-package" accesskey="n" rel="next">The ls-user pa
 </li><li> <a href="#go-to-the-RDATA_2236_2236LONGLEY-special-variable"><tt>longley</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236LYNX-special-variable"><tt>lynx</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236MORLEY-special-variable"><tt>morley</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236MPG-special-variable"><tt>mpg</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236MTCARS-special-variable"><tt>mtcars</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NHTEMP-special-variable"><tt>nhtemp</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NILE-special-variable"><tt>nile</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NOTTEM-special-variable"><tt>nottem</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236NPK-special-variable"><tt>npk</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRLINES-special-variable"><tt>nycflights13-airlines</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRPORTS-special-variable"><tt>nycflights13-airports</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dFLIGHTS-special-variable"><tt>nycflights13-flights</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dPLANES-special-variable"><tt>nycflights13-planes</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dWEATHER-special-variable"><tt>nycflights13-weather</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236OCCUPATIONALSTATUS-special-variable"><tt>occupationalstatus</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ORANGE-special-variable"><tt>orange</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ORCHARDSPRAYS-special-variable"><tt>orchardsprays</tt></a> (special variable)
@@ -818,6 +830,7 @@ Next: <a href="#The-ls_002duser-package" accesskey="n" rel="next">The ls-user pa
 </li><li> <a href="#go-to-the-RDATA_2236_2236RANDU-special-variable"><tt>randu</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236RIVERS-special-variable"><tt>rivers</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236ROCK-special-variable"><tt>rock</tt></a> (special variable)
+</li><li> <a href="#go-to-the-RDATA_2236_2236SAVE_002dR_002dDATA-function"><tt>save-r-data</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236SAVE_002dR_002dDEFAULT_002dDATASETS-function"><tt>save-r-default-datasets</tt></a> (function)
 </li><li> <a href="#go-to-the-RDATA_2236_2236SEATBELTS-special-variable"><tt>seatbelts</tt></a> (special variable)
 </li><li> <a href="#go-to-the-RDATA_2236_2236STACKLOSS-special-variable"><tt>stackloss</tt></a> (special variable)
@@ -874,13 +887,55 @@ Previous: <a href="#The-rdata-package" accesskey="p" rel="prev">The rdata packag
 </li><li> <tt>common-lisp</tt>
 </li></ul>
 </dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024GROUP-symbol-macro"><tt>plantgrowth$group</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024WEIGHT-symbol-macro"><tt>plantgrowth$weight</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024X6-symbol-macro"><tt>plantgrowth$x6</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024DOSE-symbol-macro"><tt>toothgrowth$dose</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024LEN-symbol-macro"><tt>toothgrowth$len</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024SUPP-symbol-macro"><tt>toothgrowth$supp</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024X5-symbol-macro"><tt>toothgrowth$x5</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024ASSAULT-symbol-macro"><tt>usarrests$assault</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024MURDER-symbol-macro"><tt>usarrests$murder</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024RAPE-symbol-macro"><tt>usarrests$rape</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024URBANPOP-symbol-macro"><tt>usarrests$urbanpop</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024X7-symbol-macro"><tt>usarrests$x7</tt></a> (symbol macro)
+</li></ul>
+</dd>
 <dt><strong>Internal Definitions</strong></dt>
 <dd><ul>
 <li> <a href="#go-to-the-LS_002dUSER_2236_2236_002aDEFAULT_002dDATASETS_002a-special-variable"><tt>*default-datasets*</tt></a> (special variable)
-</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236IRIS-special-variable"><tt>iris</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236_002bCOPYRIGHT_002dYEARS_002b-constant"><tt>+copyright-years+</tt></a> (constant)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS-special-variable"><tt>cars</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024ACCELERATION-symbol-macro"><tt>cars$acceleration</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024CYLINDERS-symbol-macro"><tt>cars$cylinders</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024DISPLACEMENT-symbol-macro"><tt>cars$displacement</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024HORSEPOWER-symbol-macro"><tt>cars$horsepower</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024MILES_002dPER_002dGALLON-symbol-macro"><tt>cars$miles-per-gallon</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024NAME-symbol-macro"><tt>cars$name</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024ORIGIN-symbol-macro"><tt>cars$origin</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024WEIGHT_002dIN_002dLBS-symbol-macro"><tt>cars$weight-in-lbs</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236CARS_0024YEAR-symbol-macro"><tt>cars$year</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS-special-variable"><tt>mtcars</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024AM-symbol-macro"><tt>mtcars$am</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024CARB-symbol-macro"><tt>mtcars$carb</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024CYL-symbol-macro"><tt>mtcars$cyl</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024DISP-symbol-macro"><tt>mtcars$disp</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024DRAT-symbol-macro"><tt>mtcars$drat</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024GEAR-symbol-macro"><tt>mtcars$gear</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024HP-symbol-macro"><tt>mtcars$hp</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024MPG-symbol-macro"><tt>mtcars$mpg</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024QSEC-symbol-macro"><tt>mtcars$qsec</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024VS-symbol-macro"><tt>mtcars$vs</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024WT-symbol-macro"><tt>mtcars$wt</tt></a> (symbol macro)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236MTCARS_0024X4-symbol-macro"><tt>mtcars$x4</tt></a> (symbol macro)
 </li><li> <a href="#go-to-the-LS_002dUSER_2236_2236PLANTGROWTH-special-variable"><tt>plantgrowth</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024X2-symbol-macro"><tt>plantgrowth$x2</tt></a> (symbol macro)
 </li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH-special-variable"><tt>toothgrowth</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024X1-symbol-macro"><tt>toothgrowth$x1</tt></a> (symbol macro)
 </li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS-special-variable"><tt>usarrests</tt></a> (special variable)
+</li><li> <a href="#go-to-the-LS_002dUSER_2236_2236USARRESTS_0024X3-symbol-macro"><tt>usarrests$x3</tt></a> (symbol macro)
 </li></ul>
 </dd>
 </dl>
@@ -913,16 +968,18 @@ Next: <a href="#Internal-definitions" accesskey="n" rel="next">Internal definiti
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Exported-special-variables" accesskey="1">Exported special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Exported-macros" accesskey="2">Exported macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-symbol-macros" accesskey="2">Exported symbol macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="3">Exported functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-macros" accesskey="3">Exported macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="4">Exported functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 <hr>
 <span id="Exported-special-variables"></span><div class="header">
 <p>
-Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Exported-symbol-macros" accesskey="n" rel="next">Exported symbol macros</a>, Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <span id="Special-variables"></span><h4 class="subsection">5.1.1 Special variables</h4>
 <dl>
@@ -1497,6 +1554,19 @@ Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, P
 </dl>
 </dd></dl>
 <dl>
+<dt id="index-mpg">Special Variable: <strong>mpg</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236MPG-special-variable"></span><span id="index-Special-Variable_002c-mpg"></span>
+<p>Fuel economy data from 1999 to 2008 for 38 popular models of cars
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
 <dt id="index-mtcars">Special Variable: <strong>mtcars</strong></dt>
 <dd><span id="go-to-the-RDATA_2236_2236MTCARS-special-variable"></span><span id="index-Special-Variable_002c-mtcars"></span>
 <p>Motor Trend Car Road Tests
@@ -1552,6 +1622,71 @@ Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, P
 <dt id="index-npk">Special Variable: <strong>npk</strong></dt>
 <dd><span id="go-to-the-RDATA_2236_2236NPK-special-variable"></span><span id="index-Special-Variable_002c-npk"></span>
 <p>Classical N, P, K Factorial Experiment
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-nycflights13_002dairlines">Special Variable: <strong>nycflights13-airlines</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRLINES-special-variable"></span><span id="index-Special-Variable_002c-nycflights13_002dairlines"></span>
+<p>Airline name lookup table by carrier code
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-nycflights13_002dairports">Special Variable: <strong>nycflights13-airports</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dAIRPORTS-special-variable"></span><span id="index-Special-Variable_002c-nycflights13_002dairports"></span>
+<p>Airport metadata
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-nycflights13_002dflights">Special Variable: <strong>nycflights13-flights</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dFLIGHTS-special-variable"></span><span id="index-Special-Variable_002c-nycflights13_002dflights"></span>
+<p>On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-nycflights13_002dplanes">Special Variable: <strong>nycflights13-planes</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dPLANES-special-variable"></span><span id="index-Special-Variable_002c-nycflights13_002dplanes"></span>
+<p>Metadata for all airplane tail numbers found in the FAA aircraft registry
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-nycflights13_002dweather">Special Variable: <strong>nycflights13-weather</strong></dt>
+<dd><span id="go-to-the-RDATA_2236_2236NYCFLIGHTS13_002dWEATHER-special-variable"></span><span id="index-Special-Variable_002c-nycflights13_002dweather"></span>
+<p>Hourly meterological data for LGA, JFK and EWR in 2013
 </p><dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
@@ -2044,11 +2179,198 @@ Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, P
 </dd></dl>
 
 <hr>
+<span id="Exported-symbol-macros"></span><div class="header">
+<p>
+Next: <a href="#Exported-macros" accesskey="n" rel="next">Exported macros</a>, Previous: <a href="#Exported-special-variables" accesskey="p" rel="prev">Exported special variables</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Symbol-macros"></span><h4 class="subsection">5.1.2 Symbol macros</h4>
+<dl>
+<dt id="index-plantgrowth_0024group">Symbol Macro: <strong>plantgrowth$group</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024GROUP-symbol-macro"></span><span id="index-Symbol-Macro_002c-plantgrowth_0024group"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::plantgrowth) 2)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-plantgrowth_0024weight">Symbol Macro: <strong>plantgrowth$weight</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024WEIGHT-symbol-macro"></span><span id="index-Symbol-Macro_002c-plantgrowth_0024weight"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::plantgrowth) 1)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-plantgrowth_0024x6">Symbol Macro: <strong>plantgrowth$x6</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024X6-symbol-macro"></span><span id="index-Symbol-Macro_002c-plantgrowth_0024x6"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::plantgrowth) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-toothgrowth_0024dose">Symbol Macro: <strong>toothgrowth$dose</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024DOSE-symbol-macro"></span><span id="index-Symbol-Macro_002c-toothgrowth_0024dose"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::toothgrowth) 3)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-toothgrowth_0024len">Symbol Macro: <strong>toothgrowth$len</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024LEN-symbol-macro"></span><span id="index-Symbol-Macro_002c-toothgrowth_0024len"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::toothgrowth) 1)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-toothgrowth_0024supp">Symbol Macro: <strong>toothgrowth$supp</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024SUPP-symbol-macro"></span><span id="index-Symbol-Macro_002c-toothgrowth_0024supp"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::toothgrowth) 2)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-toothgrowth_0024x5">Symbol Macro: <strong>toothgrowth$x5</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024X5-symbol-macro"></span><span id="index-Symbol-Macro_002c-toothgrowth_0024x5"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::toothgrowth) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024assault">Symbol Macro: <strong>usarrests$assault</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024ASSAULT-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024assault"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 2)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024murder">Symbol Macro: <strong>usarrests$murder</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024MURDER-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024murder"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 1)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024rape">Symbol Macro: <strong>usarrests$rape</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024RAPE-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024rape"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 4)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024urbanpop">Symbol Macro: <strong>usarrests$urbanpop</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024URBANPOP-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024urbanpop"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 3)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024x7">Symbol Macro: <strong>usarrests$x7</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024X7-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024x7"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
 <span id="Exported-macros"></span><div class="header">
 <p>
-Next: <a href="#Exported-functions" accesskey="n" rel="next">Exported functions</a>, Previous: <a href="#Exported-special-variables" accesskey="p" rel="prev">Exported special variables</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Exported-functions" accesskey="n" rel="next">Exported functions</a>, Previous: <a href="#Exported-symbol-macros" accesskey="p" rel="prev">Exported symbol macros</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Macros"></span><h4 class="subsection">5.1.2 Macros</h4>
+<span id="Macros"></span><h4 class="subsection">5.1.3 Macros</h4>
 <dl>
 <dt id="index-def">Macro: <strong>def</strong> <em>NAME VALUE &amp;optional DOCUMENTATION</em></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236DEF-macro"></span><span id="index-Macro_002c-def"></span>
@@ -2069,7 +2391,7 @@ VALUE is not evaluated and must be a symbol.  Assigns the value of FORM to VALUE
 <p>
 Previous: <a href="#Exported-macros" accesskey="p" rel="prev">Exported macros</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Functions"></span><h4 class="subsection">5.1.3 Functions</h4>
+<span id="Functions"></span><h4 class="subsection">5.1.4 Functions</h4>
 <dl>
 <dt id="index-fivenum">Function: <strong>fivenum</strong> <em>X</em></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236FIVENUM-function"></span><span id="index-Function_002c-fivenum"></span>
@@ -2084,18 +2406,6 @@ See:<br>
 </p></dd>
 <dt><strong>Source</strong></dt>
 <dd><p><a href="#go-to-the-lisp_002dstat_002fstatistics_002fstats_2024lisp-file"><tt>stats.lisp</tt></a> (file)
-</p></dd>
-</dl>
-</dd></dl>
-<dl>
-<dt id="index-get_002dr_002ddata">Function: <strong>get-r-data</strong> <em>()</em></dt>
-<dd><span id="go-to-the-RDATA_2236_2236GET_002dR_002dDATA-function"></span><span id="index-Function_002c-get_002dr_002ddata"></span>
-<dl compact="compact">
-<dt><strong>Package</strong></dt>
-<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
-</p></dd>
-<dt><strong>Source</strong></dt>
-<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
 </p></dd>
 </dl>
 </dd></dl>
@@ -2128,10 +2438,20 @@ See:<br>
 <dl>
 <dt id="index-load_002dr_002dmetadata">Function: <strong>load-r-metadata</strong> <em>()</em></dt>
 <dd><span id="go-to-the-RDATA_2236_2236LOAD_002dR_002dMETADATA-function"></span><span id="index-Function_002c-load_002dr_002dmetadata"></span>
-<p>Loads the master R data set index as a data frame<br>
-</p>
-<p>This allows you to slice &amp; dice the 1500+ data sets to find what you need
+<p>Loads the master R data set index as a data frame. Use this to query the R data sets.
 </p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002frdata_2024lisp-file"><tt>rdata.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-save_002dr_002ddata">Function: <strong>save-r-data</strong> <em>()</em></dt>
+<dd><span id="go-to-the-RDATA_2236_2236SAVE_002dR_002dDATA-function"></span><span id="index-Function_002c-save_002dr_002ddata"></span>
+<dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-RDATA-package"><tt>rdata</tt></a>
 </p></dd>
@@ -2168,6 +2488,21 @@ Example (savevar &rsquo;urban &quot;urban&quot;)
 </dl>
 </dd></dl>
 <dl>
+<dt id="index-undef_002dvar">Function: <strong>undef-var</strong> <em>V</em></dt>
+<dd><span id="go-to-the-LISP_002dSTAT_2236_2236UNDEF_002dVAR-function"></span><span id="index-Function_002c-undef_002dvar"></span>
+<p>Remove V from the system<br>
+If V is the symbol of a defined variable the variable it is unbound and removed from the list of defined variables. If V is a list of variable names each is unbound and removed. Returns V.
+Example: (undef &rsquo;urban)
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
 <dt id="index-variables">Function: <strong>variables</strong> <em>()</em></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236VARIABLES-function"></span><span id="index-Function_002c-variables"></span>
 <p>Returns a list of the names of all def&rsquo;ed variables.
@@ -2189,20 +2524,40 @@ Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported defi
 </div>
 <span id="Internal-definitions-1"></span><h3 class="section">5.2 Internal definitions</h3>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Internal-special-variables" accesskey="1">Internal special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-constants" accesskey="1">Internal constants</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Internal-functions" accesskey="2">Internal functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-special-variables" accesskey="2">Internal special variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top">&bull; <a href="#Internal-generic-functions" accesskey="3">Internal generic functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-symbol-macros" accesskey="3">Internal symbol macros</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-functions" accesskey="4">Internal functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-generic-functions" accesskey="5">Internal generic functions</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 <hr>
+<span id="Internal-constants"></span><div class="header">
+<p>
+Next: <a href="#Internal-special-variables" accesskey="n" rel="next">Internal special variables</a>, Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Constants"></span><h4 class="subsection">5.2.1 Constants</h4>
+<dl>
+<dt id="index-_002bcopyright_002dyears_002b">Constant: <strong>+copyright-years+</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236_002bCOPYRIGHT_002dYEARS_002b-constant"></span><span id="index-Constant_002c-_002bcopyright_002dyears_002b"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
 <span id="Internal-special-variables"></span><div class="header">
 <p>
-Next: <a href="#Internal-functions" accesskey="n" rel="next">Internal functions</a>, Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Internal-symbol-macros" accesskey="n" rel="next">Internal symbol macros</a>, Previous: <a href="#Internal-constants" accesskey="p" rel="prev">Internal constants</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Special-variables-1"></span><h4 class="subsection">5.2.1 Special variables</h4>
+<span id="Special-variables-1"></span><h4 class="subsection">5.2.2 Special variables</h4>
 <dl>
 <dt id="index-_002aask_002don_002dredefine_002a">Special Variable: <strong>*ask-on-redefine*</strong></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236_002aASK_002dON_002dREDEFINE_002a-special-variable"></span><span id="index-Special-Variable_002c-_002aask_002don_002dredefine_002a"></span>
@@ -2254,15 +2609,20 @@ Next: <a href="#Internal-functions" accesskey="n" rel="next">Internal functions<
 </dl>
 </dd></dl>
 <dl>
-<dt id="index-iris-1">Special Variable: <strong>iris</strong></dt>
-<dd><span id="go-to-the-LS_002dUSER_2236_2236IRIS-special-variable"></span><span id="index-Special-Variable_002c-iris-1"></span>
-<p>Edgar Anderson&rsquo;s Iris Data
-</p><dl compact="compact">
+<dt id="index-cars-1">Special Variable: <strong>cars</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS-special-variable"></span><span id="index-Special-Variable_002c-cars-1"></span>
+<dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
 </p></dd>
-<dt><strong>Source</strong></dt>
-<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars-1">Special Variable: <strong>mtcars</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS-special-variable"></span><span id="index-Special-Variable_002c-mtcars-1"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
 </p></dd>
 </dl>
 </dd></dl>
@@ -2320,11 +2680,315 @@ Next: <a href="#Internal-functions" accesskey="n" rel="next">Internal functions<
 </dd></dl>
 
 <hr>
+<span id="Internal-symbol-macros"></span><div class="header">
+<p>
+Next: <a href="#Internal-functions" accesskey="n" rel="next">Internal functions</a>, Previous: <a href="#Internal-special-variables" accesskey="p" rel="prev">Internal special variables</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<span id="Symbol-macros-1"></span><h4 class="subsection">5.2.3 Symbol macros</h4>
+<dl>
+<dt id="index-cars_0024acceleration">Symbol Macro: <strong>cars$acceleration</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024ACCELERATION-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024acceleration"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 2)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024cylinders">Symbol Macro: <strong>cars$cylinders</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024CYLINDERS-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024cylinders"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 6)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024displacement">Symbol Macro: <strong>cars$displacement</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024DISPLACEMENT-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024displacement"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 5)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024horsepower">Symbol Macro: <strong>cars$horsepower</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024HORSEPOWER-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024horsepower"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 4)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024miles_002dper_002dgallon">Symbol Macro: <strong>cars$miles-per-gallon</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024MILES_002dPER_002dGALLON-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024miles_002dper_002dgallon"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 7)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024name">Symbol Macro: <strong>cars$name</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024NAME-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024name"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 8)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024origin">Symbol Macro: <strong>cars$origin</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024ORIGIN-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024origin"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024weight_002din_002dlbs">Symbol Macro: <strong>cars$weight-in-lbs</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024WEIGHT_002dIN_002dLBS-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024weight_002din_002dlbs"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 3)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-cars_0024year">Symbol Macro: <strong>cars$year</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236CARS_0024YEAR-symbol-macro"></span><span id="index-Symbol-Macro_002c-cars_0024year"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::cars) 1)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024am">Symbol Macro: <strong>mtcars$am</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024AM-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024am"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 9)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024carb">Symbol Macro: <strong>mtcars$carb</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024CARB-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024carb"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 11)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024cyl">Symbol Macro: <strong>mtcars$cyl</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024CYL-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024cyl"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 2)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024disp">Symbol Macro: <strong>mtcars$disp</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024DISP-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024disp"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 3)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024drat">Symbol Macro: <strong>mtcars$drat</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024DRAT-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024drat"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 5)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024gear">Symbol Macro: <strong>mtcars$gear</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024GEAR-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024gear"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 10)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024hp">Symbol Macro: <strong>mtcars$hp</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024HP-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024hp"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 4)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024mpg">Symbol Macro: <strong>mtcars$mpg</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024MPG-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024mpg"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 1)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024qsec">Symbol Macro: <strong>mtcars$qsec</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024QSEC-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024qsec"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 7)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024vs">Symbol Macro: <strong>mtcars$vs</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024VS-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024vs"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 8)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024wt">Symbol Macro: <strong>mtcars$wt</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024WT-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024wt"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 6)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-mtcars_0024x4">Symbol Macro: <strong>mtcars$x4</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236MTCARS_0024X4-symbol-macro"></span><span id="index-Symbol-Macro_002c-mtcars_0024x4"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::mtcars) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-plantgrowth_0024x2">Symbol Macro: <strong>plantgrowth$x2</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236PLANTGROWTH_0024X2-symbol-macro"></span><span id="index-Symbol-Macro_002c-plantgrowth_0024x2"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::plantgrowth) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-toothgrowth_0024x1">Symbol Macro: <strong>toothgrowth$x1</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236TOOTHGROWTH_0024X1-symbol-macro"></span><span id="index-Symbol-Macro_002c-toothgrowth_0024x1"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::toothgrowth) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt id="index-usarrests_0024x3">Symbol Macro: <strong>usarrests$x3</strong></dt>
+<dd><span id="go-to-the-LS_002dUSER_2236_2236USARRESTS_0024X3-symbol-macro"></span><span id="index-Symbol-Macro_002c-usarrests_0024x3"></span>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-LS_002dUSER-package"><tt>ls-user</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="file://C:/Users/nunez/ls-init.lisp"><tt>/Users/nunez/ls-init.lisp</tt></a>
+</p></dd>
+<dt><strong>Expansion</strong></dt>
+<dd><p><tt>(aref (data-frame:columns ls-user::usarrests) 0)</tt>
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
 <span id="Internal-functions"></span><div class="header">
 <p>
-Next: <a href="#Internal-generic-functions" accesskey="n" rel="next">Internal generic functions</a>, Previous: <a href="#Internal-special-variables" accesskey="p" rel="prev">Internal special variables</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Internal-generic-functions" accesskey="n" rel="next">Internal generic functions</a>, Previous: <a href="#Internal-symbol-macros" accesskey="p" rel="prev">Internal symbol macros</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Functions-1"></span><h4 class="subsection">5.2.2 Functions</h4>
+<span id="Functions-1"></span><h4 class="subsection">5.2.4 Functions</h4>
 <dl>
 <dt id="index-setup_002dls_002dtranslations">Function: <strong>setup-ls-translations</strong> <em>()</em></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236SETUP_002dLS_002dTRANSLATIONS-function"></span><span id="index-Function_002c-setup_002dls_002dtranslations"></span>
@@ -2343,24 +3007,11 @@ Next: <a href="#Internal-generic-functions" accesskey="n" rel="next">Internal ge
 <p>
 Previous: <a href="#Internal-functions" accesskey="p" rel="prev">Internal functions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<span id="Generic-functions"></span><h4 class="subsection">5.2.3 Generic functions</h4>
+<span id="Generic-functions"></span><h4 class="subsection">5.2.5 Generic functions</h4>
 <dl>
 <dt id="index-save_002dobj">Generic Function: <strong>save-obj</strong> <em>DATA</em></dt>
 <dd><span id="go-to-the-LISP_002dSTAT_2236_2236SAVE_002dOBJ-generic-function"></span><span id="index-Generic-Function_002c-save_002dobj"></span>
 <p>Save data object
-</p><dl compact="compact">
-<dt><strong>Package</strong></dt>
-<dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
-</p></dd>
-<dt><strong>Source</strong></dt>
-<dd><p><a href="#go-to-the-lisp_002dstat_002fbase_002fvariables_2024lisp-file"><tt>variables.lisp</tt></a> (file)
-</p></dd>
-</dl>
-</dd></dl>
-<dl>
-<dt id="index-save_002dvariable">Generic Function: <strong>save-variable</strong> <em>DATA</em></dt>
-<dd><span id="go-to-the-LISP_002dSTAT_2236_2236SAVE_002dVARIABLE-generic-function"></span><span id="index-Generic-Function_002c-save_002dvariable"></span>
-<p>Save the data.
 </p><dl compact="compact">
 <dt><strong>Package</strong></dt>
 <dd><p><a href="#go-to-the-LISP_002dSTAT-package"><tt>lisp-stat</tt></a>
@@ -2480,6 +3131,8 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-S"><b>S</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-U"><b>U</b></a>
+ &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-V"><b>V</b></a>
  &nbsp; 
 </td></tr></table>
@@ -2492,19 +3145,18 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
 <tr><th id="Function-index_fn_letter-F">F</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-fivenum"><code>fivenum</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-fivenum"><code><span class="roman">Function, </span>fivenum</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-get_002dr_002ddata"><code><span class="roman">Function, </span>get-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-interquartile_002drange"><code><span class="roman">Function, </span>interquartile-range</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-load_002dr_002ddefault_002ddatasets"><code><span class="roman">Function, </span>load-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-load_002dr_002dmetadata"><code><span class="roman">Function, </span>load-r-metadata</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-save_002dr_002ddata"><code><span class="roman">Function, </span>save-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-save_002dr_002ddefault_002ddatasets"><code><span class="roman">Function, </span>save-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-savevar"><code><span class="roman">Function, </span>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-setup_002dls_002dtranslations"><code><span class="roman">Function, </span>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-undef_002dvar"><code><span class="roman">Function, </span>undef-var</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-variables"><code><span class="roman">Function, </span>variables</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-G">G</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-save_002dobj"><code><span class="roman">Generic Function, </span>save-obj</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-save_002dvariable"><code><span class="roman">Generic Function, </span>save-variable</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-get_002dr_002ddata"><code>get-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-I">I</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-interquartile_002drange"><code>interquartile-range</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
@@ -2518,10 +3170,13 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-S">S</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-save_002dobj"><code>save-obj</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-save_002dr_002ddata"><code>save-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-save_002dr_002ddefault_002ddatasets"><code>save-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-save_002dvariable"><code>save-variable</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-savevar"><code>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-setup_002dls_002dtranslations"><code>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Function-index_fn_letter-U">U</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-undef_002dvar"><code>undef-var</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-V">V</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-variables"><code>variables</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
@@ -2541,6 +3196,8 @@ Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Pre
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-S"><b>S</b></a>
  &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-U"><b>U</b></a>
+ &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-V"><b>V</b></a>
  &nbsp; 
 </td></tr></table>
@@ -2554,6 +3211,8 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 </div>
 <span id="Variables"></span><h3 class="appendixsec">A.3 Variables</h3>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_symbol-2"><b>+</b></a>
  &nbsp; 
 <br>
 <a class="summary-letter" href="#Variable-index_vr_letter-A"><b>A</b></a>
@@ -2609,6 +3268,9 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-_002ar_002ddefault_002ddatasets_002a"><code>*r-default-datasets*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_002avariables_002a"><code>*variables*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
+<tr><th id="Variable-index_vr_symbol-2">+</th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_002bcopyright_002dyears_002b"><code>+copyright-years+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-constants">Internal constants</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-A">A</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-ability_002ecov"><code>ability.cov</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-airmiles"><code>airmiles</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2626,10 +3288,21 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-C">C</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-cars"><code>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars-1"><code>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024acceleration"><code>cars$acceleration</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024cylinders"><code>cars$cylinders</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024displacement"><code>cars$displacement</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024horsepower"><code>cars$horsepower</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024miles_002dper_002dgallon"><code>cars$miles-per-gallon</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024name"><code>cars$name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024origin"><code>cars$origin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024weight_002din_002dlbs"><code>cars$weight-in-lbs</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-cars_0024year"><code>cars$year</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-chickweight"><code>chickweight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-chickwts"><code>chickwts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-co2_002d1"><code>co2-1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-co2_002d2"><code>co2-2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Constant_002c-_002bcopyright_002dyears_002b"><code><span class="roman">Constant, </span>+copyright-years+</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-constants">Internal constants</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-crimtab"><code>crimtab</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-D">D</th><td></td><td></td></tr>
@@ -2657,7 +3330,6 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-infert"><code>infert</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-insectsprays"><code>insectsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-iris"><code>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-iris-1"><code>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-iris3"><code>iris3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-islands"><code>islands</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
@@ -2674,13 +3346,32 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-M">M</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-morley"><code>morley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mpg"><code>mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-mtcars"><code>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars-1"><code>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024am"><code>mtcars$am</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024carb"><code>mtcars$carb</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024cyl"><code>mtcars$cyl</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024disp"><code>mtcars$disp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024drat"><code>mtcars$drat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024gear"><code>mtcars$gear</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024hp"><code>mtcars$hp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024mpg"><code>mtcars$mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024qsec"><code>mtcars$qsec</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024vs"><code>mtcars$vs</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024wt"><code>mtcars$wt</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars_0024x4"><code>mtcars$x4</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-N">N</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-nhtemp"><code>nhtemp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-nile"><code>nile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-nottem"><code>nottem</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-npk"><code>npk</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nycflights13_002dairlines"><code>nycflights13-airlines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nycflights13_002dairports"><code>nycflights13-airports</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nycflights13_002dflights"><code>nycflights13-flights</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nycflights13_002dplanes"><code>nycflights13-planes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-nycflights13_002dweather"><code>nycflights13-weather</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-O">O</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-occupationalstatus"><code>occupationalstatus</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2690,6 +3381,10 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><th id="Variable-index_vr_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plantgrowth"><code>plantgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plantgrowth-1"><code>plantgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-plantgrowth_0024group"><code>plantgrowth$group</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-plantgrowth_0024weight"><code>plantgrowth$weight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-plantgrowth_0024x2"><code>plantgrowth$x2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-plantgrowth_0024x6"><code>plantgrowth$x6</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-precip"><code>precip</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-presidents"><code>presidents</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-pressure"><code>pressure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2722,6 +3417,7 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-bjsales"><code><span class="roman">Special Variable, </span>bjsales</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-bod"><code><span class="roman">Special Variable, </span>bod</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-cars"><code><span class="roman">Special Variable, </span>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-cars-1"><code><span class="roman">Special Variable, </span>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-chickweight"><code><span class="roman">Special Variable, </span>chickweight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-chickwts"><code><span class="roman">Special Variable, </span>chickwts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-co2_002d1"><code><span class="roman">Special Variable, </span>co2-1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2743,7 +3439,6 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-infert"><code><span class="roman">Special Variable, </span>infert</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-insectsprays"><code><span class="roman">Special Variable, </span>insectsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris"><code><span class="roman">Special Variable, </span>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris-1"><code><span class="roman">Special Variable, </span>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris3"><code><span class="roman">Special Variable, </span>iris3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-islands"><code><span class="roman">Special Variable, </span>islands</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-johnsonjohnson"><code><span class="roman">Special Variable, </span>johnsonjohnson</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2754,11 +3449,18 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-longley"><code><span class="roman">Special Variable, </span>longley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-lynx"><code><span class="roman">Special Variable, </span>lynx</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-morley"><code><span class="roman">Special Variable, </span>morley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mpg"><code><span class="roman">Special Variable, </span>mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mtcars"><code><span class="roman">Special Variable, </span>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mtcars-1"><code><span class="roman">Special Variable, </span>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nhtemp"><code><span class="roman">Special Variable, </span>nhtemp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nile"><code><span class="roman">Special Variable, </span>nile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nottem"><code><span class="roman">Special Variable, </span>nottem</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-npk"><code><span class="roman">Special Variable, </span>npk</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dairlines"><code><span class="roman">Special Variable, </span>nycflights13-airlines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dairports"><code><span class="roman">Special Variable, </span>nycflights13-airports</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dflights"><code><span class="roman">Special Variable, </span>nycflights13-flights</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dplanes"><code><span class="roman">Special Variable, </span>nycflights13-planes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dweather"><code><span class="roman">Special Variable, </span>nycflights13-weather</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-occupationalstatus"><code><span class="roman">Special Variable, </span>occupationalstatus</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-orange"><code><span class="roman">Special Variable, </span>orange</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-orchardsprays"><code><span class="roman">Special Variable, </span>orchardsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2806,12 +3508,53 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-sunspot_002eyear"><code>sunspot.year</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-sunspots"><code>sunspots</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-swiss"><code>swiss</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024acceleration"><code><span class="roman">Symbol Macro, </span>cars$acceleration</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024cylinders"><code><span class="roman">Symbol Macro, </span>cars$cylinders</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024displacement"><code><span class="roman">Symbol Macro, </span>cars$displacement</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024horsepower"><code><span class="roman">Symbol Macro, </span>cars$horsepower</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024miles_002dper_002dgallon"><code><span class="roman">Symbol Macro, </span>cars$miles-per-gallon</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024name"><code><span class="roman">Symbol Macro, </span>cars$name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024origin"><code><span class="roman">Symbol Macro, </span>cars$origin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024weight_002din_002dlbs"><code><span class="roman">Symbol Macro, </span>cars$weight-in-lbs</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-cars_0024year"><code><span class="roman">Symbol Macro, </span>cars$year</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024am"><code><span class="roman">Symbol Macro, </span>mtcars$am</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024carb"><code><span class="roman">Symbol Macro, </span>mtcars$carb</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024cyl"><code><span class="roman">Symbol Macro, </span>mtcars$cyl</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024disp"><code><span class="roman">Symbol Macro, </span>mtcars$disp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024drat"><code><span class="roman">Symbol Macro, </span>mtcars$drat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024gear"><code><span class="roman">Symbol Macro, </span>mtcars$gear</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024hp"><code><span class="roman">Symbol Macro, </span>mtcars$hp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024mpg"><code><span class="roman">Symbol Macro, </span>mtcars$mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024qsec"><code><span class="roman">Symbol Macro, </span>mtcars$qsec</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024vs"><code><span class="roman">Symbol Macro, </span>mtcars$vs</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024wt"><code><span class="roman">Symbol Macro, </span>mtcars$wt</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-mtcars_0024x4"><code><span class="roman">Symbol Macro, </span>mtcars$x4</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-plantgrowth_0024group"><code><span class="roman">Symbol Macro, </span>plantgrowth$group</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-plantgrowth_0024weight"><code><span class="roman">Symbol Macro, </span>plantgrowth$weight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-plantgrowth_0024x2"><code><span class="roman">Symbol Macro, </span>plantgrowth$x2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-plantgrowth_0024x6"><code><span class="roman">Symbol Macro, </span>plantgrowth$x6</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-toothgrowth_0024dose"><code><span class="roman">Symbol Macro, </span>toothgrowth$dose</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-toothgrowth_0024len"><code><span class="roman">Symbol Macro, </span>toothgrowth$len</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-toothgrowth_0024supp"><code><span class="roman">Symbol Macro, </span>toothgrowth$supp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-toothgrowth_0024x1"><code><span class="roman">Symbol Macro, </span>toothgrowth$x1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-toothgrowth_0024x5"><code><span class="roman">Symbol Macro, </span>toothgrowth$x5</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024assault"><code><span class="roman">Symbol Macro, </span>usarrests$assault</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024murder"><code><span class="roman">Symbol Macro, </span>usarrests$murder</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024rape"><code><span class="roman">Symbol Macro, </span>usarrests$rape</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024urbanpop"><code><span class="roman">Symbol Macro, </span>usarrests$urbanpop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024x3"><code><span class="roman">Symbol Macro, </span>usarrests$x3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Symbol-Macro_002c-usarrests_0024x7"><code><span class="roman">Symbol Macro, </span>usarrests$x7</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-T">T</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-theoph"><code>theoph</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-titanic"><code>titanic</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-toothgrowth"><code>toothgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-toothgrowth-1"><code>toothgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-toothgrowth_0024dose"><code>toothgrowth$dose</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-toothgrowth_0024len"><code>toothgrowth$len</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-toothgrowth_0024supp"><code>toothgrowth$supp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-toothgrowth_0024x1"><code>toothgrowth$x1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-toothgrowth_0024x5"><code>toothgrowth$x5</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-treering"><code>treering</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-trees"><code>trees</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
@@ -2822,6 +3565,12 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td></td><td valign="top"><a href="#index-usaccdeaths"><code>usaccdeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-usarrests"><code>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-usarrests-1"><code>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-special-variables">Internal special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024assault"><code>usarrests$assault</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024murder"><code>usarrests$murder</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024rape"><code>usarrests$rape</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024urbanpop"><code>usarrests$urbanpop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024x3"><code>usarrests$x3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-symbol-macros">Internal symbol macros</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests_0024x7"><code>usarrests$x7</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-symbol-macros">Exported symbol macros</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-usjudgeratings"><code>usjudgeratings</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-uspersonalexpenditure"><code>uspersonalexpenditure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-uspop"><code>uspop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-special-variables">Exported special variables</a></td></tr>
@@ -2838,6 +3587,8 @@ Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, P
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_symbol-2"><b>+</b></a>
  &nbsp; 
 <br>
 <a class="summary-letter" href="#Variable-index_vr_letter-A"><b>A</b></a>

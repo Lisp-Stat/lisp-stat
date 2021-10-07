@@ -22,7 +22,6 @@ VALUE is not evaluated and must be a symbol.  Assigns the value of FORM to VALUE
 	    (pushnew ',name *variables*))
 	  ',name))
 
-
 (defun undef-var (v)
 "Remove V from the system
 If V is the symbol of a defined variable the variable it is unbound and removed from the list of defined variables. If V is a list of variable names each is unbound and removed. Returns V.

@@ -199,6 +199,8 @@ File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: Th
         • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
         • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
           (function)
+        • *note undef-var: go to the LISP-STAT∶∶UNDEF-VAR function.
+          (function)
         • *note variables: go to the LISP-STAT∶∶VARIABLES function.
           (function)
 *Internal Definitions*
@@ -209,8 +211,6 @@ File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: Th
           variable. (special variable)
         • *note save-obj: go to the LISP-STAT∶∶SAVE-OBJ generic
           function. (generic function)
-        • *note save-variable: go to the LISP-STAT∶∶SAVE-VARIABLE
-          generic function. (generic function)
 
 
 File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The lisp-stat/statistics/stats․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
@@ -281,8 +281,6 @@ File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The li
           variable. (special variable)
         • *note freeny: go to the RDATA∶∶FREENY special variable.
           (special variable)
-        • *note get-r-data: go to the RDATA∶∶GET-R-DATA function.
-          (function)
         • *note haireyecolor: go to the RDATA∶∶HAIREYECOLOR special
           variable. (special variable)
         • *note harman23.cor: go to the RDATA∶∶HARMAN23․COR special
@@ -323,6 +321,8 @@ File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The li
           variable)
         • *note morley: go to the RDATA∶∶MORLEY special variable.
           (special variable)
+        • *note mpg: go to the RDATA∶∶MPG special variable. (special
+          variable)
         • *note mtcars: go to the RDATA∶∶MTCARS special variable.
           (special variable)
         • *note nhtemp: go to the RDATA∶∶NHTEMP special variable.
@@ -332,6 +332,21 @@ File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The li
         • *note nottem: go to the RDATA∶∶NOTTEM special variable.
           (special variable)
         • *note npk: go to the RDATA∶∶NPK special variable. (special
+          variable)
+        • *note nycflights13-airlines: go to the
+          RDATA∶∶NYCFLIGHTS13-AIRLINES special variable. (special
+          variable)
+        • *note nycflights13-airports: go to the
+          RDATA∶∶NYCFLIGHTS13-AIRPORTS special variable. (special
+          variable)
+        • *note nycflights13-flights: go to the
+          RDATA∶∶NYCFLIGHTS13-FLIGHTS special variable. (special
+          variable)
+        • *note nycflights13-planes: go to the
+          RDATA∶∶NYCFLIGHTS13-PLANES special variable. (special
+          variable)
+        • *note nycflights13-weather: go to the
+          RDATA∶∶NYCFLIGHTS13-WEATHER special variable. (special
           variable)
         • *note occupationalstatus: go to the RDATA∶∶OCCUPATIONALSTATUS
           special variable. (special variable)
@@ -357,6 +372,8 @@ File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The li
           (special variable)
         • *note rock: go to the RDATA∶∶ROCK special variable. (special
           variable)
+        • *note save-r-data: go to the RDATA∶∶SAVE-R-DATA function.
+          (function)
         • *note save-r-default-datasets: go to the
           RDATA∶∶SAVE-R-DEFAULT-DATASETS function. (function)
         • *note seatbelts: go to the RDATA∶∶SEATBELTS special variable.
@@ -509,6 +526,7 @@ Base functions for Lisp-Stat
 *Use List*
         • split-sequence
         • select
+        • num-utils.print-matrix
         • num-utils.utilities
         • num-utils.elementwise
         • num-utils.statistics
@@ -519,8 +537,7 @@ Base functions for Lisp-Stat
         • alexandria
         • common-lisp
 *Used By List*
-        • ls-tests
-        • *note ls-user: go to the LS-USER package.
+     *note ls-user: go to the LS-USER package.
 *Exported Definitions*
         • *note def: go to the LISP-STAT∶∶DEF macro. (macro)
         • *note fivenum: go to the LISP-STAT∶∶FIVENUM function.
@@ -528,6 +545,8 @@ Base functions for Lisp-Stat
         • *note interquartile-range: go to the
           LISP-STAT∶∶INTERQUARTILE-RANGE function. (function)
         • *note savevar: go to the LISP-STAT∶∶SAVEVAR function.
+          (function)
+        • *note undef-var: go to the LISP-STAT∶∶UNDEF-VAR function.
           (function)
         • *note variables: go to the LISP-STAT∶∶VARIABLES function.
           (function)
@@ -539,8 +558,6 @@ Base functions for Lisp-Stat
           variable. (special variable)
         • *note save-obj: go to the LISP-STAT∶∶SAVE-OBJ generic
           function. (generic function)
-        • *note save-variable: go to the LISP-STAT∶∶SAVE-VARIABLE
-          generic function. (generic function)
         • *note setup-ls-translations: go to the
           LISP-STAT∶∶SETUP-LS-TRANSLATIONS function. (function)
 
@@ -608,8 +625,6 @@ File: lisp-stat.info,  Node: The rdata package,  Next: The ls-user package,  Pre
           variable. (special variable)
         • *note freeny: go to the RDATA∶∶FREENY special variable.
           (special variable)
-        • *note get-r-data: go to the RDATA∶∶GET-R-DATA function.
-          (function)
         • *note haireyecolor: go to the RDATA∶∶HAIREYECOLOR special
           variable. (special variable)
         • *note harman23.cor: go to the RDATA∶∶HARMAN23․COR special
@@ -650,6 +665,8 @@ File: lisp-stat.info,  Node: The rdata package,  Next: The ls-user package,  Pre
           variable)
         • *note morley: go to the RDATA∶∶MORLEY special variable.
           (special variable)
+        • *note mpg: go to the RDATA∶∶MPG special variable. (special
+          variable)
         • *note mtcars: go to the RDATA∶∶MTCARS special variable.
           (special variable)
         • *note nhtemp: go to the RDATA∶∶NHTEMP special variable.
@@ -659,6 +676,21 @@ File: lisp-stat.info,  Node: The rdata package,  Next: The ls-user package,  Pre
         • *note nottem: go to the RDATA∶∶NOTTEM special variable.
           (special variable)
         • *note npk: go to the RDATA∶∶NPK special variable. (special
+          variable)
+        • *note nycflights13-airlines: go to the
+          RDATA∶∶NYCFLIGHTS13-AIRLINES special variable. (special
+          variable)
+        • *note nycflights13-airports: go to the
+          RDATA∶∶NYCFLIGHTS13-AIRPORTS special variable. (special
+          variable)
+        • *note nycflights13-flights: go to the
+          RDATA∶∶NYCFLIGHTS13-FLIGHTS special variable. (special
+          variable)
+        • *note nycflights13-planes: go to the
+          RDATA∶∶NYCFLIGHTS13-PLANES special variable. (special
+          variable)
+        • *note nycflights13-weather: go to the
+          RDATA∶∶NYCFLIGHTS13-WEATHER special variable. (special
           variable)
         • *note occupationalstatus: go to the RDATA∶∶OCCUPATIONALSTATUS
           special variable. (special variable)
@@ -684,6 +716,8 @@ File: lisp-stat.info,  Node: The rdata package,  Next: The ls-user package,  Pre
           (special variable)
         • *note rock: go to the RDATA∶∶ROCK special variable. (special
           variable)
+        • *note save-r-data: go to the RDATA∶∶SAVE-R-DATA function.
+          (function)
         • *note save-r-default-datasets: go to the
           RDATA∶∶SAVE-R-DEFAULT-DATASETS function. (function)
         • *note seatbelts: go to the RDATA∶∶SEATBELTS special variable.
@@ -756,18 +790,95 @@ User package for Lisp-Stat
 *Use List*
         • *note lisp-stat: go to the LISP-STAT package.
         • common-lisp
+*Exported Definitions*
+        • *note plantgrowth$group: go to the LS-USER∶∶PLANTGROWTH$GROUP
+          symbol macro. (symbol macro)
+        • *note plantgrowth$weight: go to the
+          LS-USER∶∶PLANTGROWTH$WEIGHT symbol macro. (symbol macro)
+        • *note plantgrowth$x6: go to the LS-USER∶∶PLANTGROWTH$X6 symbol
+          macro. (symbol macro)
+        • *note toothgrowth$dose: go to the LS-USER∶∶TOOTHGROWTH$DOSE
+          symbol macro. (symbol macro)
+        • *note toothgrowth$len: go to the LS-USER∶∶TOOTHGROWTH$LEN
+          symbol macro. (symbol macro)
+        • *note toothgrowth$supp: go to the LS-USER∶∶TOOTHGROWTH$SUPP
+          symbol macro. (symbol macro)
+        • *note toothgrowth$x5: go to the LS-USER∶∶TOOTHGROWTH$X5 symbol
+          macro. (symbol macro)
+        • *note usarrests$assault: go to the LS-USER∶∶USARRESTS$ASSAULT
+          symbol macro. (symbol macro)
+        • *note usarrests$murder: go to the LS-USER∶∶USARRESTS$MURDER
+          symbol macro. (symbol macro)
+        • *note usarrests$rape: go to the LS-USER∶∶USARRESTS$RAPE symbol
+          macro. (symbol macro)
+        • *note usarrests$urbanpop: go to the
+          LS-USER∶∶USARRESTS$URBANPOP symbol macro. (symbol macro)
+        • *note usarrests$x7: go to the LS-USER∶∶USARRESTS$X7 symbol
+          macro. (symbol macro)
 *Internal Definitions*
         • *note *default-datasets*: go to the
           LS-USER∶∶*DEFAULT-DATASETS* special variable. (special
           variable)
-        • *note iris: go to the LS-USER∶∶IRIS special variable. (special
+        • *note +copyright-years+: go to the LS-USER∶∶+COPYRIGHT-YEARS+
+          constant. (constant)
+        • *note cars: go to the LS-USER∶∶CARS special variable. (special
           variable)
+        • *note cars$acceleration: go to the LS-USER∶∶CARS$ACCELERATION
+          symbol macro. (symbol macro)
+        • *note cars$cylinders: go to the LS-USER∶∶CARS$CYLINDERS symbol
+          macro. (symbol macro)
+        • *note cars$displacement: go to the LS-USER∶∶CARS$DISPLACEMENT
+          symbol macro. (symbol macro)
+        • *note cars$horsepower: go to the LS-USER∶∶CARS$HORSEPOWER
+          symbol macro. (symbol macro)
+        • *note cars$miles-per-gallon: go to the
+          LS-USER∶∶CARS$MILES-PER-GALLON symbol macro. (symbol macro)
+        • *note cars$name: go to the LS-USER∶∶CARS$NAME symbol macro.
+          (symbol macro)
+        • *note cars$origin: go to the LS-USER∶∶CARS$ORIGIN symbol
+          macro. (symbol macro)
+        • *note cars$weight-in-lbs: go to the
+          LS-USER∶∶CARS$WEIGHT-IN-LBS symbol macro. (symbol macro)
+        • *note cars$year: go to the LS-USER∶∶CARS$YEAR symbol macro.
+          (symbol macro)
+        • *note mtcars: go to the LS-USER∶∶MTCARS special variable.
+          (special variable)
+        • *note mtcars$am: go to the LS-USER∶∶MTCARS$AM symbol macro.
+          (symbol macro)
+        • *note mtcars$carb: go to the LS-USER∶∶MTCARS$CARB symbol
+          macro. (symbol macro)
+        • *note mtcars$cyl: go to the LS-USER∶∶MTCARS$CYL symbol macro.
+          (symbol macro)
+        • *note mtcars$disp: go to the LS-USER∶∶MTCARS$DISP symbol
+          macro. (symbol macro)
+        • *note mtcars$drat: go to the LS-USER∶∶MTCARS$DRAT symbol
+          macro. (symbol macro)
+        • *note mtcars$gear: go to the LS-USER∶∶MTCARS$GEAR symbol
+          macro. (symbol macro)
+        • *note mtcars$hp: go to the LS-USER∶∶MTCARS$HP symbol macro.
+          (symbol macro)
+        • *note mtcars$mpg: go to the LS-USER∶∶MTCARS$MPG symbol macro.
+          (symbol macro)
+        • *note mtcars$qsec: go to the LS-USER∶∶MTCARS$QSEC symbol
+          macro. (symbol macro)
+        • *note mtcars$vs: go to the LS-USER∶∶MTCARS$VS symbol macro.
+          (symbol macro)
+        • *note mtcars$wt: go to the LS-USER∶∶MTCARS$WT symbol macro.
+          (symbol macro)
+        • *note mtcars$x4: go to the LS-USER∶∶MTCARS$X4 symbol macro.
+          (symbol macro)
         • *note plantgrowth: go to the LS-USER∶∶PLANTGROWTH special
           variable. (special variable)
+        • *note plantgrowth$x2: go to the LS-USER∶∶PLANTGROWTH$X2 symbol
+          macro. (symbol macro)
         • *note toothgrowth: go to the LS-USER∶∶TOOTHGROWTH special
           variable. (special variable)
+        • *note toothgrowth$x1: go to the LS-USER∶∶TOOTHGROWTH$X1 symbol
+          macro. (symbol macro)
         • *note usarrests: go to the LS-USER∶∶USARRESTS special
           variable. (special variable)
+        • *note usarrests$x3: go to the LS-USER∶∶USARRESTS$X3 symbol
+          macro. (symbol macro)
 
 
 File: lisp-stat.info,  Node: Definitions,  Next: Indexes,  Prev: Packages,  Up: Top
@@ -792,11 +903,12 @@ File: lisp-stat.info,  Node: Exported definitions,  Next: Internal definitions, 
 * Menu:
 
 * Exported special variables::
+* Exported symbol macros::
 * Exported macros::
 * Exported functions::
 
 
-File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,  Prev: Exported definitions,  Up: Exported definitions
+File: lisp-stat.info,  Node: Exported special variables,  Next: Exported symbol macros,  Prev: Exported definitions,  Up: Exported definitions
 
 5.1.1 Special variables
 -----------------------
@@ -1108,6 +1220,13 @@ File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,
      *Source*
           *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
           (file)
+ -- Special Variable: mpg
+     Fuel economy data from 1999 to 2008 for 38 popular models of cars
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
  -- Special Variable: mtcars
      Motor Trend Car Road Tests
      *Package*
@@ -1138,6 +1257,43 @@ File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,
           (file)
  -- Special Variable: npk
      Classical N, P, K Factorial Experiment
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nycflights13-airlines
+     Airline name lookup table by carrier code
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nycflights13-airports
+     Airport metadata
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nycflights13-flights
+     On-time data for all flights that departed NYC (i.e.  JFK, LGA or
+     EWR) in 2013
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nycflights13-planes
+     Metadata for all airplane tail numbers found in the FAA aircraft
+     registry
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Special Variable: nycflights13-weather
+     Hourly meterological data for LGA, JFK and EWR in 2013
      *Package*
           *note rdata: go to the RDATA package.
      *Source*
@@ -1404,9 +1560,100 @@ File: lisp-stat.info,  Node: Exported special variables,  Next: Exported macros,
           (file)
 
 
-File: lisp-stat.info,  Node: Exported macros,  Next: Exported functions,  Prev: Exported special variables,  Up: Exported definitions
+File: lisp-stat.info,  Node: Exported symbol macros,  Next: Exported macros,  Prev: Exported special variables,  Up: Exported definitions
 
-5.1.2 Macros
+5.1.2 Symbol macros
+-------------------
+
+ -- Symbol Macro: plantgrowth$group
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::plantgrowth) 2)
+ -- Symbol Macro: plantgrowth$weight
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::plantgrowth) 1)
+ -- Symbol Macro: plantgrowth$x6
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::plantgrowth) 0)
+ -- Symbol Macro: toothgrowth$dose
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::toothgrowth) 3)
+ -- Symbol Macro: toothgrowth$len
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::toothgrowth) 1)
+ -- Symbol Macro: toothgrowth$supp
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::toothgrowth) 2)
+ -- Symbol Macro: toothgrowth$x5
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::toothgrowth) 0)
+ -- Symbol Macro: usarrests$assault
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 2)
+ -- Symbol Macro: usarrests$murder
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 1)
+ -- Symbol Macro: usarrests$rape
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 4)
+ -- Symbol Macro: usarrests$urbanpop
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 3)
+ -- Symbol Macro: usarrests$x7
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 0)
+
+
+File: lisp-stat.info,  Node: Exported macros,  Next: Exported functions,  Prev: Exported symbol macros,  Up: Exported definitions
+
+5.1.3 Macros
 ------------
 
  -- Macro: def NAME VALUE &optional DOCUMENTATION
@@ -1425,7 +1672,7 @@ File: lisp-stat.info,  Node: Exported macros,  Next: Exported functions,  Prev: 
 
 File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Exported definitions
 
-5.1.3 Functions
+5.1.4 Functions
 ---------------
 
  -- Function: fivenum X
@@ -1441,12 +1688,6 @@ File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Ex
      *Source*
           *note stats.lisp: go to the lisp-stat/statistics/stats․lisp
           file. (file)
- -- Function: get-r-data ()
-     *Package*
-          *note rdata: go to the RDATA package.
-     *Source*
-          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
-          (file)
  -- Function: interquartile-range X
      Returns the interquartile range of the elements of X.
      *Package*
@@ -1462,10 +1703,14 @@ File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Ex
           *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
           (file)
  -- Function: load-r-metadata ()
-     Loads the master R data set index as a data frame
-
-     This allows you to slice & dice the 1500+ data sets to find what
-     you need
+     Loads the master R data set index as a data frame.  Use this to
+     query the R data sets.
+     *Package*
+          *note rdata: go to the RDATA package.
+     *Source*
+          *note rdata.lisp: go to the lisp-stat/base/rdata․lisp file.
+          (file)
+ -- Function: save-r-data ()
      *Package*
           *note rdata: go to the RDATA package.
      *Source*
@@ -1490,6 +1735,17 @@ File: lisp-stat.info,  Node: Exported functions,  Prev: Exported macros,  Up: Ex
      *Source*
           *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
+ -- Function: undef-var V
+     Remove V from the system
+     If V is the symbol of a defined variable the variable it is unbound
+     and removed from the list of defined variables.  If V is a list of
+     variable names each is unbound and removed.  Returns V. Example:
+     (undef ’urban)
+     *Package*
+          *note lisp-stat: go to the LISP-STAT package.
+     *Source*
+          *note variables.lisp: go to the lisp-stat/base/variables․lisp
+          file. (file)
  -- Function: variables ()
      Returns a list of the names of all def’ed variables.
      *Package*
@@ -1506,14 +1762,26 @@ File: lisp-stat.info,  Node: Internal definitions,  Prev: Exported definitions, 
 
 * Menu:
 
+* Internal constants::
 * Internal special variables::
+* Internal symbol macros::
 * Internal functions::
 * Internal generic functions::
 
 
-File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functions,  Prev: Internal definitions,  Up: Internal definitions
+File: lisp-stat.info,  Node: Internal constants,  Next: Internal special variables,  Prev: Internal definitions,  Up: Internal definitions
 
-5.2.1 Special variables
+5.2.1 Constants
+---------------
+
+ -- Constant: +copyright-years+
+     *Package*
+          *note ls-user: go to the LS-USER package.
+
+
+File: lisp-stat.info,  Node: Internal special variables,  Next: Internal symbol macros,  Prev: Internal constants,  Up: Internal definitions
+
+5.2.2 Special variables
 -----------------------
 
  -- Special Variable: *ask-on-redefine*
@@ -1542,12 +1810,12 @@ File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functio
      *Source*
           *note variables.lisp: go to the lisp-stat/base/variables․lisp
           file. (file)
- -- Special Variable: iris
-     Edgar Anderson’s Iris Data
+ -- Special Variable: cars
      *Package*
           *note ls-user: go to the LS-USER package.
-     *Source*
-          /Users/nunez/ls-init.lisp
+ -- Special Variable: mtcars
+     *Package*
+          *note ls-user: go to the LS-USER package.
  -- Special Variable: plantgrowth
      Results from an Experiment on Plant Growth
      *Package*
@@ -1575,9 +1843,142 @@ File: lisp-stat.info,  Node: Internal special variables,  Next: Internal functio
           /Users/nunez/ls-init.lisp
 
 
-File: lisp-stat.info,  Node: Internal functions,  Next: Internal generic functions,  Prev: Internal special variables,  Up: Internal definitions
+File: lisp-stat.info,  Node: Internal symbol macros,  Next: Internal functions,  Prev: Internal special variables,  Up: Internal definitions
 
-5.2.2 Functions
+5.2.3 Symbol macros
+-------------------
+
+ -- Symbol Macro: cars$acceleration
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 2)
+ -- Symbol Macro: cars$cylinders
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 6)
+ -- Symbol Macro: cars$displacement
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 5)
+ -- Symbol Macro: cars$horsepower
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 4)
+ -- Symbol Macro: cars$miles-per-gallon
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 7)
+ -- Symbol Macro: cars$name
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 8)
+ -- Symbol Macro: cars$origin
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 0)
+ -- Symbol Macro: cars$weight-in-lbs
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 3)
+ -- Symbol Macro: cars$year
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::cars) 1)
+ -- Symbol Macro: mtcars$am
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 9)
+ -- Symbol Macro: mtcars$carb
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 11)
+ -- Symbol Macro: mtcars$cyl
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 2)
+ -- Symbol Macro: mtcars$disp
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 3)
+ -- Symbol Macro: mtcars$drat
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 5)
+ -- Symbol Macro: mtcars$gear
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 10)
+ -- Symbol Macro: mtcars$hp
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 4)
+ -- Symbol Macro: mtcars$mpg
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 1)
+ -- Symbol Macro: mtcars$qsec
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 7)
+ -- Symbol Macro: mtcars$vs
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 8)
+ -- Symbol Macro: mtcars$wt
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 6)
+ -- Symbol Macro: mtcars$x4
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Expansion*
+          (aref (data-frame:columns ls-user::mtcars) 0)
+ -- Symbol Macro: plantgrowth$x2
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::plantgrowth) 0)
+ -- Symbol Macro: toothgrowth$x1
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::toothgrowth) 0)
+ -- Symbol Macro: usarrests$x3
+     *Package*
+          *note ls-user: go to the LS-USER package.
+     *Source*
+          /Users/nunez/ls-init.lisp
+     *Expansion*
+          (aref (data-frame:columns ls-user::usarrests) 0)
+
+
+File: lisp-stat.info,  Node: Internal functions,  Next: Internal generic functions,  Prev: Internal symbol macros,  Up: Internal definitions
+
+5.2.4 Functions
 ---------------
 
  -- Function: setup-ls-translations ()
@@ -1590,18 +1991,11 @@ File: lisp-stat.info,  Node: Internal functions,  Next: Internal generic functio
 
 File: lisp-stat.info,  Node: Internal generic functions,  Prev: Internal functions,  Up: Internal definitions
 
-5.2.3 Generic functions
+5.2.5 Generic functions
 -----------------------
 
  -- Generic Function: save-obj DATA
      Save data object
-     *Package*
-          *note lisp-stat: go to the LISP-STAT package.
-     *Source*
-          *note variables.lisp: go to the lisp-stat/base/variables․lisp
-          file. (file)
- -- Generic Function: save-variable DATA
-     Save the data.
      *Package*
           *note lisp-stat: go to the LISP-STAT package.
      *Source*
@@ -1703,31 +2097,29 @@ A.2 Functions
 * def:                                   Exported macros.      (line  6)
 * fivenum:                               Exported functions.   (line  6)
 * Function, fivenum:                     Exported functions.   (line  7)
-* Function, get-r-data:                  Exported functions.   (line 20)
-* Function, interquartile-range:         Exported functions.   (line 26)
-* Function, load-r-default-datasets:     Exported functions.   (line 33)
-* Function, load-r-metadata:             Exported functions.   (line 40)
-* Function, save-r-default-datasets:     Exported functions.   (line 50)
-* Function, savevar:                     Exported functions.   (line 57)
+* Function, interquartile-range:         Exported functions.   (line 20)
+* Function, load-r-default-datasets:     Exported functions.   (line 27)
+* Function, load-r-metadata:             Exported functions.   (line 34)
+* Function, save-r-data:                 Exported functions.   (line 42)
+* Function, save-r-default-datasets:     Exported functions.   (line 48)
+* Function, savevar:                     Exported functions.   (line 55)
 * Function, setup-ls-translations:       Internal functions.   (line  7)
-* Function, variables:                   Exported functions.   (line 69)
+* Function, undef-var:                   Exported functions.   (line 67)
+* Function, variables:                   Exported functions.   (line 78)
 * Generic Function, save-obj:            Internal generic functions.
                                                                (line  7)
-* Generic Function, save-variable:       Internal generic functions.
-                                                               (line 14)
-* get-r-data:                            Exported functions.   (line 19)
-* interquartile-range:                   Exported functions.   (line 25)
-* load-r-default-datasets:               Exported functions.   (line 32)
-* load-r-metadata:                       Exported functions.   (line 39)
+* interquartile-range:                   Exported functions.   (line 19)
+* load-r-default-datasets:               Exported functions.   (line 26)
+* load-r-metadata:                       Exported functions.   (line 33)
 * Macro, def:                            Exported macros.      (line  7)
 * save-obj:                              Internal generic functions.
                                                                (line  6)
-* save-r-default-datasets:               Exported functions.   (line 49)
-* save-variable:                         Internal generic functions.
-                                                               (line 13)
-* savevar:                               Exported functions.   (line 56)
+* save-r-data:                           Exported functions.   (line 41)
+* save-r-default-datasets:               Exported functions.   (line 47)
+* savevar:                               Exported functions.   (line 54)
 * setup-ls-translations:                 Internal functions.   (line  6)
-* variables:                             Exported functions.   (line 68)
+* undef-var:                             Exported functions.   (line 66)
+* variables:                             Exported functions.   (line 77)
 
 
 File: lisp-stat.info,  Node: Variable index,  Next: Data type index,  Prev: Function index,  Up: Indexes
@@ -1748,6 +2140,7 @@ A.3 Variables
                                                               (line   6)
 * *variables*:                           Internal special variables.
                                                               (line  26)
+* +copyright-years+:                     Internal constants.  (line   6)
 * ability.cov:                           Exported special variables.
                                                               (line  13)
 * airmiles:                              Exported special variables.
@@ -1772,6 +2165,26 @@ A.3 Variables
                                                               (line  83)
 * cars:                                  Exported special variables.
                                                               (line  90)
+* cars <1>:                              Internal special variables.
+                                                              (line  32)
+* cars$acceleration:                     Internal symbol macros.
+                                                              (line   6)
+* cars$cylinders:                        Internal symbol macros.
+                                                              (line  11)
+* cars$displacement:                     Internal symbol macros.
+                                                              (line  16)
+* cars$horsepower:                       Internal symbol macros.
+                                                              (line  21)
+* cars$miles-per-gallon:                 Internal symbol macros.
+                                                              (line  26)
+* cars$name:                             Internal symbol macros.
+                                                              (line  31)
+* cars$origin:                           Internal symbol macros.
+                                                              (line  36)
+* cars$weight-in-lbs:                    Internal symbol macros.
+                                                              (line  41)
+* cars$year:                             Internal symbol macros.
+                                                              (line  46)
 * chickweight:                           Exported special variables.
                                                               (line  97)
 * chickwts:                              Exported special variables.
@@ -1780,6 +2193,7 @@ A.3 Variables
                                                               (line 111)
 * co2-2:                                 Exported special variables.
                                                               (line 118)
+* Constant, +copyright-years+:           Internal constants.  (line   7)
 * crimtab:                               Exported special variables.
                                                               (line 125)
 * discoveries:                           Exported special variables.
@@ -1814,8 +2228,6 @@ A.3 Variables
                                                               (line 229)
 * iris:                                  Exported special variables.
                                                               (line 236)
-* iris <1>:                              Internal special variables.
-                                                              (line  32)
 * iris3:                                 Exported special variables.
                                                               (line 243)
 * islands:                               Exported special variables.
@@ -1836,44 +2248,90 @@ A.3 Variables
                                                               (line 299)
 * morley:                                Exported special variables.
                                                               (line 306)
-* mtcars:                                Exported special variables.
+* mpg:                                   Exported special variables.
                                                               (line 313)
-* nhtemp:                                Exported special variables.
+* mtcars:                                Exported special variables.
                                                               (line 320)
-* nile:                                  Exported special variables.
+* mtcars <1>:                            Internal special variables.
+                                                              (line  35)
+* mtcars$am:                             Internal symbol macros.
+                                                              (line  51)
+* mtcars$carb:                           Internal symbol macros.
+                                                              (line  56)
+* mtcars$cyl:                            Internal symbol macros.
+                                                              (line  61)
+* mtcars$disp:                           Internal symbol macros.
+                                                              (line  66)
+* mtcars$drat:                           Internal symbol macros.
+                                                              (line  71)
+* mtcars$gear:                           Internal symbol macros.
+                                                              (line  76)
+* mtcars$hp:                             Internal symbol macros.
+                                                              (line  81)
+* mtcars$mpg:                            Internal symbol macros.
+                                                              (line  86)
+* mtcars$qsec:                           Internal symbol macros.
+                                                              (line  91)
+* mtcars$vs:                             Internal symbol macros.
+                                                              (line  96)
+* mtcars$wt:                             Internal symbol macros.
+                                                              (line 101)
+* mtcars$x4:                             Internal symbol macros.
+                                                              (line 106)
+* nhtemp:                                Exported special variables.
                                                               (line 327)
-* nottem:                                Exported special variables.
+* nile:                                  Exported special variables.
                                                               (line 334)
-* npk:                                   Exported special variables.
+* nottem:                                Exported special variables.
                                                               (line 341)
-* occupationalstatus:                    Exported special variables.
+* npk:                                   Exported special variables.
                                                               (line 348)
-* orange:                                Exported special variables.
+* nycflights13-airlines:                 Exported special variables.
                                                               (line 355)
-* orchardsprays:                         Exported special variables.
+* nycflights13-airports:                 Exported special variables.
                                                               (line 362)
-* plantgrowth:                           Exported special variables.
+* nycflights13-flights:                  Exported special variables.
                                                               (line 369)
+* nycflights13-planes:                   Exported special variables.
+                                                              (line 377)
+* nycflights13-weather:                  Exported special variables.
+                                                              (line 385)
+* occupationalstatus:                    Exported special variables.
+                                                              (line 392)
+* orange:                                Exported special variables.
+                                                              (line 399)
+* orchardsprays:                         Exported special variables.
+                                                              (line 406)
+* plantgrowth:                           Exported special variables.
+                                                              (line 413)
 * plantgrowth <1>:                       Internal special variables.
                                                               (line  38)
+* plantgrowth$group:                     Exported symbol macros.
+                                                              (line   6)
+* plantgrowth$weight:                    Exported symbol macros.
+                                                              (line  13)
+* plantgrowth$x2:                        Internal symbol macros.
+                                                              (line 111)
+* plantgrowth$x6:                        Exported symbol macros.
+                                                              (line  20)
 * precip:                                Exported special variables.
-                                                              (line 376)
+                                                              (line 420)
 * presidents:                            Exported special variables.
-                                                              (line 383)
+                                                              (line 427)
 * pressure:                              Exported special variables.
-                                                              (line 390)
+                                                              (line 434)
 * puromycin:                             Exported special variables.
-                                                              (line 397)
+                                                              (line 441)
 * quakes:                                Exported special variables.
-                                                              (line 404)
+                                                              (line 448)
 * randu:                                 Exported special variables.
-                                                              (line 411)
+                                                              (line 455)
 * rivers:                                Exported special variables.
-                                                              (line 418)
+                                                              (line 462)
 * rock:                                  Exported special variables.
-                                                              (line 425)
+                                                              (line 469)
 * seatbelts:                             Exported special variables.
-                                                              (line 432)
+                                                              (line 476)
 * Special Variable, *ask-on-redefine*:   Internal special variables.
                                                               (line   7)
 * Special Variable, *default-datasets*:  Internal special variables.
@@ -1908,6 +2366,8 @@ A.3 Variables
                                                               (line  84)
 * Special Variable, cars:                Exported special variables.
                                                               (line  91)
+* Special Variable, cars <1>:            Internal special variables.
+                                                              (line  33)
 * Special Variable, chickweight:         Exported special variables.
                                                               (line  98)
 * Special Variable, chickwts:            Exported special variables.
@@ -1950,8 +2410,6 @@ A.3 Variables
                                                               (line 230)
 * Special Variable, iris:                Exported special variables.
                                                               (line 237)
-* Special Variable, iris <1>:            Internal special variables.
-                                                              (line  33)
 * Special Variable, iris3:               Exported special variables.
                                                               (line 244)
 * Special Variable, islands:             Exported special variables.
@@ -1972,152 +2430,260 @@ A.3 Variables
                                                               (line 300)
 * Special Variable, morley:              Exported special variables.
                                                               (line 307)
-* Special Variable, mtcars:              Exported special variables.
+* Special Variable, mpg:                 Exported special variables.
                                                               (line 314)
-* Special Variable, nhtemp:              Exported special variables.
+* Special Variable, mtcars:              Exported special variables.
                                                               (line 321)
-* Special Variable, nile:                Exported special variables.
+* Special Variable, mtcars <1>:          Internal special variables.
+                                                              (line  36)
+* Special Variable, nhtemp:              Exported special variables.
                                                               (line 328)
-* Special Variable, nottem:              Exported special variables.
+* Special Variable, nile:                Exported special variables.
                                                               (line 335)
-* Special Variable, npk:                 Exported special variables.
+* Special Variable, nottem:              Exported special variables.
                                                               (line 342)
-* Special Variable, occupationalstatus:  Exported special variables.
+* Special Variable, npk:                 Exported special variables.
                                                               (line 349)
-* Special Variable, orange:              Exported special variables.
+* Special Variable, nycflights13-airlines: Exported special variables.
                                                               (line 356)
-* Special Variable, orchardsprays:       Exported special variables.
+* Special Variable, nycflights13-airports: Exported special variables.
                                                               (line 363)
-* Special Variable, plantgrowth:         Exported special variables.
+* Special Variable, nycflights13-flights: Exported special variables.
                                                               (line 370)
+* Special Variable, nycflights13-planes: Exported special variables.
+                                                              (line 378)
+* Special Variable, nycflights13-weather: Exported special variables.
+                                                              (line 386)
+* Special Variable, occupationalstatus:  Exported special variables.
+                                                              (line 393)
+* Special Variable, orange:              Exported special variables.
+                                                              (line 400)
+* Special Variable, orchardsprays:       Exported special variables.
+                                                              (line 407)
+* Special Variable, plantgrowth:         Exported special variables.
+                                                              (line 414)
 * Special Variable, plantgrowth <1>:     Internal special variables.
                                                               (line  39)
 * Special Variable, precip:              Exported special variables.
-                                                              (line 377)
+                                                              (line 421)
 * Special Variable, presidents:          Exported special variables.
-                                                              (line 384)
+                                                              (line 428)
 * Special Variable, pressure:            Exported special variables.
-                                                              (line 391)
+                                                              (line 435)
 * Special Variable, puromycin:           Exported special variables.
-                                                              (line 398)
+                                                              (line 442)
 * Special Variable, quakes:              Exported special variables.
-                                                              (line 405)
+                                                              (line 449)
 * Special Variable, randu:               Exported special variables.
-                                                              (line 412)
+                                                              (line 456)
 * Special Variable, rivers:              Exported special variables.
-                                                              (line 419)
+                                                              (line 463)
 * Special Variable, rock:                Exported special variables.
-                                                              (line 426)
+                                                              (line 470)
 * Special Variable, seatbelts:           Exported special variables.
-                                                              (line 433)
+                                                              (line 477)
 * Special Variable, stackloss:           Exported special variables.
-                                                              (line 440)
+                                                              (line 484)
 * Special Variable, student-sleep:       Internal special variables.
                                                               (line  45)
 * Special Variable, sunspot.month:       Exported special variables.
-                                                              (line 447)
+                                                              (line 491)
 * Special Variable, sunspot.year:        Exported special variables.
-                                                              (line 454)
+                                                              (line 498)
 * Special Variable, sunspots:            Exported special variables.
-                                                              (line 461)
+                                                              (line 505)
 * Special Variable, swiss:               Exported special variables.
-                                                              (line 468)
+                                                              (line 512)
 * Special Variable, theoph:              Exported special variables.
-                                                              (line 475)
+                                                              (line 519)
 * Special Variable, titanic:             Exported special variables.
-                                                              (line 482)
+                                                              (line 526)
 * Special Variable, toothgrowth:         Exported special variables.
-                                                              (line 489)
+                                                              (line 533)
 * Special Variable, toothgrowth <1>:     Internal special variables.
                                                               (line  52)
 * Special Variable, treering:            Exported special variables.
-                                                              (line 496)
+                                                              (line 540)
 * Special Variable, trees:               Exported special variables.
-                                                              (line 503)
+                                                              (line 547)
 * Special Variable, ucbadmissions:       Exported special variables.
-                                                              (line 510)
+                                                              (line 554)
 * Special Variable, ukdriverdeaths:      Exported special variables.
-                                                              (line 517)
+                                                              (line 561)
 * Special Variable, ukgas:               Exported special variables.
-                                                              (line 524)
+                                                              (line 568)
 * Special Variable, usaccdeaths:         Exported special variables.
-                                                              (line 531)
+                                                              (line 575)
 * Special Variable, usarrests:           Exported special variables.
-                                                              (line 538)
+                                                              (line 582)
 * Special Variable, usarrests <1>:       Internal special variables.
                                                               (line  58)
 * Special Variable, usjudgeratings:      Exported special variables.
-                                                              (line 545)
+                                                              (line 589)
 * Special Variable, uspersonalexpenditure: Exported special variables.
-                                                              (line 552)
+                                                              (line 596)
 * Special Variable, uspop:               Exported special variables.
-                                                              (line 559)
+                                                              (line 603)
 * Special Variable, vadeaths:            Exported special variables.
-                                                              (line 566)
+                                                              (line 610)
 * Special Variable, volcano:             Exported special variables.
-                                                              (line 573)
+                                                              (line 617)
 * Special Variable, warpbreaks:          Exported special variables.
-                                                              (line 580)
+                                                              (line 624)
 * Special Variable, women:               Exported special variables.
-                                                              (line 587)
+                                                              (line 631)
 * Special Variable, worldphones:         Exported special variables.
-                                                              (line 594)
+                                                              (line 638)
 * Special Variable, wwwusage:            Exported special variables.
-                                                              (line 601)
+                                                              (line 645)
 * stackloss:                             Exported special variables.
-                                                              (line 439)
+                                                              (line 483)
 * student-sleep:                         Internal special variables.
                                                               (line  44)
 * sunspot.month:                         Exported special variables.
-                                                              (line 446)
+                                                              (line 490)
 * sunspot.year:                          Exported special variables.
-                                                              (line 453)
+                                                              (line 497)
 * sunspots:                              Exported special variables.
-                                                              (line 460)
+                                                              (line 504)
 * swiss:                                 Exported special variables.
-                                                              (line 467)
+                                                              (line 511)
+* Symbol Macro, cars$acceleration:       Internal symbol macros.
+                                                              (line   7)
+* Symbol Macro, cars$cylinders:          Internal symbol macros.
+                                                              (line  12)
+* Symbol Macro, cars$displacement:       Internal symbol macros.
+                                                              (line  17)
+* Symbol Macro, cars$horsepower:         Internal symbol macros.
+                                                              (line  22)
+* Symbol Macro, cars$miles-per-gallon:   Internal symbol macros.
+                                                              (line  27)
+* Symbol Macro, cars$name:               Internal symbol macros.
+                                                              (line  32)
+* Symbol Macro, cars$origin:             Internal symbol macros.
+                                                              (line  37)
+* Symbol Macro, cars$weight-in-lbs:      Internal symbol macros.
+                                                              (line  42)
+* Symbol Macro, cars$year:               Internal symbol macros.
+                                                              (line  47)
+* Symbol Macro, mtcars$am:               Internal symbol macros.
+                                                              (line  52)
+* Symbol Macro, mtcars$carb:             Internal symbol macros.
+                                                              (line  57)
+* Symbol Macro, mtcars$cyl:              Internal symbol macros.
+                                                              (line  62)
+* Symbol Macro, mtcars$disp:             Internal symbol macros.
+                                                              (line  67)
+* Symbol Macro, mtcars$drat:             Internal symbol macros.
+                                                              (line  72)
+* Symbol Macro, mtcars$gear:             Internal symbol macros.
+                                                              (line  77)
+* Symbol Macro, mtcars$hp:               Internal symbol macros.
+                                                              (line  82)
+* Symbol Macro, mtcars$mpg:              Internal symbol macros.
+                                                              (line  87)
+* Symbol Macro, mtcars$qsec:             Internal symbol macros.
+                                                              (line  92)
+* Symbol Macro, mtcars$vs:               Internal symbol macros.
+                                                              (line  97)
+* Symbol Macro, mtcars$wt:               Internal symbol macros.
+                                                              (line 102)
+* Symbol Macro, mtcars$x4:               Internal symbol macros.
+                                                              (line 107)
+* Symbol Macro, plantgrowth$group:       Exported symbol macros.
+                                                              (line   7)
+* Symbol Macro, plantgrowth$weight:      Exported symbol macros.
+                                                              (line  14)
+* Symbol Macro, plantgrowth$x2:          Internal symbol macros.
+                                                              (line 112)
+* Symbol Macro, plantgrowth$x6:          Exported symbol macros.
+                                                              (line  21)
+* Symbol Macro, toothgrowth$dose:        Exported symbol macros.
+                                                              (line  28)
+* Symbol Macro, toothgrowth$len:         Exported symbol macros.
+                                                              (line  35)
+* Symbol Macro, toothgrowth$supp:        Exported symbol macros.
+                                                              (line  42)
+* Symbol Macro, toothgrowth$x1:          Internal symbol macros.
+                                                              (line 119)
+* Symbol Macro, toothgrowth$x5:          Exported symbol macros.
+                                                              (line  49)
+* Symbol Macro, usarrests$assault:       Exported symbol macros.
+                                                              (line  56)
+* Symbol Macro, usarrests$murder:        Exported symbol macros.
+                                                              (line  63)
+* Symbol Macro, usarrests$rape:          Exported symbol macros.
+                                                              (line  70)
+* Symbol Macro, usarrests$urbanpop:      Exported symbol macros.
+                                                              (line  77)
+* Symbol Macro, usarrests$x3:            Internal symbol macros.
+                                                              (line 126)
+* Symbol Macro, usarrests$x7:            Exported symbol macros.
+                                                              (line  84)
 * theoph:                                Exported special variables.
-                                                              (line 474)
+                                                              (line 518)
 * titanic:                               Exported special variables.
-                                                              (line 481)
+                                                              (line 525)
 * toothgrowth:                           Exported special variables.
-                                                              (line 488)
+                                                              (line 532)
 * toothgrowth <1>:                       Internal special variables.
                                                               (line  51)
+* toothgrowth$dose:                      Exported symbol macros.
+                                                              (line  27)
+* toothgrowth$len:                       Exported symbol macros.
+                                                              (line  34)
+* toothgrowth$supp:                      Exported symbol macros.
+                                                              (line  41)
+* toothgrowth$x1:                        Internal symbol macros.
+                                                              (line 118)
+* toothgrowth$x5:                        Exported symbol macros.
+                                                              (line  48)
 * treering:                              Exported special variables.
-                                                              (line 495)
+                                                              (line 539)
 * trees:                                 Exported special variables.
-                                                              (line 502)
+                                                              (line 546)
 * ucbadmissions:                         Exported special variables.
-                                                              (line 509)
+                                                              (line 553)
 * ukdriverdeaths:                        Exported special variables.
-                                                              (line 516)
+                                                              (line 560)
 * ukgas:                                 Exported special variables.
-                                                              (line 523)
+                                                              (line 567)
 * usaccdeaths:                           Exported special variables.
-                                                              (line 530)
+                                                              (line 574)
 * usarrests:                             Exported special variables.
-                                                              (line 537)
+                                                              (line 581)
 * usarrests <1>:                         Internal special variables.
                                                               (line  57)
+* usarrests$assault:                     Exported symbol macros.
+                                                              (line  55)
+* usarrests$murder:                      Exported symbol macros.
+                                                              (line  62)
+* usarrests$rape:                        Exported symbol macros.
+                                                              (line  69)
+* usarrests$urbanpop:                    Exported symbol macros.
+                                                              (line  76)
+* usarrests$x3:                          Internal symbol macros.
+                                                              (line 125)
+* usarrests$x7:                          Exported symbol macros.
+                                                              (line  83)
 * usjudgeratings:                        Exported special variables.
-                                                              (line 544)
+                                                              (line 588)
 * uspersonalexpenditure:                 Exported special variables.
-                                                              (line 551)
+                                                              (line 595)
 * uspop:                                 Exported special variables.
-                                                              (line 558)
+                                                              (line 602)
 * vadeaths:                              Exported special variables.
-                                                              (line 565)
+                                                              (line 609)
 * volcano:                               Exported special variables.
-                                                              (line 572)
+                                                              (line 616)
 * warpbreaks:                            Exported special variables.
-                                                              (line 579)
+                                                              (line 623)
 * women:                                 Exported special variables.
-                                                              (line 586)
+                                                              (line 630)
 * worldphones:                           Exported special variables.
-                                                              (line 593)
+                                                              (line 637)
 * wwwusage:                              Exported special variables.
-                                                              (line 600)
+                                                              (line 644)
 
 
 File: lisp-stat.info,  Node: Data type index,  Prev: Variable index,  Up: Indexes
@@ -2159,145 +2725,192 @@ Node: The lisp-stat/pkgdcls․lisp file4557
 Ref: go to the lisp-stat/pkgdcls․lisp file4781
 Node: The lisp-stat/base/variables․lisp file4941
 Ref: go to the lisp-stat/base/variables․lisp file5191
-Node: The lisp-stat/base/rdata․lisp file6075
-Ref: go to the lisp-stat/base/rdata․lisp file6326
-Node: The lisp-stat/statistics/stats․lisp file16451
-Ref: go to the lisp-stat/statistics/stats․lisp file16716
-Node: The lisp-stat/docs/doc-strings․lisp file17064
-Ref: go to the lisp-stat/docs/doc-strings․lisp file17326
-Node: The lisp-stat/ls-init․lisp file17433
-Ref: go to the lisp-stat/ls-init․lisp file17626
-Node: Static files17912
-Node: The lisp-stat/license file18052
-Ref: go to the lisp-stat/license file18200
-Node: Packages18293
-Node: The lisp-stat package18525
-Ref: go to the LISP-STAT package18666
-Node: The rdata package20300
-Ref: go to the RDATA package20444
-Node: The ls-user package30426
-Ref: go to the LS-USER package30544
-Node: Definitions31341
-Node: Exported definitions31611
-Node: Exported special variables31866
-Ref: go to the RDATA∶∶*R-DEFAULT-DATASETS* special variable32097
-Ref: go to the RDATA∶∶ABILITY․COV special variable32341
-Ref: go to the RDATA∶∶AIRMILES special variable32574
-Ref: go to the RDATA∶∶AIRPASSENGERS special variable32834
-Ref: go to the RDATA∶∶AIRQUALITY special variable33082
-Ref: go to the RDATA∶∶ANSCOMBE special variable33318
-Ref: go to the RDATA∶∶ATTENU special variable33584
-Ref: go to the RDATA∶∶ATTITUDE special variable33820
-Ref: go to the RDATA∶∶AUSTRES special variable34056
-Ref: go to the RDATA∶∶BASE-URL special variable34318
-Ref: go to the RDATA∶∶BJSALES special variable34555
-Ref: go to the RDATA∶∶BOD special variable34786
-Ref: go to the RDATA∶∶CARS special variable35010
-Ref: go to the RDATA∶∶CHICKWEIGHT special variable35252
-Ref: go to the RDATA∶∶CHICKWTS special variable35501
-Ref: go to the RDATA∶∶CO2-1 special variable35729
-Ref: go to the RDATA∶∶CO2-2 special variable35966
-Ref: go to the RDATA∶∶CRIMTAB special variable36207
-Ref: go to the RDATA∶∶DISCOVERIES special variable36444
-Ref: go to the RDATA∶∶DNASE special variable36683
-Ref: go to the RDATA∶∶ESOPH special variable36903
-Ref: go to the RDATA∶∶EURO special variable37143
-Ref: go to the RDATA∶∶EUSTOCKMARKETS special variable37387
-Ref: go to the RDATA∶∶FAITHFUL special variable37653
-Ref: go to the RDATA∶∶FORMALDEHYDE special variable37884
-Ref: go to the RDATA∶∶FREENY special variable38114
-Ref: go to the RDATA∶∶HAIREYECOLOR special variable38344
-Ref: go to the RDATA∶∶HARMAN23․COR special variable38592
-Ref: go to the RDATA∶∶HARMAN74․COR special variable38817
-Ref: go to the RDATA∶∶INDEX special variable39035
-Ref: go to the RDATA∶∶INDOMETH special variable39232
-Ref: go to the RDATA∶∶INFERT special variable39465
-Ref: go to the RDATA∶∶INSECTSPRAYS special variable39722
-Ref: go to the RDATA∶∶IRIS special variable39951
-Ref: go to the RDATA∶∶IRIS3 special variable40179
-Ref: go to the RDATA∶∶ISLANDS special variable40409
-Ref: go to the RDATA∶∶JOHNSONJOHNSON special variable40657
-Ref: go to the RDATA∶∶LAKEHURON special variable40907
-Ref: go to the RDATA∶∶LH special variable41133
-Ref: go to the RDATA∶∶LIFECYCLESAVINGS special variable41380
-Ref: go to the RDATA∶∶LOBLOLLY special variable41619
-Ref: go to the RDATA∶∶LONGLEY special variable41850
-Ref: go to the RDATA∶∶LYNX special variable42085
-Ref: go to the RDATA∶∶MORLEY special variable42326
-Ref: go to the RDATA∶∶MTCARS special variable42556
-Ref: go to the RDATA∶∶NHTEMP special variable42783
-Ref: go to the RDATA∶∶NILE special variable43022
-Ref: go to the RDATA∶∶NOTTEM special variable43245
-Ref: go to the RDATA∶∶NPK special variable43496
-Ref: go to the RDATA∶∶OCCUPATIONALSTATUS special variable43747
-Ref: go to the RDATA∶∶ORANGE special variable43993
-Ref: go to the RDATA∶∶ORCHARDSPRAYS special variable44223
-Ref: go to the RDATA∶∶PLANTGROWTH special variable44454
-Ref: go to the RDATA∶∶PRECIP special variable44697
-Ref: go to the RDATA∶∶PRESIDENTS special variable44935
-Ref: go to the RDATA∶∶PRESSURE special variable45181
-Ref: go to the RDATA∶∶PUROMYCIN special variable45439
-Ref: go to the RDATA∶∶QUAKES special variable45682
-Ref: go to the RDATA∶∶RANDU special variable45915
-Ref: go to the RDATA∶∶RIVERS special variable46164
-Ref: go to the RDATA∶∶ROCK special variable46401
-Ref: go to the RDATA∶∶SEATBELTS special variable46643
-Ref: go to the RDATA∶∶STACKLOSS special variable46887
-Ref: go to the RDATA∶∶SUNSPOT․MONTH special variable47129
-Ref: go to the RDATA∶∶SUNSPOT․YEAR special variable47378
-Ref: go to the RDATA∶∶SUNSPOTS special variable47611
-Ref: go to the RDATA∶∶SWISS special variable47845
-Ref: go to the RDATA∶∶THEOPH special variable48102
-Ref: go to the RDATA∶∶TITANIC special variable48336
-Ref: go to the RDATA∶∶TOOTHGROWTH special variable48579
-Ref: go to the RDATA∶∶TREERING special variable48836
-Ref: go to the RDATA∶∶TREES special variable49068
-Ref: go to the RDATA∶∶UCBADMISSIONS special variable49326
-Ref: go to the RDATA∶∶UKDRIVERDEATHS special variable49568
-Ref: go to the RDATA∶∶UKGAS special variable49808
-Ref: go to the RDATA∶∶USACCDEATHS special variable50042
-Ref: go to the RDATA∶∶USARRESTS special variable50283
-Ref: go to the RDATA∶∶USJUDGERATINGS special variable50523
-Ref: go to the RDATA∶∶USPERSONALEXPENDITURE special variable50798
-Ref: go to the RDATA∶∶USPOP special variable51023
-Ref: go to the RDATA∶∶VADEATHS special variable51263
-Ref: go to the RDATA∶∶VOLCANO special variable51495
-Ref: go to the RDATA∶∶WARPBREAKS special variable51759
-Ref: go to the RDATA∶∶WOMEN special variable52002
-Ref: go to the RDATA∶∶WORLDPHONES special variable52254
-Ref: go to the RDATA∶∶WWWUSAGE special variable52481
-Node: Exported macros52679
-Ref: go to the LISP-STAT∶∶DEF macro52893
-Node: Exported functions53424
-Ref: go to the LISP-STAT∶∶FIVENUM function53583
-Ref: go to the RDATA∶∶GET-R-DATA function54189
-Ref: go to the LISP-STAT∶∶INTERQUARTILE-RANGE function54391
-Ref: go to the RDATA∶∶LOAD-R-DEFAULT-DATASETS function54671
-Ref: go to the RDATA∶∶LOAD-R-METADATA function54913
-Ref: go to the RDATA∶∶SAVE-R-DEFAULT-DATASETS function55260
-Ref: go to the LISP-STAT∶∶SAVEVAR function55518
-Ref: go to the LISP-STAT∶∶VARIABLES function56138
-Node: Internal definitions56381
-Node: Internal special variables56627
-Ref: go to the LISP-STAT∶∶*ASK-ON-REDEFINE* special variable56858
-Ref: go to the LS-USER∶∶*DEFAULT-DATASETS* special variable57081
-Ref: go to the RDATA∶∶*R-DEFAULT-DATAFRAMES* special variable57344
-Ref: go to the LISP-STAT∶∶*VARIABLES* special variable57601
-Ref: go to the LS-USER∶∶IRIS special variable57810
-Ref: go to the LS-USER∶∶PLANTGROWTH special variable57995
-Ref: go to the RDATA∶∶STUDENT-SLEEP special variable58196
-Ref: go to the LS-USER∶∶TOOTHGROWTH special variable58424
-Ref: go to the LS-USER∶∶USARRESTS special variable58633
-Node: Internal functions58788
-Ref: go to the LISP-STAT∶∶SETUP-LS-TRANSLATIONS function59008
-Node: Internal generic functions59182
-Ref: go to the LISP-STAT∶∶SAVE-OBJ generic function59380
-Ref: go to the LISP-STAT∶∶SAVE-VARIABLE generic function59625
-Node: Indexes59828
-Node: Concept index60023
-Node: Function index64670
-Node: Variable index66855
-Node: Data type index94000
+Node: The lisp-stat/base/rdata․lisp file6051
+Ref: go to the lisp-stat/base/rdata․lisp file6302
+Node: The lisp-stat/statistics/stats․lisp file17221
+Ref: go to the lisp-stat/statistics/stats․lisp file17486
+Node: The lisp-stat/docs/doc-strings․lisp file17834
+Ref: go to the lisp-stat/docs/doc-strings․lisp file18096
+Node: The lisp-stat/ls-init․lisp file18203
+Ref: go to the lisp-stat/ls-init․lisp file18396
+Node: Static files18682
+Node: The lisp-stat/license file18822
+Ref: go to the lisp-stat/license file18970
+Node: Packages19063
+Node: The lisp-stat package19295
+Ref: go to the LISP-STAT package19436
+Node: The rdata package21053
+Ref: go to the RDATA package21197
+Node: The ls-user package31973
+Ref: go to the LS-USER package32091
+Node: Definitions37067
+Node: Exported definitions37337
+Node: Exported special variables37619
+Ref: go to the RDATA∶∶*R-DEFAULT-DATASETS* special variable37857
+Ref: go to the RDATA∶∶ABILITY․COV special variable38101
+Ref: go to the RDATA∶∶AIRMILES special variable38334
+Ref: go to the RDATA∶∶AIRPASSENGERS special variable38594
+Ref: go to the RDATA∶∶AIRQUALITY special variable38842
+Ref: go to the RDATA∶∶ANSCOMBE special variable39078
+Ref: go to the RDATA∶∶ATTENU special variable39344
+Ref: go to the RDATA∶∶ATTITUDE special variable39580
+Ref: go to the RDATA∶∶AUSTRES special variable39816
+Ref: go to the RDATA∶∶BASE-URL special variable40078
+Ref: go to the RDATA∶∶BJSALES special variable40315
+Ref: go to the RDATA∶∶BOD special variable40546
+Ref: go to the RDATA∶∶CARS special variable40770
+Ref: go to the RDATA∶∶CHICKWEIGHT special variable41012
+Ref: go to the RDATA∶∶CHICKWTS special variable41261
+Ref: go to the RDATA∶∶CO2-1 special variable41489
+Ref: go to the RDATA∶∶CO2-2 special variable41726
+Ref: go to the RDATA∶∶CRIMTAB special variable41967
+Ref: go to the RDATA∶∶DISCOVERIES special variable42204
+Ref: go to the RDATA∶∶DNASE special variable42443
+Ref: go to the RDATA∶∶ESOPH special variable42663
+Ref: go to the RDATA∶∶EURO special variable42903
+Ref: go to the RDATA∶∶EUSTOCKMARKETS special variable43147
+Ref: go to the RDATA∶∶FAITHFUL special variable43413
+Ref: go to the RDATA∶∶FORMALDEHYDE special variable43644
+Ref: go to the RDATA∶∶FREENY special variable43874
+Ref: go to the RDATA∶∶HAIREYECOLOR special variable44104
+Ref: go to the RDATA∶∶HARMAN23․COR special variable44352
+Ref: go to the RDATA∶∶HARMAN74․COR special variable44577
+Ref: go to the RDATA∶∶INDEX special variable44795
+Ref: go to the RDATA∶∶INDOMETH special variable44992
+Ref: go to the RDATA∶∶INFERT special variable45225
+Ref: go to the RDATA∶∶INSECTSPRAYS special variable45482
+Ref: go to the RDATA∶∶IRIS special variable45711
+Ref: go to the RDATA∶∶IRIS3 special variable45939
+Ref: go to the RDATA∶∶ISLANDS special variable46169
+Ref: go to the RDATA∶∶JOHNSONJOHNSON special variable46417
+Ref: go to the RDATA∶∶LAKEHURON special variable46667
+Ref: go to the RDATA∶∶LH special variable46893
+Ref: go to the RDATA∶∶LIFECYCLESAVINGS special variable47140
+Ref: go to the RDATA∶∶LOBLOLLY special variable47379
+Ref: go to the RDATA∶∶LONGLEY special variable47610
+Ref: go to the RDATA∶∶LYNX special variable47845
+Ref: go to the RDATA∶∶MORLEY special variable48086
+Ref: go to the RDATA∶∶MPG special variable48313
+Ref: go to the RDATA∶∶MTCARS special variable48579
+Ref: go to the RDATA∶∶NHTEMP special variable48806
+Ref: go to the RDATA∶∶NILE special variable49045
+Ref: go to the RDATA∶∶NOTTEM special variable49268
+Ref: go to the RDATA∶∶NPK special variable49519
+Ref: go to the RDATA∶∶NYCFLIGHTS13-AIRLINES special variable49773
+Ref: go to the RDATA∶∶NYCFLIGHTS13-AIRPORTS special variable50030
+Ref: go to the RDATA∶∶NYCFLIGHTS13-FLIGHTS special variable50261
+Ref: go to the RDATA∶∶NYCFLIGHTS13-PLANES special variable50558
+Ref: go to the RDATA∶∶NYCFLIGHTS13-WEATHER special variable50851
+Ref: go to the RDATA∶∶OCCUPATIONALSTATUS special variable51118
+Ref: go to the RDATA∶∶ORANGE special variable51364
+Ref: go to the RDATA∶∶ORCHARDSPRAYS special variable51594
+Ref: go to the RDATA∶∶PLANTGROWTH special variable51825
+Ref: go to the RDATA∶∶PRECIP special variable52068
+Ref: go to the RDATA∶∶PRESIDENTS special variable52306
+Ref: go to the RDATA∶∶PRESSURE special variable52552
+Ref: go to the RDATA∶∶PUROMYCIN special variable52810
+Ref: go to the RDATA∶∶QUAKES special variable53053
+Ref: go to the RDATA∶∶RANDU special variable53286
+Ref: go to the RDATA∶∶RIVERS special variable53535
+Ref: go to the RDATA∶∶ROCK special variable53772
+Ref: go to the RDATA∶∶SEATBELTS special variable54014
+Ref: go to the RDATA∶∶STACKLOSS special variable54258
+Ref: go to the RDATA∶∶SUNSPOT․MONTH special variable54500
+Ref: go to the RDATA∶∶SUNSPOT․YEAR special variable54749
+Ref: go to the RDATA∶∶SUNSPOTS special variable54982
+Ref: go to the RDATA∶∶SWISS special variable55216
+Ref: go to the RDATA∶∶THEOPH special variable55473
+Ref: go to the RDATA∶∶TITANIC special variable55707
+Ref: go to the RDATA∶∶TOOTHGROWTH special variable55950
+Ref: go to the RDATA∶∶TREERING special variable56207
+Ref: go to the RDATA∶∶TREES special variable56439
+Ref: go to the RDATA∶∶UCBADMISSIONS special variable56697
+Ref: go to the RDATA∶∶UKDRIVERDEATHS special variable56939
+Ref: go to the RDATA∶∶UKGAS special variable57179
+Ref: go to the RDATA∶∶USACCDEATHS special variable57413
+Ref: go to the RDATA∶∶USARRESTS special variable57654
+Ref: go to the RDATA∶∶USJUDGERATINGS special variable57894
+Ref: go to the RDATA∶∶USPERSONALEXPENDITURE special variable58169
+Ref: go to the RDATA∶∶USPOP special variable58394
+Ref: go to the RDATA∶∶VADEATHS special variable58634
+Ref: go to the RDATA∶∶VOLCANO special variable58866
+Ref: go to the RDATA∶∶WARPBREAKS special variable59130
+Ref: go to the RDATA∶∶WOMEN special variable59373
+Ref: go to the RDATA∶∶WORLDPHONES special variable59625
+Ref: go to the RDATA∶∶WWWUSAGE special variable59852
+Node: Exported symbol macros60050
+Ref: go to the LS-USER∶∶PLANTGROWTH$GROUP symbol macro60268
+Ref: go to the LS-USER∶∶PLANTGROWTH$WEIGHT symbol macro60500
+Ref: go to the LS-USER∶∶PLANTGROWTH$X6 symbol macro60728
+Ref: go to the LS-USER∶∶TOOTHGROWTH$DOSE symbol macro60958
+Ref: go to the LS-USER∶∶TOOTHGROWTH$LEN symbol macro61187
+Ref: go to the LS-USER∶∶TOOTHGROWTH$SUPP symbol macro61417
+Ref: go to the LS-USER∶∶TOOTHGROWTH$X5 symbol macro61645
+Ref: go to the LS-USER∶∶USARRESTS$ASSAULT symbol macro61876
+Ref: go to the LS-USER∶∶USARRESTS$MURDER symbol macro62104
+Ref: go to the LS-USER∶∶USARRESTS$RAPE symbol macro62330
+Ref: go to the LS-USER∶∶USARRESTS$URBANPOP symbol macro62560
+Ref: go to the LS-USER∶∶USARRESTS$X7 symbol macro62784
+Node: Exported macros62978
+Ref: go to the LISP-STAT∶∶DEF macro63188
+Node: Exported functions63719
+Ref: go to the LISP-STAT∶∶FIVENUM function63878
+Ref: go to the LISP-STAT∶∶INTERQUARTILE-RANGE function64492
+Ref: go to the RDATA∶∶LOAD-R-DEFAULT-DATASETS function64772
+Ref: go to the RDATA∶∶LOAD-R-METADATA function65014
+Ref: go to the RDATA∶∶SAVE-R-DATA function65306
+Ref: go to the RDATA∶∶SAVE-R-DEFAULT-DATASETS function65513
+Ref: go to the LISP-STAT∶∶SAVEVAR function65771
+Ref: go to the LISP-STAT∶∶UNDEF-VAR function66390
+Ref: go to the LISP-STAT∶∶VARIABLES function66866
+Node: Internal definitions67109
+Node: Internal constants67405
+Ref: go to the LS-USER∶∶+COPYRIGHT-YEARS+ constant67612
+Node: Internal special variables67680
+Ref: go to the LISP-STAT∶∶*ASK-ON-REDEFINE* special variable67913
+Ref: go to the LS-USER∶∶*DEFAULT-DATASETS* special variable68136
+Ref: go to the RDATA∶∶*R-DEFAULT-DATAFRAMES* special variable68399
+Ref: go to the LISP-STAT∶∶*VARIABLES* special variable68656
+Ref: go to the LS-USER∶∶CARS special variable68865
+Ref: go to the LS-USER∶∶MTCARS special variable68961
+Ref: go to the LS-USER∶∶PLANTGROWTH special variable69062
+Ref: go to the RDATA∶∶STUDENT-SLEEP special variable69263
+Ref: go to the LS-USER∶∶TOOTHGROWTH special variable69491
+Ref: go to the LS-USER∶∶USARRESTS special variable69700
+Node: Internal symbol macros69855
+Ref: go to the LS-USER∶∶CARS$ACCELERATION symbol macro70076
+Ref: go to the LS-USER∶∶CARS$CYLINDERS symbol macro70247
+Ref: go to the LS-USER∶∶CARS$DISPLACEMENT symbol macro70421
+Ref: go to the LS-USER∶∶CARS$HORSEPOWER symbol macro70593
+Ref: go to the LS-USER∶∶CARS$MILES-PER-GALLON symbol macro70771
+Ref: go to the LS-USER∶∶CARS$NAME symbol macro70937
+Ref: go to the LS-USER∶∶CARS$ORIGIN symbol macro71105
+Ref: go to the LS-USER∶∶CARS$WEIGHT-IN-LBS symbol macro71280
+Ref: go to the LS-USER∶∶CARS$YEAR symbol macro71446
+Ref: go to the LS-USER∶∶MTCARS$AM symbol macro71612
+Ref: go to the LS-USER∶∶MTCARS$CARB symbol macro71782
+Ref: go to the LS-USER∶∶MTCARS$CYL symbol macro71952
+Ref: go to the LS-USER∶∶MTCARS$DISP symbol macro72122
+Ref: go to the LS-USER∶∶MTCARS$DRAT symbol macro72292
+Ref: go to the LS-USER∶∶MTCARS$GEAR symbol macro72462
+Ref: go to the LS-USER∶∶MTCARS$HP symbol macro72631
+Ref: go to the LS-USER∶∶MTCARS$MPG symbol macro72800
+Ref: go to the LS-USER∶∶MTCARS$QSEC symbol macro72970
+Ref: go to the LS-USER∶∶MTCARS$VS symbol macro73138
+Ref: go to the LS-USER∶∶MTCARS$WT symbol macro73306
+Ref: go to the LS-USER∶∶MTCARS$X4 symbol macro73474
+Ref: go to the LS-USER∶∶PLANTGROWTH$X2 symbol macro73647
+Ref: go to the LS-USER∶∶TOOTHGROWTH$X1 symbol macro73875
+Ref: go to the LS-USER∶∶USARRESTS$X3 symbol macro74101
+Node: Internal functions74295
+Ref: go to the LISP-STAT∶∶SETUP-LS-TRANSLATIONS function74511
+Node: Internal generic functions74685
+Ref: go to the LISP-STAT∶∶SAVE-OBJ generic function74883
+Node: Indexes75088
+Node: Concept index75283
+Node: Function index79930
+Node: Variable index81977
+Node: Data type index121198
 
 End Tag Table
 

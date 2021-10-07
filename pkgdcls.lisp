@@ -19,7 +19,8 @@
 		 :num-utils.arithmetic
 		 :num-utils.statistics
                  :num-utils.elementwise
-		 :num-utils.utilities
+                 :num-utils.utilities
+		 :num-utils.print-matrix
 		 :select
 		 :split-sequence)
   (:export #:variables

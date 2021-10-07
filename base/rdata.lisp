@@ -1,14 +1,19 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: CL-USER -*-
 ;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
 
+;;; Note: some functions are conditionalised to not load on Genera
+;;; because dexador hasn't been ported.
+
 (uiop:define-package #:rdata
     (:use :cl)
   (:export #:index
 	   #:base-url
 	   #:load-r-default-datasets
 	   #:save-r-default-datasets
-	   #:get-r-data
 	   #:load-r-metadata
+	   #:save-r-data
+	   #:load-r-metadata
+	   #:*rdata*
 	   #:*r-default-datasets*
 
 	   ;; Individual data sets
@@ -23,7 +28,7 @@
 	   #:Indometh #:infert #:InsectSprays #:iris #:iris3 #:islands
 	   #:JohnsonJohnson
 	   #:LakeHuron #:lh #:LifeCycleSavings #:Loblolly #:longley #:lynx
-	   #:morley #:mtcars
+	   #:morley #:mtcars #:mpg
 	   #:nhtemp #:Nile #:nottem #:npk
 	   #:nycflights13-airlines #:nycflights13-airports #:nycflights13-flights #:nycflights13-planes #:nycflights13-weather
 	   #:occupationalStatus #:Orange #:OrchardSprays
@@ -61,6 +66,8 @@
   "Metadata for all airplane tail numbers found in the FAA aircraft registry")
 (defvar nycflights13-weather "http://vincentarelbundock.github.io/Rdatasets/csv/nycflights13/weather.csv"
   "Hourly meterological data for LGA, JFK and EWR in 2013")
+(defvar mpg "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/ggplot2/mpg.csv"
+  "Fuel economy data from 1999 to 2008 for 38 popular models of cars")
 
 
 
@@ -256,7 +263,7 @@
 (defvar WWWusage "http://vincentarelbundock.github.io/Rdatasets/csv/datasets/WWWusage.csv"
     "Internet Usage per Minute")
 
-
+#-genera
 (defun load-r-default-datasets ()
   "Load the data sets included in base R"
   (map nil #'(lambda (x)
@@ -270,21 +277,22 @@
 (defun save-r-default-datasets ()
   "Save the data sets included in base R"
   (map nil #'(lambda (x)
-	       (eval `(dfio:save ,x
-			    (make-pathname :host "LS"
-					   :directory '(:absolute "DATASETS" "R")
-					   :name (dfio:symbol-name-to-pathname ,(symbol-name x))
-					   :type "lisp"))))
+	       (format t "X: ~A " x)
+	       (dfio:save x
+			  (make-pathname :host "LS"
+					 :directory '(:absolute "DATASETS" "r")
+					 :name (dfio:symbol-name-to-pathname (symbol-name x))
+					 :type "lisp")))
        *r-default-dataframes*))
 
-(defun get-r-data ()
+(defun save-r-data ()
   (load-r-default-datasets)
   (save-r-default-datasets))
 
+#-genera
 (defun load-r-metadata ()
-  "Loads the master R data set index as a data frame
-
-This allows you to slice & dice the 1500+ data sets to find what you need"
-  (eval '(df:defdf all-r-datasets
+  "Loads the master R data set index as a data frame. Use this to query the R data sets."
+  (eval '(df:defdf *rdata*
 	  (dfio:read-csv (dex:get index :want-stream t))
 	  "Master index for all vincentarelbundock R data sets")))
+
