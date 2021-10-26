@@ -27,6 +27,8 @@
   (is nu:num= #(1 2.25 4 5.75 7) (fivenum '(1 2 3 4 5 6 7)))
   (is nu:num= #(1 2.5 4.5 6.5 8) (fivenum '(1 2 3 4 5 6 7 8)))
   (is nu:num= #(1 2.5 4.5 6.5 8) (fivenum #(1 2 3 4 5 6 7 8)))
+  (is nu:num= #(2 5 8 8 15) (fivenum #(2 5 8 8 15) :tukey t))
+  (is nu:num= #(2 5 10 15 18) (fivenum #(2 5 8 12 15 18) :tukey t))
   (fail (fivenum '(8 2 3 9 5 1 4 10 7 0 A)))) ;type error with non-numeric value
 
 

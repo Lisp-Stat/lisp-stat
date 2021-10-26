@@ -6,10 +6,20 @@
   "Returns the interquartile range of the elements of X."
   (reduce #'- (nu:quantiles x '(0.75 0.25))))
 
-(defun fivenum (x)
-  "Returns the five number summary (min, 1st quartile, median, 3rd quartile, max) of the elements X.
-Note this is not Tukey's fivenum summary, which R returns. The results will differ when X contains an even number of elements.
-See:
-   https://www.icalcu.com/stat/fivenum.html
-   https://math.stackexchange.com/questions/398077/question-on-five-number-summary-quantile"
-  (nu:quantiles x '(0 0.25 0.5 0.75 1)))
+(defun fivenum (x &key (tukey nil))
+  "By default, returns the five number summary (min, 1st quartile, median, 3rd quartile, max) of the elements X.
+   If the keyword :tukey is set to a non-nil value, Tukey's fivenum summary is computed instead."
+   (if tukey
+     (let* ((mn-md-mx (nu:quantiles x '(0 0.5 1)))
+	    (mn (aref mn-md-mx 0))
+            (md (aref mn-md-mx 1))
+            (mx (aref mn-md-mx 2))
+	    (sorted (sorted-reals-elements (nu:ensure-sorted-reals x)))
+	    (l (length sorted))
+	    (left (subseq sorted 0 (floor (/ (1+ l) 2))))
+	    (right (subseq sorted (floor (/ l 2)) l))
+	    (hinge-left (nu:median left))
+	    (hinge-right (nu:median right)))
+        (vector mn hinge-left md hinge-right mx))
+
+       (nu:quantiles x '(0 0.25 0.5 0.75 1))))
