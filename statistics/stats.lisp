@@ -10,10 +10,7 @@
   "By default, returns the five number summary (min, 1st quartile, median, 3rd quartile, max) of the elements X.
    If the keyword :tukey is set to a non-nil value, Tukey's fivenum summary is computed instead."
    (if tukey
-     (let* ((mn-md-mx (nu:quantiles x '(0 0.5 1)))
-	    (mn (aref mn-md-mx 0))
-            (md (aref mn-md-mx 1))
-            (mx (aref mn-md-mx 2))
+     (let+ ((#(mn md mx) (nu:quantiles x '(0 0.5 1)))
 	    (sorted (sorted-reals-elements (nu:ensure-sorted-reals x)))
 	    (l (length sorted))
 	    (left (subseq sorted 0 (floor (/ (1+ l) 2))))

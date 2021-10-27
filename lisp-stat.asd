@@ -8,6 +8,7 @@
   :author      "Steve Nunez <steve@symbolics.tech>"
   :license     :MS-PL
   :depends-on ("alexandria"
+               "let-plus"
 	       "array-operations"
 	       "data-frame"
 	       "dfio"

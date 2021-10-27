@@ -6,6 +6,7 @@
   (:documentation "Base functions for Lisp-Stat")
   (:use :common-lisp)
 
+  (:import-from :let-plus #:let+)
   ;; Fix symbol conflicts
   ;; This would be easier with something like defpackage-plus, but that system is somewhat fragile when redefining packages
   (:shadowing-import-from :num-utils.statistics #:mean #:variance #:median) ; alexandria only works on sequences
