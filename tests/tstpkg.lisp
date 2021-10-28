@@ -9,7 +9,9 @@
 	:lisp-stat
 	:parachute)
 
-  ;; Parachute has symbol conflicts with Alexandria
+  ;; Parachute has symbol conflicts with Alexandria and data-frame
+  (:shadowing-import-from :parachute #:name)
+  (:shadowing-import-from :parachute #:summary)
   (:shadowing-import-from :parachute #:featurep)
   (:shadowing-import-from :parachute #:of-type))
 
