@@ -90,6 +90,7 @@
 * [numerical-utilities](https://github.com/Lisp-Stat/numerical-utilities)
 * [special-functions](https://github.com/Lisp-Stat/special-functions)
 * [array-operations](https://github.com/Lisp-Stat/array-operations)
+* [let-plus](https://github.com/sharplispers/let-plus)
 
 
 <!-- GETTING STARTED -->
@@ -100,15 +101,17 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 An ANSI Common Lisp implementation. Developed and tested with
-[SBCL](https://www.sbcl.org/) and
-[CCL](https://github.com/Clozure/ccl).
+[SBCL](https://www.sbcl.org/) ~~and
+[CCL](https://github.com/Clozure/ccl)~~.
+
+Note: CCL is in poor condition these days, and we no can longer support it due to some serious problem with numerical accuracy. See [issue 390](https://github.com/Clozure/ccl/issues/390) for just one of the problems. A shame, because it's a great environment to work in.
 
 ### Installation
 
-Lisp-Stat is composed of several system that are designed to be
-independently useful.  So you can, for example, use `select` to obtain
-selections from two dimensional arrays without bringing in all of
-Lisp-Stat.
+Lisp-Stat is composed of several systems that are designed to be
+independently useful.  So you can, for example, use
+[select](https://github.com/Lisp-Stat/select) to obtain selections
+from two dimensional arrays without bringing in all of Lisp-Stat.
 
 #### Getting the source
 
@@ -123,8 +126,8 @@ git clone https://github.com/Lisp-Stat/special-functions.git && \
 git clone https://github.com/Lisp-Stat/numerical-utilities.git && \
 git clone https://github.com/Lisp-Stat/documentation.git && \
 git clone https://github.com/Lisp-Stat/plot.git && \
-git clone https://github.com/Lisp-Stat/select.git \
-git clone https://github.com/Symbolics/alexandria-plus \
+git clone https://github.com/Lisp-Stat/select.git && \
+git clone https://github.com/Symbolics/alexandria-plus && \
 git clone https://github.com/Lisp-Stat/lisp-stat.git
 ```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
@@ -141,7 +144,7 @@ with a comma (',') from the slime REPL.
 
 #### Getting dependencies
 
-To get the third party systems that Lisp-Stat depends on, you can use a dependency manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/) Once installed, get the dependencies with either of:
+To get the third party systems that Lisp-Stat depends on, you can use a dependency manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/). Once installed, get the dependencies with either of:
 
 ```lisp
 (clpm-client:sync :sources "clpi") ;sources may vary
@@ -154,6 +157,11 @@ To get the third party systems that Lisp-Stat depends on, you can use a dependen
 You need do this only once. After obtaining the dependencies, you can
 load the system with `ASDF` as described above without first syncing
 sources.
+
+### Running Tests
+
+To run the `lisp-stat` tests, evaluate this form: `(asdf:test-system :lisp-stat)`
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage

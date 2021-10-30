@@ -30,7 +30,3 @@
   (:use :common-lisp :lisp-stat)
   (:import-from :rdata #:get-r-data))
 
-;; load user init file, if present
-(if (probe-file #P"~/ls-init.lisp")
-    (load #P"~/ls-init.lisp"))
-
