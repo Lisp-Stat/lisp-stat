@@ -263,6 +263,9 @@
 (defvar WWWusage "http://vincentarelbundock.github.io/Rdatasets/csv/datasets/WWWusage.csv"
     "Internet Usage per Minute")
 
+
+;;; For the most part, these functions have been superseded by those in data.lisp
+
 #-genera
 (defun load-r-default-datasets ()
   "Load the data sets included in base R"
@@ -280,7 +283,7 @@
 	       (format t "X: ~A " x)
 	       (dfio:save x
 			  (make-pathname :host "LS"
-					 :directory '(:absolute "DATASETS" "r")
+					 :directory '(:absolute "DATA" "r")
 					 :name (dfio:symbol-name-to-pathname (symbol-name x))
 					 :type "lisp")))
        *r-default-dataframes*))

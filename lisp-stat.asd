@@ -1,12 +1,19 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-lisp; Package: ASDF -*-
-;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
 
 (defsystem :lisp-stat
   :name "Lisp Statistics"
-  :version     (:read-file-form "version.sexp")
-  :description "A statistical computing environment for Common Lisp"
-  :author      "Steve Nunez <steve@symbolics.tech>"
+  :version     "1.0.0"
   :license     :MS-PL
+  :author      "Steve Nunez <steve@symbolics.tech>"
+  :long-name   "Statistical Computing in Common Lisp"
+  :description "A statistical computing environment for Common Lisp"
+  :long-description  #.(uiop:read-file-string
+			(uiop:subpathname *load-pathname* "description.text"))
+  :homepage    "https://lisp-stat.dev/"
+  :source-control (:git "https://github.com/Lisp-Stat/lisp-stat.git")
+  :bug-tracker "https://github.com/Lisp-Stat/lisp-stat/issues"
+
   :depends-on ("alexandria"
                "let-plus"
 	       "array-operations"
@@ -23,7 +30,8 @@
 			:serial t
 			:components
 			((:file "variables") ;XLS style variable definitions
-			 (:file "rdata")))   ;Utilities for working with R data sets
+                         (:file "data")	     ;load data sets
+			 (:file "rdata")))   ;definitions of data sets from R
 	       (:module "statistics"
 		        :serial t
 		        :components ((:file "stats")))
@@ -32,6 +40,7 @@
 	       (:file "ls-init")))
 
 (defsystem :lisp-stat/tests
+  :version "1.0.0"
   :description "Unit tests for Lisp-Stat"
   :author "Steve Nunez <steve@symbolics.tech>"
   :license :MS-PL

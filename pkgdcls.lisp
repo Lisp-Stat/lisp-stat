@@ -25,6 +25,7 @@
 		 :select
 		 :split-sequence)
   (:export #:variables
+	   #:data
            #:def
 	   #:undef-var
            #:savevar

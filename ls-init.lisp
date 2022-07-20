@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LS -*-
-;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
 
 (in-package #:lisp-stat)
 
@@ -14,10 +14,10 @@
 
 (defun setup-ls-translations ()
   (setf (logical-pathname-translations "LS")
-	`(("DATASETS;**;*.*.*" ,(merge-pathnames "datasets/**/*.*" (asdf:system-source-directory 'lisp-stat)))
-	  ("CACHE;**;*.*.*"    ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-cache-home)))
-	  ("DATA;**;*.*.*"     ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-data-home)))
-	  ("CONFIG;**;*.*.*"   ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-config-home))))))
+	`(("DATA;**;*.*.*"    ,(merge-pathnames "data/**/*.*" (asdf:system-source-directory 'lisp-stat)))
+	  ("CACHE;**;*.*.*"   ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-cache-home)))
+	  ;; ("DATA;**;*.*.*"     ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-data-home))) ;for individual users
+	  ("CONFIG;**;*.*.*"  ,(merge-pathnames "lisp-stat/**/*.*" (uiop:xdg-config-home))))))
 
 (setup-ls-translations)
 
