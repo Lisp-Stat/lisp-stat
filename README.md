@@ -101,13 +101,14 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 An ANSI Common Lisp implementation. Developed and tested with
-[SBCL](https://www.sbcl.org/) (above version 2.1.9; Lisp Stat is known
-to work with version 2.2.6) ~~and
-[CCL](https://github.com/Clozure/ccl)~~.
+[SBCL](https://www.sbcl.org/)
+(above version 2.1.9; Lisp Stat is known to work with version 2.2.6)
+~~and [CCL](https://github.com/Clozure/ccl)~~.
 
 Note: CCL is in poor condition these days, and we no can longer support it due to some serious problem with numerical accuracy. See [issue 390](https://github.com/Clozure/ccl/issues/390) for just one of the problems. A shame, because it's a great environment to work in.
 
-[ASDF](https://gitlab.common-lisp.net/asdf/asdf) minimum version 3.3.5; check the version from SLIME with `asdf::*asdf-version*`
+[ASDF](https://gitlab.common-lisp.net/asdf/asdf) minimum version
+3.3.5; check the version from SLIME with `asdf::*asdf-version*`.
 
 
 ### Installation
