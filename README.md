@@ -167,6 +167,10 @@ sources.
 
 To run the `lisp-stat` tests, evaluate this form: `(asdf:test-system :lisp-stat)`
 
+### Upgrading ASDF to v3.3.5
+
+`cd ~/common-lisp/ && wget https://asdf.common-lisp.dev/archives/asdf-3.3.5.tar.gz && tar -xvf asdf-3.3.5.tar.gz && mv asdf-3.3.5 asdf`
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
