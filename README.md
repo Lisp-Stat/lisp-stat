@@ -170,7 +170,7 @@ Create a data frame from a file named `sg-weather.csv` on the local disk:
 
 ```lisp
 (defparameter *df*
-	(read-csv #P"LS:DATASETS;sg-weather.csv"))
+	(read-csv #P"LS:DATA;sg-weather.csv"))
 
 ```
 
