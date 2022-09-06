@@ -30,9 +30,7 @@
 	       (:module "base"
 			:serial t
 			:components
-			((:file "variables") ;XLS style variable definitions
-                         (:file "data")	     ;load data sets
-			 (:file "rdata")))   ;definitions of data sets from R
+			((:file "variables")) ;XLS style variable definitions
 	       (:module "docs"
 		:components ((:file "doc-strings")))
 	       (:file "ls-init")))

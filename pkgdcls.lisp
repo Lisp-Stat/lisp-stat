@@ -27,7 +27,6 @@
 		 :split-sequence
 		 :statistics-1)
   (:export #:variables
-	   #:data
            #:def
 	   #:undef-var
            #:savevar
