@@ -20,8 +20,8 @@
   <h3 align="center">Lisp-Stat</h3>
 
   <p align="center">
-	An environment for statistical computing
-	<br />
+  An environment for statistical computing
+  <br />
     <a href="https://lisp-stat.dev/docs/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -54,7 +54,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-	<li><a href="#resources">Resources</a></li>
+  <li><a href="#resources">Resources</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -101,10 +101,15 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 An ANSI Common Lisp implementation. Developed and tested with
-[SBCL](https://www.sbcl.org/) ~~and
-[CCL](https://github.com/Clozure/ccl)~~.
+[SBCL](https://www.sbcl.org/)
+(above version 2.1.9; Lisp Stat is known to work with version 2.2.6)
+~~and [CCL](https://github.com/Clozure/ccl)~~.
 
 Note: CCL is in poor condition these days, and we no can longer support it due to some serious problem with numerical accuracy. See [issue 390](https://github.com/Clozure/ccl/issues/390) for just one of the problems. A shame, because it's a great environment to work in.
+
+[ASDF](https://gitlab.common-lisp.net/asdf/asdf) minimum version
+3.3.5; check the version from SLIME with `asdf::*asdf-version*`.
+
 
 ### Installation
 
@@ -162,6 +167,10 @@ sources.
 
 To run the `lisp-stat` tests, evaluate this form: `(asdf:test-system :lisp-stat)`
 
+### Upgrading ASDF to v3.3.5
+
+`cd ~/common-lisp/ && wget https://asdf.common-lisp.dev/archives/asdf-3.3.5.tar.gz && tar -xvf asdf-3.3.5.tar.gz && mv asdf-3.3.5 asdf`
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -170,7 +179,7 @@ Create a data frame from a file named `sg-weather.csv` on the local disk:
 
 ```lisp
 (defparameter *df*
-	(read-csv #P"LS:DATASETS;sg-weather.csv"))
+  (read-csv #P"LS:DATA;sg-weather.csv"))
 
 ```
 
