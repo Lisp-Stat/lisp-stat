@@ -16,18 +16,18 @@ lisp-stat.texi.
      manual into another language, under the above conditions for
      modified versions, except that this permission notice may be
      translated as well.
-INFO-DIR-SECTION Lisp-Stat
+INFO-DIR-SECTION Common Lisp
 START-INFO-DIR-ENTRY
-* Lisp-Stat Reference Manual: (lisp-stat). The Lisp-Stat Reference Manual.
+* LISP-STAT Reference Manual: (lisp-stat). The LISP-STAT Reference Manual.
 END-INFO-DIR-ENTRY
 
 
 File: lisp-stat.info,  Node: Top,  Next: Copying,  Prev: (dir),  Up: (dir)
 
-The Lisp-Stat Reference Manual
+The LISP-STAT Reference Manual
 ******************************
 
-This is the Lisp-Stat Reference Manual, version 1.0.0, generated
+This is the LISP-STAT Reference Manual, version 1.2.0, generated
 automatically by Declt version 4.0b2.
 
 * Menu:
@@ -105,26 +105,27 @@ A statistical computing environment for Common Lisp
      we need from the other libraries.  You should always do your work
      in the LS-USER package, and not in CL-USER.
 *Version*
-     1.0.0
+     1.2.0
 *Dependencies*
         • alexandria (system).
-        • let-plus (system).
+        • alexandria+ (system).
         • array-operations (system).
         • data-frame (system).
+        • distributions (system).
+        • dexador (system).
         • dfio (system).
         • num-utils (system).
         • select (system).
-        • dexador (system).
-        • split-sequence (system).
+        • statistics (system).
+        • org.tfeb.conduit-packages (system).
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Child Components*
-        • *note pkgdcls.lisp: ❨6❩. (file).
-        • *note license: ❨7❩. (file).
+        • *note pkgdcls.lisp: ❨5❩. (file).
+        • *note license: ❨6❩. (file).
         • *note base: ❨2❩. (module).
-        • *note statistics: ❨3❩. (module).
-        • *note docs: ❨4❩. (module).
-        • *note ls-init.lisp: ❨13❩. (file).
+        • *note docs: ❨3❩. (module).
+        • *note ls-init.lisp: ❨9❩. (file).
 
 
 File: lisp-stat.info,  Node: Modules,  Next: Files,  Prev: Systems,  Up: Top
@@ -137,49 +138,33 @@ Modules are listed depth-first from the system components tree.
 * Menu:
 
 * The lisp-stat/base module::
-* The lisp-stat/statistics module::
 * The lisp-stat/docs module::
 
 
-File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/statistics module,  Prev: Modules,  Up: Modules
+File: lisp-stat.info,  Node: The lisp-stat/base module,  Next: The lisp-stat/docs module,  Prev: Modules,  Up: Modules
 
 2.1 lisp-stat/base
 ==================
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
-*Parent Component*
-     *note lisp-stat: ❨1❩. (system).
-*Child Components*
-        • *note variables.lisp: ❨8❩. (file).
-        • *note data.lisp: ❨9❩. (file).
-        • *note rdata.lisp: ❨10❩. (file).
-
-
-File: lisp-stat.info,  Node: The lisp-stat/statistics module,  Next: The lisp-stat/docs module,  Prev: The lisp-stat/base module,  Up: Modules
-
-2.2 lisp-stat/statistics
-========================
-
-*Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
 *Child Component*
-     *note stats.lisp: ❨11❩. (file).
+     *note variables.lisp: ❨7❩. (file).
 
 
-File: lisp-stat.info,  Node: The lisp-stat/docs module,  Prev: The lisp-stat/statistics module,  Up: Modules
+File: lisp-stat.info,  Node: The lisp-stat/docs module,  Prev: The lisp-stat/base module,  Up: Modules
 
-2.3 lisp-stat/docs
+2.2 lisp-stat/docs
 ==================
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
 *Child Component*
-     *note doc-strings.lisp: ❨12❩. (file).
+     *note doc-strings.lisp: ❨8❩. (file).
 
 
 File: lisp-stat.info,  Node: Files,  Next: Packages,  Prev: Modules,  Up: Top
@@ -206,9 +191,6 @@ File: lisp-stat.info,  Node: Lisp files,  Next: Static files,  Prev: Files,  Up:
 * The lisp-stat/lisp-stat․asd file::
 * The lisp-stat/pkgdcls․lisp file::
 * The lisp-stat/base/variables․lisp file::
-* The lisp-stat/base/data․lisp file::
-* The lisp-stat/base/rdata․lisp file::
-* The lisp-stat/statistics/stats․lisp file::
 * The lisp-stat/docs/doc-strings․lisp file::
 * The lisp-stat/ls-init․lisp file::
 
@@ -219,7 +201,7 @@ File: lisp-stat.info,  Node: The lisp-stat/lisp-stat․asd file,  Next: The lisp
 -----------------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
 *ASDF Systems*
@@ -232,200 +214,55 @@ File: lisp-stat.info,  Node: The lisp-stat/pkgdcls․lisp file,  Next: The lisp-
 ----------------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
 *Packages*
-     *note lisp-stat: ❨14❩.
+        • *note lisp-stat: ❨10❩.
+        • *note ls-user: ❨11❩.
 
 
-File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: The lisp-stat/base/data․lisp file,  Prev: The lisp-stat/pkgdcls․lisp file,  Up: Lisp files
+File: lisp-stat.info,  Node: The lisp-stat/base/variables․lisp file,  Next: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/pkgdcls․lisp file,  Up: Lisp files
 
 3.1.3 lisp-stat/base/variables.lisp
 -----------------------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note base: ❨2❩. (module).
 *Public Interface*
-        • *note def: ❨17❩. (macro).
-        • *note savevar: ❨22❩. (function).
-        • *note undef-var: ❨18❩. (function).
-        • *note variables: ❨21❩. (function).
+        • *note def: ❨13❩. (macro).
+        • *note savevar: ❨15❩. (function).
+        • *note undef-var: ❨12❩. (function).
+        • *note variables: ❨14❩. (function).
 *Internals*
-        • *note *variables*: ❨24❩. (special variable).
-        • *note save-obj: ❨25❩. (generic function).
+        • *note *variables*: ❨17❩. (special variable).
+        • *note save-obj: ❨16❩. (generic function).
 
 
-File: lisp-stat.info,  Node: The lisp-stat/base/data․lisp file,  Next: The lisp-stat/base/rdata․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
+File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Next: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat/base/variables․lisp file,  Up: Lisp files
 
-3.1.4 lisp-stat/base/data.lisp
-------------------------------
-
-*Dependency*
-     *note variables.lisp: ❨8❩. (file).
-*Source*
-     *note lisp-stat.asd: ❨5❩.
-*Parent Component*
-     *note base: ❨2❩. (module).
-*Public Interface*
-     *note data: ❨20❩. (function).
-
-
-File: lisp-stat.info,  Node: The lisp-stat/base/rdata․lisp file,  Next: The lisp-stat/statistics/stats․lisp file,  Prev: The lisp-stat/base/data․lisp file,  Up: Lisp files
-
-3.1.5 lisp-stat/base/rdata.lisp
--------------------------------
-
-*Dependency*
-     *note data.lisp: ❨9❩. (file).
-*Source*
-     *note lisp-stat.asd: ❨5❩.
-*Parent Component*
-     *note base: ❨2❩. (module).
-*Packages*
-     *note rdata: ❨16❩.
-*Public Interface*
-        • *note *r-default-datasets*: ❨50❩. (special variable).
-        • *note ability.cov: ❨111❩. (special variable).
-        • *note airmiles: ❨92❩. (special variable).
-        • *note airpassengers: ❨118❩. (special variable).
-        • *note airquality: ❨104❩. (special variable).
-        • *note anscombe: ❨82❩. (special variable).
-        • *note attenu: ❨119❩. (special variable).
-        • *note attitude: ❨64❩. (special variable).
-        • *note austres: ❨75❩. (special variable).
-        • *note base-url: ❨51❩. (special variable).
-        • *note bjsales: ❨96❩. (special variable).
-        • *note bod: ❨79❩. (special variable).
-        • *note cars: ❨32❩. (special variable).
-        • *note chickweight: ❨113❩. (special variable).
-        • *note chickwts: ❨71❩. (special variable).
-        • *note co2-1: ❨42❩. (special variable).
-        • *note co2-2: ❨107❩. (special variable).
-        • *note crimtab: ❨109❩. (special variable).
-        • *note discoveries: ❨56❩. (special variable).
-        • *note dnase: ❨91❩. (special variable).
-        • *note esoph: ❨97❩. (special variable).
-        • *note euro: ❨102❩. (special variable).
-        • *note eustockmarkets: ❨33❩. (special variable).
-        • *note faithful: ❨46❩. (special variable).
-        • *note formaldehyde: ❨39❩. (special variable).
-        • *note freeny: ❨69❩. (special variable).
-        • *note haireyecolor: ❨43❩. (special variable).
-        • *note harman23.cor: ❨80❩. (special variable).
-        • *note harman74.cor: ❨105❩. (special variable).
-        • *note index: ❨63❩. (special variable).
-        • *note indometh: ❨86❩. (special variable).
-        • *note infert: ❨85❩. (special variable).
-        • *note insectsprays: ❨70❩. (special variable).
-        • *note iris: ❨124❩. (special variable).
-        • *note iris3: ❨60❩. (special variable).
-        • *note islands: ❨37❩. (special variable).
-        • *note johnsonjohnson: ❨125❩. (special variable).
-        • *note lakehuron: ❨48❩. (special variable).
-        • *note lh: ❨76❩. (special variable).
-        • *note lifecyclesavings: ❨116❩. (special variable).
-        • *note load-r-default-datasets: ❨54❩. (function).
-        • *note load-r-metadata: ❨120❩. (function).
-        • *note loblolly: ❨100❩. (special variable).
-        • *note longley: ❨106❩. (special variable).
-        • *note lynx: ❨41❩. (special variable).
-        • *note morley: ❨68❩. (special variable).
-        • *note mpg: ❨74❩. (special variable).
-        • *note mtcars: ❨88❩. (special variable).
-        • *note nhtemp: ❨78❩. (special variable).
-        • *note nile: ❨99❩. (special variable).
-        • *note nottem: ❨81❩. (special variable).
-        • *note npk: ❨59❩. (special variable).
-        • *note nycflights13-airlines: ❨121❩. (special variable).
-        • *note nycflights13-airports: ❨72❩. (special variable).
-        • *note nycflights13-flights: ❨93❩. (special variable).
-        • *note nycflights13-planes: ❨35❩. (special variable).
-        • *note nycflights13-weather: ❨127❩. (special variable).
-        • *note occupationalstatus: ❨73❩. (special variable).
-        • *note orange: ❨110❩. (special variable).
-        • *note orchardsprays: ❨103❩. (special variable).
-        • *note plantgrowth: ❨47❩. (special variable).
-        • *note precip: ❨122❩. (special variable).
-        • *note presidents: ❨123❩. (special variable).
-        • *note pressure: ❨45❩. (special variable).
-        • *note puromycin: ❨61❩. (special variable).
-        • *note quakes: ❨65❩. (special variable).
-        • *note randu: ❨115❩. (special variable).
-        • *note rivers: ❨57❩. (special variable).
-        • *note rock: ❨126❩. (special variable).
-        • *note save-r-data: ❨34❩. (function).
-        • *note save-r-default-datasets: ❨55❩. (function).
-        • *note seatbelts: ❨36❩. (special variable).
-        • *note stackloss: ❨66❩. (special variable).
-        • *note sunspot.month: ❨38❩. (special variable).
-        • *note sunspot.year: ❨58❩. (special variable).
-        • *note sunspots: ❨90❩. (special variable).
-        • *note swiss: ❨53❩. (special variable).
-        • *note theoph: ❨84❩. (special variable).
-        • *note titanic: ❨52❩. (special variable).
-        • *note toothgrowth: ❨62❩. (special variable).
-        • *note treering: ❨83❩. (special variable).
-        • *note trees: ❨95❩. (special variable).
-        • *note ucbadmissions: ❨94❩. (special variable).
-        • *note ukdriverdeaths: ❨108❩. (special variable).
-        • *note ukgas: ❨89❩. (special variable).
-        • *note usaccdeaths: ❨112❩. (special variable).
-        • *note usarrests: ❨117❩. (special variable).
-        • *note usjudgeratings: ❨44❩. (special variable).
-        • *note uspersonalexpenditure: ❨40❩. (special variable).
-        • *note uspop: ❨98❩. (special variable).
-        • *note vadeaths: ❨67❩. (special variable).
-        • *note volcano: ❨101❩. (special variable).
-        • *note warpbreaks: ❨87❩. (special variable).
-        • *note women: ❨49❩. (special variable).
-        • *note worldphones: ❨114❩. (special variable).
-        • *note wwwusage: ❨77❩. (special variable).
-*Internals*
-        • *note *r-default-dataframes*: ❨128❩. (special variable).
-        • *note student-sleep: ❨129❩. (special variable).
-
-
-File: lisp-stat.info,  Node: The lisp-stat/statistics/stats․lisp file,  Next: The lisp-stat/docs/doc-strings․lisp file,  Prev: The lisp-stat/base/rdata․lisp file,  Up: Lisp files
-
-3.1.6 lisp-stat/statistics/stats.lisp
+3.1.4 lisp-stat/docs/doc-strings.lisp
 -------------------------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
-     *note statistics: ❨3❩. (module).
-*Public Interface*
-        • *note fivenum: ❨23❩. (function).
-        • *note interquartile-range: ❨19❩. (function).
-
-
-File: lisp-stat.info,  Node: The lisp-stat/docs/doc-strings․lisp file,  Next: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat/statistics/stats․lisp file,  Up: Lisp files
-
-3.1.7 lisp-stat/docs/doc-strings.lisp
--------------------------------------
-
-*Source*
-     *note lisp-stat.asd: ❨5❩.
-*Parent Component*
-     *note docs: ❨4❩. (module).
+     *note docs: ❨3❩. (module).
 
 
 File: lisp-stat.info,  Node: The lisp-stat/ls-init․lisp file,  Prev: The lisp-stat/docs/doc-strings․lisp file,  Up: Lisp files
 
-3.1.8 lisp-stat/ls-init.lisp
+3.1.5 lisp-stat/ls-init.lisp
 ----------------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
-*Packages*
-     *note ls-user: ❨15❩.
 *Internals*
-     *note setup-ls-translations: ❨26❩. (function).
+     *note setup-ls-translations: ❨18❩. (function).
 
 
 File: lisp-stat.info,  Node: Static files,  Prev: Lisp files,  Up: Files
@@ -444,7 +281,7 @@ File: lisp-stat.info,  Node: The lisp-stat/license file,  Prev: Static files,  U
 -----------------------
 
 *Source*
-     *note lisp-stat.asd: ❨5❩.
+     *note lisp-stat.asd: ❨4❩.
 *Parent Component*
      *note lisp-stat: ❨1❩. (system).
 
@@ -460,7 +297,6 @@ Packages are listed by definition order.
 
 * The lisp-stat package::
 * The ls-user package::
-* The rdata package::
 
 
 File: lisp-stat.info,  Node: The lisp-stat package,  Next: The ls-user package,  Prev: Packages,  Up: Packages
@@ -468,168 +304,32 @@ File: lisp-stat.info,  Node: The lisp-stat package,  Next: The ls-user package, 
 4.1 lisp-stat
 =============
 
-Base functions for Lisp-Stat
 *Source*
-     *note pkgdcls.lisp: ❨6❩.
-*Nickname*
-     ls
-*Use List*
-        • alexandria.
-        • array-operations/all.
-        • common-lisp.
-        • data-frame.
-        • dfio.
-        • num-utils.arithmetic.
-        • num-utils.elementwise.
-        • num-utils.print-matrix.
-        • num-utils.statistics.
-        • num-utils.utilities.
-        • select.
-        • split-sequence.
-*Used By List*
-     *note ls-user: ❨15❩.
+     *note pkgdcls.lisp: ❨5❩.
 *Public Interface*
-        • *note data: ❨20❩. (function).
-        • *note def: ❨17❩. (macro).
-        • *note fivenum: ❨23❩. (function).
-        • *note interquartile-range: ❨19❩. (function).
-        • *note savevar: ❨22❩. (function).
-        • *note undef-var: ❨18❩. (function).
-        • *note variables: ❨21❩. (function).
+        • *note def: ❨13❩. (macro).
+        • *note savevar: ❨15❩. (function).
+        • *note undef-var: ❨12❩. (function).
+        • *note variables: ❨14❩. (function).
 *Internals*
-        • *note *variables*: ❨24❩. (special variable).
-        • *note save-obj: ❨25❩. (generic function).
-        • *note setup-ls-translations: ❨26❩. (function).
+        • *note *variables*: ❨17❩. (special variable).
+        • *note save-obj: ❨16❩. (generic function).
+        • *note setup-ls-translations: ❨18❩. (function).
 
 
-File: lisp-stat.info,  Node: The ls-user package,  Next: The rdata package,  Prev: The lisp-stat package,  Up: Packages
+File: lisp-stat.info,  Node: The ls-user package,  Prev: The lisp-stat package,  Up: Packages
 
 4.2 ls-user
 ===========
 
-User package for Lisp-Stat
 *Source*
-     *note ls-init.lisp: ❨13❩.
-*Use List*
-        • common-lisp.
-        • *note lisp-stat: ❨14❩.
+     *note pkgdcls.lisp: ❨5❩.
 *Internals*
-        • *note iris: ❨28❩. (special variable).
-        • *note mtcars: ❨31❩. (special variable).
-        • *note plant-growth: ❨30❩. (special variable).
-        • *note tooth-growth: ❨29❩. (special variable).
-        • *note usarrests: ❨27❩. (special variable).
-
-
-File: lisp-stat.info,  Node: The rdata package,  Prev: The ls-user package,  Up: Packages
-
-4.3 rdata
-=========
-
-*Source*
-     *note rdata.lisp: ❨10❩.
-*Use List*
-     common-lisp.
-*Public Interface*
-        • *note *r-default-datasets*: ❨50❩. (special variable).
-        • *note ability.cov: ❨111❩. (special variable).
-        • *note airmiles: ❨92❩. (special variable).
-        • *note airpassengers: ❨118❩. (special variable).
-        • *note airquality: ❨104❩. (special variable).
-        • *note anscombe: ❨82❩. (special variable).
-        • *note attenu: ❨119❩. (special variable).
-        • *note attitude: ❨64❩. (special variable).
-        • *note austres: ❨75❩. (special variable).
-        • *note base-url: ❨51❩. (special variable).
-        • *note bjsales: ❨96❩. (special variable).
-        • *note bod: ❨79❩. (special variable).
-        • *note cars: ❨32❩. (special variable).
-        • *note chickweight: ❨113❩. (special variable).
-        • *note chickwts: ❨71❩. (special variable).
-        • *note co2-1: ❨42❩. (special variable).
-        • *note co2-2: ❨107❩. (special variable).
-        • *note crimtab: ❨109❩. (special variable).
-        • *note discoveries: ❨56❩. (special variable).
-        • *note dnase: ❨91❩. (special variable).
-        • *note esoph: ❨97❩. (special variable).
-        • *note euro: ❨102❩. (special variable).
-        • *note eustockmarkets: ❨33❩. (special variable).
-        • *note faithful: ❨46❩. (special variable).
-        • *note formaldehyde: ❨39❩. (special variable).
-        • *note freeny: ❨69❩. (special variable).
-        • *note haireyecolor: ❨43❩. (special variable).
-        • *note harman23.cor: ❨80❩. (special variable).
-        • *note harman74.cor: ❨105❩. (special variable).
-        • *note index: ❨63❩. (special variable).
-        • *note indometh: ❨86❩. (special variable).
-        • *note infert: ❨85❩. (special variable).
-        • *note insectsprays: ❨70❩. (special variable).
-        • *note iris: ❨124❩. (special variable).
-        • *note iris3: ❨60❩. (special variable).
-        • *note islands: ❨37❩. (special variable).
-        • *note johnsonjohnson: ❨125❩. (special variable).
-        • *note lakehuron: ❨48❩. (special variable).
-        • *note lh: ❨76❩. (special variable).
-        • *note lifecyclesavings: ❨116❩. (special variable).
-        • *note load-r-default-datasets: ❨54❩. (function).
-        • *note load-r-metadata: ❨120❩. (function).
-        • *note loblolly: ❨100❩. (special variable).
-        • *note longley: ❨106❩. (special variable).
-        • *note lynx: ❨41❩. (special variable).
-        • *note morley: ❨68❩. (special variable).
-        • *note mpg: ❨74❩. (special variable).
-        • *note mtcars: ❨88❩. (special variable).
-        • *note nhtemp: ❨78❩. (special variable).
-        • *note nile: ❨99❩. (special variable).
-        • *note nottem: ❨81❩. (special variable).
-        • *note npk: ❨59❩. (special variable).
-        • *note nycflights13-airlines: ❨121❩. (special variable).
-        • *note nycflights13-airports: ❨72❩. (special variable).
-        • *note nycflights13-flights: ❨93❩. (special variable).
-        • *note nycflights13-planes: ❨35❩. (special variable).
-        • *note nycflights13-weather: ❨127❩. (special variable).
-        • *note occupationalstatus: ❨73❩. (special variable).
-        • *note orange: ❨110❩. (special variable).
-        • *note orchardsprays: ❨103❩. (special variable).
-        • *note plantgrowth: ❨47❩. (special variable).
-        • *note precip: ❨122❩. (special variable).
-        • *note presidents: ❨123❩. (special variable).
-        • *note pressure: ❨45❩. (special variable).
-        • *note puromycin: ❨61❩. (special variable).
-        • *note quakes: ❨65❩. (special variable).
-        • *note randu: ❨115❩. (special variable).
-        • *note rivers: ❨57❩. (special variable).
-        • *note rock: ❨126❩. (special variable).
-        • *note save-r-data: ❨34❩. (function).
-        • *note save-r-default-datasets: ❨55❩. (function).
-        • *note seatbelts: ❨36❩. (special variable).
-        • *note stackloss: ❨66❩. (special variable).
-        • *note sunspot.month: ❨38❩. (special variable).
-        • *note sunspot.year: ❨58❩. (special variable).
-        • *note sunspots: ❨90❩. (special variable).
-        • *note swiss: ❨53❩. (special variable).
-        • *note theoph: ❨84❩. (special variable).
-        • *note titanic: ❨52❩. (special variable).
-        • *note toothgrowth: ❨62❩. (special variable).
-        • *note treering: ❨83❩. (special variable).
-        • *note trees: ❨95❩. (special variable).
-        • *note ucbadmissions: ❨94❩. (special variable).
-        • *note ukdriverdeaths: ❨108❩. (special variable).
-        • *note ukgas: ❨89❩. (special variable).
-        • *note usaccdeaths: ❨112❩. (special variable).
-        • *note usarrests: ❨117❩. (special variable).
-        • *note usjudgeratings: ❨44❩. (special variable).
-        • *note uspersonalexpenditure: ❨40❩. (special variable).
-        • *note uspop: ❨98❩. (special variable).
-        • *note vadeaths: ❨67❩. (special variable).
-        • *note volcano: ❨101❩. (special variable).
-        • *note warpbreaks: ❨87❩. (special variable).
-        • *note women: ❨49❩. (special variable).
-        • *note worldphones: ❨114❩. (special variable).
-        • *note wwwusage: ❨77❩. (special variable).
-*Internals*
-        • *note *r-default-dataframes*: ❨128❩. (special variable).
-        • *note student-sleep: ❨129❩. (special variable).
+        • *note iris: ❨21❩. (special variable).
+        • *note mtcars: ❨22❩. (special variable).
+        • *note plant-growth: ❨19❩. (special variable).
+        • *note tooth-growth: ❨23❩. (special variable).
+        • *note usarrests: ❨20❩. (special variable).
 
 
 File: lisp-stat.info,  Node: Definitions,  Next: Indexes,  Prev: Packages,  Up: Top
@@ -653,574 +353,13 @@ File: lisp-stat.info,  Node: Public Interface,  Next: Internals,  Prev: Definiti
 
 * Menu:
 
-* Public special variables::
 * Public macros::
 * Public ordinary functions::
 
 
-File: lisp-stat.info,  Node: Public special variables,  Next: Public macros,  Prev: Public Interface,  Up: Public Interface
+File: lisp-stat.info,  Node: Public macros,  Next: Public ordinary functions,  Prev: Public Interface,  Up: Public Interface
 
-5.1.1 Special variables
------------------------
-
- -- Special Variable: *r-default-datasets*
-     All data sets included by default in R
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: ability.cov
-     Ability and Intelligence Tests
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: airmiles
-     Passenger Miles on Commercial US Airlines, 1937-1960
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: airpassengers
-     Monthly Airline Passenger Numbers 1949-1960
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: airquality
-     New York Air Quality Measurements
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: anscombe
-     Anscombe’s Quartet of ’Identical’ Simple Linear Regressions
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: attenu
-     The Joyner-Boore Attenuation Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: attitude
-     The Chatterjee-Price Attitude Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: austres
-     Quarterly Time Series of the Number of Australian Residents
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: base-url
-     Base URL for datasets included in R
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: bjsales
-     Sales Data with Leading Indicator
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: bod
-     Biochemical Oxygen Demand
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: cars
-     Speed and Stopping Distances of Cars
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: chickweight
-     Weight versus age of chicks on different diets
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: chickwts
-     Chicken Weights by Feed Type
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: co2-1
-     Carbon Dioxide Uptake in Grass Plants
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: co2-2
-     Mauna Loa Atmospheric CO2 Concentration
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: crimtab
-     Student’s 3000 Criminals Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: discoveries
-     Yearly Numbers of Important Discoveries
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: dnase
-     Elisa assay of DNase
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: esoph
-     Smoking, Alcohol and (O)esophageal Cancer
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: euro
-     Conversion Rates of Euro Currencies
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: eustockmarkets
-     Daily Closing Prices of Major European Stock Indices, 1991-1998
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: faithful
-     Old Faithful Geyser Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: formaldehyde
-     Determination of Formaldehyde
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: freeny
-     Freeny’s Revenue Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: haireyecolor
-     Hair and Eye Color of Statistics Students
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: harman23.cor
-     Harman Example 2.3
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: harman74.cor
-     Harman Example 7.4
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: index
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: indometh
-     Pharmacokinetics of Indomethacin
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: infert
-     Infertility after Spontaneous and Induced Abortion
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: insectsprays
-     Effectiveness of Insect Sprays
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: iris
-     Edgar Anderson’s Iris Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: iris3
-     Edgar Anderson’s Iris Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: islands
-     Areas of the World’s Major Landmasses
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: johnsonjohnson
-     Quarterly Earnings per Johnson & Johnson Share
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: lakehuron
-     Level of Lake Huron 1875-1972
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: lh
-     Luteinizing Hormone in Blood Samples
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: lifecyclesavings
-     Intercountry Life-Cycle Savings Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: loblolly
-     Growth of Loblolly pine trees
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: longley
-     Longley’s Economic Regression Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: lynx
-     Annual Canadian Lynx trappings 1821-1934
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: morley
-     Michelson Speed of Light Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: mpg
-     Fuel economy data from 1999 to 2008 for 38 popular models of cars
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: mtcars
-     Motor Trend Car Road Tests
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nhtemp
-     Average Yearly Temperatures in New Haven
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nile
-     Flow of the River Nile
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nottem
-     Average Monthly Temperatures at Nottingham, 1920-1939
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: npk
-     Classical N, P, K Factorial Experiment
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nycflights13-airlines
-     Airline name lookup table by carrier code
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nycflights13-airports
-     Airport metadata
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nycflights13-flights
-     On-time data for all flights that departed NYC (i.e.  JFK, LGA or
-     EWR) in 2013
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nycflights13-planes
-     Metadata for all airplane tail numbers found in the FAA aircraft
-     registry
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: nycflights13-weather
-     Hourly meterological data for LGA, JFK and EWR in 2013
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: occupationalstatus
-     Occupational Status of Fathers and their Sons
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: orange
-     Growth of Orange Trees
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: orchardsprays
-     Potency of Orchard Sprays
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: plantgrowth
-     Results from an Experiment on Plant Growth
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: precip
-     Annual Precipitation in US Cities
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: presidents
-     Quarterly Approval Ratings of US Presidents
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: pressure
-     Vapor Pressure of Mercury as a Function of Temperature
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: puromycin
-     Reaction Velocity of an Enzymatic Reaction
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: quakes
-     Locations of Earthquakes off Fiji
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: randu
-     Random Numbers from Congruential Generator RANDU
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: rivers
-     Lengths of Major North American Rivers
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: rock
-     Measurements on Petroleum Rock Samples
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: seatbelts
-     Road Casualties in Great Britain 1969-84
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: stackloss
-     Brownlee’s Stack Loss Plant Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: sunspot.month
-     Monthly Sunspot Data, from 1749 to Present
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: sunspot.year
-     Yearly Sunspot Data, 1700-1988
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: sunspots
-     Monthly Sunspot Numbers, 1749-1983
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: swiss
-     Swiss Fertility and Socioeconomic Indicators (1888) Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: theoph
-     Pharmacokinetics of Theophylline
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: titanic
-     Survival of passengers on the Titanic
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: toothgrowth
-     The Effect of Vitamin C on Tooth Growth in Guinea Pigs
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: treering
-     Yearly Treering Data, -6000-1979
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: trees
-     Diameter, Height and Volume for Black Cherry Trees
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: ucbadmissions
-     Student Admissions at UC Berkeley
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: ukdriverdeaths
-     Road Casualties in Great Britain 1969-84
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: ukgas
-     UK Quarterly Gas Consumption
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: usaccdeaths
-     Accidental Deaths in the US 1973-1978
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: usarrests
-     Violent Crime Rates by US State
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: usjudgeratings
-     Lawyers’ Ratings of State Judges in the US Superior Court
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: uspersonalexpenditure
-     Personal Expenditure Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: uspop
-     Populations Recorded by the US Census
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: vadeaths
-     Death Rates in Virginia (1940)
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: volcano
-     Topographic Information on Auckland’s Maunga Whau Volcano
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: warpbreaks
-     The Number of Breaks in Yarn during Weaving
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: women
-     Average Heights and Weights for American Women
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: worldphones
-     The World’s Telephones
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Special Variable: wwwusage
-     Internet Usage per Minute
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
-
-
-File: lisp-stat.info,  Node: Public macros,  Next: Public ordinary functions,  Prev: Public special variables,  Up: Public Interface
-
-5.1.2 Macros
+5.1.1 Macros
 ------------
 
  -- Macro: def (name value &optional documentation)
@@ -1231,77 +370,16 @@ File: lisp-stat.info,  Node: Public macros,  Next: Public ordinary functions,  P
      variable *ASK-ON-REDEFINE* is not nil then you are asked if you
      want to redefine the variable.
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
 
 
 File: lisp-stat.info,  Node: Public ordinary functions,  Prev: Public macros,  Up: Public Interface
 
-5.1.3 Ordinary functions
+5.1.2 Ordinary functions
 ------------------------
 
- -- Function: data (d &key system directory type)
-     Load a data frame from a CSV or LISP data source located on the
-     local filesystem named by D. Intended for example data sets for
-     Lisp-Stat system.  Parameters may be either a KEYWORD or STRING.
-     JSON files require application specific loaders, so not handled
-     here.  Use (read-vega ...)  for example.
-
-     Description
-     Each package using lisp-stat should define its own logical host,
-     and a directory called DATA. Once done, you can load the example
-     data sets like so:
-
-     LS-USER> (data my-example :system :glimpse)
-
-     If the system is named GLIMPSE. To load a data set from R, assuming
-     you have configured a logical host, RDATA:
-
-     LS-USER> (data :antigua :system :rdata :directory :daag :type :csv)
-     *Package*
-          *note lisp-stat: ❨14❩.
-     *Source*
-          *note data.lisp: ❨9❩.
- -- Function: fivenum (x &key tukey)
-     By default, returns the five number summary (min, 1st quartile,
-     median, 3rd quartile, max) of the elements X. If the keyword :tukey
-     is set to a non-nil value, Tukey’s fivenum summary is computed
-     instead.
-     *Package*
-          *note lisp-stat: ❨14❩.
-     *Source*
-          *note stats.lisp: ❨11❩.
- -- Function: interquartile-range (x)
-     Returns the interquartile range of the elements of X.
-     *Package*
-          *note lisp-stat: ❨14❩.
-     *Source*
-          *note stats.lisp: ❨11❩.
- -- Function: load-r-default-datasets ()
-     Load the data sets included in base R
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Function: load-r-metadata ()
-     Loads the master R data set index as a data frame.  Use this to
-     query the R data sets.
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Function: save-r-data ()
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
- -- Function: save-r-default-datasets ()
-     Save the data sets included in base R
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
  -- Function: savevar (vars file &optional suffix)
      VARS is a symbol or a list of symbols.  FILE is a string (or a
      symbol whose print name is used) not ending in SUFFIX (defaults to
@@ -1310,9 +388,9 @@ File: lisp-stat.info,  Node: Public ordinary functions,  Prev: Public macros,  U
      NOTE: Ensure VARS doesn’t contain CLOS objects that don’t have a
      SAVE-OBJ method.  Example (savevar ’urban "urban")
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
  -- Function: undef-var (v)
      Remove V from the system
      If V is the symbol of a defined variable the variable it is unbound
@@ -1320,15 +398,15 @@ File: lisp-stat.info,  Node: Public ordinary functions,  Prev: Public macros,  U
      variable names each is unbound and removed.  Returns V. Example:
      (undef ’urban)
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
  -- Function: variables ()
      Returns a list of the names of all def’ed variables.
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
 
 
 File: lisp-stat.info,  Node: Internals,  Prev: Public Interface,  Up: Definitions
@@ -1348,17 +426,11 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
 5.2.1 Special variables
 -----------------------
 
- -- Special Variable: *r-default-dataframes*
-     Data frames corresponding to the default R datasets
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
  -- Special Variable: *variables*
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
  -- Special Variable: iris
      Edgar Anderson’s Iris Data
 
@@ -1387,7 +459,7 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
      dni3[[2]])))), Species = gl(3, 50, labels = sub("S", "s", sub("V",
      "v", dni3[[3]])))) all.equal(ii, iris) # TRUE
      *Package*
-          *note ls-user: ❨15❩.
+          *note ls-user: ❨11❩.
  -- Special Variable: mtcars
      Motor Trend Car Road Tests
 
@@ -1408,7 +480,7 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
      Henderson and Velleman (1981), Building multiple regression models
      interactively.  Biometrics, 37, 391–411.
      *Package*
-          *note ls-user: ❨15❩.
+          *note ls-user: ❨11❩.
  -- Special Variable: plant-growth
      Results from an Experiment on Plant Growth
 
@@ -1437,13 +509,7 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
      notch = TRUE, varwidth = TRUE)
      anova(lm(weight ~ group, data = PlantGrowth))
      *Package*
-          *note ls-user: ❨15❩.
- -- Special Variable: student-sleep
-     Student’s Sleep Data
-     *Package*
-          *note rdata: ❨16❩.
-     *Source*
-          *note rdata.lisp: ❨10❩.
+          *note ls-user: ❨11❩.
  -- Special Variable: tooth-growth
      The Effect of Vitamin C on Tooth Growth in Guinea Pigs
 
@@ -1478,7 +544,7 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
      xlab = "ToothGrowth data: length vs dose, given type of
      supplement")
      *Package*
-          *note ls-user: ❨15❩.
+          *note ls-user: ❨11❩.
  -- Special Variable: usarrests
      Violent Crime Rates by US State
 
@@ -1537,7 +603,7 @@ File: lisp-stat.info,  Node: Private special variables,  Next: Private ordinary 
      (or (string= "Nebraska" x)
      (string= "Pennsylvania" x)))))
      *Package*
-          *note ls-user: ❨15❩.
+          *note ls-user: ❨11❩.
 
 
 File: lisp-stat.info,  Node: Private ordinary functions,  Next: Private generic functions,  Prev: Private special variables,  Up: Internals
@@ -1547,9 +613,9 @@ File: lisp-stat.info,  Node: Private ordinary functions,  Next: Private generic 
 
  -- Function: setup-ls-translations ()
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note ls-init.lisp: ❨13❩.
+          *note ls-init.lisp: ❨9❩.
 
 
 File: lisp-stat.info,  Node: Private generic functions,  Prev: Private ordinary functions,  Up: Internals
@@ -1560,9 +626,9 @@ File: lisp-stat.info,  Node: Private generic functions,  Prev: Private ordinary 
  -- Generic Function: save-obj (data)
      Save data object
      *Package*
-          *note lisp-stat: ❨14❩.
+          *note lisp-stat: ❨10❩.
      *Source*
-          *note variables.lisp: ❨8❩.
+          *note variables.lisp: ❨7❩.
 
 
 File: lisp-stat.info,  Node: Indexes,  Prev: Definitions,  Up: Top
@@ -1592,56 +658,28 @@ A.2 Functions
  [index ]
 * Menu:
 
-* data:                                  Public ordinary functions.
-                                                               (line  6)
 * def:                                   Public macros.        (line  6)
-* fivenum:                               Public ordinary functions.
-                                                               (line 28)
-* Function, data:                        Public ordinary functions.
-                                                               (line  7)
-* Function, fivenum:                     Public ordinary functions.
-                                                               (line 29)
-* Function, interquartile-range:         Public ordinary functions.
-                                                               (line 38)
-* Function, load-r-default-datasets:     Public ordinary functions.
-                                                               (line 44)
-* Function, load-r-metadata:             Public ordinary functions.
-                                                               (line 50)
-* Function, save-r-data:                 Public ordinary functions.
-                                                               (line 57)
-* Function, save-r-default-datasets:     Public ordinary functions.
-                                                               (line 62)
 * Function, savevar:                     Public ordinary functions.
-                                                               (line 68)
+                                                               (line  7)
 * Function, setup-ls-translations:       Private ordinary functions.
                                                                (line  7)
 * Function, undef-var:                   Public ordinary functions.
-                                                               (line 79)
+                                                               (line 18)
 * Function, variables:                   Public ordinary functions.
-                                                               (line 89)
+                                                               (line 28)
 * Generic Function, save-obj:            Private generic functions.
                                                                (line  7)
-* interquartile-range:                   Public ordinary functions.
-                                                               (line 37)
-* load-r-default-datasets:               Public ordinary functions.
-                                                               (line 43)
-* load-r-metadata:                       Public ordinary functions.
-                                                               (line 49)
 * Macro, def:                            Public macros.        (line  7)
 * save-obj:                              Private generic functions.
                                                                (line  6)
-* save-r-data:                           Public ordinary functions.
-                                                               (line 56)
-* save-r-default-datasets:               Public ordinary functions.
-                                                               (line 61)
 * savevar:                               Public ordinary functions.
-                                                               (line 67)
+                                                               (line  6)
 * setup-ls-translations:                 Private ordinary functions.
                                                                (line  6)
 * undef-var:                             Public ordinary functions.
-                                                               (line 78)
+                                                               (line 17)
 * variables:                             Public ordinary functions.
-                                                               (line 88)
+                                                               (line 27)
 
 
 File: lisp-stat.info,  Node: Variable index,  Next: Data type index,  Prev: Function index,  Up: Indexes
@@ -1652,406 +690,30 @@ A.3 Variables
  [index ]
 * Menu:
 
-* *r-default-dataframes*:                Private special variables.
-                                                              (line   6)
-* *r-default-datasets*:                  Public special variables.
-                                                              (line   6)
 * *variables*:                           Private special variables.
-                                                              (line  12)
-* ability.cov:                           Public special variables.
-                                                              (line  12)
-* airmiles:                              Public special variables.
-                                                              (line  18)
-* airpassengers:                         Public special variables.
-                                                              (line  24)
-* airquality:                            Public special variables.
-                                                              (line  30)
-* anscombe:                              Public special variables.
-                                                              (line  36)
-* attenu:                                Public special variables.
-                                                              (line  42)
-* attitude:                              Public special variables.
-                                                              (line  48)
-* austres:                               Public special variables.
-                                                              (line  54)
-* base-url:                              Public special variables.
-                                                              (line  60)
-* bjsales:                               Public special variables.
-                                                              (line  66)
-* bod:                                   Public special variables.
-                                                              (line  72)
-* cars:                                  Public special variables.
-                                                              (line  78)
-* chickweight:                           Public special variables.
-                                                              (line  84)
-* chickwts:                              Public special variables.
-                                                              (line  90)
-* co2-1:                                 Public special variables.
-                                                              (line  96)
-* co2-2:                                 Public special variables.
-                                                              (line 102)
-* crimtab:                               Public special variables.
-                                                              (line 108)
-* discoveries:                           Public special variables.
-                                                              (line 114)
-* dnase:                                 Public special variables.
-                                                              (line 120)
-* esoph:                                 Public special variables.
-                                                              (line 126)
-* euro:                                  Public special variables.
-                                                              (line 132)
-* eustockmarkets:                        Public special variables.
-                                                              (line 138)
-* faithful:                              Public special variables.
-                                                              (line 144)
-* formaldehyde:                          Public special variables.
-                                                              (line 150)
-* freeny:                                Public special variables.
-                                                              (line 156)
-* haireyecolor:                          Public special variables.
-                                                              (line 162)
-* harman23.cor:                          Public special variables.
-                                                              (line 168)
-* harman74.cor:                          Public special variables.
-                                                              (line 174)
-* index:                                 Public special variables.
-                                                              (line 180)
-* indometh:                              Public special variables.
-                                                              (line 185)
-* infert:                                Public special variables.
-                                                              (line 191)
-* insectsprays:                          Public special variables.
-                                                              (line 197)
-* iris:                                  Public special variables.
-                                                              (line 203)
-* iris <1>:                              Private special variables.
-                                                              (line  17)
-* iris3:                                 Public special variables.
-                                                              (line 209)
-* islands:                               Public special variables.
-                                                              (line 215)
-* johnsonjohnson:                        Public special variables.
-                                                              (line 221)
-* lakehuron:                             Public special variables.
-                                                              (line 227)
-* lh:                                    Public special variables.
-                                                              (line 233)
-* lifecyclesavings:                      Public special variables.
-                                                              (line 239)
-* loblolly:                              Public special variables.
-                                                              (line 245)
-* longley:                               Public special variables.
-                                                              (line 251)
-* lynx:                                  Public special variables.
-                                                              (line 257)
-* morley:                                Public special variables.
-                                                              (line 263)
-* mpg:                                   Public special variables.
-                                                              (line 269)
-* mtcars:                                Public special variables.
-                                                              (line 275)
-* mtcars <1>:                            Private special variables.
-                                                              (line  46)
-* nhtemp:                                Public special variables.
-                                                              (line 281)
-* nile:                                  Public special variables.
-                                                              (line 287)
-* nottem:                                Public special variables.
-                                                              (line 293)
-* npk:                                   Public special variables.
-                                                              (line 299)
-* nycflights13-airlines:                 Public special variables.
-                                                              (line 305)
-* nycflights13-airports:                 Public special variables.
-                                                              (line 311)
-* nycflights13-flights:                  Public special variables.
-                                                              (line 317)
-* nycflights13-planes:                   Public special variables.
-                                                              (line 324)
-* nycflights13-weather:                  Public special variables.
-                                                              (line 331)
-* occupationalstatus:                    Public special variables.
-                                                              (line 337)
-* orange:                                Public special variables.
-                                                              (line 343)
-* orchardsprays:                         Public special variables.
-                                                              (line 349)
+                                                              (line   6)
+* iris:                                  Private special variables.
+                                                              (line  11)
+* mtcars:                                Private special variables.
+                                                              (line  40)
 * plant-growth:                          Private special variables.
-                                                              (line  67)
-* plantgrowth:                           Public special variables.
-                                                              (line 355)
-* precip:                                Public special variables.
-                                                              (line 361)
-* presidents:                            Public special variables.
-                                                              (line 367)
-* pressure:                              Public special variables.
-                                                              (line 373)
-* puromycin:                             Public special variables.
-                                                              (line 379)
-* quakes:                                Public special variables.
-                                                              (line 385)
-* randu:                                 Public special variables.
-                                                              (line 391)
-* rivers:                                Public special variables.
-                                                              (line 397)
-* rock:                                  Public special variables.
-                                                              (line 403)
-* seatbelts:                             Public special variables.
-                                                              (line 409)
-* Special Variable, *r-default-dataframes*: Private special variables.
-                                                              (line   7)
-* Special Variable, *r-default-datasets*: Public special variables.
-                                                              (line   7)
-* Special Variable, *variables*:         Private special variables.
-                                                              (line  13)
-* Special Variable, ability.cov:         Public special variables.
-                                                              (line  13)
-* Special Variable, airmiles:            Public special variables.
-                                                              (line  19)
-* Special Variable, airpassengers:       Public special variables.
-                                                              (line  25)
-* Special Variable, airquality:          Public special variables.
-                                                              (line  31)
-* Special Variable, anscombe:            Public special variables.
-                                                              (line  37)
-* Special Variable, attenu:              Public special variables.
-                                                              (line  43)
-* Special Variable, attitude:            Public special variables.
-                                                              (line  49)
-* Special Variable, austres:             Public special variables.
-                                                              (line  55)
-* Special Variable, base-url:            Public special variables.
                                                               (line  61)
-* Special Variable, bjsales:             Public special variables.
-                                                              (line  67)
-* Special Variable, bod:                 Public special variables.
-                                                              (line  73)
-* Special Variable, cars:                Public special variables.
-                                                              (line  79)
-* Special Variable, chickweight:         Public special variables.
-                                                              (line  85)
-* Special Variable, chickwts:            Public special variables.
-                                                              (line  91)
-* Special Variable, co2-1:               Public special variables.
-                                                              (line  97)
-* Special Variable, co2-2:               Public special variables.
-                                                              (line 103)
-* Special Variable, crimtab:             Public special variables.
-                                                              (line 109)
-* Special Variable, discoveries:         Public special variables.
-                                                              (line 115)
-* Special Variable, dnase:               Public special variables.
-                                                              (line 121)
-* Special Variable, esoph:               Public special variables.
-                                                              (line 127)
-* Special Variable, euro:                Public special variables.
-                                                              (line 133)
-* Special Variable, eustockmarkets:      Public special variables.
-                                                              (line 139)
-* Special Variable, faithful:            Public special variables.
-                                                              (line 145)
-* Special Variable, formaldehyde:        Public special variables.
-                                                              (line 151)
-* Special Variable, freeny:              Public special variables.
-                                                              (line 157)
-* Special Variable, haireyecolor:        Public special variables.
-                                                              (line 163)
-* Special Variable, harman23.cor:        Public special variables.
-                                                              (line 169)
-* Special Variable, harman74.cor:        Public special variables.
-                                                              (line 175)
-* Special Variable, index:               Public special variables.
-                                                              (line 181)
-* Special Variable, indometh:            Public special variables.
-                                                              (line 186)
-* Special Variable, infert:              Public special variables.
-                                                              (line 192)
-* Special Variable, insectsprays:        Public special variables.
-                                                              (line 198)
-* Special Variable, iris:                Public special variables.
-                                                              (line 204)
-* Special Variable, iris <1>:            Private special variables.
-                                                              (line  18)
-* Special Variable, iris3:               Public special variables.
-                                                              (line 210)
-* Special Variable, islands:             Public special variables.
-                                                              (line 216)
-* Special Variable, johnsonjohnson:      Public special variables.
-                                                              (line 222)
-* Special Variable, lakehuron:           Public special variables.
-                                                              (line 228)
-* Special Variable, lh:                  Public special variables.
-                                                              (line 234)
-* Special Variable, lifecyclesavings:    Public special variables.
-                                                              (line 240)
-* Special Variable, loblolly:            Public special variables.
-                                                              (line 246)
-* Special Variable, longley:             Public special variables.
-                                                              (line 252)
-* Special Variable, lynx:                Public special variables.
-                                                              (line 258)
-* Special Variable, morley:              Public special variables.
-                                                              (line 264)
-* Special Variable, mpg:                 Public special variables.
-                                                              (line 270)
-* Special Variable, mtcars:              Public special variables.
-                                                              (line 276)
-* Special Variable, mtcars <1>:          Private special variables.
-                                                              (line  47)
-* Special Variable, nhtemp:              Public special variables.
-                                                              (line 282)
-* Special Variable, nile:                Public special variables.
-                                                              (line 288)
-* Special Variable, nottem:              Public special variables.
-                                                              (line 294)
-* Special Variable, npk:                 Public special variables.
-                                                              (line 300)
-* Special Variable, nycflights13-airlines: Public special variables.
-                                                              (line 306)
-* Special Variable, nycflights13-airports: Public special variables.
-                                                              (line 312)
-* Special Variable, nycflights13-flights: Public special variables.
-                                                              (line 318)
-* Special Variable, nycflights13-planes: Public special variables.
-                                                              (line 325)
-* Special Variable, nycflights13-weather: Public special variables.
-                                                              (line 332)
-* Special Variable, occupationalstatus:  Public special variables.
-                                                              (line 338)
-* Special Variable, orange:              Public special variables.
-                                                              (line 344)
-* Special Variable, orchardsprays:       Public special variables.
-                                                              (line 350)
+* Special Variable, *variables*:         Private special variables.
+                                                              (line   7)
+* Special Variable, iris:                Private special variables.
+                                                              (line  12)
+* Special Variable, mtcars:              Private special variables.
+                                                              (line  41)
 * Special Variable, plant-growth:        Private special variables.
-                                                              (line  68)
-* Special Variable, plantgrowth:         Public special variables.
-                                                              (line 356)
-* Special Variable, precip:              Public special variables.
-                                                              (line 362)
-* Special Variable, presidents:          Public special variables.
-                                                              (line 368)
-* Special Variable, pressure:            Public special variables.
-                                                              (line 374)
-* Special Variable, puromycin:           Public special variables.
-                                                              (line 380)
-* Special Variable, quakes:              Public special variables.
-                                                              (line 386)
-* Special Variable, randu:               Public special variables.
-                                                              (line 392)
-* Special Variable, rivers:              Public special variables.
-                                                              (line 398)
-* Special Variable, rock:                Public special variables.
-                                                              (line 404)
-* Special Variable, seatbelts:           Public special variables.
-                                                              (line 410)
-* Special Variable, stackloss:           Public special variables.
-                                                              (line 416)
-* Special Variable, student-sleep:       Private special variables.
-                                                              (line  97)
-* Special Variable, sunspot.month:       Public special variables.
-                                                              (line 422)
-* Special Variable, sunspot.year:        Public special variables.
-                                                              (line 428)
-* Special Variable, sunspots:            Public special variables.
-                                                              (line 434)
-* Special Variable, swiss:               Public special variables.
-                                                              (line 440)
-* Special Variable, theoph:              Public special variables.
-                                                              (line 446)
-* Special Variable, titanic:             Public special variables.
-                                                              (line 452)
+                                                              (line  62)
 * Special Variable, tooth-growth:        Private special variables.
-                                                              (line 103)
-* Special Variable, toothgrowth:         Public special variables.
-                                                              (line 458)
-* Special Variable, treering:            Public special variables.
-                                                              (line 464)
-* Special Variable, trees:               Public special variables.
-                                                              (line 470)
-* Special Variable, ucbadmissions:       Public special variables.
-                                                              (line 476)
-* Special Variable, ukdriverdeaths:      Public special variables.
-                                                              (line 482)
-* Special Variable, ukgas:               Public special variables.
-                                                              (line 488)
-* Special Variable, usaccdeaths:         Public special variables.
-                                                              (line 494)
-* Special Variable, usarrests:           Public special variables.
-                                                              (line 500)
-* Special Variable, usarrests <1>:       Private special variables.
-                                                              (line 138)
-* Special Variable, usjudgeratings:      Public special variables.
-                                                              (line 506)
-* Special Variable, uspersonalexpenditure: Public special variables.
-                                                              (line 512)
-* Special Variable, uspop:               Public special variables.
-                                                              (line 518)
-* Special Variable, vadeaths:            Public special variables.
-                                                              (line 524)
-* Special Variable, volcano:             Public special variables.
-                                                              (line 530)
-* Special Variable, warpbreaks:          Public special variables.
-                                                              (line 536)
-* Special Variable, women:               Public special variables.
-                                                              (line 542)
-* Special Variable, worldphones:         Public special variables.
-                                                              (line 548)
-* Special Variable, wwwusage:            Public special variables.
-                                                              (line 554)
-* stackloss:                             Public special variables.
-                                                              (line 415)
-* student-sleep:                         Private special variables.
-                                                              (line  96)
-* sunspot.month:                         Public special variables.
-                                                              (line 421)
-* sunspot.year:                          Public special variables.
-                                                              (line 427)
-* sunspots:                              Public special variables.
-                                                              (line 433)
-* swiss:                                 Public special variables.
-                                                              (line 439)
-* theoph:                                Public special variables.
-                                                              (line 445)
-* titanic:                               Public special variables.
-                                                              (line 451)
+                                                              (line  91)
+* Special Variable, usarrests:           Private special variables.
+                                                              (line 126)
 * tooth-growth:                          Private special variables.
-                                                              (line 102)
-* toothgrowth:                           Public special variables.
-                                                              (line 457)
-* treering:                              Public special variables.
-                                                              (line 463)
-* trees:                                 Public special variables.
-                                                              (line 469)
-* ucbadmissions:                         Public special variables.
-                                                              (line 475)
-* ukdriverdeaths:                        Public special variables.
-                                                              (line 481)
-* ukgas:                                 Public special variables.
-                                                              (line 487)
-* usaccdeaths:                           Public special variables.
-                                                              (line 493)
-* usarrests:                             Public special variables.
-                                                              (line 499)
-* usarrests <1>:                         Private special variables.
-                                                              (line 137)
-* usjudgeratings:                        Public special variables.
-                                                              (line 505)
-* uspersonalexpenditure:                 Public special variables.
-                                                              (line 511)
-* uspop:                                 Public special variables.
-                                                              (line 517)
-* vadeaths:                              Public special variables.
-                                                              (line 523)
-* volcano:                               Public special variables.
-                                                              (line 529)
-* warpbreaks:                            Public special variables.
-                                                              (line 535)
-* women:                                 Public special variables.
-                                                              (line 541)
-* worldphones:                           Public special variables.
-                                                              (line 547)
-* wwwusage:                              Public special variables.
-                                                              (line 553)
+                                                              (line  90)
+* usarrests:                             Private special variables.
+                                                              (line 125)
 
 
 File: lisp-stat.info,  Node: Data type index,  Prev: Variable index,  Up: Indexes
@@ -2064,13 +726,9 @@ A.4 Data types
 
 * base:                                  The lisp-stat/base module.
                                                                 (line 6)
-* data.lisp:                             The lisp-stat/base/data․lisp file.
-                                                                (line 6)
 * doc-strings.lisp:                      The lisp-stat/docs/doc-strings․lisp file.
                                                                 (line 6)
 * docs:                                  The lisp-stat/docs module.
-                                                                (line 6)
-* File, data.lisp:                       The lisp-stat/base/data․lisp file.
                                                                 (line 6)
 * File, doc-strings.lisp:                The lisp-stat/docs/doc-strings․lisp file.
                                                                 (line 6)
@@ -2081,10 +739,6 @@ A.4 Data types
 * File, ls-init.lisp:                    The lisp-stat/ls-init․lisp file.
                                                                 (line 6)
 * File, pkgdcls.lisp:                    The lisp-stat/pkgdcls․lisp file.
-                                                                (line 6)
-* File, rdata.lisp:                      The lisp-stat/base/rdata․lisp file.
-                                                                (line 6)
-* File, stats.lisp:                      The lisp-stat/statistics/stats․lisp file.
                                                                 (line 6)
 * File, variables.lisp:                  The lisp-stat/base/variables․lisp file.
                                                                 (line 6)
@@ -2101,19 +755,9 @@ A.4 Data types
                                                                 (line 6)
 * Module, docs:                          The lisp-stat/docs module.
                                                                 (line 6)
-* Module, statistics:                    The lisp-stat/statistics module.
-                                                                (line 6)
 * Package, lisp-stat:                    The lisp-stat package. (line 6)
 * Package, ls-user:                      The ls-user package.   (line 6)
-* Package, rdata:                        The rdata package.     (line 6)
 * pkgdcls.lisp:                          The lisp-stat/pkgdcls․lisp file.
-                                                                (line 6)
-* rdata:                                 The rdata package.     (line 6)
-* rdata.lisp:                            The lisp-stat/base/rdata․lisp file.
-                                                                (line 6)
-* statistics:                            The lisp-stat/statistics module.
-                                                                (line 6)
-* stats.lisp:                            The lisp-stat/statistics/stats․lisp file.
                                                                 (line 6)
 * System, lisp-stat:                     The lisp-stat system.  (line 6)
 * variables.lisp:                        The lisp-stat/base/variables․lisp file.
@@ -2122,173 +766,61 @@ A.4 Data types
 
 
 Tag Table:
-Node: Top905
-Node: Copying2135
-Node: Systems2318
-Node: The lisp-stat system2526
-Ref: ❨1❩2638
-Node: Modules4161
-Node: The lisp-stat/base module4433
-Ref: ❨2❩4600
-Node: The lisp-stat/statistics module4869
-Ref: ❨3❩5066
-Node: The lisp-stat/docs module5230
-Ref: ❨4❩5381
-Node: Files5551
-Node: Lisp files5780
-Node: The lisp-stat/lisp-stat․asd file6234
-Ref: ❨5❩6440
-Node: The lisp-stat/pkgdcls․lisp file6591
-Ref: ❨6❩6825
-Node: The lisp-stat/base/variables․lisp file6973
-Ref: ❨8❩7222
-Node: The lisp-stat/base/data․lisp file7665
-Ref: ❨9❩7907
-Node: The lisp-stat/base/rdata․lisp file8122
-Ref: ❨10❩8368
-Node: The lisp-stat/statistics/stats․lisp file14423
-Ref: ❨11❩14688
-Node: The lisp-stat/docs/doc-strings․lisp file14923
-Ref: ❨12❩15185
-Node: The lisp-stat/ls-init․lisp file15285
-Ref: ❨13❩15478
-Node: Static files15692
-Node: The lisp-stat/license file15832
-Ref: ❨7❩15980
-Node: Packages16085
-Node: The lisp-stat package16317
-Ref: ❨14❩16460
-Node: The ls-user package17515
-Ref: ❨15❩17663
-Node: The rdata package18115
-Ref: ❨16❩18229
-Node: Definitions24165
-Node: Public Interface24420
-Node: Public special variables24655
-Ref: ❨50❩24874
-Ref: ❨111❩25052
-Ref: ❨92❩25219
-Ref: ❨118❩25413
-Ref: ❨104❩25595
-Ref: ❨82❩25765
-Ref: ❨119❩25965
-Ref: ❨64❩26135
-Ref: ❨75❩26305
-Ref: ❨51❩26501
-Ref: ❨96❩26672
-Ref: ❨79❩26837
-Ref: ❨32❩26995
-Ref: ❨113❩27171
-Ref: ❨71❩27354
-Ref: ❨42❩27516
-Ref: ❨107❩27687
-Ref: ❨109❩27862
-Ref: ❨56❩28033
-Ref: ❨91❩28206
-Ref: ❨97❩28360
-Ref: ❨102❩28534
-Ref: ❨33❩28712
-Ref: ❨46❩28912
-Ref: ❨39❩29077
-Ref: ❨69❩29241
-Ref: ❨43❩29405
-Ref: ❨80❩29587
-Ref: ❨105❩29746
-Ref: ❨63❩29898
-Ref: ❨86❩30029
-Ref: ❨85❩30196
-Ref: ❨70❩30387
-Ref: ❨124❩30550
-Ref: ❨60❩30712
-Ref: ❨37❩30876
-Ref: ❨125❩31058
-Ref: ❨48❩31242
-Ref: ❨76❩31402
-Ref: ❨116❩31583
-Ref: ❨100❩31756
-Ref: ❨106❩31921
-Ref: ❨41❩32090
-Ref: ❨68❩32265
-Ref: ❨74❩32426
-Ref: ❨88❩32626
-Ref: ❨78❩32787
-Ref: ❨99❩32960
-Ref: ❨81❩33117
-Ref: ❨59❩33302
-Ref: ❨121❩33490
-Ref: ❨72❩33681
-Ref: ❨93❩33846
-Ref: ❨35❩34077
-Ref: ❨127❩34304
-Ref: ❨73❩34505
-Ref: ❨110❩34685
-Ref: ❨103❩34849
-Ref: ❨47❩35014
-Ref: ❨122❩35191
-Ref: ❨123❩35363
-Ref: ❨45❩35543
-Ref: ❨61❩35735
-Ref: ❨65❩35912
-Ref: ❨115❩36079
-Ref: ❨57❩36262
-Ref: ❨126❩36433
-Ref: ❨36❩36609
-Ref: ❨66❩36787
-Ref: ❨38❩36963
-Ref: ❨58❩37146
-Ref: ❨90❩37313
-Ref: ❨53❩37481
-Ref: ❨84❩37672
-Ref: ❨52❩37840
-Ref: ❨62❩38017
-Ref: ❨83❩38208
-Ref: ❨95❩38374
-Ref: ❨94❩38566
-Ref: ❨108❩38742
-Ref: ❨89❩38916
-Ref: ❨112❩39084
-Ref: ❨117❩39259
-Ref: ❨44❩39433
-Ref: ❨40❩39642
-Ref: ❨98❩39801
-Ref: ❨67❩39975
-Ref: ❨101❩40141
-Ref: ❨87❩40339
-Ref: ❨49❩40516
-Ref: ❨114❩40702
-Ref: ❨77❩40863
-Node: Public macros40995
-Ref: ❨17❩41210
-Node: Public ordinary functions41666
-Ref: ❨20❩41870
-Ref: ❨23❩42760
-Ref: ❨19❩43128
-Ref: ❨54❩43332
-Ref: ❨120❩43508
-Ref: ❨34❩43734
-Ref: ❨55❩43875
-Ref: ❨22❩44069
-Ref: ❨18❩44615
-Ref: ❨21❩45016
-Node: Internals45184
-Node: Private special variables45399
-Ref: ❨128❩45620
-Ref: ❨24❩45811
-Ref: ❨28❩45945
-Ref: ❨31❩47129
-Ref: ❨30❩48009
-Ref: ❨129❩48972
-Ref: ❨29❩49135
-Ref: ❨27❩50397
-Node: Private ordinary functions52458
-Ref: ❨26❩52691
-Node: Private generic functions52798
-Ref: ❨25❩52994
-Node: Indexes53124
-Node: Concept index53319
-Node: Function index53445
-Node: Variable index57134
-Node: Data type index85321
+Node: Top907
+Node: Copying2137
+Node: Systems2320
+Node: The lisp-stat system2528
+Ref: ❨1❩2640
+Node: Modules4196
+Node: The lisp-stat/base module4432
+Ref: ❨2❩4593
+Node: The lisp-stat/docs module4760
+Ref: ❨3❩4905
+Node: Files5074
+Node: Lisp files5303
+Node: The lisp-stat/lisp-stat․asd file5629
+Ref: ❨4❩5835
+Node: The lisp-stat/pkgdcls․lisp file5986
+Ref: ❨5❩6220
+Node: The lisp-stat/base/variables․lisp file6412
+Ref: ❨7❩6668
+Node: The lisp-stat/docs/doc-strings․lisp file7111
+Ref: ❨8❩7371
+Node: The lisp-stat/ls-init․lisp file7471
+Ref: ❨9❩7664
+Node: Static files7837
+Node: The lisp-stat/license file7977
+Ref: ❨6❩8125
+Node: Packages8230
+Node: The lisp-stat package8440
+Ref: ❨10❩8583
+Node: The ls-user package9033
+Ref: ❨11❩9155
+Node: Definitions9504
+Node: Public Interface9759
+Node: Public macros9965
+Ref: ❨13❩10172
+Node: Public ordinary functions10628
+Ref: ❨15❩10833
+Ref: ❨12❩11379
+Ref: ❨14❩11780
+Node: Internals11948
+Node: Private special variables12163
+Ref: ❨17❩12373
+Ref: ❨21❩12507
+Ref: ❨22❩13691
+Ref: ❨19❩14571
+Ref: ❨23❩15533
+Ref: ❨20❩16795
+Node: Private ordinary functions18856
+Ref: ❨18❩19089
+Node: Private generic functions19195
+Ref: ❨16❩19391
+Node: Indexes19521
+Node: Concept index19716
+Node: Function index19842
+Node: Variable index21557
+Node: Data type index23408
 
 End Tag Table
 

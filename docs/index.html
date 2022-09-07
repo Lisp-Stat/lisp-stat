@@ -16,10 +16,10 @@ section entitled "Copying" is included exactly as in the original.
 Permission is granted to copy and distribute translations of this manual
 into another language, under the above conditions for modified versions,
 except that this permission notice may be translated as well. -->
-<title>The Lisp-Stat Reference Manual</title>
+<title>The LISP-STAT Reference Manual</title>
 
-<meta name="description" content="The Lisp-Stat Reference Manual, version 1.0.0.">
-<meta name="keywords" content="The Lisp-Stat Reference Manual">
+<meta name="description" content="The LISP-STAT Reference Manual, version 1.2.0.">
+<meta name="keywords" content="The LISP-STAT Reference Manual">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="makeinfo">
@@ -55,7 +55,7 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en">
-<h1 class="settitle" align="center">The Lisp-Stat Reference Manual</h1>
+<h1 class="settitle" align="center">The LISP-STAT Reference Manual</h1>
 
 
 
@@ -102,8 +102,8 @@ ul.no-bullet {list-style: none}
 
 
 <div class="top" id="Top">
-<span id="The-Lisp_002dStat-Reference-Manual"></span><h1 class="top">The Lisp-Stat Reference Manual</h1>
-<p>This is the Lisp-Stat Reference Manual, version 1.0.0,
+<span id="The-LISP_002dSTAT-Reference-Manual"></span><h1 class="top">The LISP-STAT Reference Manual</h1>
+<p>This is the LISP-STAT Reference Manual, version 1.2.0,
 generated automatically by Declt version 4.0b2.
 </p>
 
@@ -139,8 +139,7 @@ except that this permission notice may be translated as well.
   <li><a id="toc-Modules-1" href="#Modules">2 Modules</a>
   <ul class="no-bullet">
     <li><a id="toc-lisp_002dstat_002fbase" href="#The-lisp_002dstat_002fbase-module">2.1 <tt>lisp-stat/base</tt></a></li>
-    <li><a id="toc-lisp_002dstat_002fstatistics" href="#The-lisp_002dstat_002fstatistics-module">2.2 <tt>lisp-stat/statistics</tt></a></li>
-    <li><a id="toc-lisp_002dstat_002fdocs" href="#The-lisp_002dstat_002fdocs-module">2.3 <tt>lisp-stat/docs</tt></a></li>
+    <li><a id="toc-lisp_002dstat_002fdocs" href="#The-lisp_002dstat_002fdocs-module">2.2 <tt>lisp-stat/docs</tt></a></li>
   </ul></li>
   <li><a id="toc-Files-1" href="#Files">3 Files</a>
   <ul class="no-bullet">
@@ -149,11 +148,8 @@ except that this permission notice may be translated as well.
       <li><a id="toc-lisp_002dstat_002flisp_002dstat_002easd" href="#The-lisp_002dstat_002flisp_002dstat_2024asd-file">3.1.1 <tt>lisp-stat/lisp-stat.asd</tt></a></li>
       <li><a id="toc-lisp_002dstat_002fpkgdcls_002elisp" href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">3.1.2 <tt>lisp-stat/pkgdcls.lisp</tt></a></li>
       <li><a id="toc-lisp_002dstat_002fbase_002fvariables_002elisp" href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">3.1.3 <tt>lisp-stat/base/variables.lisp</tt></a></li>
-      <li><a id="toc-lisp_002dstat_002fbase_002fdata_002elisp" href="#The-lisp_002dstat_002fbase_002fdata_2024lisp-file">3.1.4 <tt>lisp-stat/base/data.lisp</tt></a></li>
-      <li><a id="toc-lisp_002dstat_002fbase_002frdata_002elisp" href="#The-lisp_002dstat_002fbase_002frdata_2024lisp-file">3.1.5 <tt>lisp-stat/base/rdata.lisp</tt></a></li>
-      <li><a id="toc-lisp_002dstat_002fstatistics_002fstats_002elisp" href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file">3.1.6 <tt>lisp-stat/statistics/stats.lisp</tt></a></li>
-      <li><a id="toc-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp" href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">3.1.7 <tt>lisp-stat/docs/doc-strings.lisp</tt></a></li>
-      <li><a id="toc-lisp_002dstat_002fls_002dinit_002elisp" href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">3.1.8 <tt>lisp-stat/ls-init.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp" href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">3.1.4 <tt>lisp-stat/docs/doc-strings.lisp</tt></a></li>
+      <li><a id="toc-lisp_002dstat_002fls_002dinit_002elisp" href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">3.1.5 <tt>lisp-stat/ls-init.lisp</tt></a></li>
     </ul></li>
     <li><a id="toc-Static" href="#Static-files">3.2 Static</a>
     <ul class="no-bullet">
@@ -164,19 +160,17 @@ except that this permission notice may be translated as well.
   <ul class="no-bullet">
     <li><a id="toc-lisp_002dstat-1" href="#The-lisp_002dstat-package">4.1 <tt>lisp-stat</tt></a></li>
     <li><a id="toc-ls_002duser" href="#The-ls_002duser-package">4.2 <tt>ls-user</tt></a></li>
-    <li><a id="toc-rdata" href="#The-rdata-package">4.3 <tt>rdata</tt></a></li>
   </ul></li>
   <li><a id="toc-Definitions-1" href="#Definitions">5 Definitions</a>
   <ul class="no-bullet">
     <li><a id="toc-Public-Interface-1" href="#Public-Interface">5.1 Public Interface</a>
     <ul class="no-bullet">
-      <li><a id="toc-Special-variables" href="#Public-special-variables">5.1.1 Special variables</a></li>
-      <li><a id="toc-Macros" href="#Public-macros">5.1.2 Macros</a></li>
-      <li><a id="toc-Ordinary-functions" href="#Public-ordinary-functions">5.1.3 Ordinary functions</a></li>
+      <li><a id="toc-Macros" href="#Public-macros">5.1.1 Macros</a></li>
+      <li><a id="toc-Ordinary-functions" href="#Public-ordinary-functions">5.1.2 Ordinary functions</a></li>
     </ul></li>
     <li><a id="toc-Internals-1" href="#Internals">5.2 Internals</a>
     <ul class="no-bullet">
-      <li><a id="toc-Special-variables-1" href="#Private-special-variables">5.2.1 Special variables</a></li>
+      <li><a id="toc-Special-variables" href="#Private-special-variables">5.2.1 Special variables</a></li>
       <li><a id="toc-Ordinary-functions-1" href="#Private-ordinary-functions">5.2.2 Ordinary functions</a></li>
       <li><a id="toc-Generic-functions" href="#Private-generic-functions">5.2.3 Generic functions</a></li>
     </ul></li>
@@ -238,32 +232,33 @@ License.
 <dd><p>The Lisp-Stat system is an umbrella for a few projects and provides a unified interface for working with statistics.  The general rule is that Lisp-Stat may depend on other libraries, for example data-frame, but not the other way around.  Lisp-Stat provides it&rsquo;s own user package, LS-USER, which imports CL as well as the symbols we need from the other libraries.  You should always do your work in the LS-USER package, and not in CL-USER.
 </p></dd>
 <dt><span><strong>Version</strong></span></dt>
-<dd><p>1.0.0
+<dd><p>1.2.0
 </p></dd>
 <dt><span><strong>Dependencies</strong></span></dt>
 <dd><ul>
 <li> <tt>alexandria</tt> (system).
-</li><li> <tt>let-plus</tt> (system).
+</li><li> <tt>alexandria+</tt> (system).
 </li><li> <tt>array-operations</tt> (system).
 </li><li> <tt>data-frame</tt> (system).
+</li><li> <tt>distributions</tt> (system).
+</li><li> <tt>dexador</tt> (system).
 </li><li> <tt>dfio</tt> (system).
 </li><li> <tt>num-utils</tt> (system).
 </li><li> <tt>select</tt> (system).
-</li><li> <tt>dexador</tt> (system).
-</li><li> <tt>split-sequence</tt> (system).
+</li><li> <tt>statistics</tt> (system).
+</li><li> <tt>org.tfeb.conduit-packages</tt> (system).
 </li></ul>
 </dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Child Components</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_27686_2769"><tt>pkgdcls.lisp</tt></a> (file).
-</li><li> <a href="#g_t_27687_2769"><tt>license</tt></a> (file).
+<li> <a href="#g_t_27685_2769"><tt>pkgdcls.lisp</tt></a> (file).
+</li><li> <a href="#g_t_27686_2769"><tt>license</tt></a> (file).
 </li><li> <a href="#g_t_27682_2769"><tt>base</tt></a> (module).
-</li><li> <a href="#g_t_27683_2769"><tt>statistics</tt></a> (module).
-</li><li> <a href="#g_t_27684_2769"><tt>docs</tt></a> (module).
-</li><li> <a href="#g_t_276813_2769"><tt>ls-init.lisp</tt></a> (file).
+</li><li> <a href="#g_t_27683_2769"><tt>docs</tt></a> (module).
+</li><li> <a href="#g_t_27689_2769"><tt>ls-init.lisp</tt></a> (file).
 </li></ul>
 </dd>
 </dl>
@@ -286,36 +281,13 @@ License.
 <span id="index-Module_002c-base"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
-</p></dd>
-<dt><span><strong>Parent Component</strong></span></dt>
-<dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
-</p></dd>
-<dt><span><strong>Child Components</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_27688_2769"><tt>variables.lisp</tt></a> (file).
-</li><li> <a href="#g_t_27689_2769"><tt>data.lisp</tt></a> (file).
-</li><li> <a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a> (file).
-</li></ul>
-</dd>
-</dl>
-
-
-<hr>
-</div>
-<div class="section" id="The-lisp_002dstat_002fstatistics-module">
-<span id="lisp_002dstat_002fstatistics"></span><h3 class="section">2.2 <tt>lisp-stat/statistics</tt></h3>
-<span id="g_t_27683_2769"></span><span id="index-statistics"></span>
-<span id="index-Module_002c-statistics"></span>
-<dl compact="compact">
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
 </p></dd>
 <dt><span><strong>Child Component</strong></span></dt>
-<dd><p><a href="#g_t_276811_2769"><tt>stats.lisp</tt></a> (file).
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a> (file).
 </p></dd>
 </dl>
 
@@ -323,18 +295,18 @@ License.
 <hr>
 </div>
 <div class="section" id="The-lisp_002dstat_002fdocs-module">
-<span id="lisp_002dstat_002fdocs"></span><h3 class="section">2.3 <tt>lisp-stat/docs</tt></h3>
-<span id="g_t_27684_2769"></span><span id="index-docs"></span>
+<span id="lisp_002dstat_002fdocs"></span><h3 class="section">2.2 <tt>lisp-stat/docs</tt></h3>
+<span id="g_t_27683_2769"></span><span id="index-docs"></span>
 <span id="index-Module_002c-docs"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
 </p></dd>
 <dt><span><strong>Child Component</strong></span></dt>
-<dd><p><a href="#g_t_276812_2769"><tt>doc-strings.lisp</tt></a> (file).
+<dd><p><a href="#g_t_27688_2769"><tt>doc-strings.lisp</tt></a> (file).
 </p></dd>
 </dl>
 
@@ -357,11 +329,11 @@ components trees.
 <hr>
 <div class="subsection" id="The-lisp_002dstat_002flisp_002dstat_2024asd-file">
 <span id="lisp_002dstat_002flisp_002dstat_002easd"></span><h4 class="subsection">3.1.1 <tt>lisp-stat/lisp-stat.asd</tt></h4>
-<span id="g_t_27685_2769"></span><span id="index-lisp_002dstat_002easd"></span>
+<span id="g_t_27684_2769"></span><span id="index-lisp_002dstat_002easd"></span>
 <span id="index-File_002c-lisp_002dstat_002easd"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
@@ -375,214 +347,48 @@ components trees.
 </div>
 <div class="subsection" id="The-lisp_002dstat_002fpkgdcls_2024lisp-file">
 <span id="lisp_002dstat_002fpkgdcls_002elisp"></span><h4 class="subsection">3.1.2 <tt>lisp-stat/pkgdcls.lisp</tt></h4>
-<span id="g_t_27686_2769"></span><span id="index-pkgdcls_002elisp"></span>
+<span id="g_t_27685_2769"></span><span id="index-pkgdcls_002elisp"></span>
 <span id="index-File_002c-pkgdcls_002elisp"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
 </p></dd>
 <dt><span><strong>Packages</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
-</p></dd>
+<dd><ul>
+<li> <a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
+</li><li> <a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
+</li></ul>
+</dd>
 </dl>
 
 <hr>
 </div>
 <div class="subsection" id="The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">
 <span id="lisp_002dstat_002fbase_002fvariables_002elisp"></span><h4 class="subsection">3.1.3 <tt>lisp-stat/base/variables.lisp</tt></h4>
-<span id="g_t_27688_2769"></span><span id="index-variables_002elisp"></span>
+<span id="g_t_27687_2769"></span><span id="index-variables_002elisp"></span>
 <span id="index-File_002c-variables_002elisp"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27682_2769"><tt>base</tt></a> (module).
 </p></dd>
 <dt><span><strong>Public Interface</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276817_2769"><tt>def</tt></a> (macro).
-</li><li> <a href="#g_t_276822_2769"><tt>savevar</tt></a> (function).
-</li><li> <a href="#g_t_276818_2769"><tt>undef-var</tt></a> (function).
-</li><li> <a href="#g_t_276821_2769"><tt>variables</tt></a> (function).
+<li> <a href="#g_t_276813_2769"><tt>def</tt></a> (macro).
+</li><li> <a href="#g_t_276815_2769"><tt>savevar</tt></a> (function).
+</li><li> <a href="#g_t_276812_2769"><tt>undef-var</tt></a> (function).
+</li><li> <a href="#g_t_276814_2769"><tt>variables</tt></a> (function).
 </li></ul>
 </dd>
 <dt><span><strong>Internals</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276824_2769"><tt>*variables*</tt></a> (special variable).
-</li><li> <a href="#g_t_276825_2769"><tt>save-obj</tt></a> (generic function).
-</li></ul>
-</dd>
-</dl>
-
-<hr>
-</div>
-<div class="subsection" id="The-lisp_002dstat_002fbase_002fdata_2024lisp-file">
-<span id="lisp_002dstat_002fbase_002fdata_002elisp"></span><h4 class="subsection">3.1.4 <tt>lisp-stat/base/data.lisp</tt></h4>
-<span id="g_t_27689_2769"></span><span id="index-data_002elisp"></span>
-<span id="index-File_002c-data_002elisp"></span>
-<dl compact="compact">
-<dt><span><strong>Dependency</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a> (file).
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
-</p></dd>
-<dt><span><strong>Parent Component</strong></span></dt>
-<dd><p><a href="#g_t_27682_2769"><tt>base</tt></a> (module).
-</p></dd>
-<dt><span><strong>Public Interface</strong></span></dt>
-<dd><p><a href="#g_t_276820_2769"><tt>data</tt></a> (function).
-</p></dd>
-</dl>
-
-<hr>
-</div>
-<div class="subsection" id="The-lisp_002dstat_002fbase_002frdata_2024lisp-file">
-<span id="lisp_002dstat_002fbase_002frdata_002elisp"></span><h4 class="subsection">3.1.5 <tt>lisp-stat/base/rdata.lisp</tt></h4>
-<span id="g_t_276810_2769"></span><span id="index-rdata_002elisp"></span>
-<span id="index-File_002c-rdata_002elisp"></span>
-<dl compact="compact">
-<dt><span><strong>Dependency</strong></span></dt>
-<dd><p><a href="#g_t_27689_2769"><tt>data.lisp</tt></a> (file).
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
-</p></dd>
-<dt><span><strong>Parent Component</strong></span></dt>
-<dd><p><a href="#g_t_27682_2769"><tt>base</tt></a> (module).
-</p></dd>
-<dt><span><strong>Packages</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Public Interface</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_276850_2769"><tt>*r-default-datasets*</tt></a> (special variable).
-</li><li> <a href="#g_t_2768111_2769"><tt>ability.cov</tt></a> (special variable).
-</li><li> <a href="#g_t_276892_2769"><tt>airmiles</tt></a> (special variable).
-</li><li> <a href="#g_t_2768118_2769"><tt>airpassengers</tt></a> (special variable).
-</li><li> <a href="#g_t_2768104_2769"><tt>airquality</tt></a> (special variable).
-</li><li> <a href="#g_t_276882_2769"><tt>anscombe</tt></a> (special variable).
-</li><li> <a href="#g_t_2768119_2769"><tt>attenu</tt></a> (special variable).
-</li><li> <a href="#g_t_276864_2769"><tt>attitude</tt></a> (special variable).
-</li><li> <a href="#g_t_276875_2769"><tt>austres</tt></a> (special variable).
-</li><li> <a href="#g_t_276851_2769"><tt>base-url</tt></a> (special variable).
-</li><li> <a href="#g_t_276896_2769"><tt>bjsales</tt></a> (special variable).
-</li><li> <a href="#g_t_276879_2769"><tt>bod</tt></a> (special variable).
-</li><li> <a href="#g_t_276832_2769"><tt>cars</tt></a> (special variable).
-</li><li> <a href="#g_t_2768113_2769"><tt>chickweight</tt></a> (special variable).
-</li><li> <a href="#g_t_276871_2769"><tt>chickwts</tt></a> (special variable).
-</li><li> <a href="#g_t_276842_2769"><tt>co2-1</tt></a> (special variable).
-</li><li> <a href="#g_t_2768107_2769"><tt>co2-2</tt></a> (special variable).
-</li><li> <a href="#g_t_2768109_2769"><tt>crimtab</tt></a> (special variable).
-</li><li> <a href="#g_t_276856_2769"><tt>discoveries</tt></a> (special variable).
-</li><li> <a href="#g_t_276891_2769"><tt>dnase</tt></a> (special variable).
-</li><li> <a href="#g_t_276897_2769"><tt>esoph</tt></a> (special variable).
-</li><li> <a href="#g_t_2768102_2769"><tt>euro</tt></a> (special variable).
-</li><li> <a href="#g_t_276833_2769"><tt>eustockmarkets</tt></a> (special variable).
-</li><li> <a href="#g_t_276846_2769"><tt>faithful</tt></a> (special variable).
-</li><li> <a href="#g_t_276839_2769"><tt>formaldehyde</tt></a> (special variable).
-</li><li> <a href="#g_t_276869_2769"><tt>freeny</tt></a> (special variable).
-</li><li> <a href="#g_t_276843_2769"><tt>haireyecolor</tt></a> (special variable).
-</li><li> <a href="#g_t_276880_2769"><tt>harman23.cor</tt></a> (special variable).
-</li><li> <a href="#g_t_2768105_2769"><tt>harman74.cor</tt></a> (special variable).
-</li><li> <a href="#g_t_276863_2769"><tt>index</tt></a> (special variable).
-</li><li> <a href="#g_t_276886_2769"><tt>indometh</tt></a> (special variable).
-</li><li> <a href="#g_t_276885_2769"><tt>infert</tt></a> (special variable).
-</li><li> <a href="#g_t_276870_2769"><tt>insectsprays</tt></a> (special variable).
-</li><li> <a href="#g_t_2768124_2769"><tt>iris</tt></a> (special variable).
-</li><li> <a href="#g_t_276860_2769"><tt>iris3</tt></a> (special variable).
-</li><li> <a href="#g_t_276837_2769"><tt>islands</tt></a> (special variable).
-</li><li> <a href="#g_t_2768125_2769"><tt>johnsonjohnson</tt></a> (special variable).
-</li><li> <a href="#g_t_276848_2769"><tt>lakehuron</tt></a> (special variable).
-</li><li> <a href="#g_t_276876_2769"><tt>lh</tt></a> (special variable).
-</li><li> <a href="#g_t_2768116_2769"><tt>lifecyclesavings</tt></a> (special variable).
-</li><li> <a href="#g_t_276854_2769"><tt>load-r-default-datasets</tt></a> (function).
-</li><li> <a href="#g_t_2768120_2769"><tt>load-r-metadata</tt></a> (function).
-</li><li> <a href="#g_t_2768100_2769"><tt>loblolly</tt></a> (special variable).
-</li><li> <a href="#g_t_2768106_2769"><tt>longley</tt></a> (special variable).
-</li><li> <a href="#g_t_276841_2769"><tt>lynx</tt></a> (special variable).
-</li><li> <a href="#g_t_276868_2769"><tt>morley</tt></a> (special variable).
-</li><li> <a href="#g_t_276874_2769"><tt>mpg</tt></a> (special variable).
-</li><li> <a href="#g_t_276888_2769"><tt>mtcars</tt></a> (special variable).
-</li><li> <a href="#g_t_276878_2769"><tt>nhtemp</tt></a> (special variable).
-</li><li> <a href="#g_t_276899_2769"><tt>nile</tt></a> (special variable).
-</li><li> <a href="#g_t_276881_2769"><tt>nottem</tt></a> (special variable).
-</li><li> <a href="#g_t_276859_2769"><tt>npk</tt></a> (special variable).
-</li><li> <a href="#g_t_2768121_2769"><tt>nycflights13-airlines</tt></a> (special variable).
-</li><li> <a href="#g_t_276872_2769"><tt>nycflights13-airports</tt></a> (special variable).
-</li><li> <a href="#g_t_276893_2769"><tt>nycflights13-flights</tt></a> (special variable).
-</li><li> <a href="#g_t_276835_2769"><tt>nycflights13-planes</tt></a> (special variable).
-</li><li> <a href="#g_t_2768127_2769"><tt>nycflights13-weather</tt></a> (special variable).
-</li><li> <a href="#g_t_276873_2769"><tt>occupationalstatus</tt></a> (special variable).
-</li><li> <a href="#g_t_2768110_2769"><tt>orange</tt></a> (special variable).
-</li><li> <a href="#g_t_2768103_2769"><tt>orchardsprays</tt></a> (special variable).
-</li><li> <a href="#g_t_276847_2769"><tt>plantgrowth</tt></a> (special variable).
-</li><li> <a href="#g_t_2768122_2769"><tt>precip</tt></a> (special variable).
-</li><li> <a href="#g_t_2768123_2769"><tt>presidents</tt></a> (special variable).
-</li><li> <a href="#g_t_276845_2769"><tt>pressure</tt></a> (special variable).
-</li><li> <a href="#g_t_276861_2769"><tt>puromycin</tt></a> (special variable).
-</li><li> <a href="#g_t_276865_2769"><tt>quakes</tt></a> (special variable).
-</li><li> <a href="#g_t_2768115_2769"><tt>randu</tt></a> (special variable).
-</li><li> <a href="#g_t_276857_2769"><tt>rivers</tt></a> (special variable).
-</li><li> <a href="#g_t_2768126_2769"><tt>rock</tt></a> (special variable).
-</li><li> <a href="#g_t_276834_2769"><tt>save-r-data</tt></a> (function).
-</li><li> <a href="#g_t_276855_2769"><tt>save-r-default-datasets</tt></a> (function).
-</li><li> <a href="#g_t_276836_2769"><tt>seatbelts</tt></a> (special variable).
-</li><li> <a href="#g_t_276866_2769"><tt>stackloss</tt></a> (special variable).
-</li><li> <a href="#g_t_276838_2769"><tt>sunspot.month</tt></a> (special variable).
-</li><li> <a href="#g_t_276858_2769"><tt>sunspot.year</tt></a> (special variable).
-</li><li> <a href="#g_t_276890_2769"><tt>sunspots</tt></a> (special variable).
-</li><li> <a href="#g_t_276853_2769"><tt>swiss</tt></a> (special variable).
-</li><li> <a href="#g_t_276884_2769"><tt>theoph</tt></a> (special variable).
-</li><li> <a href="#g_t_276852_2769"><tt>titanic</tt></a> (special variable).
-</li><li> <a href="#g_t_276862_2769"><tt>toothgrowth</tt></a> (special variable).
-</li><li> <a href="#g_t_276883_2769"><tt>treering</tt></a> (special variable).
-</li><li> <a href="#g_t_276895_2769"><tt>trees</tt></a> (special variable).
-</li><li> <a href="#g_t_276894_2769"><tt>ucbadmissions</tt></a> (special variable).
-</li><li> <a href="#g_t_2768108_2769"><tt>ukdriverdeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_276889_2769"><tt>ukgas</tt></a> (special variable).
-</li><li> <a href="#g_t_2768112_2769"><tt>usaccdeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_2768117_2769"><tt>usarrests</tt></a> (special variable).
-</li><li> <a href="#g_t_276844_2769"><tt>usjudgeratings</tt></a> (special variable).
-</li><li> <a href="#g_t_276840_2769"><tt>uspersonalexpenditure</tt></a> (special variable).
-</li><li> <a href="#g_t_276898_2769"><tt>uspop</tt></a> (special variable).
-</li><li> <a href="#g_t_276867_2769"><tt>vadeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_2768101_2769"><tt>volcano</tt></a> (special variable).
-</li><li> <a href="#g_t_276887_2769"><tt>warpbreaks</tt></a> (special variable).
-</li><li> <a href="#g_t_276849_2769"><tt>women</tt></a> (special variable).
-</li><li> <a href="#g_t_2768114_2769"><tt>worldphones</tt></a> (special variable).
-</li><li> <a href="#g_t_276877_2769"><tt>wwwusage</tt></a> (special variable).
-</li></ul>
-</dd>
-<dt><span><strong>Internals</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_2768128_2769"><tt>*r-default-dataframes*</tt></a> (special variable).
-</li><li> <a href="#g_t_2768129_2769"><tt>student-sleep</tt></a> (special variable).
-</li></ul>
-</dd>
-</dl>
-
-<hr>
-</div>
-<div class="subsection" id="The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file">
-<span id="lisp_002dstat_002fstatistics_002fstats_002elisp"></span><h4 class="subsection">3.1.6 <tt>lisp-stat/statistics/stats.lisp</tt></h4>
-<span id="g_t_276811_2769"></span><span id="index-stats_002elisp"></span>
-<span id="index-File_002c-stats_002elisp"></span>
-<dl compact="compact">
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
-</p></dd>
-<dt><span><strong>Parent Component</strong></span></dt>
-<dd><p><a href="#g_t_27683_2769"><tt>statistics</tt></a> (module).
-</p></dd>
-<dt><span><strong>Public Interface</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_276823_2769"><tt>fivenum</tt></a> (function).
-</li><li> <a href="#g_t_276819_2769"><tt>interquartile-range</tt></a> (function).
+<li> <a href="#g_t_276817_2769"><tt>*variables*</tt></a> (special variable).
+</li><li> <a href="#g_t_276816_2769"><tt>save-obj</tt></a> (generic function).
 </li></ul>
 </dd>
 </dl>
@@ -590,36 +396,33 @@ components trees.
 <hr>
 </div>
 <div class="subsection" id="The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">
-<span id="lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span><h4 class="subsection">3.1.7 <tt>lisp-stat/docs/doc-strings.lisp</tt></h4>
-<span id="g_t_276812_2769"></span><span id="index-doc_002dstrings_002elisp"></span>
+<span id="lisp_002dstat_002fdocs_002fdoc_002dstrings_002elisp"></span><h4 class="subsection">3.1.4 <tt>lisp-stat/docs/doc-strings.lisp</tt></h4>
+<span id="g_t_27688_2769"></span><span id="index-doc_002dstrings_002elisp"></span>
 <span id="index-File_002c-doc_002dstrings_002elisp"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
-<dd><p><a href="#g_t_27684_2769"><tt>docs</tt></a> (module).
+<dd><p><a href="#g_t_27683_2769"><tt>docs</tt></a> (module).
 </p></dd>
 </dl>
 
 <hr>
 </div>
 <div class="subsection" id="The-lisp_002dstat_002fls_002dinit_2024lisp-file">
-<span id="lisp_002dstat_002fls_002dinit_002elisp"></span><h4 class="subsection">3.1.8 <tt>lisp-stat/ls-init.lisp</tt></h4>
-<span id="g_t_276813_2769"></span><span id="index-ls_002dinit_002elisp"></span>
+<span id="lisp_002dstat_002fls_002dinit_002elisp"></span><h4 class="subsection">3.1.5 <tt>lisp-stat/ls-init.lisp</tt></h4>
+<span id="g_t_27689_2769"></span><span id="index-ls_002dinit_002elisp"></span>
 <span id="index-File_002c-ls_002dinit_002elisp"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
 </p></dd>
-<dt><span><strong>Packages</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
-</p></dd>
 <dt><span><strong>Internals</strong></span></dt>
-<dd><p><a href="#g_t_276826_2769"><tt>setup-ls-translations</tt></a> (function).
+<dd><p><a href="#g_t_276818_2769"><tt>setup-ls-translations</tt></a> (function).
 </p></dd>
 </dl>
 
@@ -633,11 +436,11 @@ components trees.
 <hr>
 <div class="subsection" id="The-lisp_002dstat_002flicense-file">
 <span id="lisp_002dstat_002flicense"></span><h4 class="subsection">3.2.1 <tt>lisp-stat/license</tt></h4>
-<span id="g_t_27687_2769"></span><span id="index-license"></span>
+<span id="g_t_27686_2769"></span><span id="index-license"></span>
 <span id="index-File_002c-license"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27685_2769"><tt>lisp-stat.asd</tt></a>.
+<dd><p><a href="#g_t_27684_2769"><tt>lisp-stat.asd</tt></a>.
 </p></dd>
 <dt><span><strong>Parent Component</strong></span></dt>
 <dd><p><a href="#g_t_27681_2769"><tt>lisp-stat</tt></a> (system).
@@ -659,51 +462,25 @@ components trees.
 <hr>
 <div class="section" id="The-lisp_002dstat-package">
 <span id="lisp_002dstat-1"></span><h3 class="section">4.1 <tt>lisp-stat</tt></h3>
-<span id="g_t_276814_2769"></span><span id="index-lisp_002dstat-1"></span>
+<span id="g_t_276810_2769"></span><span id="index-lisp_002dstat-1"></span>
 <span id="index-Package_002c-lisp_002dstat"></span>
-<p>Base functions for Lisp-Stat
-</p><dl compact="compact">
+<dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27686_2769"><tt>pkgdcls.lisp</tt></a>.
-</p></dd>
-<dt><span><strong>Nickname</strong></span></dt>
-<dd><p><tt>ls</tt>
-</p></dd>
-<dt><span><strong>Use List</strong></span></dt>
-<dd><ul>
-<li> <tt>alexandria</tt>.
-</li><li> <tt>array-operations/all</tt>.
-</li><li> <tt>common-lisp</tt>.
-</li><li> <tt>data-frame</tt>.
-</li><li> <tt>dfio</tt>.
-</li><li> <tt>num-utils.arithmetic</tt>.
-</li><li> <tt>num-utils.elementwise</tt>.
-</li><li> <tt>num-utils.print-matrix</tt>.
-</li><li> <tt>num-utils.statistics</tt>.
-</li><li> <tt>num-utils.utilities</tt>.
-</li><li> <tt>select</tt>.
-</li><li> <tt>split-sequence</tt>.
-</li></ul>
-</dd>
-<dt><span><strong>Used By List</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
+<dd><p><a href="#g_t_27685_2769"><tt>pkgdcls.lisp</tt></a>.
 </p></dd>
 <dt><span><strong>Public Interface</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276820_2769"><tt>data</tt></a> (function).
-</li><li> <a href="#g_t_276817_2769"><tt>def</tt></a> (macro).
-</li><li> <a href="#g_t_276823_2769"><tt>fivenum</tt></a> (function).
-</li><li> <a href="#g_t_276819_2769"><tt>interquartile-range</tt></a> (function).
-</li><li> <a href="#g_t_276822_2769"><tt>savevar</tt></a> (function).
-</li><li> <a href="#g_t_276818_2769"><tt>undef-var</tt></a> (function).
-</li><li> <a href="#g_t_276821_2769"><tt>variables</tt></a> (function).
+<li> <a href="#g_t_276813_2769"><tt>def</tt></a> (macro).
+</li><li> <a href="#g_t_276815_2769"><tt>savevar</tt></a> (function).
+</li><li> <a href="#g_t_276812_2769"><tt>undef-var</tt></a> (function).
+</li><li> <a href="#g_t_276814_2769"><tt>variables</tt></a> (function).
 </li></ul>
 </dd>
 <dt><span><strong>Internals</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_276824_2769"><tt>*variables*</tt></a> (special variable).
-</li><li> <a href="#g_t_276825_2769"><tt>save-obj</tt></a> (generic function).
-</li><li> <a href="#g_t_276826_2769"><tt>setup-ls-translations</tt></a> (function).
+<li> <a href="#g_t_276817_2769"><tt>*variables*</tt></a> (special variable).
+</li><li> <a href="#g_t_276816_2769"><tt>save-obj</tt></a> (generic function).
+</li><li> <a href="#g_t_276818_2769"><tt>setup-ls-translations</tt></a> (function).
 </li></ul>
 </dd>
 </dl>
@@ -713,148 +490,19 @@ components trees.
 </div>
 <div class="section" id="The-ls_002duser-package">
 <span id="ls_002duser"></span><h3 class="section">4.2 <tt>ls-user</tt></h3>
-<span id="g_t_276815_2769"></span><span id="index-ls_002duser"></span>
+<span id="g_t_276811_2769"></span><span id="index-ls_002duser"></span>
 <span id="index-Package_002c-ls_002duser"></span>
-<p>User package for Lisp-Stat
-</p><dl compact="compact">
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276813_2769"><tt>ls-init.lisp</tt></a>.
-</p></dd>
-<dt><span><strong>Use List</strong></span></dt>
-<dd><ul>
-<li> <tt>common-lisp</tt>.
-</li><li> <a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
-</li></ul>
-</dd>
-<dt><span><strong>Internals</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_276828_2769"><tt>iris</tt></a> (special variable).
-</li><li> <a href="#g_t_276831_2769"><tt>mtcars</tt></a> (special variable).
-</li><li> <a href="#g_t_276830_2769"><tt>plant-growth</tt></a> (special variable).
-</li><li> <a href="#g_t_276829_2769"><tt>tooth-growth</tt></a> (special variable).
-</li><li> <a href="#g_t_276827_2769"><tt>usarrests</tt></a> (special variable).
-</li></ul>
-</dd>
-</dl>
-
-
-<hr>
-</div>
-<div class="section" id="The-rdata-package">
-<span id="rdata"></span><h3 class="section">4.3 <tt>rdata</tt></h3>
-<span id="g_t_276816_2769"></span><span id="index-rdata"></span>
-<span id="index-Package_002c-rdata"></span>
 <dl compact="compact">
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
+<dd><p><a href="#g_t_27685_2769"><tt>pkgdcls.lisp</tt></a>.
 </p></dd>
-<dt><span><strong>Use List</strong></span></dt>
-<dd><p><tt>common-lisp</tt>.
-</p></dd>
-<dt><span><strong>Public Interface</strong></span></dt>
-<dd><ul>
-<li> <a href="#g_t_276850_2769"><tt>*r-default-datasets*</tt></a> (special variable).
-</li><li> <a href="#g_t_2768111_2769"><tt>ability.cov</tt></a> (special variable).
-</li><li> <a href="#g_t_276892_2769"><tt>airmiles</tt></a> (special variable).
-</li><li> <a href="#g_t_2768118_2769"><tt>airpassengers</tt></a> (special variable).
-</li><li> <a href="#g_t_2768104_2769"><tt>airquality</tt></a> (special variable).
-</li><li> <a href="#g_t_276882_2769"><tt>anscombe</tt></a> (special variable).
-</li><li> <a href="#g_t_2768119_2769"><tt>attenu</tt></a> (special variable).
-</li><li> <a href="#g_t_276864_2769"><tt>attitude</tt></a> (special variable).
-</li><li> <a href="#g_t_276875_2769"><tt>austres</tt></a> (special variable).
-</li><li> <a href="#g_t_276851_2769"><tt>base-url</tt></a> (special variable).
-</li><li> <a href="#g_t_276896_2769"><tt>bjsales</tt></a> (special variable).
-</li><li> <a href="#g_t_276879_2769"><tt>bod</tt></a> (special variable).
-</li><li> <a href="#g_t_276832_2769"><tt>cars</tt></a> (special variable).
-</li><li> <a href="#g_t_2768113_2769"><tt>chickweight</tt></a> (special variable).
-</li><li> <a href="#g_t_276871_2769"><tt>chickwts</tt></a> (special variable).
-</li><li> <a href="#g_t_276842_2769"><tt>co2-1</tt></a> (special variable).
-</li><li> <a href="#g_t_2768107_2769"><tt>co2-2</tt></a> (special variable).
-</li><li> <a href="#g_t_2768109_2769"><tt>crimtab</tt></a> (special variable).
-</li><li> <a href="#g_t_276856_2769"><tt>discoveries</tt></a> (special variable).
-</li><li> <a href="#g_t_276891_2769"><tt>dnase</tt></a> (special variable).
-</li><li> <a href="#g_t_276897_2769"><tt>esoph</tt></a> (special variable).
-</li><li> <a href="#g_t_2768102_2769"><tt>euro</tt></a> (special variable).
-</li><li> <a href="#g_t_276833_2769"><tt>eustockmarkets</tt></a> (special variable).
-</li><li> <a href="#g_t_276846_2769"><tt>faithful</tt></a> (special variable).
-</li><li> <a href="#g_t_276839_2769"><tt>formaldehyde</tt></a> (special variable).
-</li><li> <a href="#g_t_276869_2769"><tt>freeny</tt></a> (special variable).
-</li><li> <a href="#g_t_276843_2769"><tt>haireyecolor</tt></a> (special variable).
-</li><li> <a href="#g_t_276880_2769"><tt>harman23.cor</tt></a> (special variable).
-</li><li> <a href="#g_t_2768105_2769"><tt>harman74.cor</tt></a> (special variable).
-</li><li> <a href="#g_t_276863_2769"><tt>index</tt></a> (special variable).
-</li><li> <a href="#g_t_276886_2769"><tt>indometh</tt></a> (special variable).
-</li><li> <a href="#g_t_276885_2769"><tt>infert</tt></a> (special variable).
-</li><li> <a href="#g_t_276870_2769"><tt>insectsprays</tt></a> (special variable).
-</li><li> <a href="#g_t_2768124_2769"><tt>iris</tt></a> (special variable).
-</li><li> <a href="#g_t_276860_2769"><tt>iris3</tt></a> (special variable).
-</li><li> <a href="#g_t_276837_2769"><tt>islands</tt></a> (special variable).
-</li><li> <a href="#g_t_2768125_2769"><tt>johnsonjohnson</tt></a> (special variable).
-</li><li> <a href="#g_t_276848_2769"><tt>lakehuron</tt></a> (special variable).
-</li><li> <a href="#g_t_276876_2769"><tt>lh</tt></a> (special variable).
-</li><li> <a href="#g_t_2768116_2769"><tt>lifecyclesavings</tt></a> (special variable).
-</li><li> <a href="#g_t_276854_2769"><tt>load-r-default-datasets</tt></a> (function).
-</li><li> <a href="#g_t_2768120_2769"><tt>load-r-metadata</tt></a> (function).
-</li><li> <a href="#g_t_2768100_2769"><tt>loblolly</tt></a> (special variable).
-</li><li> <a href="#g_t_2768106_2769"><tt>longley</tt></a> (special variable).
-</li><li> <a href="#g_t_276841_2769"><tt>lynx</tt></a> (special variable).
-</li><li> <a href="#g_t_276868_2769"><tt>morley</tt></a> (special variable).
-</li><li> <a href="#g_t_276874_2769"><tt>mpg</tt></a> (special variable).
-</li><li> <a href="#g_t_276888_2769"><tt>mtcars</tt></a> (special variable).
-</li><li> <a href="#g_t_276878_2769"><tt>nhtemp</tt></a> (special variable).
-</li><li> <a href="#g_t_276899_2769"><tt>nile</tt></a> (special variable).
-</li><li> <a href="#g_t_276881_2769"><tt>nottem</tt></a> (special variable).
-</li><li> <a href="#g_t_276859_2769"><tt>npk</tt></a> (special variable).
-</li><li> <a href="#g_t_2768121_2769"><tt>nycflights13-airlines</tt></a> (special variable).
-</li><li> <a href="#g_t_276872_2769"><tt>nycflights13-airports</tt></a> (special variable).
-</li><li> <a href="#g_t_276893_2769"><tt>nycflights13-flights</tt></a> (special variable).
-</li><li> <a href="#g_t_276835_2769"><tt>nycflights13-planes</tt></a> (special variable).
-</li><li> <a href="#g_t_2768127_2769"><tt>nycflights13-weather</tt></a> (special variable).
-</li><li> <a href="#g_t_276873_2769"><tt>occupationalstatus</tt></a> (special variable).
-</li><li> <a href="#g_t_2768110_2769"><tt>orange</tt></a> (special variable).
-</li><li> <a href="#g_t_2768103_2769"><tt>orchardsprays</tt></a> (special variable).
-</li><li> <a href="#g_t_276847_2769"><tt>plantgrowth</tt></a> (special variable).
-</li><li> <a href="#g_t_2768122_2769"><tt>precip</tt></a> (special variable).
-</li><li> <a href="#g_t_2768123_2769"><tt>presidents</tt></a> (special variable).
-</li><li> <a href="#g_t_276845_2769"><tt>pressure</tt></a> (special variable).
-</li><li> <a href="#g_t_276861_2769"><tt>puromycin</tt></a> (special variable).
-</li><li> <a href="#g_t_276865_2769"><tt>quakes</tt></a> (special variable).
-</li><li> <a href="#g_t_2768115_2769"><tt>randu</tt></a> (special variable).
-</li><li> <a href="#g_t_276857_2769"><tt>rivers</tt></a> (special variable).
-</li><li> <a href="#g_t_2768126_2769"><tt>rock</tt></a> (special variable).
-</li><li> <a href="#g_t_276834_2769"><tt>save-r-data</tt></a> (function).
-</li><li> <a href="#g_t_276855_2769"><tt>save-r-default-datasets</tt></a> (function).
-</li><li> <a href="#g_t_276836_2769"><tt>seatbelts</tt></a> (special variable).
-</li><li> <a href="#g_t_276866_2769"><tt>stackloss</tt></a> (special variable).
-</li><li> <a href="#g_t_276838_2769"><tt>sunspot.month</tt></a> (special variable).
-</li><li> <a href="#g_t_276858_2769"><tt>sunspot.year</tt></a> (special variable).
-</li><li> <a href="#g_t_276890_2769"><tt>sunspots</tt></a> (special variable).
-</li><li> <a href="#g_t_276853_2769"><tt>swiss</tt></a> (special variable).
-</li><li> <a href="#g_t_276884_2769"><tt>theoph</tt></a> (special variable).
-</li><li> <a href="#g_t_276852_2769"><tt>titanic</tt></a> (special variable).
-</li><li> <a href="#g_t_276862_2769"><tt>toothgrowth</tt></a> (special variable).
-</li><li> <a href="#g_t_276883_2769"><tt>treering</tt></a> (special variable).
-</li><li> <a href="#g_t_276895_2769"><tt>trees</tt></a> (special variable).
-</li><li> <a href="#g_t_276894_2769"><tt>ucbadmissions</tt></a> (special variable).
-</li><li> <a href="#g_t_2768108_2769"><tt>ukdriverdeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_276889_2769"><tt>ukgas</tt></a> (special variable).
-</li><li> <a href="#g_t_2768112_2769"><tt>usaccdeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_2768117_2769"><tt>usarrests</tt></a> (special variable).
-</li><li> <a href="#g_t_276844_2769"><tt>usjudgeratings</tt></a> (special variable).
-</li><li> <a href="#g_t_276840_2769"><tt>uspersonalexpenditure</tt></a> (special variable).
-</li><li> <a href="#g_t_276898_2769"><tt>uspop</tt></a> (special variable).
-</li><li> <a href="#g_t_276867_2769"><tt>vadeaths</tt></a> (special variable).
-</li><li> <a href="#g_t_2768101_2769"><tt>volcano</tt></a> (special variable).
-</li><li> <a href="#g_t_276887_2769"><tt>warpbreaks</tt></a> (special variable).
-</li><li> <a href="#g_t_276849_2769"><tt>women</tt></a> (special variable).
-</li><li> <a href="#g_t_2768114_2769"><tt>worldphones</tt></a> (special variable).
-</li><li> <a href="#g_t_276877_2769"><tt>wwwusage</tt></a> (special variable).
-</li></ul>
-</dd>
 <dt><span><strong>Internals</strong></span></dt>
 <dd><ul>
-<li> <a href="#g_t_2768128_2769"><tt>*r-default-dataframes*</tt></a> (special variable).
-</li><li> <a href="#g_t_2768129_2769"><tt>student-sleep</tt></a> (special variable).
+<li> <a href="#g_t_276821_2769"><tt>iris</tt></a> (special variable).
+</li><li> <a href="#g_t_276822_2769"><tt>mtcars</tt></a> (special variable).
+</li><li> <a href="#g_t_276819_2769"><tt>plant-growth</tt></a> (special variable).
+</li><li> <a href="#g_t_276823_2769"><tt>tooth-growth</tt></a> (special variable).
+</li><li> <a href="#g_t_276820_2769"><tt>usarrests</tt></a> (special variable).
 </li></ul>
 </dd>
 </dl>
@@ -876,1219 +524,19 @@ lexicographic order.
 <span id="Public-Interface-1"></span><h3 class="section">5.1 Public Interface</h3>
 
 <hr>
-<div class="subsection" id="Public-special-variables">
-<span id="Special-variables"></span><h4 class="subsection">5.1.1 Special variables</h4>
-<dl class="def">
-<dt id="index-_002ar_002ddefault_002ddatasets_002a"><span class="category">Special Variable: </span><span><strong>*r-default-datasets*</strong><a href='#index-_002ar_002ddefault_002ddatasets_002a' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276850_2769"></span><span id="index-Special-Variable_002c-_002ar_002ddefault_002ddatasets_002a"></span>
-<p>All data sets included by default in R
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-ability_002ecov"><span class="category">Special Variable: </span><span><strong>ability.cov</strong><a href='#index-ability_002ecov' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768111_2769"></span><span id="index-Special-Variable_002c-ability_002ecov"></span>
-<p>Ability and Intelligence Tests
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-airmiles"><span class="category">Special Variable: </span><span><strong>airmiles</strong><a href='#index-airmiles' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276892_2769"></span><span id="index-Special-Variable_002c-airmiles"></span>
-<p>Passenger Miles on Commercial US Airlines, 1937-1960
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-airpassengers"><span class="category">Special Variable: </span><span><strong>airpassengers</strong><a href='#index-airpassengers' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768118_2769"></span><span id="index-Special-Variable_002c-airpassengers"></span>
-<p>Monthly Airline Passenger Numbers 1949-1960
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-airquality"><span class="category">Special Variable: </span><span><strong>airquality</strong><a href='#index-airquality' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768104_2769"></span><span id="index-Special-Variable_002c-airquality"></span>
-<p>New York Air Quality Measurements
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-anscombe"><span class="category">Special Variable: </span><span><strong>anscombe</strong><a href='#index-anscombe' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276882_2769"></span><span id="index-Special-Variable_002c-anscombe"></span>
-<p>Anscombe&rsquo;s Quartet of &rsquo;Identical&rsquo; Simple Linear Regressions
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-attenu"><span class="category">Special Variable: </span><span><strong>attenu</strong><a href='#index-attenu' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768119_2769"></span><span id="index-Special-Variable_002c-attenu"></span>
-<p>The Joyner-Boore Attenuation Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-attitude"><span class="category">Special Variable: </span><span><strong>attitude</strong><a href='#index-attitude' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276864_2769"></span><span id="index-Special-Variable_002c-attitude"></span>
-<p>The Chatterjee-Price Attitude Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-austres"><span class="category">Special Variable: </span><span><strong>austres</strong><a href='#index-austres' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276875_2769"></span><span id="index-Special-Variable_002c-austres"></span>
-<p>Quarterly Time Series of the Number of Australian Residents
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-base_002durl"><span class="category">Special Variable: </span><span><strong>base-url</strong><a href='#index-base_002durl' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276851_2769"></span><span id="index-Special-Variable_002c-base_002durl"></span>
-<p>Base URL for datasets included in R
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-bjsales"><span class="category">Special Variable: </span><span><strong>bjsales</strong><a href='#index-bjsales' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276896_2769"></span><span id="index-Special-Variable_002c-bjsales"></span>
-<p>Sales Data with Leading Indicator
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-bod"><span class="category">Special Variable: </span><span><strong>bod</strong><a href='#index-bod' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276879_2769"></span><span id="index-Special-Variable_002c-bod"></span>
-<p>Biochemical Oxygen Demand
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-cars"><span class="category">Special Variable: </span><span><strong>cars</strong><a href='#index-cars' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276832_2769"></span><span id="index-Special-Variable_002c-cars"></span>
-<p>Speed and Stopping Distances of Cars
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-chickweight"><span class="category">Special Variable: </span><span><strong>chickweight</strong><a href='#index-chickweight' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768113_2769"></span><span id="index-Special-Variable_002c-chickweight"></span>
-<p>Weight versus age of chicks on different diets
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-chickwts"><span class="category">Special Variable: </span><span><strong>chickwts</strong><a href='#index-chickwts' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276871_2769"></span><span id="index-Special-Variable_002c-chickwts"></span>
-<p>Chicken Weights by Feed Type
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-co2_002d1"><span class="category">Special Variable: </span><span><strong>co2-1</strong><a href='#index-co2_002d1' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276842_2769"></span><span id="index-Special-Variable_002c-co2_002d1"></span>
-<p>Carbon Dioxide Uptake in Grass Plants
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-co2_002d2"><span class="category">Special Variable: </span><span><strong>co2-2</strong><a href='#index-co2_002d2' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768107_2769"></span><span id="index-Special-Variable_002c-co2_002d2"></span>
-<p>Mauna Loa Atmospheric CO2 Concentration
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-crimtab"><span class="category">Special Variable: </span><span><strong>crimtab</strong><a href='#index-crimtab' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768109_2769"></span><span id="index-Special-Variable_002c-crimtab"></span>
-<p>Student&rsquo;s 3000 Criminals Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-discoveries"><span class="category">Special Variable: </span><span><strong>discoveries</strong><a href='#index-discoveries' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276856_2769"></span><span id="index-Special-Variable_002c-discoveries"></span>
-<p>Yearly Numbers of Important Discoveries
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-dnase"><span class="category">Special Variable: </span><span><strong>dnase</strong><a href='#index-dnase' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276891_2769"></span><span id="index-Special-Variable_002c-dnase"></span>
-<p>Elisa assay of DNase
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-esoph"><span class="category">Special Variable: </span><span><strong>esoph</strong><a href='#index-esoph' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276897_2769"></span><span id="index-Special-Variable_002c-esoph"></span>
-<p>Smoking, Alcohol and (O)esophageal Cancer
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-euro"><span class="category">Special Variable: </span><span><strong>euro</strong><a href='#index-euro' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768102_2769"></span><span id="index-Special-Variable_002c-euro"></span>
-<p>Conversion Rates of Euro Currencies
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-eustockmarkets"><span class="category">Special Variable: </span><span><strong>eustockmarkets</strong><a href='#index-eustockmarkets' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276833_2769"></span><span id="index-Special-Variable_002c-eustockmarkets"></span>
-<p>Daily Closing Prices of Major European Stock Indices, 1991-1998
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-faithful"><span class="category">Special Variable: </span><span><strong>faithful</strong><a href='#index-faithful' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276846_2769"></span><span id="index-Special-Variable_002c-faithful"></span>
-<p>Old Faithful Geyser Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-formaldehyde"><span class="category">Special Variable: </span><span><strong>formaldehyde</strong><a href='#index-formaldehyde' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276839_2769"></span><span id="index-Special-Variable_002c-formaldehyde"></span>
-<p>Determination of Formaldehyde
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-freeny"><span class="category">Special Variable: </span><span><strong>freeny</strong><a href='#index-freeny' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276869_2769"></span><span id="index-Special-Variable_002c-freeny"></span>
-<p>Freeny&rsquo;s Revenue Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-haireyecolor"><span class="category">Special Variable: </span><span><strong>haireyecolor</strong><a href='#index-haireyecolor' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276843_2769"></span><span id="index-Special-Variable_002c-haireyecolor"></span>
-<p>Hair and Eye Color of Statistics Students
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-harman23_002ecor"><span class="category">Special Variable: </span><span><strong>harman23.cor</strong><a href='#index-harman23_002ecor' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276880_2769"></span><span id="index-Special-Variable_002c-harman23_002ecor"></span>
-<p>Harman Example 2.3
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-harman74_002ecor"><span class="category">Special Variable: </span><span><strong>harman74.cor</strong><a href='#index-harman74_002ecor' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768105_2769"></span><span id="index-Special-Variable_002c-harman74_002ecor"></span>
-<p>Harman Example 7.4
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-index"><span class="category">Special Variable: </span><span><strong>index</strong><a href='#index-index' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276863_2769"></span><span id="index-Special-Variable_002c-index"></span>
-<dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-indometh"><span class="category">Special Variable: </span><span><strong>indometh</strong><a href='#index-indometh' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276886_2769"></span><span id="index-Special-Variable_002c-indometh"></span>
-<p>Pharmacokinetics of Indomethacin
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-infert"><span class="category">Special Variable: </span><span><strong>infert</strong><a href='#index-infert' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276885_2769"></span><span id="index-Special-Variable_002c-infert"></span>
-<p>Infertility after Spontaneous and Induced Abortion
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-insectsprays"><span class="category">Special Variable: </span><span><strong>insectsprays</strong><a href='#index-insectsprays' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276870_2769"></span><span id="index-Special-Variable_002c-insectsprays"></span>
-<p>Effectiveness of Insect Sprays
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-iris"><span class="category">Special Variable: </span><span><strong>iris</strong><a href='#index-iris' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768124_2769"></span><span id="index-Special-Variable_002c-iris"></span>
-<p>Edgar Anderson&rsquo;s Iris Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-iris3"><span class="category">Special Variable: </span><span><strong>iris3</strong><a href='#index-iris3' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276860_2769"></span><span id="index-Special-Variable_002c-iris3"></span>
-<p>Edgar Anderson&rsquo;s Iris Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-islands"><span class="category">Special Variable: </span><span><strong>islands</strong><a href='#index-islands' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276837_2769"></span><span id="index-Special-Variable_002c-islands"></span>
-<p>Areas of the World&rsquo;s Major Landmasses
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-johnsonjohnson"><span class="category">Special Variable: </span><span><strong>johnsonjohnson</strong><a href='#index-johnsonjohnson' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768125_2769"></span><span id="index-Special-Variable_002c-johnsonjohnson"></span>
-<p>Quarterly Earnings per Johnson &amp; Johnson Share
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-lakehuron"><span class="category">Special Variable: </span><span><strong>lakehuron</strong><a href='#index-lakehuron' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276848_2769"></span><span id="index-Special-Variable_002c-lakehuron"></span>
-<p>Level of Lake Huron 1875-1972
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-lh"><span class="category">Special Variable: </span><span><strong>lh</strong><a href='#index-lh' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276876_2769"></span><span id="index-Special-Variable_002c-lh"></span>
-<p>Luteinizing Hormone in Blood Samples
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-lifecyclesavings"><span class="category">Special Variable: </span><span><strong>lifecyclesavings</strong><a href='#index-lifecyclesavings' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768116_2769"></span><span id="index-Special-Variable_002c-lifecyclesavings"></span>
-<p>Intercountry Life-Cycle Savings Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-loblolly"><span class="category">Special Variable: </span><span><strong>loblolly</strong><a href='#index-loblolly' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768100_2769"></span><span id="index-Special-Variable_002c-loblolly"></span>
-<p>Growth of Loblolly pine trees
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-longley"><span class="category">Special Variable: </span><span><strong>longley</strong><a href='#index-longley' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768106_2769"></span><span id="index-Special-Variable_002c-longley"></span>
-<p>Longley&rsquo;s Economic Regression Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-lynx"><span class="category">Special Variable: </span><span><strong>lynx</strong><a href='#index-lynx' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276841_2769"></span><span id="index-Special-Variable_002c-lynx"></span>
-<p>Annual Canadian Lynx trappings 1821-1934
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-morley"><span class="category">Special Variable: </span><span><strong>morley</strong><a href='#index-morley' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276868_2769"></span><span id="index-Special-Variable_002c-morley"></span>
-<p>Michelson Speed of Light Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-mpg"><span class="category">Special Variable: </span><span><strong>mpg</strong><a href='#index-mpg' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276874_2769"></span><span id="index-Special-Variable_002c-mpg"></span>
-<p>Fuel economy data from 1999 to 2008 for 38 popular models of cars
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-mtcars"><span class="category">Special Variable: </span><span><strong>mtcars</strong><a href='#index-mtcars' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276888_2769"></span><span id="index-Special-Variable_002c-mtcars"></span>
-<p>Motor Trend Car Road Tests
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nhtemp"><span class="category">Special Variable: </span><span><strong>nhtemp</strong><a href='#index-nhtemp' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276878_2769"></span><span id="index-Special-Variable_002c-nhtemp"></span>
-<p>Average Yearly Temperatures in New Haven
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nile"><span class="category">Special Variable: </span><span><strong>nile</strong><a href='#index-nile' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276899_2769"></span><span id="index-Special-Variable_002c-nile"></span>
-<p>Flow of the River Nile
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nottem"><span class="category">Special Variable: </span><span><strong>nottem</strong><a href='#index-nottem' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276881_2769"></span><span id="index-Special-Variable_002c-nottem"></span>
-<p>Average Monthly Temperatures at Nottingham, 1920-1939
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-npk"><span class="category">Special Variable: </span><span><strong>npk</strong><a href='#index-npk' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276859_2769"></span><span id="index-Special-Variable_002c-npk"></span>
-<p>Classical N, P, K Factorial Experiment
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nycflights13_002dairlines"><span class="category">Special Variable: </span><span><strong>nycflights13-airlines</strong><a href='#index-nycflights13_002dairlines' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768121_2769"></span><span id="index-Special-Variable_002c-nycflights13_002dairlines"></span>
-<p>Airline name lookup table by carrier code
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nycflights13_002dairports"><span class="category">Special Variable: </span><span><strong>nycflights13-airports</strong><a href='#index-nycflights13_002dairports' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276872_2769"></span><span id="index-Special-Variable_002c-nycflights13_002dairports"></span>
-<p>Airport metadata
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nycflights13_002dflights"><span class="category">Special Variable: </span><span><strong>nycflights13-flights</strong><a href='#index-nycflights13_002dflights' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276893_2769"></span><span id="index-Special-Variable_002c-nycflights13_002dflights"></span>
-<p>On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nycflights13_002dplanes"><span class="category">Special Variable: </span><span><strong>nycflights13-planes</strong><a href='#index-nycflights13_002dplanes' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276835_2769"></span><span id="index-Special-Variable_002c-nycflights13_002dplanes"></span>
-<p>Metadata for all airplane tail numbers found in the FAA aircraft registry
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-nycflights13_002dweather"><span class="category">Special Variable: </span><span><strong>nycflights13-weather</strong><a href='#index-nycflights13_002dweather' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768127_2769"></span><span id="index-Special-Variable_002c-nycflights13_002dweather"></span>
-<p>Hourly meterological data for LGA, JFK and EWR in 2013
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-occupationalstatus"><span class="category">Special Variable: </span><span><strong>occupationalstatus</strong><a href='#index-occupationalstatus' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276873_2769"></span><span id="index-Special-Variable_002c-occupationalstatus"></span>
-<p>Occupational Status of Fathers and their Sons
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-orange"><span class="category">Special Variable: </span><span><strong>orange</strong><a href='#index-orange' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768110_2769"></span><span id="index-Special-Variable_002c-orange"></span>
-<p>Growth of Orange Trees
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-orchardsprays"><span class="category">Special Variable: </span><span><strong>orchardsprays</strong><a href='#index-orchardsprays' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768103_2769"></span><span id="index-Special-Variable_002c-orchardsprays"></span>
-<p>Potency of Orchard Sprays
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-plantgrowth"><span class="category">Special Variable: </span><span><strong>plantgrowth</strong><a href='#index-plantgrowth' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276847_2769"></span><span id="index-Special-Variable_002c-plantgrowth"></span>
-<p>Results from an Experiment on Plant Growth
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-precip"><span class="category">Special Variable: </span><span><strong>precip</strong><a href='#index-precip' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768122_2769"></span><span id="index-Special-Variable_002c-precip"></span>
-<p>Annual Precipitation in US Cities
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-presidents"><span class="category">Special Variable: </span><span><strong>presidents</strong><a href='#index-presidents' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768123_2769"></span><span id="index-Special-Variable_002c-presidents"></span>
-<p>Quarterly Approval Ratings of US Presidents
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-pressure"><span class="category">Special Variable: </span><span><strong>pressure</strong><a href='#index-pressure' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276845_2769"></span><span id="index-Special-Variable_002c-pressure"></span>
-<p>Vapor Pressure of Mercury as a Function of Temperature
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-puromycin"><span class="category">Special Variable: </span><span><strong>puromycin</strong><a href='#index-puromycin' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276861_2769"></span><span id="index-Special-Variable_002c-puromycin"></span>
-<p>Reaction Velocity of an Enzymatic Reaction
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-quakes"><span class="category">Special Variable: </span><span><strong>quakes</strong><a href='#index-quakes' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276865_2769"></span><span id="index-Special-Variable_002c-quakes"></span>
-<p>Locations of Earthquakes off Fiji
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-randu"><span class="category">Special Variable: </span><span><strong>randu</strong><a href='#index-randu' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768115_2769"></span><span id="index-Special-Variable_002c-randu"></span>
-<p>Random Numbers from Congruential Generator RANDU
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-rivers"><span class="category">Special Variable: </span><span><strong>rivers</strong><a href='#index-rivers' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276857_2769"></span><span id="index-Special-Variable_002c-rivers"></span>
-<p>Lengths of Major North American Rivers
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-rock"><span class="category">Special Variable: </span><span><strong>rock</strong><a href='#index-rock' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768126_2769"></span><span id="index-Special-Variable_002c-rock"></span>
-<p>Measurements on Petroleum Rock Samples
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-seatbelts"><span class="category">Special Variable: </span><span><strong>seatbelts</strong><a href='#index-seatbelts' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276836_2769"></span><span id="index-Special-Variable_002c-seatbelts"></span>
-<p>Road Casualties in Great Britain 1969-84
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-stackloss"><span class="category">Special Variable: </span><span><strong>stackloss</strong><a href='#index-stackloss' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276866_2769"></span><span id="index-Special-Variable_002c-stackloss"></span>
-<p>Brownlee&rsquo;s Stack Loss Plant Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-sunspot_002emonth"><span class="category">Special Variable: </span><span><strong>sunspot.month</strong><a href='#index-sunspot_002emonth' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276838_2769"></span><span id="index-Special-Variable_002c-sunspot_002emonth"></span>
-<p>Monthly Sunspot Data, from 1749 to Present
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-sunspot_002eyear"><span class="category">Special Variable: </span><span><strong>sunspot.year</strong><a href='#index-sunspot_002eyear' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276858_2769"></span><span id="index-Special-Variable_002c-sunspot_002eyear"></span>
-<p>Yearly Sunspot Data, 1700-1988
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-sunspots"><span class="category">Special Variable: </span><span><strong>sunspots</strong><a href='#index-sunspots' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276890_2769"></span><span id="index-Special-Variable_002c-sunspots"></span>
-<p>Monthly Sunspot Numbers, 1749-1983
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-swiss"><span class="category">Special Variable: </span><span><strong>swiss</strong><a href='#index-swiss' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276853_2769"></span><span id="index-Special-Variable_002c-swiss"></span>
-<p>Swiss Fertility and Socioeconomic Indicators (1888) Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-theoph"><span class="category">Special Variable: </span><span><strong>theoph</strong><a href='#index-theoph' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276884_2769"></span><span id="index-Special-Variable_002c-theoph"></span>
-<p>Pharmacokinetics of Theophylline
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-titanic"><span class="category">Special Variable: </span><span><strong>titanic</strong><a href='#index-titanic' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276852_2769"></span><span id="index-Special-Variable_002c-titanic"></span>
-<p>Survival of passengers on the Titanic
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-toothgrowth"><span class="category">Special Variable: </span><span><strong>toothgrowth</strong><a href='#index-toothgrowth' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276862_2769"></span><span id="index-Special-Variable_002c-toothgrowth"></span>
-<p>The Effect of Vitamin C on Tooth Growth in Guinea Pigs
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-treering"><span class="category">Special Variable: </span><span><strong>treering</strong><a href='#index-treering' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276883_2769"></span><span id="index-Special-Variable_002c-treering"></span>
-<p>Yearly Treering Data, -6000-1979
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-trees"><span class="category">Special Variable: </span><span><strong>trees</strong><a href='#index-trees' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276895_2769"></span><span id="index-Special-Variable_002c-trees"></span>
-<p>Diameter, Height and Volume for Black Cherry Trees
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-ucbadmissions"><span class="category">Special Variable: </span><span><strong>ucbadmissions</strong><a href='#index-ucbadmissions' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276894_2769"></span><span id="index-Special-Variable_002c-ucbadmissions"></span>
-<p>Student Admissions at UC Berkeley
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-ukdriverdeaths"><span class="category">Special Variable: </span><span><strong>ukdriverdeaths</strong><a href='#index-ukdriverdeaths' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768108_2769"></span><span id="index-Special-Variable_002c-ukdriverdeaths"></span>
-<p>Road Casualties in Great Britain 1969-84
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-ukgas"><span class="category">Special Variable: </span><span><strong>ukgas</strong><a href='#index-ukgas' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276889_2769"></span><span id="index-Special-Variable_002c-ukgas"></span>
-<p>UK Quarterly Gas Consumption
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-usaccdeaths"><span class="category">Special Variable: </span><span><strong>usaccdeaths</strong><a href='#index-usaccdeaths' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768112_2769"></span><span id="index-Special-Variable_002c-usaccdeaths"></span>
-<p>Accidental Deaths in the US 1973-1978
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-usarrests"><span class="category">Special Variable: </span><span><strong>usarrests</strong><a href='#index-usarrests' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768117_2769"></span><span id="index-Special-Variable_002c-usarrests"></span>
-<p>Violent Crime Rates by US State
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-usjudgeratings"><span class="category">Special Variable: </span><span><strong>usjudgeratings</strong><a href='#index-usjudgeratings' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276844_2769"></span><span id="index-Special-Variable_002c-usjudgeratings"></span>
-<p>Lawyers&rsquo; Ratings of State Judges in the US Superior Court
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-uspersonalexpenditure"><span class="category">Special Variable: </span><span><strong>uspersonalexpenditure</strong><a href='#index-uspersonalexpenditure' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276840_2769"></span><span id="index-Special-Variable_002c-uspersonalexpenditure"></span>
-<p>Personal Expenditure Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-uspop"><span class="category">Special Variable: </span><span><strong>uspop</strong><a href='#index-uspop' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276898_2769"></span><span id="index-Special-Variable_002c-uspop"></span>
-<p>Populations Recorded by the US Census
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-vadeaths"><span class="category">Special Variable: </span><span><strong>vadeaths</strong><a href='#index-vadeaths' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276867_2769"></span><span id="index-Special-Variable_002c-vadeaths"></span>
-<p>Death Rates in Virginia (1940)
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-volcano"><span class="category">Special Variable: </span><span><strong>volcano</strong><a href='#index-volcano' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768101_2769"></span><span id="index-Special-Variable_002c-volcano"></span>
-<p>Topographic Information on Auckland&rsquo;s Maunga Whau Volcano
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-warpbreaks"><span class="category">Special Variable: </span><span><strong>warpbreaks</strong><a href='#index-warpbreaks' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276887_2769"></span><span id="index-Special-Variable_002c-warpbreaks"></span>
-<p>The Number of Breaks in Yarn during Weaving
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-women"><span class="category">Special Variable: </span><span><strong>women</strong><a href='#index-women' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276849_2769"></span><span id="index-Special-Variable_002c-women"></span>
-<p>Average Heights and Weights for American Women
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-worldphones"><span class="category">Special Variable: </span><span><strong>worldphones</strong><a href='#index-worldphones' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768114_2769"></span><span id="index-Special-Variable_002c-worldphones"></span>
-<p>The World&rsquo;s Telephones
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-wwwusage"><span class="category">Special Variable: </span><span><strong>wwwusage</strong><a href='#index-wwwusage' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276877_2769"></span><span id="index-Special-Variable_002c-wwwusage"></span>
-<p>Internet Usage per Minute
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-
-<hr>
-</div>
 <div class="subsection" id="Public-macros">
-<span id="Macros"></span><h4 class="subsection">5.1.2 Macros</h4>
+<span id="Macros"></span><h4 class="subsection">5.1.1 Macros</h4>
 <dl class="def">
 <dt id="index-def"><span class="category">Macro: </span><span><strong>def</strong> <em>(name value &amp;optional documentation)</em><a href='#index-def' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276817_2769"></span><span id="index-Macro_002c-def"></span>
+<dd><span id="g_t_276813_2769"></span><span id="index-Macro_002c-def"></span>
 <p>Define a data variable<br>
 VALUE is not evaluated and must be a symbol.  Assigns the value of FORM to VALUE and adds VALUE to the list *VARIABLES* of def&rsquo;ed variables. Returns VALUE.  If VALUE is already bound and the global variable *ASK-ON-REDEFINE* is not nil then you are asked if you want to redefine the variable.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -2096,146 +544,46 @@ VALUE is not evaluated and must be a symbol.  Assigns the value of FORM to VALUE
 <hr>
 </div>
 <div class="subsection" id="Public-ordinary-functions">
-<span id="Ordinary-functions"></span><h4 class="subsection">5.1.3 Ordinary functions</h4>
-<dl class="def">
-<dt id="index-data"><span class="category">Function: </span><span><strong>data</strong> <em>(d &amp;key system directory type)</em><a href='#index-data' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276820_2769"></span><span id="index-Function_002c-data"></span>
-<p>Load a data frame from a CSV or LISP data source located on the local filesystem named by D.  Intended for example data sets for Lisp-Stat system.  Parameters may be either a KEYWORD or STRING.  JSON files require application specific loaders, so not handled here.  Use (read-vega ...) for example.
-</p>
-<p>Description<br>
-Each package using lisp-stat should define its own logical host, and a directory called DATA.  Once done, you can load  the example data sets like so:<br>
-</p>
-<p>LS-USER&gt; (data my-example :system :glimpse)<br>
-</p>
-<p>If the system is named GLIMPSE.  To load a data set from R, assuming you have configured a logical host, RDATA:<br>
-</p>
-<p>LS-USER&gt; (data :antigua :system :rdata :directory :daag :type :csv)
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27689_2769"><tt>data.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-fivenum"><span class="category">Function: </span><span><strong>fivenum</strong> <em>(x &amp;key tukey)</em><a href='#index-fivenum' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276823_2769"></span><span id="index-Function_002c-fivenum"></span>
-<p>By default, returns the five number summary (min, 1st quartile, median, 3rd quartile, max) of the elements X.
-   If the keyword :tukey is set to a non-nil value, Tukey&rsquo;s fivenum summary is computed instead.
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276811_2769"><tt>stats.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-interquartile_002drange"><span class="category">Function: </span><span><strong>interquartile-range</strong> <em>(x)</em><a href='#index-interquartile_002drange' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276819_2769"></span><span id="index-Function_002c-interquartile_002drange"></span>
-<p>Returns the interquartile range of the elements of X.
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276811_2769"><tt>stats.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-load_002dr_002ddefault_002ddatasets"><span class="category">Function: </span><span><strong>load-r-default-datasets</strong> <em>()</em><a href='#index-load_002dr_002ddefault_002ddatasets' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276854_2769"></span><span id="index-Function_002c-load_002dr_002ddefault_002ddatasets"></span>
-<p>Load the data sets included in base R
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-load_002dr_002dmetadata"><span class="category">Function: </span><span><strong>load-r-metadata</strong> <em>()</em><a href='#index-load_002dr_002dmetadata' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768120_2769"></span><span id="index-Function_002c-load_002dr_002dmetadata"></span>
-<p>Loads the master R data set index as a data frame. Use this to query the R data sets.
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-save_002dr_002ddata"><span class="category">Function: </span><span><strong>save-r-data</strong> <em>()</em><a href='#index-save_002dr_002ddata' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276834_2769"></span><span id="index-Function_002c-save_002dr_002ddata"></span>
-<dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-save_002dr_002ddefault_002ddatasets"><span class="category">Function: </span><span><strong>save-r-default-datasets</strong> <em>()</em><a href='#index-save_002dr_002ddefault_002ddatasets' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276855_2769"></span><span id="index-Function_002c-save_002dr_002ddefault_002ddatasets"></span>
-<p>Save the data sets included in base R
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
+<span id="Ordinary-functions"></span><h4 class="subsection">5.1.2 Ordinary functions</h4>
 <dl class="def">
 <dt id="index-savevar"><span class="category">Function: </span><span><strong>savevar</strong> <em>(vars file &amp;optional suffix)</em><a href='#index-savevar' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276822_2769"></span><span id="index-Function_002c-savevar"></span>
+<dd><span id="g_t_276815_2769"></span><span id="index-Function_002c-savevar"></span>
 <p>VARS is a symbol or a list of symbols.  FILE is a string (or a symbol whose print name is used) not ending in SUFFIX (defaults to &quot;.lisp&quot;). The VARS and their current values are written to the file FILE.lisp in a form suitable for use with the load command.  NOTE: Ensure VARS doesn&rsquo;t contain CLOS objects that don&rsquo;t have a SAVE-OBJ method.
 Example (savevar &rsquo;urban &quot;urban&quot;)
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
 <dt id="index-undef_002dvar"><span class="category">Function: </span><span><strong>undef-var</strong> <em>(v)</em><a href='#index-undef_002dvar' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276818_2769"></span><span id="index-Function_002c-undef_002dvar"></span>
+<dd><span id="g_t_276812_2769"></span><span id="index-Function_002c-undef_002dvar"></span>
 <p>Remove V from the system<br>
 If V is the symbol of a defined variable the variable it is unbound and removed from the list of defined variables. If V is a list of variable names each is unbound and removed. Returns V.
 Example: (undef &rsquo;urban)
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
 <dt id="index-variables"><span class="category">Function: </span><span><strong>variables</strong> <em>()</em><a href='#index-variables' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276821_2769"></span><span id="index-Function_002c-variables"></span>
+<dd><span id="g_t_276814_2769"></span><span id="index-Function_002c-variables"></span>
 <p>Returns a list of the names of all def&rsquo;ed variables.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -2249,35 +597,22 @@ Example: (undef &rsquo;urban)
 
 <hr>
 <div class="subsection" id="Private-special-variables">
-<span id="Special-variables-1"></span><h4 class="subsection">5.2.1 Special variables</h4>
-<dl class="def">
-<dt id="index-_002ar_002ddefault_002ddataframes_002a"><span class="category">Special Variable: </span><span><strong>*r-default-dataframes*</strong><a href='#index-_002ar_002ddefault_002ddataframes_002a' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768128_2769"></span><span id="index-Special-Variable_002c-_002ar_002ddefault_002ddataframes_002a"></span>
-<p>Data frames corresponding to the default R datasets
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
+<span id="Special-variables"></span><h4 class="subsection">5.2.1 Special variables</h4>
 <dl class="def">
 <dt id="index-_002avariables_002a"><span class="category">Special Variable: </span><span><strong>*variables*</strong><a href='#index-_002avariables_002a' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276824_2769"></span><span id="index-Special-Variable_002c-_002avariables_002a"></span>
+<dd><span id="g_t_276817_2769"></span><span id="index-Special-Variable_002c-_002avariables_002a"></span>
 <dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
-<dt id="index-iris-1"><span class="category">Special Variable: </span><span><strong>iris</strong><a href='#index-iris-1' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276828_2769"></span><span id="index-Special-Variable_002c-iris-1"></span>
+<dt id="index-iris"><span class="category">Special Variable: </span><span><strong>iris</strong><a href='#index-iris' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="g_t_276821_2769"></span><span id="index-Special-Variable_002c-iris"></span>
 <p>Edgar Anderson&rsquo;s Iris Data<br>
 </p>
 <p>Description<br>
@@ -2307,13 +642,13 @@ ii &lt;- data.frame(matrix(aperm(iris3, c(1,3,2)), ncol = 4,<br>
 all.equal(ii, iris) # TRUE
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
+<dd><p><a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
-<dt id="index-mtcars-1"><span class="category">Special Variable: </span><span><strong>mtcars</strong><a href='#index-mtcars-1' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276831_2769"></span><span id="index-Special-Variable_002c-mtcars-1"></span>
+<dt id="index-mtcars"><span class="category">Special Variable: </span><span><strong>mtcars</strong><a href='#index-mtcars' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="g_t_276822_2769"></span><span id="index-Special-Variable_002c-mtcars"></span>
 <p>Motor Trend Car Road Tests<br>
 </p>
 <p>Description<br>
@@ -2334,13 +669,13 @@ Henderson and Velleman (1981), Building multiple regression models
 interactively. Biometrics, 37, 391–411.
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
+<dd><p><a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
 <dt id="index-plant_002dgrowth"><span class="category">Special Variable: </span><span><strong>plant-growth</strong><a href='#index-plant_002dgrowth' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276830_2769"></span><span id="index-Special-Variable_002c-plant_002dgrowth"></span>
+<dd><span id="g_t_276819_2769"></span><span id="index-Special-Variable_002c-plant_002dgrowth"></span>
 <p>Results from an Experiment on Plant Growth<br>
 </p>
 <p>Description<br>
@@ -2369,26 +704,13 @@ boxplot(weight ~ group, data = PlantGrowth, main = &quot;PlantGrowth data&quot;,
 anova(lm(weight ~ group, data = PlantGrowth))
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
-</p></dd>
-</dl>
-</dd></dl>
-<dl class="def">
-<dt id="index-student_002dsleep"><span class="category">Special Variable: </span><span><strong>student-sleep</strong><a href='#index-student_002dsleep' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_2768129_2769"></span><span id="index-Special-Variable_002c-student_002dsleep"></span>
-<p>Student&rsquo;s Sleep Data
-</p><dl compact="compact">
-<dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276816_2769"><tt>rdata</tt></a>.
-</p></dd>
-<dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276810_2769"><tt>rdata.lisp</tt></a>.
+<dd><p><a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
 <dt id="index-tooth_002dgrowth"><span class="category">Special Variable: </span><span><strong>tooth-growth</strong><a href='#index-tooth_002dgrowth' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276829_2769"></span><span id="index-Special-Variable_002c-tooth_002dgrowth"></span>
+<dd><span id="g_t_276823_2769"></span><span id="index-Special-Variable_002c-tooth_002dgrowth"></span>
 <p>The Effect of Vitamin C on Tooth Growth in Guinea Pigs<br>
 </p>
 <p>Description<br>
@@ -2420,13 +742,13 @@ coplot(len ~ dose | supp, data = ToothGrowth, panel = panel.smooth,
        xlab = &quot;ToothGrowth data: length vs dose, given type of supplement&quot;)
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
+<dd><p><a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
 <dl class="def">
-<dt id="index-usarrests-1"><span class="category">Special Variable: </span><span><strong>usarrests</strong><a href='#index-usarrests-1' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276827_2769"></span><span id="index-Special-Variable_002c-usarrests-1"></span>
+<dt id="index-usarrests"><span class="category">Special Variable: </span><span><strong>usarrests</strong><a href='#index-usarrests' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="g_t_276820_2769"></span><span id="index-Special-Variable_002c-usarrests"></span>
 <p>Violent Crime Rates by US State<br>
 </p>
 <p>Description<br>
@@ -2480,7 +802,7 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 					  (string= &quot;Pennsylvania&quot; x)))))
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276815_2769"><tt>ls-user</tt></a>.
+<dd><p><a href="#g_t_276811_2769"><tt>ls-user</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -2491,13 +813,13 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <span id="Ordinary-functions-1"></span><h4 class="subsection">5.2.2 Ordinary functions</h4>
 <dl class="def">
 <dt id="index-setup_002dls_002dtranslations"><span class="category">Function: </span><span><strong>setup-ls-translations</strong> <em>()</em><a href='#index-setup_002dls_002dtranslations' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276826_2769"></span><span id="index-Function_002c-setup_002dls_002dtranslations"></span>
+<dd><span id="g_t_276818_2769"></span><span id="index-Function_002c-setup_002dls_002dtranslations"></span>
 <dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_276813_2769"><tt>ls-init.lisp</tt></a>.
+<dd><p><a href="#g_t_27689_2769"><tt>ls-init.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -2508,14 +830,14 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <span id="Generic-functions"></span><h4 class="subsection">5.2.3 Generic functions</h4>
 <dl class="def">
 <dt id="index-save_002dobj"><span class="category">Generic Function: </span><span><strong>save-obj</strong> <em>(data)</em><a href='#index-save_002dobj' class='copiable-anchor'> &para;</a></span></dt>
-<dd><span id="g_t_276825_2769"></span><span id="index-Generic-Function_002c-save_002dobj"></span>
+<dd><span id="g_t_276816_2769"></span><span id="index-Generic-Function_002c-save_002dobj"></span>
 <p>Save data object
 </p><dl compact="compact">
 <dt><span><strong>Package</strong></span></dt>
-<dd><p><a href="#g_t_276814_2769"><tt>lisp-stat</tt></a>.
+<dd><p><a href="#g_t_276810_2769"><tt>lisp-stat</tt></a>.
 </p></dd>
 <dt><span><strong>Source</strong></span></dt>
-<dd><p><a href="#g_t_27688_2769"><tt>variables.lisp</tt></a>.
+<dd><p><a href="#g_t_27687_2769"><tt>variables.lisp</tt></a>.
 </p></dd>
 </dl>
 </dd></dl>
@@ -2546,10 +868,6 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Function-index_fn_letter-I"><b>I</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Function-index_fn_letter-L"><b>L</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-S"><b>S</b></a>
@@ -2563,18 +881,9 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-D">D</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-data"><code>data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-def"><code>def</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-F">F</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-fivenum"><code>fivenum</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-data"><code><span class="roman">Function, </span>data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-fivenum"><code><span class="roman">Function, </span>fivenum</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-interquartile_002drange"><code><span class="roman">Function, </span>interquartile-range</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-load_002dr_002ddefault_002ddatasets"><code><span class="roman">Function, </span>load-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-load_002dr_002dmetadata"><code><span class="roman">Function, </span>load-r-metadata</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-save_002dr_002ddata"><code><span class="roman">Function, </span>save-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Function_002c-save_002dr_002ddefault_002ddatasets"><code><span class="roman">Function, </span>save-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-savevar"><code><span class="roman">Function, </span>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-setup_002dls_002dtranslations"><code><span class="roman">Function, </span>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-ordinary-functions">Private ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Function_002c-undef_002dvar"><code><span class="roman">Function, </span>undef-var</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
@@ -2583,20 +892,11 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <tr><th id="Function-index_fn_letter-G">G</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-save_002dobj"><code><span class="roman">Generic Function, </span>save-obj</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-generic-functions">Private generic functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Function-index_fn_letter-I">I</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-interquartile_002drange"><code>interquartile-range</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Function-index_fn_letter-L">L</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-load_002dr_002ddefault_002ddatasets"><code>load-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-load_002dr_002dmetadata"><code>load-r-metadata</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-M">M</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Macro_002c-def"><code><span class="roman">Macro, </span>def</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-macros">Public macros</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Function-index_fn_letter-S">S</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-save_002dobj"><code>save-obj</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-generic-functions">Private generic functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-save_002dr_002ddata"><code>save-r-data</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-save_002dr_002ddefault_002ddatasets"><code>save-r-default-datasets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-savevar"><code>savevar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-ordinary-functions">Public ordinary functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-setup_002dls_002dtranslations"><code>setup-ls-translations</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-ordinary-functions">Private ordinary functions</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
@@ -2612,10 +912,6 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Function-index_fn_letter-I"><b>I</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Function-index_fn_letter-L"><b>L</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
  &nbsp; 
@@ -2636,341 +932,63 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
  &nbsp; 
 <br>
-<a class="summary-letter" href="#Variable-index_vr_letter-A"><b>A</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-B"><b>B</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-C"><b>C</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-D"><b>D</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-E"><b>E</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-F"><b>F</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-H"><b>H</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-I"><b>I</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-J"><b>J</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-L"><b>L</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-M"><b>M</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-N"><b>N</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-O"><b>O</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-P"><b>P</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-Q"><b>Q</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-R"><b>R</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-T"><b>T</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-U"><b>U</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-V"><b>V</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
 <table class="index-vr" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_symbol-1">*</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_002ar_002ddefault_002ddataframes_002a"><code>*r-default-dataframes*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_002ar_002ddefault_002ddatasets_002a"><code>*r-default-datasets*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_002avariables_002a"><code>*variables*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-A">A</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-ability_002ecov"><code>ability.cov</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-airmiles"><code>airmiles</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-airpassengers"><code>airpassengers</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-airquality"><code>airquality</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-anscombe"><code>anscombe</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-attenu"><code>attenu</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-attitude"><code>attitude</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-austres"><code>austres</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-B">B</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-base_002durl"><code>base-url</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-bjsales"><code>bjsales</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-bod"><code>bod</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-C">C</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-cars"><code>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-chickweight"><code>chickweight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-chickwts"><code>chickwts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-co2_002d1"><code>co2-1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-co2_002d2"><code>co2-2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-crimtab"><code>crimtab</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-D">D</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-discoveries"><code>discoveries</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-dnase"><code>dnase</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-E">E</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-esoph"><code>esoph</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-euro"><code>euro</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-eustockmarkets"><code>eustockmarkets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-F">F</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-faithful"><code>faithful</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-formaldehyde"><code>formaldehyde</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-freeny"><code>freeny</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-H">H</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-haireyecolor"><code>haireyecolor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-harman23_002ecor"><code>harman23.cor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-harman74_002ecor"><code>harman74.cor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-I">I</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-index"><code>index</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-indometh"><code>indometh</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-infert"><code>infert</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-insectsprays"><code>insectsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-iris"><code>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-iris-1"><code>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-iris3"><code>iris3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-islands"><code>islands</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-J">J</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-johnsonjohnson"><code>johnsonjohnson</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-L">L</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-lakehuron"><code>lakehuron</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-lh"><code>lh</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-lifecyclesavings"><code>lifecyclesavings</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-loblolly"><code>loblolly</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-longley"><code>longley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-lynx"><code>lynx</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-iris"><code>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-M">M</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-morley"><code>morley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-mpg"><code>mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-mtcars"><code>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-mtcars-1"><code>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-N">N</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nhtemp"><code>nhtemp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nile"><code>nile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nottem"><code>nottem</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-npk"><code>npk</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nycflights13_002dairlines"><code>nycflights13-airlines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nycflights13_002dairports"><code>nycflights13-airports</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nycflights13_002dflights"><code>nycflights13-flights</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nycflights13_002dplanes"><code>nycflights13-planes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-nycflights13_002dweather"><code>nycflights13-weather</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-O">O</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-occupationalstatus"><code>occupationalstatus</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-orange"><code>orange</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-orchardsprays"><code>orchardsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-mtcars"><code>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-plant_002dgrowth"><code>plant-growth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-plantgrowth"><code>plantgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-precip"><code>precip</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-presidents"><code>presidents</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-pressure"><code>pressure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-puromycin"><code>puromycin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-Q">Q</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-quakes"><code>quakes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-R">R</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-randu"><code>randu</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-rivers"><code>rivers</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-rock"><code>rock</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-S">S</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-seatbelts"><code>seatbelts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002ar_002ddefault_002ddataframes_002a"><code><span class="roman">Special Variable, </span>*r-default-dataframes*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002ar_002ddefault_002ddatasets_002a"><code><span class="roman">Special Variable, </span>*r-default-datasets*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-_002avariables_002a"><code><span class="roman">Special Variable, </span>*variables*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-ability_002ecov"><code><span class="roman">Special Variable, </span>ability.cov</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-airmiles"><code><span class="roman">Special Variable, </span>airmiles</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-airpassengers"><code><span class="roman">Special Variable, </span>airpassengers</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-airquality"><code><span class="roman">Special Variable, </span>airquality</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-anscombe"><code><span class="roman">Special Variable, </span>anscombe</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-attenu"><code><span class="roman">Special Variable, </span>attenu</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-attitude"><code><span class="roman">Special Variable, </span>attitude</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-austres"><code><span class="roman">Special Variable, </span>austres</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-base_002durl"><code><span class="roman">Special Variable, </span>base-url</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-bjsales"><code><span class="roman">Special Variable, </span>bjsales</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-bod"><code><span class="roman">Special Variable, </span>bod</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-cars"><code><span class="roman">Special Variable, </span>cars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-chickweight"><code><span class="roman">Special Variable, </span>chickweight</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-chickwts"><code><span class="roman">Special Variable, </span>chickwts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-co2_002d1"><code><span class="roman">Special Variable, </span>co2-1</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-co2_002d2"><code><span class="roman">Special Variable, </span>co2-2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-crimtab"><code><span class="roman">Special Variable, </span>crimtab</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-discoveries"><code><span class="roman">Special Variable, </span>discoveries</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-dnase"><code><span class="roman">Special Variable, </span>dnase</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-esoph"><code><span class="roman">Special Variable, </span>esoph</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-euro"><code><span class="roman">Special Variable, </span>euro</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-eustockmarkets"><code><span class="roman">Special Variable, </span>eustockmarkets</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-faithful"><code><span class="roman">Special Variable, </span>faithful</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-formaldehyde"><code><span class="roman">Special Variable, </span>formaldehyde</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-freeny"><code><span class="roman">Special Variable, </span>freeny</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-haireyecolor"><code><span class="roman">Special Variable, </span>haireyecolor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-harman23_002ecor"><code><span class="roman">Special Variable, </span>harman23.cor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-harman74_002ecor"><code><span class="roman">Special Variable, </span>harman74.cor</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-index"><code><span class="roman">Special Variable, </span>index</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-indometh"><code><span class="roman">Special Variable, </span>indometh</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-infert"><code><span class="roman">Special Variable, </span>infert</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-insectsprays"><code><span class="roman">Special Variable, </span>insectsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris"><code><span class="roman">Special Variable, </span>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris-1"><code><span class="roman">Special Variable, </span>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris3"><code><span class="roman">Special Variable, </span>iris3</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-islands"><code><span class="roman">Special Variable, </span>islands</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-johnsonjohnson"><code><span class="roman">Special Variable, </span>johnsonjohnson</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-lakehuron"><code><span class="roman">Special Variable, </span>lakehuron</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-lh"><code><span class="roman">Special Variable, </span>lh</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-lifecyclesavings"><code><span class="roman">Special Variable, </span>lifecyclesavings</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-loblolly"><code><span class="roman">Special Variable, </span>loblolly</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-longley"><code><span class="roman">Special Variable, </span>longley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-lynx"><code><span class="roman">Special Variable, </span>lynx</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-morley"><code><span class="roman">Special Variable, </span>morley</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mpg"><code><span class="roman">Special Variable, </span>mpg</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mtcars"><code><span class="roman">Special Variable, </span>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mtcars-1"><code><span class="roman">Special Variable, </span>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nhtemp"><code><span class="roman">Special Variable, </span>nhtemp</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nile"><code><span class="roman">Special Variable, </span>nile</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nottem"><code><span class="roman">Special Variable, </span>nottem</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-npk"><code><span class="roman">Special Variable, </span>npk</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dairlines"><code><span class="roman">Special Variable, </span>nycflights13-airlines</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dairports"><code><span class="roman">Special Variable, </span>nycflights13-airports</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dflights"><code><span class="roman">Special Variable, </span>nycflights13-flights</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dplanes"><code><span class="roman">Special Variable, </span>nycflights13-planes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-nycflights13_002dweather"><code><span class="roman">Special Variable, </span>nycflights13-weather</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-occupationalstatus"><code><span class="roman">Special Variable, </span>occupationalstatus</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-orange"><code><span class="roman">Special Variable, </span>orange</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-orchardsprays"><code><span class="roman">Special Variable, </span>orchardsprays</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-iris"><code><span class="roman">Special Variable, </span>iris</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-mtcars"><code><span class="roman">Special Variable, </span>mtcars</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-plant_002dgrowth"><code><span class="roman">Special Variable, </span>plant-growth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-plantgrowth"><code><span class="roman">Special Variable, </span>plantgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-precip"><code><span class="roman">Special Variable, </span>precip</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-presidents"><code><span class="roman">Special Variable, </span>presidents</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-pressure"><code><span class="roman">Special Variable, </span>pressure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-puromycin"><code><span class="roman">Special Variable, </span>puromycin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-quakes"><code><span class="roman">Special Variable, </span>quakes</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-randu"><code><span class="roman">Special Variable, </span>randu</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-rivers"><code><span class="roman">Special Variable, </span>rivers</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-rock"><code><span class="roman">Special Variable, </span>rock</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-seatbelts"><code><span class="roman">Special Variable, </span>seatbelts</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-stackloss"><code><span class="roman">Special Variable, </span>stackloss</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-student_002dsleep"><code><span class="roman">Special Variable, </span>student-sleep</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-sunspot_002emonth"><code><span class="roman">Special Variable, </span>sunspot.month</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-sunspot_002eyear"><code><span class="roman">Special Variable, </span>sunspot.year</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-sunspots"><code><span class="roman">Special Variable, </span>sunspots</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-swiss"><code><span class="roman">Special Variable, </span>swiss</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-theoph"><code><span class="roman">Special Variable, </span>theoph</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-titanic"><code><span class="roman">Special Variable, </span>titanic</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-tooth_002dgrowth"><code><span class="roman">Special Variable, </span>tooth-growth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-toothgrowth"><code><span class="roman">Special Variable, </span>toothgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-treering"><code><span class="roman">Special Variable, </span>treering</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-trees"><code><span class="roman">Special Variable, </span>trees</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-ucbadmissions"><code><span class="roman">Special Variable, </span>ucbadmissions</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-ukdriverdeaths"><code><span class="roman">Special Variable, </span>ukdriverdeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-ukgas"><code><span class="roman">Special Variable, </span>ukgas</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-usaccdeaths"><code><span class="roman">Special Variable, </span>usaccdeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-usarrests"><code><span class="roman">Special Variable, </span>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-usarrests-1"><code><span class="roman">Special Variable, </span>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-usjudgeratings"><code><span class="roman">Special Variable, </span>usjudgeratings</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-uspersonalexpenditure"><code><span class="roman">Special Variable, </span>uspersonalexpenditure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-uspop"><code><span class="roman">Special Variable, </span>uspop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-vadeaths"><code><span class="roman">Special Variable, </span>vadeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-volcano"><code><span class="roman">Special Variable, </span>volcano</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-warpbreaks"><code><span class="roman">Special Variable, </span>warpbreaks</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-women"><code><span class="roman">Special Variable, </span>women</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-worldphones"><code><span class="roman">Special Variable, </span>worldphones</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-wwwusage"><code><span class="roman">Special Variable, </span>wwwusage</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-stackloss"><code>stackloss</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-student_002dsleep"><code>student-sleep</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sunspot_002emonth"><code>sunspot.month</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sunspot_002eyear"><code>sunspot.year</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-sunspots"><code>sunspots</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-swiss"><code>swiss</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Special-Variable_002c-usarrests"><code><span class="roman">Special Variable, </span>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-T">T</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-theoph"><code>theoph</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-titanic"><code>titanic</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-tooth_002dgrowth"><code>tooth-growth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-toothgrowth"><code>toothgrowth</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-treering"><code>treering</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-trees"><code>trees</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Variable-index_vr_letter-U">U</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-ucbadmissions"><code>ucbadmissions</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-ukdriverdeaths"><code>ukdriverdeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-ukgas"><code>ukgas</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-usaccdeaths"><code>usaccdeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-usarrests"><code>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-usarrests-1"><code>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-usjudgeratings"><code>usjudgeratings</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-uspersonalexpenditure"><code>uspersonalexpenditure</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-uspop"><code>uspop</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-V">V</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-vadeaths"><code>vadeaths</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-volcano"><code>volcano</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Variable-index_vr_letter-W">W</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-warpbreaks"><code>warpbreaks</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-women"><code>women</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-worldphones"><code>worldphones</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-wwwusage"><code>wwwusage</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Public-special-variables">Public special variables</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-usarrests"><code>usarrests</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Private-special-variables">Private special variables</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
 <table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_symbol-1"><b>*</b></a>
  &nbsp; 
 <br>
-<a class="summary-letter" href="#Variable-index_vr_letter-A"><b>A</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-B"><b>B</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-C"><b>C</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-D"><b>D</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-E"><b>E</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-F"><b>F</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-H"><b>H</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-I"><b>I</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-J"><b>J</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-L"><b>L</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-M"><b>M</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-N"><b>N</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-O"><b>O</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-P"><b>P</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-Q"><b>Q</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-R"><b>R</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-T"><b>T</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Variable-index_vr_letter-U"><b>U</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-V"><b>V</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Variable-index_vr_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
 
@@ -2992,8 +1010,6 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
  &nbsp; 
-<a class="summary-letter" href="#Data-type-index_tp_letter-R"><b>R</b></a>
- &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-V"><b>V</b></a>
@@ -3006,19 +1022,15 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <tr><td></td><td valign="top"><a href="#index-base"><code><tt>base</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase-module">The lisp-stat/base module</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-D">D</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-data_002elisp"><code><tt>data.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fdata_2024lisp-file">The lisp-stat/base/data․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-doc_002dstrings_002elisp"><code><tt>doc-strings.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">The lisp-stat/docs/doc-strings․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-docs"><code><tt>docs</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs-module">The lisp-stat/docs module</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-F">F</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-File_002c-data_002elisp"><code>File, <tt>data.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fdata_2024lisp-file">The lisp-stat/base/data․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-doc_002dstrings_002elisp"><code>File, <tt>doc-strings.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs_002fdoc_002dstrings_2024lisp-file">The lisp-stat/docs/doc-strings․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-license"><code>File, <tt>license</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002flicense-file">The lisp-stat/license file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-lisp_002dstat_002easd"><code>File, <tt>lisp-stat.asd</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002flisp_002dstat_2024asd-file">The lisp-stat/lisp-stat․asd file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-ls_002dinit_002elisp"><code>File, <tt>ls-init.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fls_002dinit_2024lisp-file">The lisp-stat/ls-init․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-pkgdcls_002elisp"><code>File, <tt>pkgdcls.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">The lisp-stat/pkgdcls․lisp file</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-File_002c-rdata_002elisp"><code>File, <tt>rdata.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002frdata_2024lisp-file">The lisp-stat/base/rdata․lisp file</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-File_002c-stats_002elisp"><code>File, <tt>stats.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file">The lisp-stat/statistics/stats․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-File_002c-variables_002elisp"><code>File, <tt>variables.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002fvariables_2024lisp-file">The lisp-stat/base/variables․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-L">L</th><td></td><td></td></tr>
@@ -3032,21 +1044,13 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <tr><th id="Data-type-index_tp_letter-M">M</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Module_002c-base"><code>Module, <tt>base</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase-module">The lisp-stat/base module</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Module_002c-docs"><code>Module, <tt>docs</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fdocs-module">The lisp-stat/docs module</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Module_002c-statistics"><code>Module, <tt>statistics</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fstatistics-module">The lisp-stat/statistics module</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-P">P</th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Package_002c-lisp_002dstat"><code><span class="roman">Package, </span>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-package">The lisp-stat package</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-Package_002c-ls_002duser"><code><span class="roman">Package, </span>ls-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-ls_002duser-package">The ls-user package</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-Package_002c-rdata"><code><span class="roman">Package, </span>rdata</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-rdata-package">The rdata package</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-pkgdcls_002elisp"><code><tt>pkgdcls.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fpkgdcls_2024lisp-file">The lisp-stat/pkgdcls․lisp file</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Data-type-index_tp_letter-R">R</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-rdata"><code>rdata</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-rdata-package">The rdata package</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-rdata_002elisp"><code><tt>rdata.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fbase_002frdata_2024lisp-file">The lisp-stat/base/rdata․lisp file</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-S">S</th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-statistics"><code><tt>statistics</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fstatistics-module">The lisp-stat/statistics module</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-stats_002elisp"><code><tt>stats.lisp</tt></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat_002fstatistics_002fstats_2024lisp-file">The lisp-stat/statistics/stats․lisp file</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-System_002c-lisp_002dstat"><code><span class="roman">System, </span>lisp-stat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-lisp_002dstat-system">The lisp-stat system</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th id="Data-type-index_tp_letter-V">V</th><td></td><td></td></tr>
@@ -3064,8 +1068,6 @@ McNeil, D. R. (1977) Interactive Data Analysis. New York: Wiley.<br>
 <a class="summary-letter" href="#Data-type-index_tp_letter-M"><b>M</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
- &nbsp; 
-<a class="summary-letter" href="#Data-type-index_tp_letter-R"><b>R</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
  &nbsp; 

@@ -3,7 +3,7 @@
 
 (defsystem "lisp-stat"
   :name "Lisp Statistics"
-  :version     "1.1.0"
+  :version     "1.2.0"
   :license     :MS-PL
   :author      "Steve Nunez <steve@symbolics.tech>"
   :long-name   "Statistical Computing in Common Lisp"
@@ -15,22 +15,23 @@
   :bug-tracker "https://github.com/Lisp-Stat/lisp-stat/issues"
 
   :depends-on ("alexandria"
-               "let-plus"
+               "alexandria+"
 	       "array-operations"
 	       "data-frame"
+	       "distributions"
+	       #-genera "dexador"
 	       "dfio"
 	       "num-utils"
 	       "select"
 	       "statistics"
-	       #-genera "dexador"
-	       "split-sequence")
+	       "org.tfeb.conduit-packages")
   :in-order-to ((test-op (test-op lisp-stat/tests)))
   :components ((:file "pkgdcls")
 	       (:static-file #:LICENSE)
 	       (:module "base"
 			:serial t
 			:components
-			((:file "variables")) ;XLS style variable definitions
+			((:file "variables"))) ;XLS style variable definitions
 	       (:module "docs"
 		:components ((:file "doc-strings")))
 	       (:file "ls-init")))

@@ -1,34 +1,39 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-lisp; Package: CL-USER -*-
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ORG.TFEB.CLC-USER -*-
 ;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
+(in-package :org.tfeb.clc-user)
 
-(uiop:define-package #:lisp-stat
-  (:documentation "Base functions for Lisp-Stat")
-  (:use :common-lisp)
+(defpackage :lisp-stat
+  (:use)
+  (:extends :cl)
+  (:extends/excluding :alexandria
+		      #:mean
+		      #:variance
+		      #:median
+		      #:flatten
+		      #:standard-deviation)
+  (:extends :alexandria+)
+  (:extends :array-operations)
+  (:extends :data-frame)
+  (:extends :dfio)
+  (:extends/excluding :distributions
+		      #:variance
+		      #:mean
+		      #:quantile)
+  (:extends :num-utils.arithmetic)
+  (:extends :num-utils.elementwise)
+  (:extends :num-utils.utilities)
+  (:extends :num-utils.print-matrix)
+  (:extends :select)
+  (:extends :statistics-1)
 
-  (:import-from :let-plus #:let+)
-
-  ;; Fix symbol conflicts
-  ;; This would be easier with something like defpackage-plus, but that system is somewhat fragile when redefining packages
-  (:shadowing-import-from :statistics-1 #:mean #:variance #:median) ; alexandria only works on sequences
-;; (:shadowing-import-from :lh.statistics #:square)
-  (:shadowing-import-from :array-operations     #:flatten)                  ; alexandria works on cons trees, aops on arrays
-  ;; (:shadowing-import-from :distributions        #:standard-deviation)       ; alexandria only works on sequences
-
-  (:use-reexport :alexandria
-		 :alexandria+
-		 :array-operations
-		 :data-frame
-                 :dfio
-		 :num-utils.arithmetic
-                 :num-utils.elementwise
-                 :num-utils.utilities
-		 :num-utils.print-matrix
-		 :select
-		 :split-sequence
-		 :statistics-1)
   (:export #:variables
            #:def
 	   #:undef-var
            #:savevar
 	   #:load-tutorial-data))
+
+(defpackage :ls-user
+  (:use)
+  (:extends :cl)
+  (:extends :lisp-stat))
 
