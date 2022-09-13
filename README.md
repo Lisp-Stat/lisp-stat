@@ -134,6 +134,12 @@ git clone https://github.com/Symbolics/alexandria-plus && \
 git clone https://github.com/Lisp-Stat/statistics.git && \
 git clone https://github.com/Lisp-Stat/lisp-stat.git
 ```
+**Note:** If you've installed lisp with [Roswell](https://roswell.github.io/),
+first run `cd ~/.roswell/lisp/quicklisp/local-projects` and *then* run the git
+clone commands. The instance of ASDF that roswell installs will already be
+configured to look in that directory when loading lisp systems (a.k.a. packages, in the
+parlance of most other programming languages).
+
 2. Reset the ASDF source-registry to find the new system (from the REPL)
    ```lisp
    (asdf:clear-source-registry)
