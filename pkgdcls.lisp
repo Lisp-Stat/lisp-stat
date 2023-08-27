@@ -1,8 +1,8 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ORG.TFEB.CLC-USER -*-
-;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2023 by Symbolics Pte. Ltd. All rights reserved.
 (in-package :org.tfeb.clc-user)
 
-(defpackage :lisp-stat
+(defpackage #:lisp-stat
   (:use)
   (:extends :cl)
   (:extends/excluding :alexandria
@@ -32,8 +32,7 @@
            #:savevar
 	   #:load-tutorial-data))
 
-(defpackage :ls-user
+(defpackage #:ls-user
   (:use)
-  (:extends :cl)
   (:extends :lisp-stat))
 

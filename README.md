@@ -113,7 +113,19 @@ independently useful.  So you can, for example, use
 [select](https://github.com/Lisp-Stat/select) to obtain selections
 from two dimensional arrays without bringing in all of Lisp-Stat.
 
-#### Getting the source
+#### The easy way
+
+Quicklisp has many dependencies, and the easiest way to load it is with a package manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/).  The install is a one-liner:
+
+```lisp
+(clpm-client:sync :sources "clpi") ;sources may vary
+```
+
+```lisp
+(ql:quickload :lisp-stat)
+```
+
+#### From source
 
 To make the system accessible to [ASDF](https://common-lisp.net/project/asdf/) (a build facility, similar to `make` in the C world), clone the repository in a directory ASDF knows about.  By default the `common-lisp` directory in your home directory is known. Create this if it doesn't already exist and then:
 
@@ -146,21 +158,7 @@ git clone https://github.com/Lisp-Stat/lisp-stat.git
 If you have installed the slime ASDF extensions, you can invoke this
 with a comma (',') from the slime REPL.
 
-#### Getting dependencies
-
-To get the third party systems that Lisp-Stat depends on, you can use a dependency manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/). Once installed, get the dependencies with either of:
-
-```lisp
-(clpm-client:sync :sources "clpi") ;sources may vary
-```
-
-```lisp
-(ql:quickload :lisp-stat)
-```
-
-You need do this only once. After obtaining the dependencies, you can
-load the system with `ASDF` as described above without first syncing
-sources.
+You'll need to use Quicklisp, CLPM or manually obtain the remaining third-party dependencies.
 
 ### Running Tests
 

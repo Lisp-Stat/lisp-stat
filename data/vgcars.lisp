@@ -22,7 +22,7 @@
 (heuristicate-types vgcars)
 
 ;; Categorical variables cannot be automatically determined
-(set-properties vgcars :type '(:origin :categorical
+(set-properties vgcars :type '(:origin  :categorical
 				:year   :categorical
 				:name   :categorical
 				:cylinders :categorical))
