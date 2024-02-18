@@ -1,11 +1,12 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ORG.TFEB.CLC-USER -*-
-;;; Copyright (c) 2021-2023 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; SPDX-License-identifier: MS-PL
 (in-package :org.tfeb.clc-user)
 
 (defpackage #:lisp-stat
   (:use)
   (:extends :cl)
-  (:extends/excluding :alexandria
+  (:extends/excluding #:alexandria
 		      #:mean
 		      #:variance
 		      #:median
@@ -18,6 +19,7 @@
   (:extends/excluding :distributions
 		      #:variance
 		      #:mean
+		      #:scale
 		      #:quantile)
   (:extends :num-utils.arithmetic)
   (:extends :num-utils.elementwise)
