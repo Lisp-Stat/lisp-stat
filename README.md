@@ -144,6 +144,8 @@ git clone https://github.com/Lisp-Stat/select.git && \
 git clone https://github.com/Lisp-Stat/cephes.cl.git && \
 git clone https://github.com/Symbolics/alexandria-plus && \
 git clone https://github.com/Lisp-Stat/statistics.git && \
+git clone https://github.com/Lisp-Stat/lla.git && \
+git clone https://github.com/Lisp-Stat/smoothers && \
 git clone https://github.com/Lisp-Stat/lisp-stat.git
 ```
 2. Reset the ASDF source-registry to find the new system (from the REPL)
