@@ -1,5 +1,6 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LISP-STAT -*-
-;;; Copyright (c) 2021-2022 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; SPDX-License-identifier: MS-PL
 (in-package #:lisp-stat)
 
 ;;; Logical pathname setup
@@ -23,4 +24,22 @@
 ;;; Printer control variables
 (setf *print-pretty* nil)
 (setf *print-lines* 25)
+
+;; Use this in your personal ccl-init.lisp file to change package to LS-USER automatically
+;; Modeled after CCL:SET-DEVELOPMENT-ENVIRONMENT
+#+CCL
+(defun set-lisp-stat-environment (&optional (thaw-definitions nil))
+  "Arrange that the outermost special bindings of *PACKAGE* and
+*WARN-IF-REDEFINE-KERNEL* restore values of the LS-USER package and
+NIL respectively, and set *ccl-save-source-locations* to T. If the
+optional argument is true, mark all globally defined functions and
+methods as being not predefined (this is a fairly expensive
+operation).  Use thaw-definitions you are redefining functions in CCL or CL packages."
+  (when thaw-definitions
+    (ccl::thaw-current-definitions))
+  ;; enable redefine-kernel-function's error checking
+  (ccl::%reset-outermost-binding '*warn-if-redefine-kernel* nil)
+  ;; Set the top-level *package* to the LS-USER package
+  (ccl::%reset-outermost-binding '*package* (find-package "LS-USER"))
+  (setq ccl::*ccl-save-source-locations* T))
 

@@ -4,7 +4,7 @@
 
 (defsystem "lisp-stat"
   :name "Lisp Statistics"
-  :version     "1.3.0"
+  :version     "1.4.0"
   :license     :MS-PL
   :author      "Steve Nunez <steve@symbolics.tech>"
   :long-name   "Statistical Computing in Common Lisp"
