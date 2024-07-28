@@ -115,7 +115,7 @@ from two dimensional arrays without bringing in all of Lisp-Stat.
 
 #### The easy way
 
-Quicklisp has many dependencies, and the easiest way to load it is with a package manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/).  The install is a one-liner:
+lisp-stat has many dependencies, and the easiest way to load it is with a package manager, such as [Quicklisp](https://www.quicklisp.org/beta/) or [CLPM](https://www.clpm.dev/).  The install is a one-liner:
 
 ```lisp
 (clpm-client:sync :sources "clpi") ;sources may vary
