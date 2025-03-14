@@ -14,7 +14,6 @@
   :homepage    "https://lisp-stat.dev/"
   :source-control (:git "https://github.com/Lisp-Stat/lisp-stat.git")
   :bug-tracker "https://github.com/Lisp-Stat/lisp-stat/issues"
-
   :depends-on ("alexandria"
                "alexandria+"
 	       "array-operations"

@@ -168,11 +168,6 @@ with a comma (',') from the slime REPL.
 
 You'll need to use Quicklisp, CLPM or manually obtain the remaining third-party dependencies.
 
-### Running Tests
-
-To run the `lisp-stat` tests, evaluate this form: `(asdf:test-system :lisp-stat)`
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
