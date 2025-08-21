@@ -1,5 +1,5 @@
 ;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: ORG.TFEB.CLC-USER -*-
-;;; Copyright (c) 2021-2024 by Symbolics Pte. Ltd. All rights reserved.
+;;; Copyright (c) 2021-2025 by Symbolics Pte. Ltd. All rights reserved.
 ;;; SPDX-License-identifier: MS-PL
 (in-package :org.tfeb.clc-user)
 
@@ -26,7 +26,7 @@
   (:extends :num-utils.utilities)
   (:extends :num-utils.print-matrix)
   (:extends :select)
-  (:extends :statistics-1)
+  (:extends :statistics)
 
   (:export #:variables
            #:def
