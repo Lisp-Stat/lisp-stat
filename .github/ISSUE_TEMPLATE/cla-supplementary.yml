@@ -1,0 +1,69 @@
+name: CLA Supplementary Information
+description: >
+  Provide supplementary CLA information (email and employer declaration).
+  Complete this after signing the CLA via pull request comment.
+title: "[CLA] Supplementary info for @<your-github-username>"
+labels: ["cla"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for signing the Lisp-Stat Contributor License Agreement.
+
+        Please complete this form to provide your email address and employer
+        declaration. This information supplements the signature recorded via
+        pull request and is required by Symbolics Pte. Ltd.
+
+        **Only complete this form after posting your signing comment on your
+        pull request.**
+
+  - type: input
+    id: github-username
+    attributes:
+      label: GitHub Username
+      placeholder: "e.g. octocat"
+    validations:
+      required: true
+
+  - type: input
+    id: full-name
+    attributes:
+      label: Full Name
+      placeholder: "e.g. Ada Lovelace"
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Email Address
+      placeholder: "e.g. ada@example.com"
+    validations:
+      required: true
+
+  - type: input
+    id: age
+    attributes:
+      label: Age
+      description: Must be 18 or older.
+      placeholder: "e.g. 35"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: signing-capacity
+    attributes:
+      label: How are you signing?
+      options:
+        - I am signing on behalf of myself.
+        - I am signing on behalf of my employer.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read and agree to the [Lisp-Stat CLA](https://github.com/Lisp-Stat/.github/blob/master/CLA.md).
+          required: true
