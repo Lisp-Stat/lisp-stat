@@ -10,9 +10,22 @@ Agreement. You (or your employer) retain the copyright to your contribution;
 this simply gives us permission to use and redistribute your contributions as
 part of the project.
 
-You generally only need to submit a CLA once, so if you've already submitted one
-(even if it was for a different project), you probably don't need to do it
-again.
+**Signing is automatic.** When you open a pull request, the CLA bot will
+comment on it with instructions. Sign by posting the following comment on
+your pull request:
+
+```
+I have read the CLA Document and I hereby sign the CLA
+```
+
+You only need to sign once across all Lisp-Stat repositories. Please also
+open a [CLA Supplementary Information][cla-issue] issue to provide your
+email address and employer declaration.
+
+The full CLA text is available at:
+<https://github.com/Lisp-Stat/.github/blob/master/CLA.md>
+
+[cla-issue]: https://github.com/Lisp-Stat/lisp-stat/issues/new?template=cla-supplementary.yml
 
 ## The Contribution Process
 
