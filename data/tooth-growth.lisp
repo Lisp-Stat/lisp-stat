@@ -13,9 +13,9 @@ as VC).
 
 Format
 A data frame with 60 observations on 3 variables.
-[,1] 	len 	numeric 	Tooth length
-[,2] 	supp 	factor 	Supplement type (VC or OJ).
-[,3] 	dose 	numeric 	Dose in milligrams/day
+[,0] 	len 	numeric 	Tooth length
+[,1] 	supp 	factor 	        Supplement type (VC or OJ).
+[,2] 	dose 	numeric 	Dose in milligrams/day
 
 Source
 C. I. Bliss (1952). The Statistics of Bioassay. Academic Press.
@@ -28,9 +28,34 @@ References
 
 Examples
 
-require(graphics)
-coplot(len ~ dose | supp, data = ToothGrowth, panel = panel.smooth,
-       xlab = \"ToothGrowth data: length vs dose, given type of supplement\")")
+(vega:defplot tooth-growth-coplot
+  `(:title \"Tooth Growth: Length vs Dose | Supplement\"
+    :data (:url \"/table/TOOTH-GROWTH\")
+    :facet (:field :supp
+            :type  :nominal
+            :title \"Supplement (Given)\"
+            :header (:title-font-size 13
+                     :label-font-size 12
+                     :label-font-weight \"bold\"))
+    :spec
+    (:width 280
+     :height 260
+     :encoding (:x (:field :dose
+                    :type  :quantitative
+                    :scale (:zero :false)
+                    :axis  (:values #(0.5 1.0 2.0)
+                            :title \"Dose (mg/day)\")))
+     :layer
+     #((:mark (:type :point :filled t :opacity 0.6)
+        :encoding (:y     (:field :len :type :quantitative :title \"Tooth Length\")
+                   :color (:field :supp :type :nominal :legend :null)))
+       (:mark (:type :line :stroke-width 2.5 :point t)
+        :encoding (:y     (:field :len :type :quantitative :aggregate :mean)
+                   :color (:field :supp :type :nominal :legend :null)))
+       (:mark (:type :errorbar :extent :stdev)
+        :encoding (:y     (:field :len :type :quantitative)
+                   :color (:field :supp :type :nominal :legend :null)))))))
+")
 
 (remove-column! tooth-growth (first-elt (keys tooth-growth))) ;row number
 (set-properties tooth-growth :label '(:len   "Tooth length"

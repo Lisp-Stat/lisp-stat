@@ -1,5 +1,5 @@
-;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LS -*-
-;;; Copyright (c) 2021 by Symbolics Pte. Ltd. All rights reserved.
+;;; -*- Mode: LISP; Base: 10; Syntax: ANSI-Common-Lisp; Package: LS-USER -*-
+;;; Copyright (c) 2021,2026 by Symbolics Pte. Ltd. All rights reserved.
 (in-package #:ls-user)
 
 (defvar mpg-data "http://vincentarelbundock.github.io/Rdatasets/csv/ggplot2/mpg.csv"
@@ -42,6 +42,6 @@
 (defvar travel-space #(12.8 12.9 12.9 13.6 14.5 14.6 15.1 17.5 19.5 20.8))
 (defvar separation #(5.5 6.2 6.3 7.0 7.8 8.3 7.1 10.0 10.8 11.0))
 
-(load #P"LS:DATASETS;sg-weather")
+(load #P"LS:DATA;sg-weather")
 
 
