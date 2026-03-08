@@ -60,7 +60,7 @@ iris   : [150 x 5]     — (observations*species) x (measurements+species)
 ```
 
 ## Step 2: Reconstruct iris from iris3
-#|
+
 
 ```lisp
 (let* ((col-keys
@@ -87,7 +87,7 @@ iris   : [150 x 5]     — (observations*species) x (measurements+species)
                   (list :species species))))
   (plist-df plist))
 ```
-|#
+
 ## Key Decisions
 
 ### aops:as-array vs df:as-array
@@ -156,7 +156,7 @@ A `loop` interleaves keys and column vectors, with `:species` appended:
   when selecting columns with `SELECT`.
 - `AOPS:SPLIT` returns displaced arrays; always `coerce` to
   `simple-vector` before passing to `plist-df`.
-"
+")
 
 ;; Remove the first column, which is a row number
 (remove-column! iris (first-elt (keys iris)))
