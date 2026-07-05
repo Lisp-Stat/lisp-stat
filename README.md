@@ -146,6 +146,7 @@ git clone https://github.com/Symbolics/alexandria-plus && \
 git clone https://github.com/Lisp-Stat/statistics.git && \
 git clone https://github.com/Lisp-Stat/lla.git && \
 git clone https://github.com/Lisp-Stat/smoothers && \
+git clone https://github.com/Lisp-Stat/stat-generics && \
 git clone https://github.com/Lisp-Stat/lisp-stat.git
 ```
 **Note:** If you've installed lisp with [Roswell](https://roswell.github.io/),
